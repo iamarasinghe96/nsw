@@ -146,8 +146,9 @@
           <div class="card-icon">${icon}</div>
           <h3 class="card-title">${shortLabel}</h3>
           <p class="card-count">${forms.length} form${forms.length !== 1 ? 's' : ''}</p>
-          <button class="browse-btn" onclick="browseCategory(${JSON.stringify(name)})">Browse Forms</button>
+          <button class="browse-btn">Browse Forms</button>
         `;
+        card.querySelector('.browse-btn').addEventListener('click', () => browseCategory(name));
         grid.appendChild(card);
       });
       applyRipples();
@@ -227,8 +228,9 @@
           <div class="sr-type">Category</div>
           <div class="sr-name">${name}</div>
           <div class="sr-count">${forms.length} forms</div>
-          <button class="browse-btn small" onclick="browseCategory(${JSON.stringify(name)})">Browse Forms</button>
+          <button class="browse-btn small">Browse Forms</button>
         `;
+        card.querySelector('.browse-btn').addEventListener('click', () => browseCategory(name));
         resultsGrid.appendChild(card);
       });
 
@@ -242,8 +244,9 @@
           <div class="sr-name">${getFormDisplayName(f.filename)}</div>
           <div class="sr-cat">${f.categoryName}</div>
           ${cat ? `<div class="sr-catalogue">Cat. ${cat}</div>` : ''}
-          <button class="start-btn small" onclick="startForm(${JSON.stringify(f.formId)}, ${JSON.stringify(f.categoryName)})">Start Form</button>
+          <button class="start-btn small">Start Form</button>
         `;
+        card.querySelector('.start-btn').addEventListener('click', () => startForm(f.formId, f.categoryName));
         resultsGrid.appendChild(card);
       });
 
