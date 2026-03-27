@@ -1,0 +1,75 @@
+{
+  "Access to Information Forms": [
+    "45013321-access-to-information-application.pdf",
+    "45013322-gipa-internal-review-application.pdf"
+  ],
+  "Authorised Inspection Station (AIS) Forms": [
+    "45060001-ais-application-new.pdf",
+    "45060002-ais-renewal-application.pdf",
+    "45060003-ais-change-of-details.pdf"
+  ],
+  "Driver Licensing Forms": [
+    "45070018-licence-application.pdf",
+    "45071506-licence-renewal-application.pdf",
+    "45070019-licence-replacement-application.pdf",
+    "45070020-overseas-licence-conversion.pdf",
+    "45070021-medical-condition-declaration.pdf",
+    "45070022-name-change-on-licence.pdf"
+  ],
+  "Driving Instructors & Assessors Forms": [
+    "45080001-driving-instructor-accreditation-application.pdf",
+    "45080002-driving-assessor-application.pdf"
+  ],
+  "e-Toll & M5 South-West Cashback Forms": [
+    "45090001-etoll-account-application.pdf",
+    "45090002-m5-cashback-application.pdf",
+    "45090003-etoll-dispute-form.pdf"
+  ],
+  "Health Professionals Licence Forms": [
+    "45100001-health-professional-medical-report.pdf",
+    "45100002-optometrist-vision-certificate.pdf"
+  ],
+  "Heavy Vehicle Operator Forms": [
+    "45110001-heavy-vehicle-permit-application.pdf",
+    "45110002-heavy-vehicle-mass-dimension-permit.pdf",
+    "45110003-livestock-transport-accreditation.pdf"
+  ],
+  "Maritime & Boating Forms": [
+    "45120001-vessel-registration-application.pdf",
+    "45120002-vessel-transfer-of-ownership.pdf",
+    "45120003-boat-licence-application.pdf",
+    "45120004-marine-licence-replacement.pdf"
+  ],
+  "Miscellaneous Forms": [
+    "45130001-general-enquiry-form.pdf",
+    "45130002-customer-feedback-form.pdf",
+    "45130003-statutory-declaration.pdf"
+  ],
+  "Mobility Parking Scheme Forms": [
+    "45140001-mobility-parking-application.pdf",
+    "45140002-mobility-parking-renewal.pdf",
+    "45140003-mobility-parking-replacement.pdf"
+  ],
+  "Motor Dealer Forms": [
+    "45150001-motor-dealer-licence-application.pdf",
+    "45150002-motor-dealer-renewal.pdf",
+    "45150003-dealer-salesperson-application.pdf"
+  ],
+  "Public Passenger Vehicle Operator Forms": [
+    "45160001-taxi-driver-authority-application.pdf",
+    "45160002-rideshare-driver-authorisation.pdf",
+    "45160003-bus-operator-accreditation.pdf"
+  ],
+  "Vehicle Registration Forms": [
+    "45170001-vehicle-registration-application.pdf",
+    "45170002-registration-transfer.pdf",
+    "45170003-registration-cancellation.pdf",
+    "45170004-conditional-registration.pdf",
+    "45170005-historic-vehicle-registration.pdf"
+  ],
+  "Vehicle Safety Compliance Certification Scheme (VSCCS) Forms": [
+    "45180001-vsccs-application.pdf",
+    "45180002-vehicle-modification-approval.pdf",
+    "45180003-compliance-plate-application.pdf"
+  ]
+}

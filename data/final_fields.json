@@ -1,0 +1,6318 @@
+{
+  "45013321-access-to-information-application.pdf": [
+    {
+      "label": "Full Name",
+      "field_name": "full_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Organisation (if applicable)",
+      "field_name": "organisation",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Information Requested",
+      "field_name": "information_requested",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Preferred Format",
+      "field_name": "preferred_format",
+      "type": "radio",
+      "options": [
+        "Paper copy",
+        "Electronic copy",
+        "Inspection of records"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Reason for Request",
+      "field_name": "reason_for_request",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "I declare this information is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    }
+  ],
+  "45013322-gipa-internal-review-application.pdf": [
+    {
+      "label": "Full Name",
+      "field_name": "full_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Original Decision",
+      "field_name": "decision_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Original Decision Reference Number",
+      "field_name": "original_decision_reference",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Grounds for Review",
+      "field_name": "grounds_for_review",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Preferred Outcome",
+      "field_name": "preferred_outcome",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "I declare this application is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    }
+  ],
+  "45060001-ais-application-new.pdf": [
+    {
+      "label": "Business Name",
+      "field_name": "business_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "ABN",
+      "field_name": "abn",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Trading Name",
+      "field_name": "trading_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Full Name (Licensee)",
+      "field_name": "full_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Mechanic Licence Number",
+      "field_name": "mechanic_licence_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Station Class",
+      "field_name": "station_class",
+      "type": "radio",
+      "options": [
+        "Class A \u2013 Light Vehicles",
+        "Class B \u2013 Light and Heavy Vehicles",
+        "Class C \u2013 Motorcycles Only"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Inspection Categories",
+      "field_name": "inspection_categories",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45060002-ais-renewal-application.pdf": [
+    {
+      "label": "Station Name",
+      "field_name": "station_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Station Number",
+      "field_name": "station_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Full Name",
+      "field_name": "full_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Renewal Year",
+      "field_name": "renewal_year",
+      "type": "number",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    }
+  ],
+  "45060003-ais-change-of-details.pdf": [
+    {
+      "label": "Station Name",
+      "field_name": "station_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Station Number",
+      "field_name": "station_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Full Name",
+      "field_name": "full_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Type of Change",
+      "field_name": "change_type",
+      "type": "radio",
+      "options": [
+        "Change of address",
+        "Change of owner",
+        "Change of station class",
+        "Other"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "New Details",
+      "field_name": "new_details",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    }
+  ],
+  "45070018-licence-application.pdf": [
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Names",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Gender",
+      "field_name": "gender",
+      "type": "radio",
+      "options": [
+        "Male",
+        "Female",
+        "Non-binary",
+        "Prefer not to say"
+      ],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Place of Birth",
+      "field_name": "place_of_birth",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Licence Class",
+      "field_name": "licence_class",
+      "type": "dropdown",
+      "options": [
+        "C \u2013 Car",
+        "R \u2013 Motorcycle",
+        "LR \u2013 Light Rigid",
+        "MR \u2013 Medium Rigid",
+        "HR \u2013 Heavy Rigid",
+        "HC \u2013 Heavy Combination",
+        "MC \u2013 Multi Combination"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Previous Licence Number",
+      "field_name": "previous_licence_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Previous Licence State",
+      "field_name": "previous_licence_state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Medical Conditions",
+      "field_name": "medical_conditions",
+      "type": "radio",
+      "options": [
+        "No",
+        "Yes \u2013 details attached"
+      ],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45071506-licence-renewal-application.pdf": [
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Names",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Current Licence Number",
+      "field_name": "current_licence_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Renewal Period",
+      "field_name": "renewal_period",
+      "type": "radio",
+      "options": [
+        "1 year",
+        "3 years",
+        "5 years"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Medical Conditions",
+      "field_name": "medical_conditions",
+      "type": "radio",
+      "options": [
+        "No",
+        "Yes \u2013 details attached"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    }
+  ],
+  "45070019-licence-replacement-application.pdf": [
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Names",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Licence Number",
+      "field_name": "licence_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Reason for Replacement",
+      "field_name": "reason_for_replacement",
+      "type": "radio",
+      "options": [
+        "Lost",
+        "Stolen",
+        "Damaged",
+        "Name change"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Police Report Number (if applicable)",
+      "field_name": "police_report_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    }
+  ],
+  "45070020-overseas-licence-conversion.pdf": [
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Names",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Country of Issue",
+      "field_name": "country_of_issue",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Overseas Licence Number",
+      "field_name": "overseas_licence_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Overseas Licence Class",
+      "field_name": "overseas_licence_class",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Years Held",
+      "field_name": "years_held",
+      "type": "number",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Translation Required",
+      "field_name": "translation_required",
+      "type": "radio",
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45070021-medical-condition-declaration.pdf": [
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Names",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Licence Number",
+      "field_name": "licence_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Condition Type",
+      "field_name": "condition_type",
+      "type": "radio",
+      "options": [
+        "Vision impairment",
+        "Hearing impairment",
+        "Physical disability",
+        "Neurological condition",
+        "Cardiovascular condition",
+        "Other"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Condition Details",
+      "field_name": "condition_details",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Treating Practitioner",
+      "field_name": "treating_practitioner",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Practitioner Phone",
+      "field_name": "practitioner_phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Driving Restrictions (if any)",
+      "field_name": "driving_restrictions",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    }
+  ],
+  "45070022-name-change-on-licence.pdf": [
+    {
+      "label": "Former Surname",
+      "field_name": "former_surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Former Given Names",
+      "field_name": "former_given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "New Surname",
+      "field_name": "new_surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "New Given Names",
+      "field_name": "new_given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Licence Number",
+      "field_name": "licence_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Reason for Change",
+      "field_name": "reason_for_change",
+      "type": "radio",
+      "options": [
+        "Marriage",
+        "Divorce",
+        "Deed poll",
+        "Other"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    }
+  ],
+  "45080001-driving-instructor-accreditation-application.pdf": [
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Names",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Current Licence Number",
+      "field_name": "current_licence_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Years Licensed",
+      "field_name": "years_licenced",
+      "type": "number",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Accreditation Class",
+      "field_name": "accreditation_class",
+      "type": "radio",
+      "options": [
+        "Class C \u2013 Car",
+        "Class R \u2013 Motorcycle",
+        "Both"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "First Aid Certificate",
+      "field_name": "first_aid_certificate",
+      "type": "radio",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Working With Children Check Number",
+      "field_name": "working_with_children_check",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45080002-driving-assessor-application.pdf": [
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Names",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Employer Name",
+      "field_name": "employer_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Employer ABN",
+      "field_name": "employer_abn",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Assessment Types",
+      "field_name": "assessment_types",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Qualifications",
+      "field_name": "qualifications",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45090001-etoll-account-application.pdf": [
+    {
+      "label": "Account Type",
+      "field_name": "account_type",
+      "type": "radio",
+      "options": [
+        "Personal",
+        "Business"
+      ],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Full Name",
+      "field_name": "full_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Plate Number",
+      "field_name": "vehicle_plate",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Vehicle State",
+      "field_name": "vehicle_state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Payment Method",
+      "field_name": "payment_method",
+      "type": "radio",
+      "options": [
+        "Credit card",
+        "Direct debit",
+        "Prepaid"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    }
+  ],
+  "45090002-m5-cashback-application.pdf": [
+    {
+      "label": "Full Name",
+      "field_name": "full_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Plate Number",
+      "field_name": "vehicle_plate",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Type",
+      "field_name": "vehicle_type",
+      "type": "radio",
+      "options": [
+        "Car",
+        "Motorcycle",
+        "Light commercial"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Bank Name",
+      "field_name": "bank_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "BSB",
+      "field_name": "bsb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Account Number",
+      "field_name": "account_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    }
+  ],
+  "45090003-etoll-dispute-form.pdf": [
+    {
+      "label": "Full Name",
+      "field_name": "full_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "e-Toll Account Number",
+      "field_name": "account_number_etoll",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Transaction Date",
+      "field_name": "transaction_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Toll Road",
+      "field_name": "toll_road",
+      "type": "dropdown",
+      "options": [
+        "M2 Hills Motorway",
+        "M5 South West",
+        "M7 Westlink",
+        "Sydney Harbour Bridge",
+        "Eastern Distributor",
+        "Lane Cove Tunnel",
+        "Cross City Tunnel"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Disputed Amount ($)",
+      "field_name": "dispute_amount",
+      "type": "number",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Reason for Dispute",
+      "field_name": "reason_for_dispute",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Supporting Evidence",
+      "field_name": "supporting_evidence",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    }
+  ],
+  "45100001-health-professional-medical-report.pdf": [
+    {
+      "label": "Patient Surname",
+      "field_name": "patient_surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Patient Given Names",
+      "field_name": "patient_given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Patient Date of Birth",
+      "field_name": "patient_date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Patient Licence Number",
+      "field_name": "patient_licence_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Practitioner Name",
+      "field_name": "practitioner_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Practitioner Registration Number",
+      "field_name": "practitioner_registration_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Practitioner Type",
+      "field_name": "practitioner_type",
+      "type": "dropdown",
+      "options": [
+        "General Practitioner",
+        "Specialist",
+        "Ophthalmologist",
+        "Optometrist",
+        "Neurologist",
+        "Cardiologist",
+        "Other"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Practice Address",
+      "field_name": "practice_address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Medical Condition",
+      "field_name": "medical_condition",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Fitness to Drive",
+      "field_name": "fitness_to_drive",
+      "type": "radio",
+      "options": [
+        "Fit to drive unconditionally",
+        "Fit to drive with conditions",
+        "Not fit to drive"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Recommended Conditions (if any)",
+      "field_name": "recommended_conditions",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Review Date",
+      "field_name": "review_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45100002-optometrist-vision-certificate.pdf": [
+    {
+      "label": "Patient Surname",
+      "field_name": "patient_surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Patient Given Names",
+      "field_name": "patient_given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Patient Date of Birth",
+      "field_name": "patient_date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Patient Licence Number",
+      "field_name": "patient_licence_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Optometrist Name",
+      "field_name": "optometrist_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Registration Number",
+      "field_name": "registration_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Practice Name",
+      "field_name": "practice_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Practice Phone",
+      "field_name": "practice_phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Visual Acuity (Right Eye)",
+      "field_name": "visual_acuity_right",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Visual Acuity (Left Eye)",
+      "field_name": "visual_acuity_left",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Visual Acuity (Both Eyes)",
+      "field_name": "visual_acuity_both",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Visual Field",
+      "field_name": "visual_field",
+      "type": "radio",
+      "options": [
+        "Normal",
+        "Abnormal"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Corrective Lenses Required",
+      "field_name": "corrective_lenses_required",
+      "type": "radio",
+      "options": [
+        "No",
+        "Yes \u2013 spectacles",
+        "Yes \u2013 contact lenses"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45110001-heavy-vehicle-permit-application.pdf": [
+    {
+      "label": "Operator Name",
+      "field_name": "operator_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "ABN",
+      "field_name": "abn",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Registration",
+      "field_name": "vehicle_registration",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Type",
+      "field_name": "vehicle_type",
+      "type": "dropdown",
+      "options": [
+        "Rigid truck",
+        "Articulated truck",
+        "B-double",
+        "Road train",
+        "Oversize vehicle"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Permit Type",
+      "field_name": "permit_type",
+      "type": "radio",
+      "options": [
+        "Single trip",
+        "Multi-trip",
+        "Annual"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Route Description",
+      "field_name": "route_description",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Proposed Travel Date",
+      "field_name": "proposed_travel_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45110002-heavy-vehicle-mass-dimension-permit.pdf": [
+    {
+      "label": "Operator Name",
+      "field_name": "operator_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "ABN",
+      "field_name": "abn",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Vehicle Registration",
+      "field_name": "vehicle_registration",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Gross Mass (kg)",
+      "field_name": "gross_mass",
+      "type": "number",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Overall Length (m)",
+      "field_name": "overall_length",
+      "type": "number",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Overall Width (m)",
+      "field_name": "overall_width",
+      "type": "number",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Overall Height (m)",
+      "field_name": "overall_height",
+      "type": "number",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Route Start",
+      "field_name": "route_start",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Route End",
+      "field_name": "route_end",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Travel Dates",
+      "field_name": "travel_dates",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Escort Required",
+      "field_name": "escort_required",
+      "type": "radio",
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45110003-livestock-transport-accreditation.pdf": [
+    {
+      "label": "Business Name",
+      "field_name": "business_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "ABN",
+      "field_name": "abn",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Contact Name",
+      "field_name": "contact_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Registration",
+      "field_name": "vehicle_registration",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Livestock Types",
+      "field_name": "livestock_types",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Accreditation Type",
+      "field_name": "accreditation_type",
+      "type": "radio",
+      "options": [
+        "Standard",
+        "Advanced"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Previous Accreditation",
+      "field_name": "previous_accreditation",
+      "type": "radio",
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45120001-vessel-registration-application.pdf": [
+    {
+      "label": "Owner Surname",
+      "field_name": "owner_surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Owner Given Names",
+      "field_name": "owner_given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Vessel Name",
+      "field_name": "vessel_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Vessel Type",
+      "field_name": "vessel_type",
+      "type": "dropdown",
+      "options": [
+        "Motor vessel",
+        "Sailing vessel",
+        "Personal watercraft",
+        "Canoe/kayak",
+        "Rowing boat",
+        "Other"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Hull Material",
+      "field_name": "hull_material",
+      "type": "radio",
+      "options": [
+        "Fibreglass",
+        "Aluminium",
+        "Timber",
+        "Steel",
+        "Inflatable"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Hull Colour",
+      "field_name": "hull_colour",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Engine Power (kW)",
+      "field_name": "engine_power",
+      "type": "number",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Propulsion",
+      "field_name": "propulsion",
+      "type": "dropdown",
+      "options": [
+        "Inboard motor",
+        "Outboard motor",
+        "Sail",
+        "Human-powered",
+        "Electric"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45120002-vessel-transfer-of-ownership.pdf": [
+    {
+      "label": "Seller Surname",
+      "field_name": "seller_surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Seller Given Names",
+      "field_name": "seller_given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Seller Phone",
+      "field_name": "seller_phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Buyer Surname",
+      "field_name": "buyer_surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Buyer Given Names",
+      "field_name": "buyer_given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Buyer Date of Birth",
+      "field_name": "buyer_date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Buyer Phone",
+      "field_name": "buyer_phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Buyer Email",
+      "field_name": "buyer_email",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Vessel Registration Number",
+      "field_name": "vessel_registration_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Vessel Name",
+      "field_name": "vessel_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Transfer Date",
+      "field_name": "transfer_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Sale Price ($)",
+      "field_name": "sale_price",
+      "type": "number",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Seller Signature",
+      "field_name": "seller_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Buyer Signature",
+      "field_name": "buyer_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45120003-boat-licence-application.pdf": [
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Names",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Gender",
+      "field_name": "gender",
+      "type": "radio",
+      "options": [
+        "Male",
+        "Female",
+        "Non-binary",
+        "Prefer not to say"
+      ],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Licence Type",
+      "field_name": "licence_type",
+      "type": "radio",
+      "options": [
+        "General boat licence",
+        "Personal watercraft licence",
+        "Master licence"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Current Driver Licence Number",
+      "field_name": "current_driver_licence_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Boating Experience",
+      "field_name": "boating_experience",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45120004-marine-licence-replacement.pdf": [
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Names",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Licence Number",
+      "field_name": "licence_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Reason for Replacement",
+      "field_name": "reason_for_replacement",
+      "type": "radio",
+      "options": [
+        "Lost",
+        "Stolen",
+        "Damaged"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Police Event Number (if stolen)",
+      "field_name": "police_event_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    }
+  ],
+  "45130001-general-enquiry-form.pdf": [
+    {
+      "label": "Full Name",
+      "field_name": "full_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Enquiry Type",
+      "field_name": "enquiry_type",
+      "type": "dropdown",
+      "options": [
+        "Registration",
+        "Licensing",
+        "Fines",
+        "Points",
+        "Other"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Subject",
+      "field_name": "subject",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Message",
+      "field_name": "message",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Preferred Contact Method",
+      "field_name": "preferred_contact",
+      "type": "radio",
+      "options": [
+        "Email",
+        "Phone",
+        "Post"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "I agree to be contacted",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 3
+    }
+  ],
+  "45130002-customer-feedback-form.pdf": [
+    {
+      "label": "Full Name",
+      "field_name": "full_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Visit Date",
+      "field_name": "visit_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Service Centre",
+      "field_name": "service_centre",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Feedback Type",
+      "field_name": "feedback_type",
+      "type": "radio",
+      "options": [
+        "Compliment",
+        "Complaint",
+        "Suggestion"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Feedback Details",
+      "field_name": "feedback_details",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Resolution Sought",
+      "field_name": "resolution_sought",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "I consent to being contacted about this feedback",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 3
+    }
+  ],
+  "45130003-statutory-declaration.pdf": [
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Names",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Occupation",
+      "field_name": "occupation",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Declaration Content",
+      "field_name": "declaration_content",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Declared At (location)",
+      "field_name": "declared_at",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Date Declared",
+      "field_name": "declared_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Witness Name",
+      "field_name": "witness_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Witness Capacity",
+      "field_name": "witness_capacity",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45140001-mobility-parking-application.pdf": [
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Names",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Registration",
+      "field_name": "vehicle_registration",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Make",
+      "field_name": "vehicle_make",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Disability Type",
+      "field_name": "disability_type",
+      "type": "dropdown",
+      "options": [
+        "Mobility impairment",
+        "Visual impairment",
+        "Other"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Condition Details",
+      "field_name": "condition_details",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Treating Practitioner",
+      "field_name": "treating_practitioner",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Practitioner Phone",
+      "field_name": "practitioner_phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45140002-mobility-parking-renewal.pdf": [
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Names",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Permit Number",
+      "field_name": "permit_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Registration",
+      "field_name": "vehicle_registration",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Has your condition changed?",
+      "field_name": "condition_changed",
+      "type": "radio",
+      "options": [
+        "No",
+        "Yes \u2013 provide details"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Change Details",
+      "field_name": "change_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    }
+  ],
+  "45140003-mobility-parking-replacement.pdf": [
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Names",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Permit Number",
+      "field_name": "permit_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Reason for Replacement",
+      "field_name": "reason_for_replacement",
+      "type": "radio",
+      "options": [
+        "Lost",
+        "Stolen",
+        "Damaged"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Police Report Number (if applicable)",
+      "field_name": "police_report_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    }
+  ],
+  "45150001-motor-dealer-licence-application.pdf": [
+    {
+      "label": "Business Name",
+      "field_name": "business_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "ABN",
+      "field_name": "abn",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Trading Name",
+      "field_name": "trading_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Contact Name",
+      "field_name": "contact_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Dealer Type",
+      "field_name": "dealer_type",
+      "type": "radio",
+      "options": [
+        "New vehicles only",
+        "Used vehicles only",
+        "Both new and used",
+        "Wholesale only"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Yard Address",
+      "field_name": "yard_address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Previously held a dealer licence?",
+      "field_name": "previous_licence_held",
+      "type": "radio",
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45150002-motor-dealer-renewal.pdf": [
+    {
+      "label": "Licence Number",
+      "field_name": "licence_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Business Name",
+      "field_name": "business_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "ABN",
+      "field_name": "abn",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Contact Name",
+      "field_name": "contact_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Changes to Details",
+      "field_name": "changes_to_details",
+      "type": "radio",
+      "options": [
+        "No changes",
+        "Changes \u2013 see below"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Change Details",
+      "field_name": "change_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    }
+  ],
+  "45150003-dealer-salesperson-application.pdf": [
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Names",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Employing Dealer Licence Number",
+      "field_name": "employing_dealer_licence_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Employing Dealer Name",
+      "field_name": "employing_dealer_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Previously held a salesperson licence?",
+      "field_name": "previous_licence",
+      "type": "radio",
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Previous Licence Number",
+      "field_name": "previous_licence_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    }
+  ],
+  "45160001-taxi-driver-authority-application.pdf": [
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Names",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Driver Licence Number",
+      "field_name": "driver_licence_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Driver Licence Class",
+      "field_name": "driver_licence_class",
+      "type": "dropdown",
+      "options": [
+        "C \u2013 Car",
+        "HC \u2013 Heavy Combination",
+        "Other"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Taxi Network",
+      "field_name": "taxi_network",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Working With Children Check Number",
+      "field_name": "working_with_children_check",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "English Proficiency",
+      "field_name": "english_proficiency",
+      "type": "radio",
+      "options": [
+        "Sufficient",
+        "Requires interpreter"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45160002-rideshare-driver-authorisation.pdf": [
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Names",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Driver Licence Number",
+      "field_name": "driver_licence_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Registration",
+      "field_name": "vehicle_registration",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Rideshare Platform",
+      "field_name": "rideshare_platform",
+      "type": "radio",
+      "options": [
+        "Uber",
+        "DiDi",
+        "Ola",
+        "Other"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Working With Children Check Number",
+      "field_name": "working_with_children_check",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    }
+  ],
+  "45160003-bus-operator-accreditation.pdf": [
+    {
+      "label": "Operator Name",
+      "field_name": "operator_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "ABN",
+      "field_name": "abn",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Contact Name",
+      "field_name": "contact_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Number of Vehicles",
+      "field_name": "number_of_vehicles",
+      "type": "number",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Accreditation Type",
+      "field_name": "accreditation_type",
+      "type": "radio",
+      "options": [
+        "Regular passenger service",
+        "Tourist and charter",
+        "School bus",
+        "Community transport"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Route Description",
+      "field_name": "route_description",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45170001-vehicle-registration-application.pdf": [
+    {
+      "label": "Owner Surname",
+      "field_name": "owner_surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Owner Given Names",
+      "field_name": "owner_given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Identification Number (VIN)",
+      "field_name": "vehicle_identification_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Make",
+      "field_name": "vehicle_make",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Model",
+      "field_name": "vehicle_model",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Year of Manufacture",
+      "field_name": "vehicle_year",
+      "type": "number",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Vehicle Colour",
+      "field_name": "vehicle_colour",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Vehicle Type",
+      "field_name": "vehicle_type",
+      "type": "dropdown",
+      "options": [
+        "Sedan",
+        "Hatchback",
+        "SUV",
+        "Ute",
+        "Van",
+        "Truck",
+        "Motorcycle",
+        "Other"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Engine Number",
+      "field_name": "engine_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Registration Period",
+      "field_name": "registration_period",
+      "type": "radio",
+      "options": [
+        "3 months",
+        "6 months",
+        "12 months"
+      ],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45170002-registration-transfer.pdf": [
+    {
+      "label": "Seller Surname",
+      "field_name": "seller_surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Seller Given Names",
+      "field_name": "seller_given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Seller Phone",
+      "field_name": "seller_phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Buyer Surname",
+      "field_name": "buyer_surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Buyer Given Names",
+      "field_name": "buyer_given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Buyer Date of Birth",
+      "field_name": "buyer_date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Buyer Phone",
+      "field_name": "buyer_phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Buyer Email",
+      "field_name": "buyer_email",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Registration Plate",
+      "field_name": "vehicle_registration_plate",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Vehicle Identification Number (VIN)",
+      "field_name": "vehicle_identification_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Transfer Date",
+      "field_name": "transfer_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Odometer Reading (km)",
+      "field_name": "odometer_reading",
+      "type": "number",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Seller Declaration",
+      "field_name": "seller_declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Buyer Declaration",
+      "field_name": "buyer_declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Seller Signature",
+      "field_name": "seller_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Buyer Signature",
+      "field_name": "buyer_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45170003-registration-cancellation.pdf": [
+    {
+      "label": "Owner Surname",
+      "field_name": "owner_surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Owner Given Names",
+      "field_name": "owner_given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Registration Plate",
+      "field_name": "vehicle_registration_plate",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Reason for Cancellation",
+      "field_name": "reason_for_cancellation",
+      "type": "radio",
+      "options": [
+        "Sold",
+        "Written off",
+        "Exported",
+        "No longer required"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Cancellation Date",
+      "field_name": "cancellation_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    }
+  ],
+  "45170004-conditional-registration.pdf": [
+    {
+      "label": "Owner Surname",
+      "field_name": "owner_surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Owner Given Names",
+      "field_name": "owner_given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Identification Number (VIN)",
+      "field_name": "vehicle_identification_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Description",
+      "field_name": "vehicle_description",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Conditional Use",
+      "field_name": "conditional_use",
+      "type": "radio",
+      "options": [
+        "Vintage/Historic",
+        "Racing",
+        "Farm vehicle",
+        "Special purpose"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Permitted Routes",
+      "field_name": "permitted_routes",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    }
+  ],
+  "45170005-historic-vehicle-registration.pdf": [
+    {
+      "label": "Owner Surname",
+      "field_name": "owner_surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Owner Given Names",
+      "field_name": "owner_given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Club Name",
+      "field_name": "club_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Identification Number (VIN)",
+      "field_name": "vehicle_identification_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Make",
+      "field_name": "vehicle_make",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Vehicle Model",
+      "field_name": "vehicle_model",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Year of Manufacture",
+      "field_name": "vehicle_year",
+      "type": "number",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Vehicle Colour",
+      "field_name": "vehicle_colour",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Original Engine?",
+      "field_name": "original_engine",
+      "type": "radio",
+      "options": [
+        "Yes",
+        "No \u2013 modified"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Restoration Details",
+      "field_name": "restoration_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45180001-vsccs-application.pdf": [
+    {
+      "label": "Applicant Name",
+      "field_name": "applicant_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "ABN",
+      "field_name": "abn",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Contact Name",
+      "field_name": "contact_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Category",
+      "field_name": "vehicle_category",
+      "type": "dropdown",
+      "options": [
+        "Passenger car",
+        "Light goods",
+        "Heavy goods",
+        "Motorcycle",
+        "Trailer"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Modification Type",
+      "field_name": "modification_type",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Compliance Standard",
+      "field_name": "compliance_standard",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Engineer Name",
+      "field_name": "engineer_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Engineer Registration Number",
+      "field_name": "engineer_registration_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45180002-vehicle-modification-approval.pdf": [
+    {
+      "label": "Owner Surname",
+      "field_name": "owner_surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Owner Given Names",
+      "field_name": "owner_given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Registration Plate",
+      "field_name": "vehicle_registration_plate",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Identification Number (VIN)",
+      "field_name": "vehicle_identification_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Make",
+      "field_name": "vehicle_make",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Model",
+      "field_name": "vehicle_model",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Year of Manufacture",
+      "field_name": "vehicle_year",
+      "type": "number",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Modification Description",
+      "field_name": "modification_description",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Modification Type",
+      "field_name": "modification_type",
+      "type": "radio",
+      "options": [
+        "Engine",
+        "Suspension",
+        "Body",
+        "Brakes",
+        "Lighting",
+        "Other"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Engineer Name",
+      "field_name": "engineer_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Engineer Phone",
+      "field_name": "engineer_phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45180003-compliance-plate-application.pdf": [
+    {
+      "label": "Manufacturer Name",
+      "field_name": "manufacturer_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "ABN",
+      "field_name": "abn",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Contact Name",
+      "field_name": "contact_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Category",
+      "field_name": "vehicle_category",
+      "type": "dropdown",
+      "options": [
+        "Passenger car",
+        "Light goods",
+        "Heavy goods",
+        "Motorcycle",
+        "Trailer"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Model Name",
+      "field_name": "model_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Compliance Standard",
+      "field_name": "compliance_standard",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Approval Number",
+      "field_name": "approval_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Production Volume",
+      "field_name": "production_volume",
+      "type": "number",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Number of Plates Requested",
+      "field_name": "plate_quantity_requested",
+      "type": "number",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45061655-driving-instructor-licence-app.pdf": [
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Names",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Gender",
+      "field_name": "gender",
+      "type": "radio",
+      "options": [
+        "Male",
+        "Female",
+        "Non-binary",
+        "Prefer not to say"
+      ],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Current Driver Licence Number",
+      "field_name": "current_driver_licence_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Licence Class",
+      "field_name": "licence_class",
+      "type": "dropdown",
+      "options": [
+        "C \u2013 Car",
+        "R \u2013 Motorcycle",
+        "Both"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Years Licensed",
+      "field_name": "years_licenced",
+      "type": "number",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "First Aid Certificate",
+      "field_name": "first_aid_certificate",
+      "type": "radio",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45061574-internal-review-of-a-decision.pdf": [
+    {
+      "label": "Full Name",
+      "field_name": "full_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Decision Date",
+      "field_name": "decision_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Reference Number",
+      "field_name": "reference_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Decision Reviewed",
+      "field_name": "decision_reviewed",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Grounds for Review",
+      "field_name": "grounds_for_review",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Preferred Outcome",
+      "field_name": "preferred_outcome",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    }
+  ],
+  "45072014-application-for-vessel-registration.pdf": [
+    {
+      "label": "Owner Surname",
+      "field_name": "owner_surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Owner Given Names",
+      "field_name": "owner_given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Street Address",
+      "field_name": "address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State",
+      "field_name": "state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Vessel Name",
+      "field_name": "vessel_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Vessel Type",
+      "field_name": "vessel_type",
+      "type": "dropdown",
+      "options": [
+        "Motor vessel",
+        "Sailing vessel",
+        "Personal watercraft",
+        "Canoe/kayak",
+        "Rowing boat",
+        "Other"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Hull Material",
+      "field_name": "hull_material",
+      "type": "radio",
+      "options": [
+        "Fibreglass",
+        "Aluminium",
+        "Timber",
+        "Steel",
+        "Inflatable"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Hull Colour",
+      "field_name": "hull_colour",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Engine Power (kW)",
+      "field_name": "engine_power",
+      "type": "number",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "I declare that the information provided is true and correct",
+      "field_name": "declaration",
+      "type": "checkbox",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ],
+  "45072015-application-transfer-vessel-registration.pdf": [
+    {
+      "label": "Current Owner Surname",
+      "field_name": "current_owner_surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Current Owner Given Names",
+      "field_name": "current_owner_given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Current Owner Phone",
+      "field_name": "current_owner_phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "New Owner Surname",
+      "field_name": "new_owner_surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "New Owner Given Names",
+      "field_name": "new_owner_given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "New Owner Date of Birth",
+      "field_name": "new_owner_dob",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "New Owner Phone",
+      "field_name": "new_owner_phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "New Owner Email",
+      "field_name": "new_owner_email",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Vessel Registration Number",
+      "field_name": "vessel_registration_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Vessel Name",
+      "field_name": "vessel_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Transfer Date",
+      "field_name": "transfer_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Sale Price ($)",
+      "field_name": "sale_price",
+      "type": "number",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Current Owner Signature",
+      "field_name": "current_owner_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "New Owner Signature",
+      "field_name": "new_owner_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
+  ]
+}

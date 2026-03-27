@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Browse Forms — Service NSW Kiosk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/kiosk.css">
+</head>
+<body class="categories-page">
+
+  <!-- ── HEADER ── -->
+  <header class="kiosk-header">
+    <div class="header-left">
+      <button class="btn-nav btn-home" onclick="goHome()" aria-label="Home">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/>
+          <polyline points="9,21 9,13 15,13 15,21"/>
+        </svg>
+      </button>
+      <button class="btn-nav btn-back" onclick="goBack()" aria-label="Back">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15,18 9,12 15,6"/>
+        </svg>
+      </button>
+    </div>
+    <div class="header-center">
+      <div class="nsw-logo-lockup">
+        <svg class="nsw-logo-icon" width="52" height="52" viewBox="0 0 52 52">
+          <circle cx="26" cy="26" r="26" fill="#E4002B"/>
+          <path d="M26 9 C20 13 13 20 15 29 C17 36 24 40 26 40 C26 40 26 28 26 26 C26 24 24 18 26 9Z" fill="white"/>
+          <path d="M26 9 C32 13 39 20 37 29 C35 36 28 40 26 40 C26 40 26 28 26 26 C26 24 28 18 26 9Z" fill="white" opacity="0.85"/>
+          <path d="M13 32 C11 38 14 44 21 46 C24 47 26 45 26 43 C26 41 24 38 26 40 C24 38 18 38 13 32Z" fill="white" opacity="0.75"/>
+          <path d="M39 32 C41 38 38 44 31 46 C28 47 26 45 26 43 C26 41 28 38 26 40 C28 38 34 38 39 32Z" fill="white" opacity="0.75"/>
+        </svg>
+        <span class="nsw-logo-text"><strong>Service</strong><br>NSW</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Search forms…" id="searchInput" oninput="handleSearch(this.value)" aria-label="Search forms">
+        <button class="search-btn" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── MAIN CONTENT ── -->
+  <main class="categories-main" id="categoriesMain">
+
+    <!-- Frequently Used Forms (hidden until data loads) -->
+    <section class="frequent-section" id="frequentSection" style="display:none">
+      <h2 class="section-title">Frequently Used</h2>
+      <div class="frequent-row" id="frequentRow"></div>
+    </section>
+
+    <!-- Search results (hidden by default) -->
+    <section class="search-results-section" id="searchResultsSection" style="display:none">
+      <h2 class="section-title">Search Results</h2>
+      <div class="search-results-grid" id="searchResultsGrid"></div>
+    </section>
+
+    <!-- Category grid -->
+    <section class="category-section" id="categorySection">
+      <div class="category-grid" id="categoryGrid">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <script src="config.js"></script>
+  <script src="js/kiosk.js"></script>
+  <script>
+    // Category icons mapping
+    const CATEGORY_ICONS = {
+      'Access to Information Forms': `<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="6" y="4" width="20" height="24" rx="2" stroke="white" stroke-width="1.8"/><line x1="10" y1="10" x2="22" y2="10" stroke="white" stroke-width="1.5"/><line x1="10" y1="14" x2="22" y2="14" stroke="white" stroke-width="1.5"/><line x1="10" y1="18" x2="17" y2="18" stroke="white" stroke-width="1.5"/><circle cx="21" cy="21" r="4" stroke="white" stroke-width="1.5"/><line x1="24.5" y1="24.5" x2="27" y2="27" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+      'Authorised Inspection Station (AIS) Forms': `<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="10" stroke="white" stroke-width="1.8"/><path d="M11 16 l3 3 l7-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+      'Driver Licensing Forms': `<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="8" width="24" height="16" rx="2" stroke="white" stroke-width="1.8"/><circle cx="11" cy="16" r="3" stroke="white" stroke-width="1.5"/><line x1="17" y1="13" x2="24" y2="13" stroke="white" stroke-width="1.5"/><line x1="17" y1="17" x2="22" y2="17" stroke="white" stroke-width="1.5"/></svg>`,
+      'Driving Instructors & Assessors Forms': `<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="10" r="4" stroke="white" stroke-width="1.8"/><path d="M8 26 C8 21 12 18 16 18 C20 18 24 21 24 26" stroke="white" stroke-width="1.8" stroke-linecap="round"/><path d="M22 14 L24 16 L28 12" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+      'e-Toll & M5 South-West Cashback Forms': `<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M4 16 L28 16" stroke="white" stroke-width="2.5" stroke-linecap="round"/><rect x="10" y="10" width="12" height="12" rx="1" stroke="white" stroke-width="1.8"/><line x1="16" y1="4" x2="16" y2="10" stroke="white" stroke-width="1.5"/><line x1="16" y1="22" x2="16" y2="28" stroke="white" stroke-width="1.5"/></svg>`,
+      'Health Professionals Licence Forms': `<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 6 L16 26 M6 16 L26 16" stroke="white" stroke-width="2.5" stroke-linecap="round"/><circle cx="16" cy="16" r="11" stroke="white" stroke-width="1.8"/></svg>`,
+      'Heavy Vehicle Operator Forms': `<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="2" y="12" width="20" height="11" rx="1" stroke="white" stroke-width="1.8"/><path d="M22 17 L30 17 L30 23 L22 23" stroke="white" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7" cy="25" r="3" stroke="white" stroke-width="1.8"/><circle cx="17" cy="25" r="3" stroke="white" stroke-width="1.8"/><circle cx="27" cy="25" r="3" stroke="white" stroke-width="1.8"/></svg>`,
+      'Maritime & Boating Forms': `<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M6 20 Q10 16 16 20 Q22 24 26 20" stroke="white" stroke-width="1.8" stroke-linecap="round"/><path d="M10 20 L12 10 L22 14 Z" stroke="white" stroke-width="1.8" stroke-linejoin="round"/><line x1="12" y1="10" x2="12" y2="22" stroke="white" stroke-width="1.5"/></svg>`,
+      'Miscellaneous Forms': `<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="white"/><circle cx="7" cy="16" r="3" fill="white"/><circle cx="25" cy="16" r="3" fill="white"/></svg>`,
+      'Mobility Parking Scheme Forms': `<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="8" r="3" stroke="white" stroke-width="1.8"/><path d="M10 14 L16 12 L20 18 L16 28" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 20 L12 28" stroke="white" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="16" r="10" stroke="white" stroke-width="1.5" opacity="0.3"/></svg>`,
+      'Motor Dealer Forms': `<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="14" width="24" height="10" rx="2" stroke="white" stroke-width="1.8"/><path d="M8 14 L10 8 L22 8 L24 14" stroke="white" stroke-width="1.8" stroke-linejoin="round"/><circle cx="9" cy="26" r="3" stroke="white" stroke-width="1.8"/><circle cx="23" cy="26" r="3" stroke="white" stroke-width="1.8"/></svg>`,
+      'Public Passenger Vehicle Operator Forms': `<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="3" y="10" width="26" height="14" rx="2" stroke="white" stroke-width="1.8"/><path d="M3 16 L29 16" stroke="white" stroke-width="1.2"/><line x1="10" y1="10" x2="10" y2="24" stroke="white" stroke-width="1"/><line x1="17" y1="10" x2="17" y2="24" stroke="white" stroke-width="1"/><circle cx="8" cy="26" r="3" stroke="white" stroke-width="1.8"/><circle cx="24" cy="26" r="3" stroke="white" stroke-width="1.8"/></svg>`,
+      'Vehicle Registration Forms': `<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="5" y="8" width="22" height="16" rx="2" stroke="white" stroke-width="1.8"/><line x1="9" y1="13" x2="23" y2="13" stroke="white" stroke-width="1.5"/><line x1="9" y1="17" x2="16" y2="17" stroke="white" stroke-width="1.5"/><line x1="9" y1="21" x2="14" y2="21" stroke="white" stroke-width="1.5"/></svg>`,
+      'Vehicle Safety Compliance Certification Scheme (VSCCS) Forms': `<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4 L28 10 L28 18 C28 24 22 28 16 30 C10 28 4 24 4 18 L4 10 Z" stroke="white" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 16 l3 3 l7-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`
+    };
+
+    const CATEGORY_SHORT_LABELS = {
+      'Vehicle Safety Compliance Certification Scheme (VSCCS) Forms': 'VSCCS Forms',
+      'Authorised Inspection Station (AIS) Forms': 'AIS Forms',
+      'e-Toll & M5 South-West Cashback Forms': 'e-Toll & M5 Cashback',
+      'Public Passenger Vehicle Operator Forms': 'Public Passenger Vehicles',
+      'Driving Instructors & Assessors Forms': 'Driving Instructors',
+    };
+
+    let allCategories = {};
+    let allFormsFlat = []; // [{formId, categoryName}, ...]
+
+    async function init() {
+      try {
+        const categoriesPath = (typeof CONFIG !== 'undefined' && CONFIG.categoriesPath)
+          ? CONFIG.categoriesPath : 'data/categories.json';
+        allCategories = await loadJSON(categoriesPath);
+
+        // Build flat list for search
+        Object.entries(allCategories).forEach(([cat, forms]) => {
+          forms.forEach(f => allFormsFlat.push({ formId: f.replace(/\.pdf$/i, ''), filename: f, categoryName: cat }));
+        });
+
+        renderCategories(allCategories);
+        renderFrequentForms();
+
+        // Auto-run search if ?q= param is present
+        const q = getParam('q');
+        if (q) {
+          document.getElementById('searchInput').value = q;
+          handleSearch(q);
+        }
+      } catch (e) {
+        document.getElementById('categoryGrid').innerHTML = '<p class="error-msg">Unable to load categories. Please try again.</p>';
+      }
+    }
+
+    function renderCategories(cats) {
+      const grid = document.getElementById('categoryGrid');
+      grid.innerHTML = '';
+      Object.entries(cats).forEach(([name, forms]) => {
+        const icon = CATEGORY_ICONS[name] || CATEGORY_ICONS['Miscellaneous Forms'];
+        const shortLabel = CATEGORY_SHORT_LABELS[name] || name;
+        const card = document.createElement('div');
+        card.className = 'category-card';
+        card.innerHTML = `
+          <div class="card-deco" aria-hidden="true">
+            <div class="card-deco-waves"></div>
+            <div class="card-deco-dots"></div>
+          </div>
+          <div class="card-icon">${icon}</div>
+          <h3 class="card-title">${shortLabel}</h3>
+          <p class="card-count">${forms.length} form${forms.length !== 1 ? 's' : ''}</p>
+          <button class="browse-btn" onclick="browseCategory(${JSON.stringify(name)})">Browse Forms</button>
+        `;
+        grid.appendChild(card);
+      });
+      applyRipples();
+    }
+
+    function renderFrequentForms() {
+      const topFormIds = getTopForms(8);
+      if (topFormIds.length === 0) return;
+
+      const row = document.getElementById('frequentRow');
+      row.innerHTML = '';
+      topFormIds.forEach(formId => {
+        const found = allFormsFlat.find(f => f.formId === formId);
+        if (!found) return;
+        const card = document.createElement('div');
+        card.className = 'frequent-card';
+        card.innerHTML = `
+          <span class="frequent-name">${getFormDisplayName(found.filename)}</span>
+          <span class="frequent-cat">${found.categoryName}</span>
+        `;
+        card.onclick = () => {
+          sessionStorage.setItem('selectedCategory', found.categoryName);
+          sessionStorage.setItem('selectedFormId', formId);
+          window.location.href = `qr.html?id=${encodeURIComponent(formId)}`;
+        };
+        row.appendChild(card);
+      });
+
+      document.getElementById('frequentSection').style.display = '';
+      applyRipples();
+    }
+
+    function browseCategory(name) {
+      sessionStorage.setItem('selectedCategory', name);
+      window.location.href = `forms.html?category=${encodeURIComponent(name)}`;
+    }
+
+    function handleSearch(query) {
+      const q = normalise(query.trim());
+      const catSection = document.getElementById('categorySection');
+      const resultsSection = document.getElementById('searchResultsSection');
+      const resultsGrid = document.getElementById('searchResultsGrid');
+      const freqSection = document.getElementById('frequentSection');
+
+      if (!q) {
+        catSection.style.display = '';
+        resultsSection.style.display = 'none';
+        freqSection.style.display = getTopForms(8).length > 0 ? '' : 'none';
+        return;
+      }
+
+      catSection.style.display = 'none';
+      freqSection.style.display = 'none';
+      resultsSection.style.display = '';
+
+      // Match categories
+      const matchedCats = Object.entries(allCategories).filter(([name]) => normalise(name).includes(q));
+      // Match individual forms
+      const matchedForms = allFormsFlat.filter(f =>
+        normalise(getFormDisplayName(f.filename)).includes(q) ||
+        normalise(f.filename).includes(q) ||
+        normalise(f.categoryName).includes(q)
+      );
+
+      if (matchedCats.length === 0 && matchedForms.length === 0) {
+        resultsGrid.innerHTML = '<p class="no-results">No results found. Try a different search term.</p>';
+        return;
+      }
+
+      resultsGrid.innerHTML = '';
+
+      // Show matched categories
+      matchedCats.forEach(([name, forms]) => {
+        const card = document.createElement('div');
+        card.className = 'search-result-card search-result-category';
+        card.innerHTML = `
+          <div class="sr-type">Category</div>
+          <div class="sr-name">${name}</div>
+          <div class="sr-count">${forms.length} forms</div>
+          <button class="browse-btn small" onclick="browseCategory(${JSON.stringify(name)})">Browse Forms</button>
+        `;
+        resultsGrid.appendChild(card);
+      });
+
+      // Show matched forms
+      matchedForms.slice(0, 20).forEach(f => {
+        const cat = getCatalogueNumber(f.filename);
+        const card = document.createElement('div');
+        card.className = 'search-result-card';
+        card.innerHTML = `
+          <div class="sr-type">Form</div>
+          <div class="sr-name">${getFormDisplayName(f.filename)}</div>
+          <div class="sr-cat">${f.categoryName}</div>
+          ${cat ? `<div class="sr-catalogue">Cat. ${cat}</div>` : ''}
+          <button class="start-btn small" onclick="startForm(${JSON.stringify(f.formId)}, ${JSON.stringify(f.categoryName)})">Start Form</button>
+        `;
+        resultsGrid.appendChild(card);
+      });
+
+      applyRipples();
+    }
+
+    function startForm(formId, categoryName) {
+      incrementFormAccess(formId);
+      sessionStorage.setItem('selectedCategory', categoryName);
+      sessionStorage.setItem('selectedFormId', formId);
+      window.location.href = `qr.html?id=${encodeURIComponent(formId)}`;
+    }
+
+    // Idle timer
+    setupIdleTimer(
+      (typeof CONFIG !== 'undefined' ? CONFIG.idleTimeoutWelcome : 60000),
+      goHome
+    );
+
+    init();
+  </script>
+</body>
+</html>

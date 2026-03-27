@@ -1,0 +1,1236 @@
+/* ==========================================================================
+   kiosk.css — Service NSW Kiosk Touchscreen Styles
+   Optimised for 1280×800 landscape touchscreen displays
+   Screens: index.html (Welcome), categories.html, forms.html, qr.html
+   ========================================================================== */
+
+/* Google Fonts — Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* --------------------------------------------------------------------------
+   1. CSS Variables & Reset
+   -------------------------------------------------------------------------- */
+:root {
+  --red:        #E4002B;
+  --navy:       #002664;
+  --white:      #ffffff;
+  --light-gray: #f5f5f5;
+  --mid-gray:   #e0e0e0;
+  --text-dark:  #1a1a1a;
+  --shadow:     0 4px 20px rgba(0,0,0,0.15);
+  --shadow-lg:  0 8px 40px rgba(0,0,0,0.22);
+  --radius:     16px;
+  --radius-sm:  8px;
+  --transition: 0.3s ease;
+
+  /* Derived aliases kept for compatibility */
+  --radius-card: var(--radius);
+  --radius-btn:  28px;
+  --gray:        #9CA3AF;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --------------------------------------------------------------------------
+   2. Gradient Background
+   Pastel pink → peach → yellow → sky-blue diagonal,
+   with a diagonal semi-transparent stripe ray overlay.
+   -------------------------------------------------------------------------- */
+body,
+.kiosk-bg {
+  background:
+    /* Diagonal ray/stripe overlay */
+    repeating-linear-gradient(
+      -55deg,
+      transparent          0px,
+      transparent          28px,
+      rgba(255,255,255,0.18) 28px,
+      rgba(255,255,255,0.18) 38px
+    ),
+    /* Main pastel gradient */
+    linear-gradient(
+      135deg,
+      #FFB7C5  0%,
+      #FFCDD5 15%,
+      #FFD4A8 35%,
+      #FFE8B0 50%,
+      #B8E4FF 75%,
+      #A0C8F0 100%
+    );
+}
+
+.kiosk-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+/* --------------------------------------------------------------------------
+   3. Idle Countdown Bar
+   Full-width thin red progress bar pinned to the very top of the viewport.
+   JS sets --idle-pct (0–100) to drive the shrink animation.
+   -------------------------------------------------------------------------- */
+.idle-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(0,0,0,0.08);
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.idle-bar-fill {
+  height: 100%;
+  background: var(--red);
+  width: 100%;                         /* JS shrinks this via inline style    */
+  transition: width linear;
+  border-radius: 0 2px 2px 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. Header
+   Fixed frosted-glass bar: left nav group | centre logo | right search
+   -------------------------------------------------------------------------- */
+.kiosk-header {
+  position: fixed;
+  top: 4px;            /* sits below the idle bar */
+  left: 0;
+  right: 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.55);
+  z-index: 500;
+}
+
+/* Left cluster: home + back */
+.header-left {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex: 1;
+}
+
+/* --------------------------------------------------------------------------
+   5. Nav Buttons (.btn-nav)
+   64 px red circles with white SVG icon + ripple effect
+   -------------------------------------------------------------------------- */
+.btn-nav {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #E4002B 0%, #c00023 100%);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), filter var(--transition);
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  /* Minimum 48 px touch target already exceeded by 64 px size */
+}
+
+.btn-nav:hover  { filter: brightness(1.12); }
+.btn-nav:active { transform: scale(0.91); }
+
+.btn-nav svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+/* House icon (home button) — inline SVG path provided in HTML */
+/* Arrow-left icon (back button) — inline SVG path provided in HTML */
+
+/* --------------------------------------------------------------------------
+   6. Header Centre — Service NSW Logo + wordmark
+   -------------------------------------------------------------------------- */
+.header-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  pointer-events: none;   /* clicks pass through to underlying header buttons */
+}
+
+.header-logo .logo-circle {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+}
+
+.header-logo .logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.header-logo .logo-text .logo-service {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.header-logo .logo-text .logo-nsw {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+}
+
+/* --------------------------------------------------------------------------
+   7. Search Bar (.search-bar)
+   Pill-shaped glass input with search icon button
+   -------------------------------------------------------------------------- */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 2px solid rgba(255,255,255,0.65);
+  border-radius: 28px;
+  padding: 0 8px 0 18px;
+  gap: 6px;
+  min-width: 300px;
+  flex-shrink: 0;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.search-bar:focus-within {
+  border-color: var(--navy);
+  box-shadow: 0 0 0 3px rgba(0,38,100,0.12);
+}
+
+.search-bar input {
+  flex: 1;
+  height: 48px;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--navy);
+  outline: none;
+}
+
+.search-bar input::placeholder {
+  color: var(--gray);
+}
+
+/* Circular red search icon button */
+.search-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--red);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: filter var(--transition);
+}
+
+.search-btn:hover  { filter: brightness(1.12); }
+.search-btn:active { transform: scale(0.93); }
+
+.search-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: white;
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* --------------------------------------------------------------------------
+   8. Screen Container
+   Fills the viewport below the fixed header; overflow-y scroll
+   -------------------------------------------------------------------------- */
+.screen {
+  position: absolute;
+  inset: 0;
+  padding-top: 84px;   /* header height (80) + idle bar (4) */
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,38,100,0.2) transparent;
+  animation: screen-fade-in 0.32s ease both;
+}
+
+.screen::-webkit-scrollbar       { width: 6px; }
+.screen::-webkit-scrollbar-track { background: transparent; }
+.screen::-webkit-scrollbar-thumb {
+  background: rgba(0,38,100,0.2);
+  border-radius: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   9. Screen Fade-in & Slide Transitions
+   -------------------------------------------------------------------------- */
+@keyframes screen-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* JS adds .slide-out-left / .slide-in-right for forward navigation,
+   .slide-out-right / .slide-in-left for back navigation. */
+@keyframes slide-out-left {
+  to { opacity: 0; transform: translateX(-60px); }
+}
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slide-out-right {
+  to { opacity: 0; transform: translateX(60px); }
+}
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.screen.slide-out-left  { animation: slide-out-left  0.28s ease forwards; }
+.screen.slide-in-right  { animation: slide-in-right  0.28s ease forwards; }
+.screen.slide-out-right { animation: slide-out-right 0.28s ease forwards; }
+.screen.slide-in-left   { animation: slide-in-left   0.28s ease forwards; }
+
+/* ============================================================
+   SCREEN 1 — WELCOME
+   ============================================================ */
+
+/* --------------------------------------------------------------------------
+   10. Welcome Screen Layout
+   -------------------------------------------------------------------------- */
+.welcome-screen {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px 40px;
+  position: relative;
+  gap: 0;
+}
+
+.welcome-tagline {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 12px;
+  opacity: 0.7;
+}
+
+.welcome-heading {
+  font-size: 3.5rem;   /* 56px at default */
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.12;
+  margin-bottom: 36px;
+  text-shadow: 0 2px 12px rgba(0,38,100,0.10);
+}
+
+/* Large logo + decorative landmark SVG */
+.welcome-logo-wrap {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+/* Landmark / Sydney skyline decorative SVG — positioned behind logo */
+.landmark-svg {
+  position: absolute;
+  inset: -80px;
+  width: calc(100% + 160px);
+  opacity: 0.14;
+  pointer-events: none;
+}
+
+.welcome-logo-wrap .main-logo {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  z-index: 1;
+}
+
+.welcome-cta {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+/* --------------------------------------------------------------------------
+   11. Chevron Bounce Animation
+   -------------------------------------------------------------------------- */
+.chevron-container {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  animation: bounce-up 1.6s ease-in-out infinite;
+}
+
+.chevron-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+
+.chevron-arrow {
+  width: 36px;
+  height: 36px;
+  border-left: 4px solid var(--navy);
+  border-bottom: 4px solid var(--navy);
+  transform: rotate(-45deg);
+  opacity: 0.55;
+  border-radius: 0 0 0 4px;
+}
+
+/* Stagger opacity for the two chevrons */
+.chevron-arrow:first-of-type  { opacity: 0.35; }
+.chevron-arrow:last-of-type   { opacity: 0.65; }
+
+@keyframes bounce-up {
+  0%, 100% { transform: translateX(-50%) translateY(0px); }
+  50%       { transform: translateX(-50%) translateY(-10px); }
+}
+
+/* ============================================================
+   SCREEN 2 — CATEGORIES
+   ============================================================ */
+
+/* --------------------------------------------------------------------------
+   12. Categories Screen Layout
+   -------------------------------------------------------------------------- */
+.categories-screen {
+  padding: 20px 28px 32px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 14px;
+}
+
+/* --------------------------------------------------------------------------
+   13. Frequently-Used Strip — horizontal scroll row
+   -------------------------------------------------------------------------- */
+.frequent-forms {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  margin-bottom: 28px;
+  scrollbar-width: none;
+}
+.frequent-forms::-webkit-scrollbar { display: none; }
+
+/* Individual frequently-used chip card */
+.frequent-card {
+  flex-shrink: 0;
+  width: 190px;
+  background: var(--navy);
+  border-radius: 14px;
+  padding: 16px;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  min-height: 48px;   /* touch target */
+}
+
+.frequent-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Red usage-count badge (top-right) */
+.frequent-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--red);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+  line-height: 1.5;
+}
+
+.frequent-card-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+  padding-right: 36px;   /* avoid overlap with badge */
+}
+
+.frequent-card-cat {
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   14. Category Grid — 4 columns
+   -------------------------------------------------------------------------- */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   15. Category Card
+   -------------------------------------------------------------------------- */
+.category-card {
+  background: var(--navy);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+  position: relative;
+}
+
+.category-card:hover {
+  transform: translateY(-7px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Decorative wavy/dotted pattern area at the top of each card */
+.card-deco {
+  height: 88px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  /* SVG wavy pattern as a CSS background — rendered purely in CSS */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='88'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.22)' stroke-width='2'%3E%3Cpath d='M0 22 Q25 10 50 22 Q75 34 100 22 Q125 10 150 22 Q175 34 200 22'/%3E%3Cpath d='M0 42 Q25 30 50 42 Q75 54 100 42 Q125 30 150 42 Q175 54 200 42'/%3E%3Cpath d='M0 62 Q25 50 50 62 Q75 74 100 62 Q125 50 150 62 Q175 74 200 62'/%3E%3Cpath d='M0 82 Q25 70 50 82 Q75 94 100 82 Q125 70 150 82 Q175 94 200 82'/%3E%3C/g%3E%3Cg fill='rgba(255,255,255,0.12)'%3E%3Ccircle cx='20' cy='16' r='3'/%3E%3Ccircle cx='60' cy='8' r='2'/%3E%3Ccircle cx='100' cy='16' r='3'/%3E%3Ccircle cx='140' cy='8' r='2'/%3E%3Ccircle cx='180' cy='16' r='3'/%3E%3Ccircle cx='40' cy='32' r='2'/%3E%3Ccircle cx='80' cy='28' r='3'/%3E%3Ccircle cx='120' cy='32' r='2'/%3E%3Ccircle cx='160' cy='28' r='3'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: center;
+  background-color: rgba(255,255,255,0.06);
+}
+
+/* Card content */
+.card-body {
+  padding: 16px 20px 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-icon {
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  flex: 1;
+}
+
+/* Red "Browse" CTA button — full width, inside card bottom */
+.browse-btn {
+  display: block;
+  margin: 14px 16px 16px;
+  padding: 0 16px;
+  height: 52px;
+  line-height: 52px;
+  background: var(--red);
+  color: white;
+  border: none;
+  border-radius: var(--radius-btn);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  font-family: inherit;
+  transition: filter var(--transition);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.browse-btn:hover  { filter: brightness(1.12); }
+.browse-btn:active { filter: brightness(0.92); }
+
+/* ============================================================
+   SCREEN 3 — FORM LIST
+   ============================================================ */
+
+/* --------------------------------------------------------------------------
+   16. Forms Screen Layout
+   -------------------------------------------------------------------------- */
+.forms-screen {
+  padding: 20px 28px 32px;
+}
+
+/* --------------------------------------------------------------------------
+   17. Form Cards — white bg, navy left border, horizontal layout
+   -------------------------------------------------------------------------- */
+.forms-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.form-card {
+  background: white;
+  border-radius: var(--radius);
+  border-left: 4px solid var(--navy);
+  padding: 20px 20px 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+  min-height: 80px;
+}
+
+.form-card:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.form-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.form-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+.form-cat {
+  font-size: 13px;
+  color: var(--gray);
+  font-weight: 500;
+}
+
+/* Red "Start Form" button */
+.start-btn {
+  flex-shrink: 0;
+  min-width: 160px;
+  height: 52px;
+  padding: 0 24px;
+  background: var(--red);
+  color: white;
+  border: none;
+  border-radius: var(--radius-btn);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: filter var(--transition), transform var(--transition);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.start-btn:hover  { filter: brightness(1.12); }
+.start-btn:active { transform: scale(0.95); }
+
+/* ============================================================
+   SCREEN 4 — QR SCREEN
+   ============================================================ */
+
+/* --------------------------------------------------------------------------
+   18. QR Screen Layout
+   -------------------------------------------------------------------------- */
+.qr-screen {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 40px;
+  text-align: center;
+  gap: 0;
+}
+
+.qr-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.qr-subtitle {
+  font-size: 16px;
+  color: var(--navy);
+  opacity: 0.65;
+  margin-bottom: 28px;
+  font-weight: 500;
+}
+
+/* White card containing the QR code */
+.qr-container {
+  background: white;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 24px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* QR image — 300×300 */
+.qr-container img,
+.qr-container canvas,
+.qr-image {
+  width: 300px;
+  height: 300px;
+  border-radius: var(--radius-sm);
+  display: block;
+}
+
+/* Form name badge above the QR */
+.qr-form-badge {
+  background: var(--navy);
+  color: white;
+  padding: 8px 22px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.qr-instructions {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-top: 4px;
+}
+
+.qr-secondary {
+  font-size: 14px;
+  color: rgba(0,38,100,0.55);
+}
+
+/* --------------------------------------------------------------------------
+   19. Touch Ripple Effect
+   JS injects a <span class="ripple"> at the tap point.
+   -------------------------------------------------------------------------- */
+.btn-nav,
+.browse-btn,
+.start-btn,
+.frequent-card,
+.category-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  transform: scale(0);
+  animation: ripple-anim 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-anim {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   20. Breadcrumb
+   -------------------------------------------------------------------------- */
+.breadcrumb {
+  font-size: 13px;
+  color: rgba(0,38,100,0.55);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.breadcrumb span {
+  opacity: 0.7;
+  margin: 0 6px;
+}
+
+/* --------------------------------------------------------------------------
+   21. Page / Section Title
+   -------------------------------------------------------------------------- */
+.page-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   22. Search Highlight
+   Applied around text matched in the live search
+   -------------------------------------------------------------------------- */
+.search-highlight {
+  background: rgba(228,0,43,0.15);
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+/* --------------------------------------------------------------------------
+   23. Empty / No-Results States
+   -------------------------------------------------------------------------- */
+.empty-state,
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--navy);
+  opacity: 0.45;
+}
+
+.no-results {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   PATCH — HTML/CSS class name reconciliation
+   Aliases to match the actual class names used in the HTML files.
+   ========================================================================== */
+
+/* ── Scrollable main areas (replicate .screen behaviour) ─────────────────── */
+.categories-main,
+.forms-main,
+.qr-main {
+  position: absolute;
+  inset: 0;
+  padding-top: 88px;   /* 4px idle-bar + 80px header + 4px gap */
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,38,100,0.2) transparent;
+  animation: screen-fade-in 0.32s ease both;
+}
+.categories-main::-webkit-scrollbar,
+.forms-main::-webkit-scrollbar,
+.qr-main::-webkit-scrollbar { width: 6px; }
+.categories-main::-webkit-scrollbar-track,
+.forms-main::-webkit-scrollbar-track,
+.qr-main::-webkit-scrollbar-track { background: transparent; }
+.categories-main::-webkit-scrollbar-thumb,
+.forms-main::-webkit-scrollbar-thumb,
+.qr-main::-webkit-scrollbar-thumb { background: rgba(0,38,100,0.18); border-radius: 4px; }
+
+/* Allow body to scroll on these pages (overrides global overflow:hidden) */
+.categories-page,
+.forms-page,
+.qr-page {
+  overflow: hidden;   /* body stays locked; only .main scrolls */
+}
+
+/* ── Categories page padding ─────────────────────────────────────────────── */
+.categories-main { padding-left: 28px; padding-right: 28px; padding-bottom: 32px; }
+.forms-main      { padding-left: 28px; padding-right: 28px; padding-bottom: 32px; }
+
+/* ── Header logo lockup (HTML uses .nsw-logo-lockup / .nsw-logo-icon) ────── */
+.nsw-logo-lockup {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.nsw-logo-icon {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+}
+.nsw-logo-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.2;
+}
+.header-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ── Frequently-used strip ───────────────────────────────────────────────── */
+.frequent-row {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: none;
+}
+.frequent-row::-webkit-scrollbar { display: none; }
+
+.frequent-section { margin-bottom: 28px; }
+
+.frequent-card .frequent-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+}
+.frequent-card .frequent-cat {
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 6px;
+}
+
+/* ── Category card internals (HTML puts icon/title directly in .category-card) */
+.category-card { padding-bottom: 0; }
+.card-count {
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+  font-weight: 500;
+  padding: 0 20px;
+  margin-bottom: 6px;
+}
+.category-card .card-icon { padding: 16px 20px 0; }
+.category-card .card-title { padding: 6px 20px 0; }
+
+/* ── Form list cards (forms.html uses .form-card-deco, .form-card-body etc.) */
+.form-card-deco {
+  width: 6px;
+  flex-shrink: 0;
+  align-self: stretch;
+  background: var(--navy);
+  border-radius: 4px 0 0 4px;
+  margin-right: 8px;
+}
+.form-card-body {
+  flex: 1;
+  min-width: 0;
+}
+.form-card-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+.form-card-catalogue {
+  font-size: 13px;
+  color: var(--gray);
+  font-weight: 500;
+}
+
+/* ── Forms page header bar ───────────────────────────────────────────────── */
+.forms-header-bar {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.forms-category-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--navy);
+  flex: 1;
+}
+.forms-count {
+  font-size: 14px;
+  color: var(--gray);
+  font-weight: 500;
+}
+.forms-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ── Search results grid ─────────────────────────────────────────────────── */
+.search-results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 8px;
+}
+.search-result-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.search-result-category { border-top: 4px solid var(--navy); }
+.sr-type { font-size: 11px; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: 0.08em; }
+.sr-name { font-size: 15px; font-weight: 700; color: var(--navy); line-height: 1.3; }
+.sr-count,.sr-cat { font-size: 13px; color: var(--gray); }
+.sr-catalogue { font-size: 12px; font-weight: 600; color: var(--red); }
+.browse-btn.small,.start-btn.small {
+  margin-top: 8px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 13px;
+  padding: 0 14px;
+}
+
+/* ── QR screen ───────────────────────────────────────────────────────────── */
+.qr-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 24px;
+  text-align: center;
+}
+.qr-card {
+  background: white;
+  border-radius: 28px;
+  padding: 32px 40px 28px;
+  box-shadow: var(--shadow-lg);
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+}
+.qr-card-top { margin-bottom: 20px; }
+.qr-form-name {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+.qr-catalogue {
+  display: inline-block;
+  background: var(--navy);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 16px;
+  border-radius: 20px;
+}
+.qr-code-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.qr-code-container {
+  width: 280px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.qr-code-container img,
+.qr-code-container canvas {
+  border-radius: var(--radius-sm);
+}
+.qr-url-hint {
+  font-size: 11px;
+  color: var(--gray);
+  word-break: break-all;
+  max-width: 320px;
+}
+.qr-instructions {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  text-align: left;
+}
+.qr-step {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(0,38,100,0.04);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+.qr-step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: white;
+  font-size: 15px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.qr-step p {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.45;
+  margin-top: 4px;
+}
+.qr-reset-bar {
+  width: 100%;
+  max-width: 680px;
+  height: 6px;
+  background: rgba(0,38,100,0.1);
+  border-radius: 4px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+.qr-reset-progress {
+  height: 100%;
+  background: var(--red);
+  border-radius: 4px;
+  width: 0%;
+  transition: width 1s linear;
+}
+.qr-reset-hint {
+  font-size: 13px;
+  color: var(--gray);
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+/* ── Welcome screen extras ───────────────────────────────────────────────── */
+.welcome-screen {
+  padding-top: 88px;   /* clear fixed header */
+}
+.landmark-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.landmark-bg .landmark-svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0.12;
+}
+.welcome-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.welcome-logo {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 8px 32px rgba(228,0,43,0.25));
+}
+/* Chevron CTA — alias for .chevron-container */
+.chevron-cta {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  animation: bounce-up 1.6s ease-in-out infinite;
+  z-index: 1;
+}
+.chevron-icon {
+  width: 56px;
+  height: 48px;
+  opacity: 0.55;
+}
+.welcome-subtitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--navy);
+  opacity: 0.65;
+  margin-bottom: 28px;
+  margin-top: 8px;
+}

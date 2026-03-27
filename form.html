@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form — Service NSW</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/form.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.5/dist/signature_pad.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- ── FORM HEADER ── -->
+  <header class="form-header">
+    <div class="form-header-logo">
+      <svg width="40" height="40" viewBox="0 0 52 52">
+        <circle cx="26" cy="26" r="26" fill="#E4002B"/>
+        <path d="M26 9 C20 13 13 20 15 29 C17 36 24 40 26 40 C26 40 26 28 26 26 C26 24 24 18 26 9Z" fill="white"/>
+        <path d="M26 9 C32 13 39 20 37 29 C35 36 28 40 26 40 C26 40 26 28 26 26 C26 24 28 18 26 9Z" fill="white" opacity="0.85"/>
+        <path d="M13 32 C11 38 14 44 21 46 C24 47 26 45 26 43 C26 41 24 38 26 40 C24 38 18 38 13 32Z" fill="white" opacity="0.75"/>
+        <path d="M39 32 C41 38 38 44 31 46 C28 47 26 45 26 43 C26 41 28 38 26 40 C28 38 34 38 39 32Z" fill="white" opacity="0.75"/>
+      </svg>
+      <div class="form-header-text">
+        <span class="form-header-gov">NSW Government</span>
+        <span class="form-header-service">Service NSW</span>
+      </div>
+    </div>
+    <div class="form-header-meta">
+      <h1 class="form-header-title" id="formHeaderTitle">Loading…</h1>
+      <span class="form-header-catalogue" id="formHeaderCatalogue"></span>
+    </div>
+  </header>
+
+  <!-- ── PROGRESS BAR ── -->
+  <div class="progress-container" id="progressContainer" style="display:none">
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" id="progressFill"></div>
+    </div>
+    <p class="progress-label" id="progressLabel">Step 1 of 1</p>
+    <div class="progress-dots" id="progressDots"></div>
+  </div>
+
+  <!-- ── FORM BODY ── -->
+  <main class="form-main" id="formMain">
+    <div class="form-loading" id="formLoading">
+      <div class="loading-spinner"></div>
+      <p>Loading form…</p>
+    </div>
+
+    <!-- Steps container -->
+    <div id="stepsContainer" style="display:none">
+      <!-- Steps populated dynamically -->
+    </div>
+
+    <!-- Review screen (shown on final step) -->
+    <div id="reviewScreen" class="review-screen" style="display:none">
+      <h2 class="review-title">Review Your Information</h2>
+      <p class="review-subtitle">Please check all details before submitting.</p>
+      <div class="review-fields" id="reviewFields"></div>
+    </div>
+
+    <!-- Final QR screen -->
+    <div id="finalQrScreen" class="final-qr-screen" style="display:none">
+      <div class="final-qr-icon">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#002664" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+      </div>
+      <h2 class="final-qr-title">Form Complete!</h2>
+      <div class="screenshot-notice">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        <strong>Take a screenshot</strong> of the QR code below
+      </div>
+      <div class="final-qr-container" id="finalQrContainer"></div>
+      <p class="final-qr-instruction">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E4002B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;vertical-align:middle"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        Show this QR code to staff at the counter
+      </p>
+      <button class="btn-restart" onclick="restartForm()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+        Start a New Form
+      </button>
+    </div>
+  </main>
+
+  <!-- ── NAVIGATION BUTTONS ── -->
+  <nav class="form-nav" id="formNav" style="display:none">
+    <button class="btn-prev" id="btnPrev" onclick="prevStep()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15,18 9,12 15,6"/></svg>
+      Back
+    </button>
+    <span class="form-nav-step" id="formNavStep">1 / 1</span>
+    <button class="btn-next" id="btnNext" onclick="nextStep()">
+      Next
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,18 15,12 9,6"/></svg>
+    </button>
+  </nav>
+
+  <script src="config.js"></script>
+  <script src="js/kiosk.js"></script>
+  <script src="js/form-renderer.js"></script>
+  <script src="js/validator.js"></script>
+  <script src="js/qr-generator.js"></script>
+  <script src="js/signature.js"></script>
+  <script>
+    let formFields = [];
+    let pageNumbers = [];
+    let currentPageIndex = 0;
+    let formData = {};
+    let formId = '';
+    let formDisplayName = '';
+    const REVIEW_STEP = 'review';
+    const QR_STEP = 'qr';
+
+    function totalSteps() { return pageNumbers.length + 2; } // pages + review + qr
+    function isReviewStep() { return currentPageIndex === pageNumbers.length; }
+    function isQrStep() { return currentPageIndex === pageNumbers.length + 1; }
+
+    async function init() {
+      formId = getParam('id') || '';
+
+      if (!formId) {
+        document.getElementById('formLoading').innerHTML = '<p class="error-msg">No form specified. Please scan the kiosk QR code again.</p>';
+        return;
+      }
+
+      const filename = formId + '.pdf';
+      formDisplayName = getFormDisplayName(filename);
+      const catNum = getCatalogueNumber(filename);
+
+      document.getElementById('formHeaderTitle').textContent = formDisplayName;
+      document.getElementById('formHeaderCatalogue').textContent = catNum ? 'Cat. ' + catNum : '';
+      document.title = formDisplayName + ' — Service NSW';
+
+      try {
+        const dataPath = (typeof CONFIG !== 'undefined' && CONFIG.formDataPath)
+          ? CONFIG.formDataPath : 'data/final_fields.json';
+        const allFields = await loadJSON(dataPath);
+        formFields = allFields[filename] || allFields[formId] || [];
+
+        if (formFields.length === 0) {
+          document.getElementById('formLoading').innerHTML =
+            `<div class="error-card">
+              <p><strong>Form not found.</strong></p>
+              <p>We don't have a digital version of <em>${formDisplayName}</em> yet.</p>
+              <p>Please ask staff for a paper form (Cat. ${catNum || formId}).</p>
+            </div>`;
+          return;
+        }
+
+        pageNumbers = getPageNumbers(formFields);
+        document.getElementById('formLoading').style.display = 'none';
+
+        buildSteps();
+        renderProgressBar();
+        showStep(0);
+        document.getElementById('formNav').style.display = '';
+        document.getElementById('progressContainer').style.display = '';
+
+      } catch (e) {
+        document.getElementById('formLoading').innerHTML =
+          '<p class="error-msg">Unable to load form data. Please check your internet connection.</p>';
+      }
+    }
+
+    function buildSteps() {
+      const container = document.getElementById('stepsContainer');
+      container.innerHTML = '';
+
+      pageNumbers.forEach((pageNum, idx) => {
+        const div = document.createElement('div');
+        div.className = 'form-step';
+        div.id = 'step_' + idx;
+        div.style.display = 'none';
+
+        const pageLabel = getPageLabel(pageNum);
+        div.innerHTML = `
+          <div class="step-header">
+            <h2 class="step-title">${pageLabel}</h2>
+          </div>
+          <div class="step-fields">${renderPage(formFields, pageNum, formData)}</div>
+        `;
+        container.appendChild(div);
+      });
+      container.style.display = '';
+    }
+
+    function getPageLabel(pageNum) {
+      // Try to infer section name from the first field on this page
+      const fields = formFields.filter(f => Number(f.page) === pageNum);
+      if (fields.length === 0) return 'Page ' + pageNum;
+
+      const firstLabel = fields[0].label.toLowerCase();
+      if (firstLabel.includes('surname') || firstLabel.includes('full name') || firstLabel.includes('given')) return 'Personal Details';
+      if (firstLabel.includes('address') || firstLabel.includes('suburb') || firstLabel.includes('state') || firstLabel.includes('postcode')) return 'Contact Details';
+      if (firstLabel.includes('email') || firstLabel.includes('phone')) return 'Contact Details';
+      if (firstLabel.includes('declaration') || firstLabel.includes('signature')) return 'Declaration & Signature';
+      if (firstLabel.includes('vehicle')) return 'Vehicle Details';
+      if (firstLabel.includes('vessel') || firstLabel.includes('boat')) return 'Vessel Details';
+      if (firstLabel.includes('licence') || firstLabel.includes('class')) return 'Licence Details';
+      if (firstLabel.includes('business') || firstLabel.includes('operator')) return 'Business Details';
+      if (firstLabel.includes('bank') || firstLabel.includes('bsb')) return 'Payment Details';
+      return 'Section ' + pageNum;
+    }
+
+    function showStep(idx) {
+      currentPageIndex = idx;
+
+      // Hide all steps / review / qr
+      pageNumbers.forEach((_, i) => {
+        const el = document.getElementById('step_' + i);
+        if (el) el.style.display = 'none';
+      });
+      document.getElementById('reviewScreen').style.display = 'none';
+      document.getElementById('finalQrScreen').style.display = 'none';
+      document.getElementById('formNav').style.display = '';
+
+      if (isQrStep()) {
+        // Final QR
+        document.getElementById('finalQrScreen').style.display = '';
+        document.getElementById('formNav').style.display = 'none';
+        generateFinalQR();
+      } else if (isReviewStep()) {
+        // Review
+        renderReview();
+        document.getElementById('reviewScreen').style.display = '';
+        document.getElementById('btnNext').innerHTML = `Submit <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,18 15,12 9,6"/></svg>`;
+      } else {
+        // Normal page step
+        const el = document.getElementById('step_' + idx);
+        if (el) {
+          el.style.display = '';
+          // Re-render fields (to restore saved values)
+          const stepFields = document.querySelector('#step_' + idx + ' .step-fields');
+          if (stepFields) {
+            stepFields.innerHTML = renderPage(formFields, pageNumbers[idx], formData);
+          }
+          // Init signature pads on this step
+          setTimeout(() => {
+            const sigFields = formFields.filter(f => Number(f.page) === pageNumbers[idx] && f.type === 'signature');
+            sigFields.forEach(f => {
+              initSignaturePad(f.field_name);
+              // Restore saved signature if any
+              if (formData[f.field_name]) {
+                restoreSignature(f.field_name, formData[f.field_name]);
+              }
+            });
+          }, 50);
+        }
+        document.getElementById('btnNext').innerHTML = `Next <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,18 15,12 9,6"/></svg>`;
+      }
+
+      updateProgressBar();
+      updateNavButtons();
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function nextStep() {
+      if (isReviewStep()) {
+        // Go to QR step — no validation needed
+        showStep(currentPageIndex + 1);
+        return;
+      }
+      if (isQrStep()) return;
+
+      // Collect data from current step
+      const pageNum = pageNumbers[currentPageIndex];
+      const pageFields = formFields.filter(f => Number(f.page) === pageNum);
+
+      // Save data first
+      pageFields.forEach(field => {
+        const el = document.getElementById('f_' + field.field_name);
+        if (!el) return;
+        if (field.type === 'checkbox') {
+          formData[field.field_name] = el.checked;
+        } else if (field.type === 'radio') {
+          const checked = document.querySelector(`input[name="${field.field_name}"]:checked`);
+          formData[field.field_name] = checked ? checked.value : '';
+        } else {
+          formData[field.field_name] = el.value;
+        }
+      });
+
+      // Validate
+      const valid = validatePage(formFields, pageNumbers[currentPageIndex]);
+      if (!valid) return;
+
+      clearPageErrors(pageFields);
+      showStep(currentPageIndex + 1);
+    }
+
+    function prevStep() {
+      if (currentPageIndex > 0) {
+        showStep(currentPageIndex - 1);
+      }
+    }
+
+    function renderReview() {
+      const container = document.getElementById('reviewFields');
+      container.innerHTML = '';
+
+      pageNumbers.forEach((pageNum, idx) => {
+        const pageFields = formFields.filter(f => Number(f.page) === pageNum);
+        if (pageFields.length === 0) return;
+
+        const section = document.createElement('div');
+        section.className = 'review-section';
+        section.innerHTML = `<h3 class="review-section-title">${getPageLabel(pageNum)}</h3>`;
+
+        pageFields.forEach(field => {
+          let displayValue = formData[field.field_name];
+          if (field.type === 'checkbox') {
+            displayValue = displayValue ? 'Yes' : 'No';
+          } else if (field.type === 'signature') {
+            displayValue = displayValue ? '[Signature captured]' : '[Not signed]';
+          } else if (!displayValue && displayValue !== 0) {
+            displayValue = '—';
+          }
+
+          const row = document.createElement('div');
+          row.className = 'review-row';
+          row.innerHTML = `
+            <span class="review-label">${field.label}</span>
+            <span class="review-value${!formData[field.field_name] && field.required ? ' review-missing' : ''}">${displayValue}</span>
+          `;
+          section.appendChild(row);
+        });
+
+        const editBtn = document.createElement('button');
+        editBtn.className = 'btn-edit-step';
+        editBtn.textContent = 'Edit';
+        editBtn.onclick = () => showStep(idx);
+        section.appendChild(editBtn);
+
+        container.appendChild(section);
+      });
+    }
+
+    function generateFinalQR() {
+      const container = document.getElementById('finalQrContainer');
+      container.innerHTML = '';
+
+      // Build payload: form metadata + all form data (strip signatures for size)
+      const payload = {
+        form: formId,
+        name: formDisplayName,
+        submitted: new Date().toISOString(),
+        data: {}
+      };
+
+      formFields.forEach(field => {
+        if (field.type !== 'signature') {
+          payload.data[field.field_name] = formData[field.field_name] !== undefined ? formData[field.field_name] : '';
+        }
+      });
+
+      try {
+        generateDataQR('finalQrContainer', payload.data, { id: formId, name: formDisplayName });
+      } catch (e) {
+        container.innerHTML = '<p class="error-msg">Unable to generate QR code. Please ask staff for a printed form.</p>';
+      }
+    }
+
+    function renderProgressBar() {
+      const total = pageNumbers.length + 1; // pages + review
+      const dots = document.getElementById('progressDots');
+      dots.innerHTML = '';
+      for (let i = 0; i <= pageNumbers.length; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'progress-dot';
+        dot.id = 'dot_' + i;
+        dots.appendChild(dot);
+      }
+    }
+
+    function updateProgressBar() {
+      const total = pageNumbers.length + 1; // +1 for review
+      const current = Math.min(currentPageIndex + 1, total);
+      const pct = ((current - 1) / Math.max(total - 1, 1)) * 100;
+
+      document.getElementById('progressFill').style.width = pct + '%';
+      document.getElementById('progressLabel').textContent =
+        isQrStep() ? 'Complete!' :
+        isReviewStep() ? `Review — Step ${pageNumbers.length + 1} of ${total}` :
+        `Step ${currentPageIndex + 1} of ${total}`;
+      document.getElementById('formNavStep').textContent =
+        isQrStep() ? '' :
+        isReviewStep() ? `Review` :
+        `${currentPageIndex + 1} / ${pageNumbers.length + 1}`;
+
+      // Update dots
+      for (let i = 0; i <= pageNumbers.length; i++) {
+        const dot = document.getElementById('dot_' + i);
+        if (!dot) continue;
+        dot.className = 'progress-dot' +
+          (i < currentPageIndex ? ' done' : i === currentPageIndex ? ' active' : '');
+      }
+    }
+
+    function updateNavButtons() {
+      const btnPrev = document.getElementById('btnPrev');
+      btnPrev.style.visibility = currentPageIndex > 0 ? 'visible' : 'hidden';
+    }
+
+    function showPageErrors(errors) {
+      // Scroll to first error
+      const firstErr = errors[0];
+      if (firstErr) {
+        const errEl = document.getElementById('err_' + firstErr.field_name);
+        if (errEl) {
+          errEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+    }
+
+    function clearPageErrors(fields) {
+      fields.forEach(f => {
+        const el = document.getElementById('err_' + f.field_name);
+        if (el) el.textContent = '';
+        const input = document.getElementById('f_' + f.field_name);
+        if (input) input.classList.remove('error');
+      });
+    }
+
+    function restartForm() {
+      formData = {};
+      currentPageIndex = 0;
+      buildSteps();
+      showStep(0);
+    }
+
+    init();
+  </script>
+</body>
+</html>
