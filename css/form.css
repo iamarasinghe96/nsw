@@ -614,3 +614,365 @@ textarea.field-input {
     padding: 14px;
   }
 }
+
+/* ==========================================================================
+   16. HTML ↔ CSS Class Aliases & Missing Classes
+   Bridges the gap between CSS class names and what form.html actually uses
+   ========================================================================== */
+
+/* form-main = form-container */
+.form-main {
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 16px;
+  padding-bottom: 40px;
+}
+
+/* progress-container = progress-wrap */
+.progress-container {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin: 0 16px 20px;
+}
+
+/* progress-bar-wrap = progress-track */
+.progress-bar-wrap {
+  height: 8px;
+  background: rgba(0,38,100,0.15);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* progress-bar-fill = progress-fill */
+.progress-bar-fill {
+  height: 100%;
+  background: #E4002B;
+  border-radius: 4px;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+
+/* progress-dots = step-dots, progress-dot = step-dot */
+.progress-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.progress-dot {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(0,38,100,0.15);
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+.progress-dot.active {
+  background: #E4002B;
+}
+
+.progress-dot.done {
+  background: #002664;
+}
+
+/* step-title = page-title */
+.step-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #002664;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #F5F5F5;
+}
+
+/* final-qr-screen = final-qr-wrap */
+.final-qr-screen {
+  text-align: center;
+  padding: 24px;
+}
+
+/* final-qr-container = qr-display */
+.final-qr-container {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  display: inline-block;
+  box-shadow: 0 4px 24px rgba(0,0,32,0.12);
+  margin-bottom: 20px;
+}
+
+/* --- Form Header (HTML structure) --- */
+.form-header-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.form-header-logo svg,
+.form-header-logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.form-header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-header-gov {
+  font-size: 10px;
+  color: rgba(255,255,255,0.7);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.form-header-service {
+  font-size: 15px;
+  color: white;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.form-header-meta {
+  flex: 1;
+}
+
+.form-header-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.form-header-catalogue {
+  font-size: 12px;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  padding: 3px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+/* --- Step wrapper --- */
+.form-step {
+  /* Step cards rendered by buildSteps(); each .form-card inside */
+}
+
+.step-header {
+  /* Minimal wrapper above step fields */
+}
+
+.step-fields {
+  /* Fields container within each step */
+}
+
+/* --- Loading / Error states --- */
+.form-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 60px 20px;
+  text-align: center;
+  color: #002664;
+  font-size: 16px;
+}
+
+.loading-spinner {
+  width: 44px;
+  height: 44px;
+  border: 4px solid rgba(0,38,100,0.15);
+  border-top-color: #E4002B;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 2px 16px rgba(0,0,32,0.08);
+  color: #002664;
+  line-height: 1.6;
+}
+
+.error-card strong {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #E4002B;
+}
+
+.error-msg {
+  color: #E4002B;
+  font-size: 15px;
+  padding: 16px;
+  background: #fff5f5;
+  border-radius: 12px;
+  border: 1px solid rgba(228,0,43,0.2);
+}
+
+/* --- Nav step counter --- */
+.form-nav-step {
+  flex: 0 0 auto;
+  font-size: 14px;
+  font-weight: 600;
+  color: #002664;
+  padding: 0 4px;
+  white-space: nowrap;
+}
+
+/* --- Restart button --- */
+.btn-restart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  background: #002664;
+  color: white;
+  border: none;
+  border-radius: 28px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  margin-top: 8px;
+}
+
+.btn-restart:hover {
+  filter: brightness(1.15);
+}
+
+.btn-restart:active {
+  transform: scale(0.97);
+}
+
+/* --- Review screen --- */
+.review-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #002664;
+  margin-bottom: 8px;
+}
+
+.review-subtitle {
+  font-size: 15px;
+  color: rgba(0,38,100,0.6);
+  margin-bottom: 24px;
+}
+
+.review-fields {
+  /* Container for all review sections */
+}
+
+.review-section-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(0,38,100,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #F5F5F5;
+}
+
+.review-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.review-missing {
+  color: #E4002B !important;
+  font-style: italic;
+}
+
+.btn-edit-step {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 18px;
+  background: rgba(0,38,100,0.08);
+  color: #002664;
+  border: none;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.btn-edit-step:hover {
+  background: rgba(0,38,100,0.14);
+}
+
+/* --- Final QR extras --- */
+.final-qr-icon {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.final-qr-instruction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #002664;
+  margin-bottom: 20px;
+}
+
+/* Screenshot notice flex layout */
+.screenshot-notice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.screenshot-notice svg {
+  flex-shrink: 0;
+}
+
+/* form-nav alignment */
+.form-nav {
+  position: sticky;
+  bottom: 0;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 12px 16px;
+  max-width: 540px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+@media (max-width: 480px) {
+  .form-main {
+    padding: 12px;
+    padding-bottom: 32px;
+  }
+
+  .final-qr-screen {
+    padding: 16px;
+  }
+
+  .step-title {
+    font-size: 16px;
+  }
+}

@@ -60,6 +60,22 @@ function getSignaturePad(fieldName) {
   return _signaturePads[fieldName] || null;
 }
 
+// Restore a previously saved signature (base64 data URL) into the pad
+function restoreSignature(fieldName, dataUrl) {
+  if (!dataUrl || !dataUrl.startsWith('data:image')) return;
+  const pad = _signaturePads[fieldName];
+  if (!pad) return;
+  const img = new Image();
+  img.onload = function() {
+    pad.clear();
+    const canvas = document.getElementById('sigcanvas_' + fieldName);
+    if (canvas) {
+      canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+    }
+  };
+  img.src = dataUrl;
+}
+
 // Initialise all signature pads on the page (call after rendering fields)
 function initAllSignaturePads(fields) {
   fields.forEach(function(field) {

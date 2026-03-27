@@ -106,14 +106,20 @@ function getCatalogueNumber(filename) {
 
 // --- Build form QR URL ---
 function buildFormUrl(formId) {
-  const domain = (typeof CONFIG !== 'undefined' && CONFIG.domain)
-    ? CONFIG.domain
-    : window.location.origin;
-  const path = (typeof CONFIG !== 'undefined' && CONFIG.formPath)
+  let base;
+  if (typeof CONFIG !== 'undefined' && CONFIG.domain) {
+    // Explicit domain set in config (recommended for production)
+    base = CONFIG.domain.replace(/\/$/, '');
+  } else {
+    // Auto-detect: use directory of current page, not just origin.
+    // e.g. https://host/nsw/qr.html  →  https://host/nsw
+    const href = window.location.href.split('?')[0]; // strip query
+    base = href.substring(0, href.lastIndexOf('/'));
+  }
+  const formPath = (typeof CONFIG !== 'undefined' && CONFIG.formPath)
     ? CONFIG.formPath
     : 'form.html';
-  const base = domain.replace(/\/$/, '');
-  return `${base}/${path}?id=${encodeURIComponent(formId)}`;
+  return `${base}/${formPath}?id=${encodeURIComponent(formId)}`;
 }
 
 // --- Load JSON data helper ---
