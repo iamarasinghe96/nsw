@@ -1,75 +1,61 @@
 {
   "Access to Information Forms": [
-    "45013321-access-to-information-application.pdf",
-    "45013322-gipa-internal-review-application.pdf"
-  ],
-  "Authorised Inspection Station (AIS) Forms": [
-    "45060001-ais-application-new.pdf",
-    "45060002-ais-renewal-application.pdf",
-    "45060003-ais-change-of-details.pdf"
-  ],
-  "Driver Licensing Forms": [
-    "45070018-licence-application.pdf",
-    "45071506-licence-renewal-application.pdf",
-    "45070019-licence-replacement-application.pdf",
-    "45070020-overseas-licence-conversion.pdf",
-    "45070021-medical-condition-declaration.pdf",
-    "45070022-name-change-on-licence.pdf"
+    "45061574-internal-review-of-a-decision.pdf",
+    "45064982-application-for-an-internal-review-of-a-decision.pdf"
   ],
   "Driving Instructors & Assessors Forms": [
-    "45080001-driving-instructor-accreditation-application.pdf",
-    "45080002-driving-assessor-application.pdf"
+    "45061655-driving-instructor-licence-app.pdf",
+    "45062462-driving-instructor-mutual-recognition.pdf",
+    "45062468-driving-instructors-licence-application-for-renewal.pdf"
+  ],
+  "Driver Licensing Forms": [
+    "45065696-applicant-witness-stat-dec-bar-cross-licence.pdf",
+    "45071383-request-confirmation-overseas-licence-details.pdf",
+    "45071927-change-in-circumstances.pdf"
   ],
   "e-Toll & M5 South-West Cashback Forms": [
-    "45090001-etoll-account-application.pdf",
-    "45090002-m5-cashback-application.pdf",
-    "45090003-etoll-dispute-form.pdf"
+    "45065707-etoll-direct-debit-request-service-agreement.pdf",
+    "45065750-credit-card-authority.pdf",
+    "45071217-heavy-vehicle-e-toll-tag.pdf",
+    "45071442-e-toll-confirmation.pdf",
+    "45071687-etoll-terms-and-conditions.pdf",
+    "45071696-install-your-e-toll-tag.pdf",
+    "45071696a-install-e-toll-tag-obu610.pdf"
   ],
   "Health Professionals Licence Forms": [
-    "45100001-health-professional-medical-report.pdf",
-    "45100002-optometrist-vision-certificate.pdf"
+    "45071885-interlock-medical-consultation-certificate.pdf",
+    "45071886-interlock-installation-certificate.pdf"
   ],
   "Heavy Vehicle Operator Forms": [
-    "45110001-heavy-vehicle-permit-application.pdf",
-    "45110002-heavy-vehicle-mass-dimension-permit.pdf",
-    "45110003-livestock-transport-accreditation.pdf"
+    "45065676-heavy-vehicle-camera-image-request.pdf",
+    "45071812-training-organisation-heavy-vehicle-competency-based-assessment.pdf",
+    "45072002-osom-escort-vehicle-driver.pdf",
+    "45072003-osom-escort-vehicle-provider.pdf"
   ],
   "Maritime & Boating Forms": [
-    "45120001-vessel-registration-application.pdf",
-    "45120002-vessel-transfer-of-ownership.pdf",
-    "45120003-boat-licence-application.pdf",
-    "45120004-marine-licence-replacement.pdf"
+    "45072013-personal-watercraft-driver-licence.pdf",
+    "45072014-application-for-vessel-registration.pdf",
+    "45072015-application-transfer-vessel-registration.pdf"
   ],
   "Miscellaneous Forms": [
-    "45130001-general-enquiry-form.pdf",
-    "45130002-customer-feedback-form.pdf",
-    "45130003-statutory-declaration.pdf"
-  ],
-  "Mobility Parking Scheme Forms": [
-    "45140001-mobility-parking-application.pdf",
-    "45140002-mobility-parking-renewal.pdf",
-    "45140003-mobility-parking-replacement.pdf"
-  ],
-  "Motor Dealer Forms": [
-    "45150001-motor-dealer-licence-application.pdf",
-    "45150002-motor-dealer-renewal.pdf",
-    "45150003-dealer-salesperson-application.pdf"
+    "45062798-road-occupancy-licence-app-development-activities.pdf",
+    "45065401-cutback-bitumin-prime-primerseal-daily-record.pdf",
+    "45065403-cutback-bitumin-seal-reseal-daily-record.pdf",
+    "45065405-conventional-sam-sami-daily-record.pdf",
+    "45070768-witness-letter.pdf"
   ],
   "Public Passenger Vehicle Operator Forms": [
-    "45160001-taxi-driver-authority-application.pdf",
-    "45160002-rideshare-driver-authorisation.pdf",
-    "45160003-bus-operator-accreditation.pdf"
+    "45071942-operator-accreditation-4wd-tourist-vehicle.pdf",
+    "45071943-operator-accreditation-motorcycle.pdf"
   ],
   "Vehicle Registration Forms": [
-    "45170001-vehicle-registration-application.pdf",
-    "45170002-registration-transfer.pdf",
-    "45170003-registration-cancellation.pdf",
-    "45170004-conditional-registration.pdf",
-    "45170005-historic-vehicle-registration.pdf"
+    "45071058-pay-your-registration.pdf",
+    "45071806-rally-vehicle-approved-operations.pdf",
+    "45071875-traders-plates-condition-of-use.pdf"
   ],
   "Vehicle Safety Compliance Certification Scheme (VSCCS) Forms": [
-    "45180001-vsccs-application.pdf",
-    "45180002-vehicle-modification-approval.pdf",
-    "45180003-compliance-plate-application.pdf"
+    "45071422-light-vehicle-pre-delivery-checklist.pdf",
+    "45071423-motorcycle-pre-delivery-checklist.pdf",
+    "45071424-light-trailer-and-caravan-pre-delivery-checklist.pdf"
   ]
 }
