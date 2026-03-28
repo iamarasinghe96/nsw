@@ -107,11 +107,11 @@ function renderField(field, formData) {
 }
 
 // Returns array of unique page numbers sorted ascending.
-// Skips heading/instruction blocks that carry no page number.
+// Skips heading/instruction blocks (they have no field_name).
 function getPageNumbers(fields) {
   return [...new Set(
     fields
-      .filter(b => b.type === 'field' || (!b.type && b.field_name))
+      .filter(b => b.type !== 'heading' && b.type !== 'instruction' && b.field_name)
       .map(b => Number(b.page))
       .filter(n => !isNaN(n))
   )].sort((a, b) => a - b);
@@ -127,7 +127,7 @@ function renderPage(fields, pageNum, formData) {
 function collectFormData(fields) {
   const data = {};
   fields.forEach(block => {
-    if (block.type !== 'field' && block.type !== undefined) return;
+    if (block.type === 'heading' || block.type === 'instruction') return;
     const field = block;
     const el = document.getElementById('f_' + field.field_name);
     if (!el) return;

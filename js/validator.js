@@ -50,7 +50,8 @@ function validatePage(fields, pageNum) {
   // Filter to this page's blocks, skipping heading/instruction blocks
   const pageFields = fields.filter(f =>
     Number(f.page) === pageNum &&
-    (f.type === 'field' || f.type === undefined) &&
+    f.type !== 'heading' &&
+    f.type !== 'instruction' &&
     f.field_name
   );
   let allValid = true;
