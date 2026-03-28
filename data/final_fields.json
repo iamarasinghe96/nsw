@@ -136,6 +136,16 @@
   ],
   "45064982-application-for-an-internal-review-of-a-decision.pdf": [
     {
+      "type": "instruction",
+      "text": "Use this form to request an internal review of a decision made by Service NSW. You must submit this request within 28 days of receiving the original decision notice. All fields marked with * are required.",
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Personal Details",
+      "page": 1
+    },
+    {
       "label": "Full Name",
       "field_name": "full_name",
       "type": "text",
@@ -166,6 +176,16 @@
       "options": [],
       "required": true,
       "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Decision Details",
+      "page": 2
+    },
+    {
+      "type": "instruction",
+      "text": "Provide details of the original decision you wish to have reviewed. Your reference number can be found on the original decision letter.",
+      "page": 2
     },
     {
       "label": "Postal Address",
@@ -200,6 +220,16 @@
       "page": 2
     },
     {
+      "type": "heading",
+      "text": "Grounds for Review",
+      "page": 3
+    },
+    {
+      "type": "instruction",
+      "text": "Explain why you believe the original decision was incorrect. Include any relevant facts, legislation, or circumstances you wish the reviewer to consider.",
+      "page": 3
+    },
+    {
       "label": "Grounds for Review",
       "field_name": "grounds_for_review",
       "type": "textarea",
@@ -216,6 +246,16 @@
         "No"
       ],
       "required": true,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Declaration",
+      "page": 3
+    },
+    {
+      "type": "instruction",
+      "text": "By signing below you confirm all information is true and correct. Providing false or misleading information may result in penalties under the Government Information (Public Access) Act 2009.",
       "page": 3
     },
     {

@@ -745,28 +745,32 @@ textarea.field-input {
 }
 
 .form-heading h3 {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 800;
   color: #002664;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  padding-bottom: 8px;
-  border-bottom: 2px solid rgba(0,38,100,0.12);
+  letter-spacing: 0.06em;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(0,38,100,0.20);
 }
 
 .form-instruction {
-  background: rgba(0,38,100,0.05);
-  border-left: 3px solid #002664;
-  border-radius: 0 8px 8px 0;
-  padding: 10px 14px;
+  background: rgba(0,38,100,0.10);
+  border: 1px solid rgba(0,38,100,0.18);
+  border-left: 4px solid #002664;
+  border-radius: 0 12px 12px 0;
+  padding: 12px 16px;
   margin-bottom: 16px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .form-instruction p {
   font-size: 14px;
-  color: rgba(0,38,100,0.75);
-  line-height: 1.5;
+  color: #002664;
+  line-height: 1.6;
   margin: 0;
+  font-weight: 500;
 }
 
 /* --- Form Header (HTML structure) — see section 4 for primary logo styles --- */
