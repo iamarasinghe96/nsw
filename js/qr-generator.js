@@ -14,7 +14,7 @@ function generateKioskQR(containerId, formId) {
     text: url,
     width: 280,
     height: 280,
-    colorDark: '#002664',
+    colorDark: '#000000',
     colorLight: '#FFFFFF',
     correctLevel: QRCode.CorrectLevel.M,
   });
@@ -66,9 +66,9 @@ function generateDataQR(containerId, formData, formMeta, formFields) {
   try {
     new QRCode(container, {
       text: payload,
-      width: 260,
-      height: 260,
-      colorDark: '#002664',
+      width: 300,
+      height: 300,
+      colorDark: '#000000',
       colorLight: '#FFFFFF',
       correctLevel: QRCode.CorrectLevel.L,
     });
