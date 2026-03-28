@@ -1,7 +1,6 @@
 // signature.js — Signature pad integration using SignaturePad library
 
-var _signaturePads   = {};
-var _signatureStrokes = {};  // raw stroke point arrays per field
+var _signaturePads = {};
 
 // ── Ramer-Douglas-Peucker path simplification ──────────────────────────────
 function _rdp(points, epsilon) {
@@ -25,23 +24,28 @@ function _rdp(points, epsilon) {
 }
 
 // ── Return compact SVG path string for a field's signature ─────────────────
-// Normalises all points to a 0-99 grid and simplifies with RDP.
-// Result looks like "M10,45L14,43L20,40 M55,30L60,35" — decodable as SVG.
+// Uses SignaturePad's built-in toData() to get stroke points — reliable
+// across all browsers/devices since SignaturePad uses pointer events.
+// Normalises to a 0-99 grid and simplifies with RDP.
 function getSignatureSVGPath(fieldName) {
-  var strokes = _signatureStrokes[fieldName];
-  if (!strokes || strokes.length === 0) return '';
+  var pad = _signaturePads[fieldName];
+  if (!pad || pad.isEmpty()) return '';
+
+  var strokeData = pad.toData();
+  if (!strokeData || strokeData.length === 0) return '';
 
   var canvas = document.getElementById('sigcanvas_' + fieldName);
   var w = (canvas && canvas.offsetWidth)  || 300;
   var h = (canvas && canvas.offsetHeight) || 150;
-
-  // epsilon = 2% of the larger canvas dimension → good simplification
   var epsilon = Math.max(w, h) * 0.02;
 
   var parts = [];
-  for (var s = 0; s < strokes.length; s++) {
-    var stroke = strokes[s];
-    if (stroke.length === 0) continue;
+  for (var s = 0; s < strokeData.length; s++) {
+    // Support both SignaturePad v4 ({points:[]}) and v2/v3 (array of points)
+    var raw = strokeData[s].points || strokeData[s];
+    if (!raw || raw.length === 0) continue;
+
+    var stroke = raw.map(function (pt) { return { x: pt.x, y: pt.y }; });
     var simplified = _rdp(stroke, epsilon);
     var cmds = '';
     for (var p = 0; p < simplified.length; p++) {
@@ -49,7 +53,7 @@ function getSignatureSVGPath(fieldName) {
       var y = Math.min(99, Math.max(0, Math.round(simplified[p].y / h * 99)));
       cmds += (p === 0 ? 'M' : 'L') + x + ',' + y;
     }
-    parts.push(cmds);
+    if (cmds) parts.push(cmds);
   }
   return parts.join(' ');
 }
@@ -76,38 +80,10 @@ function initSignaturePad(fieldName) {
     maxWidth: 3,
   });
 
-  _signaturePads[fieldName]   = pad;
-  _signatureStrokes[fieldName] = [];
+  _signaturePads[fieldName] = pad;
 
   window.addEventListener('resize', resizeCanvas);
   resizeCanvas();
-
-  // ── Stroke recording (raw points for SVG path export) ──────────────────
-  var _currentStroke = [];
-
-  function _pt(e) {
-    var rect = canvas.getBoundingClientRect();
-    var src  = e.touches ? e.touches[0] : e;
-    return { x: src.clientX - rect.left, y: src.clientY - rect.top };
-  }
-  function _startStroke(e) { _currentStroke = [_pt(e)]; }
-  function _addPoint(e)   {
-    if (e.buttons === 0 && !e.touches) return; // mouse not pressed
-    _currentStroke.push(_pt(e));
-  }
-  function _endStroke() {
-    if (_currentStroke.length > 0) {
-      _signatureStrokes[fieldName].push(_currentStroke.slice());
-    }
-    _currentStroke = [];
-  }
-
-  canvas.addEventListener('mousedown',  _startStroke);
-  canvas.addEventListener('mousemove',  _addPoint);
-  canvas.addEventListener('mouseup',    _endStroke);
-  canvas.addEventListener('touchstart', _startStroke, { passive: true });
-  canvas.addEventListener('touchmove',  _addPoint,    { passive: true });
-  canvas.addEventListener('touchend',   _endStroke);
 
   // ── Save to hidden input on each stroke end ─────────────────────────────
   pad.addEventListener('endStroke', function () {
@@ -129,7 +105,6 @@ function clearSignaturePad(fieldName) {
   if (_signaturePads[fieldName]) _signaturePads[fieldName].clear();
   var hiddenInput = document.getElementById('f_' + fieldName);
   if (hiddenInput) hiddenInput.value = '';
-  _signatureStrokes[fieldName] = [];
 }
 
 // ── Return the pad instance (or null) ─────────────────────────────────────
