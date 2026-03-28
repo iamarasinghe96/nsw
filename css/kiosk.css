@@ -107,24 +107,37 @@ body,
 
 /* --------------------------------------------------------------------------
    4. Header
-   Fixed frosted-glass bar: left nav group | centre logo | right search
+   Floating Apple-style rounded island — glass pill pinned below idle bar
    -------------------------------------------------------------------------- */
 .kiosk-header {
   position: fixed;
-  top: 4px;            /* sits below the idle bar */
-  left: 0;
-  right: 0;
-  height: 80px;
+  top: 10px;           /* floats below the idle bar with a gap */
+  left: 14px;
+  right: 14px;
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 28px;
-  background: rgba(255,255,255,0.55);
+  padding: 0 24px;
+  background: rgba(255,255,255,0.58);
   backdrop-filter: blur(28px) saturate(2);
   -webkit-backdrop-filter: blur(28px) saturate(2);
-  border-bottom: 1px solid rgba(255,255,255,0.65);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), 0 4px 24px rgba(0,0,0,0.08);
+  border: 1px solid rgba(255,255,255,0.70);
+  border-radius: 22px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.85), 0 8px 32px rgba(0,0,0,0.10);
   z-index: 500;
+  animation: header-drop-in 0.45s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+
+@keyframes header-drop-in {
+  from { transform: translateY(-110%); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+.kiosk-header.header-exit {
+  transition: transform 0.32s cubic-bezier(0.4,0,0.2,1), opacity 0.28s ease;
+  transform: translateY(-130%);
+  opacity: 0;
 }
 
 /* Left cluster: home + back */
@@ -291,7 +304,7 @@ body,
 .screen {
   position: absolute;
   inset: 0;
-  padding-top: 84px;   /* header height (80) + idle bar (4) */
+  padding-top: 96px;   /* floating header (72) + top gap (10) + idle bar (4) + breathing room */
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-width: thin;
@@ -342,6 +355,17 @@ body,
 .screen.slide-out-right { animation: slide-out-right 0.28s ease forwards; }
 .screen.slide-in-left   { animation: slide-in-left   0.28s ease forwards; }
 
+/* Page-exit: content floats up when navigating deeper */
+@keyframes page-exit-up {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-48px); }
+}
+
+.page-exit {
+  animation: page-exit-up 0.32s cubic-bezier(0.4,0,0.2,1) forwards;
+  pointer-events: none;
+}
+
 /* ============================================================
    SCREEN 1 — WELCOME
    ============================================================ */
@@ -361,19 +385,13 @@ body,
   gap: 0;
 }
 
-.welcome-glass-panel {
-  background: rgba(255,255,255,0.28);
-  backdrop-filter: blur(24px) saturate(1.8);
-  -webkit-backdrop-filter: blur(24px) saturate(1.8);
-  border: 1px solid rgba(255,255,255,0.50);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.65), 0 12px 40px rgba(0,0,0,0.08);
-  border-radius: 28px;
-  padding: 40px 56px;
+.welcome-content {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: 36px;
 }
 
 .welcome-tagline {
@@ -391,7 +409,7 @@ body,
   font-weight: 800;
   color: var(--navy);
   line-height: 1.12;
-  margin-bottom: 0;
+  margin-bottom: 32px;
   text-shadow: 0 2px 16px rgba(0,38,100,0.12);
 }
 

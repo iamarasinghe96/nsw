@@ -96,14 +96,15 @@
       </svg>
     </div>
 
-    <!-- Service NSW large logo -->
-    <div class="welcome-logo-wrap">
-      <img src="assets/favicon.svg" alt="Service NSW" class="welcome-logo" width="220">
-    </div>
-
-    <div class="welcome-glass-panel">
+    <div class="welcome-content">
       <p class="welcome-tagline">New South Wales Government</p>
       <h1 class="welcome-heading" id="welcomeHeading">Welcome to Service NSW</h1>
+
+      <!-- Service NSW large logo -->
+      <div class="welcome-logo-wrap">
+        <img src="assets/favicon.svg" alt="Service NSW" class="welcome-logo" width="260">
+      </div>
+
       <p class="welcome-cta">Touch anywhere or tap below to browse forms</p>
     </div>
 
@@ -142,13 +143,13 @@
     });
 
     function goToCategories() {
-      window.location.href = 'categories.html';
+      navigateTo('categories.html');
     }
 
     function handleWelcomeSearch(e) {
       if (e.key === 'Enter') {
         const q = document.getElementById('welcomeSearch').value.trim();
-        if (q) window.location.href = 'categories.html?q=' + encodeURIComponent(q);
+        if (q) navigateTo('categories.html?q=' + encodeURIComponent(q));
         else goToCategories();
       }
     }

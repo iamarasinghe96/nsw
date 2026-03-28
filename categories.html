@@ -166,7 +166,7 @@
         card.onclick = () => {
           sessionStorage.setItem('selectedCategory', found.categoryName);
           sessionStorage.setItem('selectedFormId', formId);
-          window.location.href = `qr.html?id=${encodeURIComponent(formId)}`;
+          navigateTo(`qr.html?id=${encodeURIComponent(formId)}`);
         };
         row.appendChild(card);
       });
@@ -177,7 +177,7 @@
 
     function browseCategory(name) {
       sessionStorage.setItem('selectedCategory', name);
-      window.location.href = `forms.html?category=${encodeURIComponent(name)}`;
+      navigateTo(`forms.html?category=${encodeURIComponent(name)}`);
     }
 
     function handleSearch(query) {
@@ -251,7 +251,7 @@
       incrementFormAccess(formId);
       sessionStorage.setItem('selectedCategory', categoryName);
       sessionStorage.setItem('selectedFormId', formId);
-      window.location.href = `qr.html?id=${encodeURIComponent(formId)}`;
+      navigateTo(`qr.html?id=${encodeURIComponent(formId)}`);
     }
 
     // Idle timer

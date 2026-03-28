@@ -145,7 +145,7 @@
     function startForm(formId) {
       incrementFormAccess(formId);
       sessionStorage.setItem('selectedFormId', formId);
-      window.location.href = `qr.html?id=${encodeURIComponent(formId)}`;
+      navigateTo(`qr.html?id=${encodeURIComponent(formId)}`);
     }
 
     // Idle timer

@@ -18,6 +18,16 @@ function clearIdleTimer() {
 }
 
 // --- Navigation ---
+
+// Animates the header up + content fade-up, then navigates
+function navigateTo(url) {
+  var header = document.querySelector('.kiosk-header');
+  var screen = document.querySelector('.screen') || document.querySelector('main');
+  if (header) header.classList.add('header-exit');
+  if (screen) screen.classList.add('page-exit');
+  setTimeout(function() { window.location.href = url; }, 310);
+}
+
 function goHome() {
   window.location.href = 'index.html';
 }
