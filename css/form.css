@@ -856,15 +856,7 @@ textarea.field-input {
   border: 1px solid rgba(228,0,43,0.2);
 }
 
-/* --- Nav step counter --- */
-.form-nav-step {
-  flex: 0 0 auto;
-  font-size: 14px;
-  font-weight: 600;
-  color: #002664;
-  padding: 0 4px;
-  white-space: nowrap;
-}
+/* .form-nav-step — defined in the sticky nav section below */
 
 /* --- Restart button --- */
 .btn-restart {
@@ -1106,23 +1098,50 @@ textarea.field-input {
   .qr-panel { padding: 0; }
 }
 
-/* form-nav alignment */
+/* form-nav — sticky full-width bar */
 .form-nav {
   position: sticky;
   bottom: 0;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 12px 16px;
-  max-width: 540px;
-  margin: 0 auto;
+  left: 0;
+  right: 0;
+  /* stretch edge-to-edge regardless of parent max-width */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(0,38,100,0.08);
+  padding: 10px 16px;
+  /* iOS home-bar safe area */
+  padding-bottom: max(10px, env(safe-area-inset-bottom));
   align-items: center;
+  gap: 10px;
+  box-shadow: 0 -4px 20px rgba(0,0,32,0.06);
+}
+
+/* Step counter pill */
+.form-nav-step {
+  flex: 0 0 auto;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  background: rgba(0,38,100,0.07);
+  padding: 6px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* Slimmer Next button on mobile */
+.btn-next {
+  min-height: 50px;
+  font-size: 16px;
+  padding: 12px 20px;
 }
 
 @media (max-width: 480px) {
   .form-main {
     padding: 12px;
-    padding-bottom: 32px;
+    padding-bottom: 80px; /* room for sticky nav */
   }
 
   .final-qr-screen {
@@ -1131,5 +1150,18 @@ textarea.field-input {
 
   .step-title {
     font-size: 16px;
+  }
+
+  /* Header flush on small screens — remove side border-radius */
+  .form-header {
+    border-radius: 0 0 20px 20px;
+    margin: -12px -12px 0;
+    padding: 16px;
+  }
+
+  /* Form card tighter on mobile */
+  .form-card {
+    padding: 16px;
+    margin-top: 12px;
   }
 }
