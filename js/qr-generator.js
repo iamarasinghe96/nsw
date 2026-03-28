@@ -22,38 +22,50 @@ function generateKioskQR(containerId, formId) {
   return url;
 }
 
-// Generate a QR code for the mobile form completion (encodes JSON form data).
-// The QR library supports up to ~271 bytes (version 10, L correction), so we
-// build the most compact payload possible and fall back to a text summary if
-// the data is still too large.
-function generateDataQR(containerId, formData, formMeta) {
+// Generate a QR code for the mobile form completion.
+// Encodes as pipe-separated values: "{catNum}:{val1}|{val2}|...|{valN}|{date}"
+// No field keys are included — the scanner app uses the catalogue number to
+// look up the form definition and map values to fields by position.
+// This keeps the payload under 200 bytes for typical forms.
+function generateDataQR(containerId, formData, formMeta, formFields) {
   const container = document.getElementById(containerId);
   if (!container) return;
   container.innerHTML = '';
 
-  // Compact payload: catalogue number only, date only, non-empty values, text capped at 35 chars
   const catNum = (formMeta && formMeta.id) ? formMeta.id.split('-')[0] : '';
-  const compact = {
-    f: catNum,
-    d: {},
-    t: new Date().toISOString().slice(0, 10),
-  };
+  const date = new Date().toISOString().slice(0, 10);
 
-  Object.keys(formData || {}).forEach(key => {
-    const val = formData[key];
-    if (val === '' || val === null || val === undefined || val === false) return;
-    if (typeof val === 'string' && val.startsWith('data:image')) {
-      compact.d[key] = '[signed]';
-      return;
-    }
-    compact.d[key] = (typeof val === 'string' && val.length > 35) ? val.slice(0, 35) : val;
+  // Build ordered value list from field definitions (excludes heading/instruction/signature)
+  const dataFields = (formFields || []).filter(function(f) {
+    var ft = f.field_type || f.type || '';
+    return f.type !== 'heading' && f.type !== 'instruction' && f.field_name && ft !== 'signature';
   });
 
-  const jsonStr = JSON.stringify(compact);
+  var values;
+  if (dataFields.length > 0) {
+    values = dataFields.map(function(field) {
+      var val = (formData || {})[field.field_name];
+      if (val === undefined || val === null || val === false || val === '') return '';
+      if (val === true) return '1';
+      // Strip pipe characters and non-latin chars; cap at 40 chars
+      return String(val).replace(/\|/g, ' ').slice(0, 40);
+    });
+  } else {
+    // Fallback: no field order known — use values from formData object
+    values = Object.keys(formData || {}).map(function(key) {
+      var val = formData[key];
+      if (val === undefined || val === null || val === false || val === '') return '';
+      if (typeof val === 'string' && val.startsWith('data:image')) return '';
+      if (val === true) return '1';
+      return String(val).replace(/\|/g, ' ').slice(0, 40);
+    });
+  }
+
+  const payload = catNum + ':' + values.join('|') + '|' + date;
 
   try {
     new QRCode(container, {
-      text: jsonStr,
+      text: payload,
       width: 260,
       height: 260,
       colorDark: '#002664',

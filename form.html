@@ -364,7 +364,7 @@
       });
 
       try {
-        generateDataQR('finalQrContainer', payload.data, { id: formId, name: formDisplayName });
+        generateDataQR('finalQrContainer', payload.data, { id: formId, name: formDisplayName }, formFields);
       } catch (e) {
         container.innerHTML = '<p class="error-msg">Unable to generate QR code. Please ask staff for a printed form.</p>';
       }
