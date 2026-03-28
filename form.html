@@ -182,6 +182,7 @@
           </div>
           <div class="step-fields">${renderPage(formFields, pageNum, formData)}</div>
         `;
+        initPageInteractions(div);
         container.appendChild(div);
       });
       container.style.display = '';
@@ -236,10 +237,12 @@
           const stepFields = document.querySelector('#step_' + idx + ' .step-fields');
           if (stepFields) {
             stepFields.innerHTML = renderPage(formFields, pageNumbers[idx], formData);
+            initPageInteractions(stepFields);
           }
           // Init signature pads on this step
           setTimeout(() => {
-            const sigFields = formFields.filter(f => Number(f.page) === pageNumbers[idx] && f.type === 'signature');
+            const fieldType = f => f.field_type || f.type || 'text';
+            const sigFields = formFields.filter(f => Number(f.page) === pageNumbers[idx] && fieldType(f) === 'signature');
             sigFields.forEach(f => {
               initSignaturePad(f.field_name);
               // Restore saved signature if any
@@ -273,11 +276,13 @@
 
       // Save data first
       pageFields.forEach(field => {
+        if (field.type === 'heading' || field.type === 'instruction') return;
         const el = document.getElementById('f_' + field.field_name);
         if (!el) return;
-        if (field.type === 'checkbox') {
+        const ft = field.field_type || field.type || 'text';
+        if (ft === 'checkbox') {
           formData[field.field_name] = el.checked;
-        } else if (field.type === 'radio') {
+        } else if (ft === 'radio') {
           const checked = document.querySelector(`input[name="${field.field_name}"]:checked`);
           formData[field.field_name] = checked ? checked.value : '';
         } else {

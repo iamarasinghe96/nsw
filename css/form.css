@@ -951,6 +951,34 @@ textarea.field-input {
   background: rgba(0,38,100,0.14);
 }
 
+/* --- Data QR text fallback (shown when payload exceeds QR capacity) --- */
+.data-fallback {
+  max-width: 260px;
+  text-align: left;
+}
+
+.data-fallback-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #002664;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(0,38,100,0.15);
+}
+
+.data-fallback-row {
+  font-size: 11px;
+  color: #002664;
+  margin: 4px 0;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.data-fallback-row strong {
+  color: rgba(0,38,100,0.6);
+  font-weight: 600;
+}
+
 /* --- Final QR extras --- */
 .final-qr-icon {
   margin-bottom: 16px;

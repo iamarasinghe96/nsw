@@ -146,6 +146,40 @@ function collectFormData(fields) {
   return data;
 }
 
+// Wire up visual interactions for custom checkbox and radio elements.
+// Call this after any renderPage() sets innerHTML on a container.
+function initPageInteractions(container) {
+  // Checkboxes: sync .checked class on the label with native input state
+  container.querySelectorAll('.checkbox-label').forEach(function(label) {
+    var input = label.querySelector('.field-checkbox');
+    if (!input) return;
+    // Restore initial state (e.g. when navigating back to a filled step)
+    label.classList.toggle('checked', input.checked);
+    label.addEventListener('click', function() {
+      // setTimeout lets the browser toggle input.checked before we read it
+      setTimeout(function() {
+        label.classList.toggle('checked', input.checked);
+      }, 0);
+    });
+  });
+
+  // Radio buttons: sync .selected class with native input state
+  container.querySelectorAll('.radio-label').forEach(function(label) {
+    var input = label.querySelector('.field-radio');
+    if (!input) return;
+    if (input.checked) label.classList.add('selected');
+    label.addEventListener('click', function() {
+      var name = input.name;
+      // Clear .selected from every label in the same group
+      container.querySelectorAll('.radio-label').forEach(function(sibling) {
+        var sibInput = sibling.querySelector('.field-radio');
+        if (sibInput && sibInput.name === name) sibling.classList.remove('selected');
+      });
+      label.classList.add('selected');
+    });
+  });
+}
+
 // HTML escaping helpers
 function escHtml(str) {
   return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');

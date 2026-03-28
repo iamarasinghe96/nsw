@@ -22,39 +22,61 @@ function generateKioskQR(containerId, formId) {
   return url;
 }
 
-// Generate a QR code for the mobile form completion (encodes JSON form data)
-// containerId: DOM element ID to render the QR into
-// formData: object with field values
-// formMeta: { id, name, catalogueNumber }
+// Generate a QR code for the mobile form completion (encodes JSON form data).
+// The QR library supports up to ~271 bytes (version 10, L correction), so we
+// build the most compact payload possible and fall back to a text summary if
+// the data is still too large.
 function generateDataQR(containerId, formData, formMeta) {
   const container = document.getElementById(containerId);
   if (!container) return;
   container.innerHTML = '';
 
-  const payload = {
-    v: 1,
-    form: formMeta || {},
-    data: formData,
-    ts: new Date().toISOString(),
+  // Compact payload: catalogue number only, date only, non-empty values, text capped at 35 chars
+  const catNum = (formMeta && formMeta.id) ? formMeta.id.split('-')[0] : '';
+  const compact = {
+    f: catNum,
+    d: {},
+    t: new Date().toISOString().slice(0, 10),
   };
 
-  // Signature fields are large — encode as "[Signature provided]" to keep QR small
-  const cleanPayload = JSON.parse(JSON.stringify(payload));
-  Object.keys(cleanPayload.data || {}).forEach(key => {
-    const val = cleanPayload.data[key];
+  Object.keys(formData || {}).forEach(key => {
+    const val = formData[key];
+    if (val === '' || val === null || val === undefined || val === false) return;
     if (typeof val === 'string' && val.startsWith('data:image')) {
-      cleanPayload.data[key] = '[Signature provided]';
+      compact.d[key] = '[signed]';
+      return;
     }
+    compact.d[key] = (typeof val === 'string' && val.length > 35) ? val.slice(0, 35) : val;
   });
 
-  const jsonStr = JSON.stringify(cleanPayload);
+  const jsonStr = JSON.stringify(compact);
 
-  new QRCode(container, {
-    text: jsonStr,
-    width: 260,
-    height: 260,
-    colorDark: '#002664',
-    colorLight: '#FFFFFF',
-    correctLevel: QRCode.CorrectLevel.L,
+  try {
+    new QRCode(container, {
+      text: jsonStr,
+      width: 260,
+      height: 260,
+      colorDark: '#002664',
+      colorLight: '#FFFFFF',
+      correctLevel: QRCode.CorrectLevel.L,
+    });
+  } catch (e) { /* silent — canvas check below */ }
+
+  // If library returned null (text too long), show a readable text summary instead
+  if (!container.querySelector('canvas')) {
+    _dataQRFallback(container, formData, catNum);
+  }
+}
+
+function _dataQRFallback(container, formData, catNum) {
+  let html = '<div class="data-fallback">'
+    + '<p class="data-fallback-title">Form ' + (catNum || '') + ' — completed ' + new Date().toLocaleDateString('en-AU') + '</p>';
+  Object.keys(formData || {}).forEach(key => {
+    const val = formData[key];
+    if (!val || (typeof val === 'string' && val.startsWith('data:image'))) return;
+    const label = key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    html += '<p class="data-fallback-row"><strong>' + label + ':</strong> ' + String(val).slice(0, 50) + '</p>';
   });
+  html += '</div>';
+  container.innerHTML = html;
 }
