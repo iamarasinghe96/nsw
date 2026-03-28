@@ -2,16 +2,33 @@
 
 const STATES = ['NSW', 'VIC', 'QLD', 'SA', 'WA', 'TAS', 'ACT', 'NT'];
 
-// Returns HTML string for a single field
+// Renders a single block — routes "heading", "instruction", or "field" blocks.
+// The new final_fields.json format uses blocks with a top-level `type` of
+// "heading", "instruction", or "field". Field blocks carry `field_type` for
+// the input type (replacing the old flat `type` field).
+function renderBlock(block, formData) {
+  if (block.type === 'heading') {
+    return `<div class="form-heading"><h3>${escHtml(block.text || '')}</h3></div>`;
+  }
+  if (block.type === 'instruction') {
+    return `<div class="form-instruction"><p>${escHtml(block.text || '')}</p></div>`;
+  }
+  // Default: treat as a field block (covers both explicit type:"field" and
+  // legacy flat objects that have no type property at all)
+  return renderField(block, formData);
+}
+
+// Returns HTML string for a single field block
 function renderField(field, formData) {
   formData = formData || {};
+  const fieldType = field.field_type || field.type || 'text';
   const val = formData[field.field_name] !== undefined ? formData[field.field_name] : '';
   const req = field.required ? ' required' : '';
   const reqMark = field.required ? '<span class="required-mark" aria-hidden="true">*</span>' : '';
 
-  let html = `<div class="form-field" data-field="${escHtml(field.field_name)}" data-type="${escHtml(field.type)}">`;
+  let html = `<div class="form-field" data-field="${escHtml(field.field_name)}" data-type="${escHtml(fieldType)}">`;
 
-  switch (field.type) {
+  switch (fieldType) {
     case 'text':
       html += `<label class="field-label" for="f_${escHtml(field.field_name)}">${escHtml(field.label)}${reqMark}</label>`;
       html += `<input type="text" id="f_${escHtml(field.field_name)}" name="${escHtml(field.field_name)}" class="field-input" value="${escAttr(val)}" placeholder="${escAttr(field.label)}" autocomplete="off"${req}>`;
@@ -89,29 +106,38 @@ function renderField(field, formData) {
   return html;
 }
 
-// Returns array of unique page numbers sorted ascending
+// Returns array of unique page numbers sorted ascending.
+// Skips heading/instruction blocks that carry no page number.
 function getPageNumbers(fields) {
-  return [...new Set(fields.map(f => Number(f.page)))].sort((a, b) => a - b);
+  return [...new Set(
+    fields
+      .filter(b => b.type === 'field' || (!b.type && b.field_name))
+      .map(b => Number(b.page))
+      .filter(n => !isNaN(n))
+  )].sort((a, b) => a - b);
 }
 
-// Returns HTML for all fields on a given page number
+// Returns HTML for all blocks on a given page number (headings, instructions, fields)
 function renderPage(fields, pageNum, formData) {
-  const pageFields = fields.filter(f => Number(f.page) === pageNum);
-  return pageFields.map(f => renderField(f, formData || {})).join('');
+  const pageBlocks = fields.filter(b => Number(b.page) === pageNum);
+  return pageBlocks.map(b => renderBlock(b, formData || {})).join('');
 }
 
-// Collect form data from DOM fields
+// Collect form data from DOM fields — skips heading and instruction blocks
 function collectFormData(fields) {
   const data = {};
-  fields.forEach(field => {
+  fields.forEach(block => {
+    if (block.type !== 'field' && block.type !== undefined) return;
+    const field = block;
     const el = document.getElementById('f_' + field.field_name);
     if (!el) return;
-    if (field.type === 'checkbox') {
+    const fieldType = field.field_type || field.type || 'text';
+    if (fieldType === 'checkbox') {
       data[field.field_name] = el.checked;
-    } else if (field.type === 'radio') {
+    } else if (fieldType === 'radio') {
       const checked = document.querySelector(`input[name="${field.field_name}"]:checked`);
       data[field.field_name] = checked ? checked.value : '';
-    } else if (field.type === 'signature') {
+    } else if (fieldType === 'signature') {
       data[field.field_name] = el.value; // set by signature.js
     } else {
       data[field.field_name] = el.value;

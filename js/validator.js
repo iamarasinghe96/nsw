@@ -47,19 +47,25 @@ function validateField(field, value) {
 
 // Validate all fields on a page. Shows inline errors. Returns true if all valid.
 function validatePage(fields, pageNum) {
-  const pageFields = fields.filter(f => Number(f.page) === pageNum);
+  // Filter to this page's blocks, skipping heading/instruction blocks
+  const pageFields = fields.filter(f =>
+    Number(f.page) === pageNum &&
+    (f.type === 'field' || f.type === undefined) &&
+    f.field_name
+  );
   let allValid = true;
   let firstInvalid = null;
 
   pageFields.forEach(field => {
+    const fieldType = field.field_type || field.type || 'text';
     let value;
-    if (field.type === 'checkbox') {
+    if (fieldType === 'checkbox') {
       const el = document.getElementById('f_' + field.field_name);
       value = el ? el.checked : false;
-    } else if (field.type === 'radio') {
+    } else if (fieldType === 'radio') {
       const checked = document.querySelector(`input[name="${field.field_name}"]:checked`);
       value = checked ? checked.value : '';
-    } else if (field.type === 'signature') {
+    } else if (fieldType === 'signature') {
       const el = document.getElementById('f_' + field.field_name);
       value = el ? el.value : '';
     } else {

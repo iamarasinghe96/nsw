@@ -704,6 +704,36 @@ textarea.field-input {
   margin-bottom: 20px;
 }
 
+/* --- Heading & Instruction blocks --- */
+.form-heading {
+  margin: 24px 0 12px;
+}
+
+.form-heading h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #002664;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid rgba(0,38,100,0.12);
+}
+
+.form-instruction {
+  background: rgba(0,38,100,0.05);
+  border-left: 3px solid #002664;
+  border-radius: 0 8px 8px 0;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+}
+
+.form-instruction p {
+  font-size: 14px;
+  color: rgba(0,38,100,0.75);
+  line-height: 1.5;
+  margin: 0;
+}
+
 /* --- Form Header (HTML structure) --- */
 .form-header-logo {
   display: flex;
