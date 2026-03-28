@@ -52,7 +52,7 @@ body {
 
 /* --------------------------------------------------------------------------
    4. Form Header
-   Navy frosted-glass banner — Apple-style pill with protruding logo circle
+   Navy glass banner — left radius matches logo circle so they curve as one
    -------------------------------------------------------------------------- */
 .form-header {
   background: rgba(0,38,100,0.72);
@@ -61,38 +61,38 @@ body {
   border: 1px solid rgba(255,255,255,0.22);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.20), 0 8px 32px rgba(0,0,80,0.22);
   color: white;
-  border-radius: 28px;
-  padding: 14px 20px 14px 10px;
+  /* left-radius = half logo circle diameter (64px) so they curve together */
+  border-radius: 32px 24px 24px 32px;
+  padding: 8px 20px 8px 8px;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
   gap: 14px;
-  overflow: visible; /* allow logo circle to protrude */
+  overflow: visible;
 }
 
-/* Protruding circular logo — sits on the left edge of the banner */
+/* 64px logo circle — left edge aligns with banner curve */
 .form-header-logo {
   flex-shrink: 0;
-  width: 62px;
-  height: 62px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   background: white;
-  border: 3px solid rgba(255,255,255,0.55);
-  box-shadow: 0 4px 18px rgba(0,0,80,0.35), inset 0 1px 0 rgba(255,255,255,0.9);
+  border: 2.5px solid rgba(255,255,255,0.50);
+  box-shadow: 0 3px 14px rgba(0,0,80,0.30);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin-left: -6px; /* protrude slightly past the left edge */
+  margin-left: 0;
   position: relative;
   z-index: 1;
 }
 
 .form-header-logo svg,
 .form-header-logo img {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
+  width: 52px;
+  height: 52px;
   flex-shrink: 0;
 }
 
@@ -1184,11 +1184,11 @@ textarea.field-input {
     font-size: 16px;
   }
 
-  /* Header on small screens — flat top, rounded bottom, edge-to-edge */
+  /* Header on small screens — flat top, rounded bottom only, edge-to-edge */
   .form-header {
-    border-radius: 0 0 28px 28px;
+    border-radius: 0 0 24px 24px;
     margin: -12px -12px 0;
-    padding: 14px 16px 14px 10px;
+    padding: 8px 16px 8px 8px;
   }
 
   /* Form card tighter on mobile */
