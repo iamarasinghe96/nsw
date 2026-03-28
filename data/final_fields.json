@@ -1,6 +1,16 @@
 {
   "45061574-internal-review-of-a-decision.pdf": [
     {
+      "type": "instruction",
+      "text": "Use this form to request an internal review of a decision made by Service NSW. You must submit this request within 28 days of receiving the original decision notice.",
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Your Contact Details",
+      "page": 1
+    },
+    {
       "label": "Full Name",
       "field_name": "full_name",
       "type": "text",
@@ -33,12 +43,27 @@
       "page": 1
     },
     {
+      "type": "instruction",
+      "text": "Your reference number can be found on the original decision letter. Leave blank if unknown.",
+      "page": 1
+    },
+    {
       "label": "Reference Number",
       "field_name": "reference_number",
       "type": "text",
       "options": [],
       "required": false,
       "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Decision Details",
+      "page": 2
+    },
+    {
+      "type": "instruction",
+      "text": "Provide as much detail as possible about the decision you are challenging. Include dates, names, and any relevant reference numbers.",
+      "page": 2
     },
     {
       "label": "Agency / Branch that made the Decision",
@@ -65,11 +90,31 @@
       "page": 2
     },
     {
+      "type": "heading",
+      "text": "Preferred Outcome",
+      "page": 3
+    },
+    {
+      "type": "instruction",
+      "text": "Briefly describe the outcome you are seeking from this review. For example: 'I would like my licence reinstated' or 'I am seeking a refund of the fee charged.'",
+      "page": 3
+    },
+    {
       "label": "Preferred Outcome",
       "field_name": "preferred_outcome",
       "type": "textarea",
       "options": [],
       "required": false,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Declaration",
+      "page": 3
+    },
+    {
+      "type": "instruction",
+      "text": "By signing below you confirm that all information provided in this form is true and correct to the best of your knowledge. Providing false or misleading information may result in penalties.",
       "page": 3
     },
     {
@@ -298,8 +343,8 @@
       "field_name": "licence_class",
       "type": "dropdown",
       "options": [
-        "C \u2013 Car",
-        "R \u2013 Motorcycle",
+        "C – Car",
+        "R – Motorcycle",
         "Both"
       ],
       "required": true,
@@ -466,8 +511,8 @@
       "field_name": "licence_class",
       "type": "dropdown",
       "options": [
-        "C \u2013 Car",
-        "R \u2013 Motorcycle",
+        "C – Car",
+        "R – Motorcycle",
         "Both"
       ],
       "required": true,
@@ -612,8 +657,8 @@
       "field_name": "licence_class",
       "type": "dropdown",
       "options": [
-        "C \u2013 Car",
-        "R \u2013 Motorcycle",
+        "C – Car",
+        "R – Motorcycle",
         "Both"
       ],
       "required": true,
@@ -653,7 +698,7 @@
       "type": "radio",
       "options": [
         "No",
-        "Yes \u2013 details below"
+        "Yes – details below"
       ],
       "required": true,
       "page": 3
@@ -2135,11 +2180,11 @@
       "field_name": "licence_class",
       "type": "dropdown",
       "options": [
-        "LR \u2013 Light Rigid",
-        "MR \u2013 Medium Rigid",
-        "HR \u2013 Heavy Rigid",
-        "HC \u2013 Heavy Combination",
-        "MC \u2013 Multi Combination"
+        "LR – Light Rigid",
+        "MR – Medium Rigid",
+        "HR – Heavy Rigid",
+        "HC – Heavy Combination",
+        "MC – Multi Combination"
       ],
       "required": true,
       "page": 3
@@ -2275,9 +2320,9 @@
       "field_name": "licence_class",
       "type": "dropdown",
       "options": [
-        "C \u2013 Car",
-        "LR \u2013 Light Rigid",
-        "MR \u2013 Medium Rigid"
+        "C – Car",
+        "LR – Light Rigid",
+        "MR – Medium Rigid"
       ],
       "required": true,
       "page": 2
@@ -2583,7 +2628,7 @@
       "type": "radio",
       "options": [
         "No",
-        "Yes \u2013 provide details below"
+        "Yes – provide details below"
       ],
       "required": true,
       "page": 3
@@ -3056,7 +3101,7 @@
       "type": "radio",
       "options": [
         "Yes",
-        "No \u2013 to follow"
+        "No – to follow"
       ],
       "required": true,
       "page": 3
@@ -3132,7 +3177,7 @@
       "page": 2
     },
     {
-      "label": "Application Rate (L/m\u00b2)",
+      "label": "Application Rate (L/m²)",
       "field_name": "application_rate",
       "type": "number",
       "options": [],
@@ -3140,7 +3185,7 @@
       "page": 2
     },
     {
-      "label": "Temperature at Time of Application (\u00b0C)",
+      "label": "Temperature at Time of Application (°C)",
       "field_name": "temperature",
       "type": "number",
       "options": [],
@@ -3148,7 +3193,7 @@
       "page": 2
     },
     {
-      "label": "Total Area Treated (m\u00b2)",
+      "label": "Total Area Treated (m²)",
       "field_name": "area_treated",
       "type": "number",
       "options": [],
@@ -3242,7 +3287,7 @@
       "page": 2
     },
     {
-      "label": "Application Rate (L/m\u00b2)",
+      "label": "Application Rate (L/m²)",
       "field_name": "application_rate",
       "type": "number",
       "options": [],
@@ -3250,7 +3295,7 @@
       "page": 2
     },
     {
-      "label": "Temperature at Time of Application (\u00b0C)",
+      "label": "Temperature at Time of Application (°C)",
       "field_name": "temperature",
       "type": "number",
       "options": [],
@@ -3258,7 +3303,7 @@
       "page": 2
     },
     {
-      "label": "Total Area Treated (m\u00b2)",
+      "label": "Total Area Treated (m²)",
       "field_name": "area_treated",
       "type": "number",
       "options": [],
@@ -3351,7 +3396,7 @@
       "page": 2
     },
     {
-      "label": "Application Rate (kg/m\u00b2)",
+      "label": "Application Rate (kg/m²)",
       "field_name": "application_rate",
       "type": "number",
       "options": [],
@@ -3367,7 +3412,7 @@
       "page": 3
     },
     {
-      "label": "Total Area Treated (m\u00b2)",
+      "label": "Total Area Treated (m²)",
       "field_name": "area_treated",
       "type": "number",
       "options": [],
@@ -3383,7 +3428,7 @@
       "page": 3
     },
     {
-      "label": "Air Temperature (\u00b0C)",
+      "label": "Air Temperature (°C)",
       "field_name": "air_temperature",
       "type": "number",
       "options": [],
@@ -4223,7 +4268,7 @@
       "page": 3
     },
     {
-      "label": "Lights \u2014 checked and functional",
+      "label": "Lights — checked and functional",
       "field_name": "check_lights",
       "type": "checkbox",
       "options": [],
@@ -4231,7 +4276,7 @@
       "page": 3
     },
     {
-      "label": "Brakes \u2014 checked and functional",
+      "label": "Brakes — checked and functional",
       "field_name": "check_brakes",
       "type": "checkbox",
       "options": [],
@@ -4239,7 +4284,7 @@
       "page": 3
     },
     {
-      "label": "Tyres \u2014 correct pressure and condition",
+      "label": "Tyres — correct pressure and condition",
       "field_name": "check_tyres",
       "type": "checkbox",
       "options": [],
@@ -4345,7 +4390,7 @@
       "page": 3
     },
     {
-      "label": "Lights \u2014 checked and functional",
+      "label": "Lights — checked and functional",
       "field_name": "check_lights",
       "type": "checkbox",
       "options": [],
@@ -4353,7 +4398,7 @@
       "page": 3
     },
     {
-      "label": "Brakes \u2014 checked and functional",
+      "label": "Brakes — checked and functional",
       "field_name": "check_brakes",
       "type": "checkbox",
       "options": [],
@@ -4361,7 +4406,7 @@
       "page": 3
     },
     {
-      "label": "Tyres \u2014 correct pressure and condition",
+      "label": "Tyres — correct pressure and condition",
       "field_name": "check_tyres",
       "type": "checkbox",
       "options": [],
@@ -4475,7 +4520,7 @@
       "page": 3
     },
     {
-      "label": "Lights and indicators \u2014 checked and functional",
+      "label": "Lights and indicators — checked and functional",
       "field_name": "check_lights",
       "type": "checkbox",
       "options": [],
@@ -4483,7 +4528,7 @@
       "page": 3
     },
     {
-      "label": "Brakes (if applicable) \u2014 checked and functional",
+      "label": "Brakes (if applicable) — checked and functional",
       "field_name": "check_brakes",
       "type": "checkbox",
       "options": [],
@@ -4491,7 +4536,7 @@
       "page": 3
     },
     {
-      "label": "Coupling and safety chain \u2014 correct and secure",
+      "label": "Coupling and safety chain — correct and secure",
       "field_name": "check_coupling",
       "type": "checkbox",
       "options": [],
@@ -4499,7 +4544,7 @@
       "page": 3
     },
     {
-      "label": "Tyres \u2014 correct pressure and condition",
+      "label": "Tyres — correct pressure and condition",
       "field_name": "check_tyres",
       "type": "checkbox",
       "options": [],
