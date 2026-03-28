@@ -52,7 +52,7 @@ body {
 
 /* --------------------------------------------------------------------------
    4. Form Header
-   Navy frosted-glass banner with logo and form name
+   Navy frosted-glass banner — Apple-style pill with protruding logo circle
    -------------------------------------------------------------------------- */
 .form-header {
   background: rgba(0,38,100,0.72);
@@ -61,31 +61,39 @@ body {
   border: 1px solid rgba(255,255,255,0.22);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.20), 0 8px 32px rgba(0,0,80,0.22);
   color: white;
-  border-radius: 20px;
-  padding: 20px;
+  border-radius: 28px;
+  padding: 14px 20px 14px 10px;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
+  overflow: visible; /* allow logo circle to protrude */
 }
 
-/* 48px circular logo */
+/* Protruding circular logo — sits on the left edge of the banner */
 .form-header-logo {
-  width: 48px;
-  height: 48px;
   flex-shrink: 0;
+  width: 62px;
+  height: 62px;
   border-radius: 50%;
-  overflow: hidden;
   background: white;
+  border: 3px solid rgba(255,255,255,0.55);
+  box-shadow: 0 4px 18px rgba(0,0,80,0.35), inset 0 1px 0 rgba(255,255,255,0.9);
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  margin-left: -6px; /* protrude slightly past the left edge */
+  position: relative;
+  z-index: 1;
 }
 
 .form-header-logo svg,
 .form-header-logo img {
-  width: 100%;
-  height: 100%;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .form-header-info h1 {
@@ -761,20 +769,7 @@ textarea.field-input {
   margin: 0;
 }
 
-/* --- Form Header (HTML structure) --- */
-.form-header-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-}
-
-.form-header-logo svg,
-.form-header-logo img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
+/* --- Form Header (HTML structure) — see section 4 for primary logo styles --- */
 
 .form-header-text {
   display: flex;
@@ -1185,11 +1180,11 @@ textarea.field-input {
     font-size: 16px;
   }
 
-  /* Header flush on small screens — remove side border-radius */
+  /* Header on small screens — flat top, rounded bottom, edge-to-edge */
   .form-header {
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 28px 28px;
     margin: -12px -12px 0;
-    padding: 16px;
+    padding: 14px 16px 14px 10px;
   }
 
   /* Form card tighter on mobile */
