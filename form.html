@@ -54,25 +54,28 @@
 
     <!-- Final QR screen -->
     <div id="finalQrScreen" class="final-qr-screen" style="display:none">
-      <div class="final-qr-icon">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#002664" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <div class="final-qr-success-row">
+        <svg class="final-qr-tick" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
         </svg>
+        <div>
+          <h2 class="final-qr-title">Form Complete!</h2>
+          <p class="final-qr-subtitle" id="finalQrSubtitle">Show the QR code(s) to staff at the counter</p>
+        </div>
       </div>
-      <h2 class="final-qr-title">Form Complete!</h2>
-      <div class="screenshot-notice">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-        <strong>Take a screenshot</strong> of the QR code below
-      </div>
+
       <div class="final-qr-container" id="finalQrContainer"></div>
-      <p class="final-qr-instruction">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E4002B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;vertical-align:middle"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-        Show this QR code to staff at the counter
-      </p>
-      <button class="btn-restart" onclick="restartForm()">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
-        Start a New Form
-      </button>
+
+      <div class="final-qr-footer">
+        <div class="final-qr-scan-hint">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          Staff will scan your QR code(s) to process your application
+        </div>
+        <button class="btn-restart" onclick="restartForm()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+          Start a New Form
+        </button>
+      </div>
     </div>
   </main>
 
@@ -339,25 +342,10 @@
     function generateFinalQR() {
       const container = document.getElementById('finalQrContainer');
       container.innerHTML = '';
-
-      // Build payload: form metadata + all form data (strip signatures for size)
-      const payload = {
-        form: formId,
-        name: formDisplayName,
-        submitted: new Date().toISOString(),
-        data: {}
-      };
-
-      formFields.forEach(field => {
-        if (field.type !== 'signature') {
-          payload.data[field.field_name] = formData[field.field_name] !== undefined ? formData[field.field_name] : '';
-        }
-      });
-
       try {
-        generateDataQR('finalQrContainer', payload.data, { id: formId, name: formDisplayName }, formFields);
+        generateDataQR('finalQrContainer', formData, { id: formId, name: formDisplayName }, formFields);
       } catch (e) {
-        container.innerHTML = '<p class="error-msg">Unable to generate QR code. Please ask staff for a printed form.</p>';
+        container.innerHTML = '<p class="error-msg">Unable to generate QR code. Please ask staff for assistance.</p>';
       }
     }
 

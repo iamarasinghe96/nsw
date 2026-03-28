@@ -979,32 +979,131 @@ textarea.field-input {
   font-weight: 600;
 }
 
-/* --- Final QR extras --- */
-.final-qr-icon {
-  margin-bottom: 16px;
-  display: flex;
-  justify-content: center;
-}
+/* ── Final QR screen ─────────────────────────────────────────────────────── */
 
-.final-qr-instruction {
+.final-qr-success-row {
   display: flex;
   align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.final-qr-tick {
+  flex-shrink: 0;
+  background: #f0fdf4;
+  border-radius: 50%;
+  padding: 8px;
+  width: 56px;
+  height: 56px;
+}
+
+.final-qr-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #002664;
+  margin: 0 0 4px;
+}
+
+.final-qr-subtitle {
+  font-size: 14px;
+  color: rgba(0,38,100,0.6);
+  margin: 0;
+}
+
+.final-qr-container {
+  display: flex;
   justify-content: center;
-  font-size: 16px;
+  margin-bottom: 28px;
+}
+
+.final-qr-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.final-qr-scan-hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(0,38,100,0.65);
+  font-weight: 500;
+}
+
+/* ── Single QR ───────────────────────────────────────────────────────────── */
+
+.qr-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+  display: inline-flex;
+}
+
+/* ── Dual QR layout ──────────────────────────────────────────────────────── */
+
+.qr-dual-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 28px;
+}
+
+.qr-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.qr-badge {
+  display: inline-block;
+  background: #002664;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.qr-badge--detail {
+  background: #E4002B;
+}
+
+.qr-panel-label {
+  font-size: 13px;
   font-weight: 700;
   color: #002664;
-  margin-bottom: 20px;
+  text-align: center;
 }
 
-/* Screenshot notice flex layout */
-.screenshot-notice {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.qr-panel-sub {
+  font-size: 11px;
+  color: rgba(0,38,100,0.5);
+  text-align: center;
+  max-width: 160px;
+  line-height: 1.4;
 }
 
-.screenshot-notice svg {
+.qr-divider {
+  width: 1px;
+  background: rgba(0,38,100,0.12);
+  align-self: stretch;
+  margin: 32px 0;
   flex-shrink: 0;
+}
+
+@media (max-width: 560px) {
+  .qr-divider { display: none; }
+  .qr-dual-wrap { flex-direction: column; align-items: center; }
+  .qr-panel { padding: 0; }
 }
 
 /* form-nav alignment */
