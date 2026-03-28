@@ -14,8 +14,8 @@ function generateKioskQR(containerId, formId) {
     text: url,
     width: 280,
     height: 280,
-    colorDark: '#000000',
-    colorLight: '#FFFFFF',
+    colorDark: '#111827',
+    colorLight: '#ffffff',
     correctLevel: QRCode.CorrectLevel.M,
   });
 
@@ -23,59 +23,48 @@ function generateKioskQR(containerId, formId) {
 }
 
 // Generate a QR code for the mobile form completion.
-// Encodes as pipe-separated values: "{catNum}:{val1}|{val2}|...|{valN}|{date}"
-// No field keys are included — the scanner app uses the catalogue number to
-// look up the form definition and map values to fields by position.
-// This keeps the payload under 200 bytes for typical forms.
+// Encodes as JSON matching the registration repo methodology:
+// { slot, formId, ...non-empty field values capped at 30 chars }
+// Uses QRCode.CorrectLevel.M (medium) for robust scanning.
 function generateDataQR(containerId, formData, formMeta, formFields) {
   const container = document.getElementById(containerId);
   if (!container) return;
   container.innerHTML = '';
 
   const catNum = (formMeta && formMeta.id) ? formMeta.id.split('-')[0] : '';
-  const date = new Date().toISOString().slice(0, 10);
 
-  // Build ordered value list from field definitions (excludes heading/instruction/signature)
-  const dataFields = (formFields || []).filter(function(f) {
-    var ft = f.field_type || f.type || '';
-    return f.type !== 'heading' && f.type !== 'instruction' && f.field_name && ft !== 'signature';
+  // Build slot number (YYYYMMDDHHmmss) — matches registration repo pattern
+  const now = new Date();
+  const p = function(n) { return String(n).padStart(2, '0'); };
+  const slot = String(now.getFullYear()) + p(now.getMonth() + 1) + p(now.getDate())
+    + p(now.getHours()) + p(now.getMinutes()) + p(now.getSeconds());
+
+  const payload = { slot: slot, formId: catNum };
+
+  // Add non-empty field values; skip signatures and structural blocks
+  (formFields || []).forEach(function(field) {
+    var ft = field.field_type || field.type || '';
+    if (field.type === 'heading' || field.type === 'instruction' || !field.field_name) return;
+    if (ft === 'signature') return;
+    var val = (formData || {})[field.field_name];
+    if (val === undefined || val === null || val === false || val === '') return;
+    if (val === true) { payload[field.field_name] = '1'; return; }
+    payload[field.field_name] = String(val).slice(0, 30);
   });
-
-  var values;
-  if (dataFields.length > 0) {
-    values = dataFields.map(function(field) {
-      var val = (formData || {})[field.field_name];
-      if (val === undefined || val === null || val === false || val === '') return '';
-      if (val === true) return '1';
-      // Strip pipe characters and non-latin chars; cap at 40 chars
-      return String(val).replace(/\|/g, ' ').slice(0, 40);
-    });
-  } else {
-    // Fallback: no field order known — use values from formData object
-    values = Object.keys(formData || {}).map(function(key) {
-      var val = formData[key];
-      if (val === undefined || val === null || val === false || val === '') return '';
-      if (typeof val === 'string' && val.startsWith('data:image')) return '';
-      if (val === true) return '1';
-      return String(val).replace(/\|/g, ' ').slice(0, 40);
-    });
-  }
-
-  const payload = catNum + ':' + values.join('|') + '|' + date;
 
   try {
     new QRCode(container, {
-      text: payload,
-      width: 300,
-      height: 300,
-      colorDark: '#000000',
-      colorLight: '#FFFFFF',
-      correctLevel: QRCode.CorrectLevel.L,
+      text: JSON.stringify(payload),
+      width: 280,
+      height: 280,
+      colorDark: '#111827',
+      colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.M,
     });
   } catch (e) { /* silent — canvas check below */ }
 
-  // If library returned null (text too long), show a readable text summary instead
-  if (!container.querySelector('canvas')) {
+  // If QR failed to render, show text summary fallback
+  if (!container.querySelector('canvas,img')) {
     _dataQRFallback(container, formData, catNum);
   }
 }
