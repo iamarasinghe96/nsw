@@ -51,7 +51,7 @@
         <div class="qr-code-container" id="qrCodeContainer">
           <!-- QR rendered here by QRCode.js -->
         </div>
-        <a class="qr-open-link" id="qrUrlHint" target="_blank" rel="noopener">Open Form</a>
+        <button class="qr-open-link" id="qrUrlHint" onclick="openFormHere()">Open Form</button>
       </div>
 
       <div class="qr-instructions">
@@ -137,7 +137,7 @@
 
       // Build the URL to encode
       const formUrl = buildFormUrl(formId);
-      document.getElementById('qrUrlHint').href = formUrl;
+      window._formUrl = formUrl;
 
       // Generate QR code
       try {
@@ -161,6 +161,10 @@
       (typeof CONFIG !== 'undefined' ? CONFIG.idleTimeoutQR : 120000),
       goHome
     );
+
+    function openFormHere() {
+      if (window._formUrl) navigateTo(window._formUrl);
+    }
 
     applyRipples();
     init();

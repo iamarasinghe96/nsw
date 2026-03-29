@@ -826,6 +826,88 @@ textarea.field-input {
   margin-top: 6px;
 }
 
+/* Close button — right side of form header */
+.form-close-btn {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #E4002B 0%, #c00023 100%);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(228,0,43,0.40);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.form-close-btn:hover  { filter: brightness(1.12); }
+.form-close-btn:active { transform: scale(0.91); }
+
+/* Discard confirmation overlay */
+.form-discard-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.form-discard-dialog {
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 32px 28px 24px;
+  max-width: 340px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  text-align: center;
+}
+.form-discard-dialog h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.form-discard-dialog p {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+.form-discard-actions {
+  display: flex;
+  gap: 12px;
+}
+.btn-discard-cancel {
+  flex: 1;
+  padding: 14px;
+  border-radius: 50px;
+  border: 2px solid var(--navy);
+  background: transparent;
+  color: var(--navy);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-discard-confirm {
+  flex: 1;
+  padding: 14px;
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(135deg, #E4002B 0%, #c00023 100%);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(228,0,43,0.35);
+}
+
 /* --- Step wrapper --- */
 .form-step {
   /* Step cards rendered by buildSteps(); each .form-card inside */
