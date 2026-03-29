@@ -19,14 +19,43 @@ function clearIdleTimer() {
 
 // --- Navigation ---
 
-// Animates the header up + content fade-up, then navigates
+// Flag key: tells the next page this is an internal nav (skip drop-in animation)
+var _NAV_FLAG = 'kiosk_internal_nav';
+
+// Animates header up + content fade, then navigates
 function navigateTo(url) {
+  sessionStorage.setItem(_NAV_FLAG, '1');
   var header = document.querySelector('.kiosk-header');
   var screen = document.querySelector('.screen') || document.querySelector('main');
   if (header) header.classList.add('header-exit');
   if (screen) screen.classList.add('page-exit');
   setTimeout(function() { window.location.href = url; }, 310);
 }
+
+// Restore page cleanly when returning via back button (bfcache restore)
+window.addEventListener('pageshow', function(e) {
+  if (e.persisted) {
+    var header = document.querySelector('.kiosk-header');
+    var screen = document.querySelector('.screen');
+    if (header) {
+      header.classList.remove('header-exit');
+      header.style.cssText = ''; // clear any inline transition/transform/opacity
+    }
+    if (screen) {
+      screen.classList.remove('page-exit');
+      screen.style.cssText = '';
+    }
+  }
+});
+
+// On every page load: if arriving via internal navigation, skip the drop-in
+document.addEventListener('DOMContentLoaded', function() {
+  if (sessionStorage.getItem(_NAV_FLAG)) {
+    sessionStorage.removeItem(_NAV_FLAG);
+    var header = document.querySelector('.kiosk-header');
+    if (header) header.style.animation = 'none';
+  }
+});
 
 function goHome() {
   window.location.href = 'index.html';

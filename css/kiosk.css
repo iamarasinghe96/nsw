@@ -55,23 +55,22 @@ body {
 body,
 .kiosk-bg {
   background:
-    /* Diagonal ray/stripe overlay */
+    /* Wide soft diagonal bands — single smooth peak per period */
     repeating-linear-gradient(
-      -55deg,
-      transparent          0px,
-      transparent          28px,
-      rgba(255,255,255,0.18) 28px,
-      rgba(255,255,255,0.18) 38px
+      -45deg,
+      rgba(255,255,255,0)    0px,
+      rgba(255,255,255,0.26) 70px,
+      rgba(255,255,255,0)   140px
     ),
-    /* Main pastel gradient */
+    /* Base pastel gradient: cream-yellow → pink → sky-blue */
     linear-gradient(
       135deg,
-      #FFB7C5  0%,
-      #FFCDD5 15%,
-      #FFD4A8 35%,
-      #FFE8B0 50%,
-      #B8E4FF 75%,
-      #A0C8F0 100%
+      #FFEDB5  0%,
+      #FFD0DC 20%,
+      #FFB8CC 42%,
+      #F0C8E8 58%,
+      #C0DCFF 80%,
+      #A4D8FF 100%
     );
 }
 
