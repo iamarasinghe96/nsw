@@ -19,12 +19,8 @@ function clearIdleTimer() {
 
 // --- Navigation ---
 
-// Flag key: tells the next page this is an internal nav (skip drop-in animation)
-var _NAV_FLAG = 'kiosk_internal_nav';
-
 // Animates header up + content fade, then navigates
 function navigateTo(url) {
-  sessionStorage.setItem(_NAV_FLAG, '1');
   var header = document.querySelector('.kiosk-header');
   var screen = document.querySelector('.screen') || document.querySelector('main');
   if (header) header.classList.add('header-exit');
@@ -39,21 +35,20 @@ window.addEventListener('pageshow', function(e) {
     var screen = document.querySelector('.screen');
     if (header) {
       header.classList.remove('header-exit');
-      header.style.cssText = ''; // clear any inline transition/transform/opacity
+      header.style.cssText = '';
     }
     if (screen) {
       screen.classList.remove('page-exit');
       screen.style.cssText = '';
     }
-  }
-});
-
-// On every page load: if arriving via internal navigation, skip the drop-in
-document.addEventListener('DOMContentLoaded', function() {
-  if (sessionStorage.getItem(_NAV_FLAG)) {
-    sessionStorage.removeItem(_NAV_FLAG);
-    var header = document.querySelector('.kiosk-header');
-    if (header) header.style.animation = 'none';
+    // Re-trigger back button fade-in
+    var back = document.querySelector('.btn-back');
+    if (back) {
+      back.classList.remove('fading-out');
+      back.style.animation = 'none';
+      back.offsetWidth; // reflow
+      back.style.animation = '';
+    }
   }
 });
 
@@ -62,10 +57,22 @@ function goHome() {
 }
 
 function goBack() {
-  if (window.history.length > 1) {
-    window.history.back();
+  var back = document.querySelector('.btn-back');
+  if (back) {
+    back.classList.add('fading-out');
+    setTimeout(function() {
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        goHome();
+      }
+    }, 230);
   } else {
-    goHome();
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      goHome();
+    }
   }
 }
 

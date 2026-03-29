@@ -129,12 +129,6 @@ body,
     inset 0 0 10px 1px rgba(255,255,255,0.55),
     0 8px 32px rgba(0,0,0,0.10);
   z-index: 500;
-  animation: header-drop-in 0.45s cubic-bezier(0.34,1.56,0.64,1) both;
-}
-
-@keyframes header-drop-in {
-  from { transform: translateY(-110%); opacity: 0; }
-  to   { transform: translateY(0);     opacity: 1; }
 }
 
 .kiosk-header.header-exit {
@@ -174,6 +168,21 @@ body,
 
 .btn-nav:hover  { filter: brightness(1.12); }
 .btn-nav:active { transform: scale(0.91); }
+
+/* Back button fades in on page load and out before back-navigation */
+.btn-back {
+  opacity: 0;
+  animation: btn-back-fade-in 0.35s ease 0.1s forwards;
+}
+@keyframes btn-back-fade-in {
+  to { opacity: 1; }
+}
+.btn-back.fading-out {
+  animation: btn-back-fade-out 0.22s ease forwards;
+}
+@keyframes btn-back-fade-out {
+  to { opacity: 0; transform: scale(0.85); }
+}
 
 .btn-nav svg {
   width: 24px;
