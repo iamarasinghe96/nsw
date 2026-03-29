@@ -66,7 +66,7 @@ body {
   filter: drop-shadow(0 6px 20px rgba(0,0,80,0.20));
   color: white;
   /* left-radius = circle_radius(30) + padding(10) = 40px — wraps circle perfectly */
-  border-radius: 40px 26px 26px 40px;
+  border-radius: 40px;
   padding: 10px 20px 10px 10px;
   margin: 12px 12px 20px 12px;
   display: flex;
@@ -1197,7 +1197,7 @@ textarea.field-input {
 
   /* Mobile: same nestled look, slightly tighter */
   .form-header {
-    border-radius: 38px 22px 22px 38px;
+    border-radius: 38px;
     padding: 8px 14px 8px 8px;
     margin: 10px 10px 14px 10px;
   }
