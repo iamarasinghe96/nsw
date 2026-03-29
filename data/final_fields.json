@@ -441,6 +441,16 @@
   ],
   "45062462-driving-instructor-mutual-recognition.pdf": [
     {
+      "type": "instruction",
+      "text": "This form is used to apply for registration of equivalent occupation as a driving instructor's licence in NSW under the Mutual Recognition Act 1992. It may also be used under the Trans-Tasman Mutual Recognition (New South Wales) Act 1996 for New Zealand driving instructor's licence mutual recognition. Any field referencing a 'State or Territory' may be used to indicate New Zealand.",
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "1. Personal Details",
+      "page": 1
+    },
+    {
       "label": "Surname",
       "field_name": "surname",
       "type": "text",
@@ -479,6 +489,11 @@
       "options": [],
       "required": false,
       "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "2. Postal Address",
+      "page": 2
     },
     {
       "label": "Street Address",
@@ -522,6 +537,11 @@
       "page": 2
     },
     {
+      "type": "heading",
+      "text": "3. Current Interstate / New Zealand Licence",
+      "page": 2
+    },
+    {
       "label": "Current State / Territory of Licence",
       "field_name": "current_state",
       "type": "dropdown",
@@ -545,6 +565,11 @@
       "options": [],
       "required": true,
       "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "4. Licence Details",
+      "page": 3
     },
     {
       "label": "Licence Class",
@@ -584,6 +609,16 @@
       ],
       "required": true,
       "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "5. Declaration",
+      "page": 4
+    },
+    {
+      "type": "instruction",
+      "text": "By signing this form you confirm that: the information you have provided is true and correct; you hold a current driving instructor's licence in the state or territory indicated above; you have not previously been refused a driving instructor's licence in NSW or had a licence cancelled or suspended; and you consent to Transport for NSW collecting and using your personal information to process this application under the Privacy and Personal Information Protection Act 1998.",
+      "page": 4
     },
     {
       "label": "I declare that the information provided is true and correct",
