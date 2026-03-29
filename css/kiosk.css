@@ -118,14 +118,13 @@ body,
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* left-radius(36) = btn-nav_radius(32) + padding(4) — wraps button cleanly */
-  padding: 0 22px 0 4px;
+  padding: 0 20px 0 8px;
   overflow: visible;
   background: rgba(255,255,255,0.45);
   backdrop-filter: brightness(1.06) saturate(1.6) blur(18px) url(#liquidGlass);
   -webkit-backdrop-filter: brightness(1.06) saturate(1.6) blur(18px) url(#liquidGlass);
   border: 1px solid rgba(255,255,255,0.70);
-  border-radius: 36px 22px 22px 36px;
+  border-radius: 36px;
   box-shadow:
     inset 6px 6px 0px -6px rgba(255,255,255,0.85),
     inset 0 0 10px 1px rgba(255,255,255,0.55),
@@ -158,8 +157,8 @@ body,
    64 px red circles with white SVG icon + ripple effect
    -------------------------------------------------------------------------- */
 .btn-nav {
-  width: 64px;
-  height: 64px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   background: linear-gradient(135deg, #E4002B 0%, #c00023 100%);
   border: none;
@@ -178,8 +177,8 @@ body,
 .btn-nav:active { transform: scale(0.91); }
 
 .btn-nav svg {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   fill: none;
   stroke: #ffffff;
   stroke-width: 2.5;
