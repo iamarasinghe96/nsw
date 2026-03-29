@@ -43,10 +43,11 @@ window.addEventListener('pageshow', function(e) {
       header.offsetWidth; // force reflow so the above takes effect
       header.style.transition = '';
     }
-    if (screen) {
-      screen.style.transition = 'none';
-      screen.classList.remove('page-exit');
-      screen.style.cssText = '';
+    var content = document.querySelector('.screen') || document.querySelector('main');
+    if (content) {
+      content.style.transition = 'none';
+      content.classList.remove('page-exit');
+      content.style.cssText = '';
     }
     // Re-trigger back button fade-in
     var back = document.querySelector('.btn-back');
