@@ -68,7 +68,7 @@ body {
   /* left-radius = circle_radius(30) + padding(10) = 40px — wraps circle perfectly */
   border-radius: 40px 26px 26px 40px;
   padding: 10px 20px 10px 10px;
-  margin-bottom: 20px;
+  margin: 0 12px 20px 12px;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -1199,7 +1199,7 @@ textarea.field-input {
   .form-header {
     border-radius: 38px 22px 22px 38px;
     padding: 8px 14px 8px 8px;
-    margin-bottom: 14px;
+    margin: 0 10px 14px 10px;
   }
 
   /* Form card tighter on mobile */
