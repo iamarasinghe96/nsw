@@ -118,7 +118,9 @@ body,
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
+  /* zero left padding — btn-nav circle sits flush at the left curve */
+  padding: 0 20px 0 0;
+  overflow: hidden;  /* banner clips the circle, blending them */
   background: rgba(255,255,255,0.45);
   backdrop-filter: brightness(1.06) saturate(1.6) blur(18px) url(#liquidGlass);
   -webkit-backdrop-filter: brightness(1.06) saturate(1.6) blur(18px) url(#liquidGlass);
@@ -143,11 +145,11 @@ body,
   opacity: 0;
 }
 
-/* Left cluster: home + back */
+/* Left cluster: home + back — sits flush at the pill's left edge */
 .header-left {
   display: flex;
-  gap: 12px;
-  align-items: center;
+  gap: 0;
+  align-items: stretch;  /* buttons fill the full header height */
   flex: 1;
 }
 
@@ -156,8 +158,8 @@ body,
    64 px red circles with white SVG icon + ripple effect
    -------------------------------------------------------------------------- */
 .btn-nav {
-  width: 64px;
-  height: 64px;
+  width: 72px;   /* matches header height — fills edge-to-edge vertically */
+  height: 72px;
   border-radius: 50%;
   background: linear-gradient(135deg, #E4002B 0%, #c00023 100%);
   border: none;
@@ -170,7 +172,6 @@ body,
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
-  /* Minimum 48 px touch target already exceeded by 64 px size */
 }
 
 .btn-nav:hover  { filter: brightness(1.12); }

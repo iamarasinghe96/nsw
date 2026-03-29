@@ -65,32 +65,30 @@ body {
     0 8px 32px rgba(0,0,80,0.22);
   filter: drop-shadow(0 6px 20px rgba(0,0,80,0.20));
   color: white;
-  /* left-radius = half logo circle diameter (64px) so they curve together */
   border-radius: 32px 24px 24px 32px;
-  padding: 8px 20px 8px 8px;
+  /* zero left padding — circle sits flush against the left edge */
+  padding: 0 20px 0 0;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
   gap: 14px;
-  overflow: visible;
+  /* clip: lets the banner corner-radius cut into the circle, blending them */
+  overflow: hidden;
 }
 
-/* 64px logo circle — left edge aligns with banner curve */
+/* Logo circle — flush with left edge, banner clips its outer corners */
 .form-header-logo {
   flex-shrink: 0;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
+  /* slightly taller than banner to guarantee edge fill */
+  align-self: stretch;
+  /* fixed width = banner left-radius * 2 so circle fills the rounded corner */
+  width: 70px;
+  border-radius: 0;          /* no separate radius — banner does the clipping */
   background: white;
-  border: 2.5px solid rgba(255,255,255,0.50);
-  box-shadow: 0 3px 14px rgba(0,0,80,0.30);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin-left: 0;
-  position: relative;
-  z-index: 1;
 }
 
 .form-header-logo svg,
@@ -98,6 +96,7 @@ body {
   width: 52px;
   height: 52px;
   flex-shrink: 0;
+  border-radius: 50%;
 }
 
 .form-header-info h1 {
@@ -1198,11 +1197,11 @@ textarea.field-input {
     font-size: 16px;
   }
 
-  /* Header on small screens — flat top, rounded bottom only, edge-to-edge */
+  /* Header on small screens — keep full border-radius, no edge-to-edge stretch */
   .form-header {
-    border-radius: 0 0 24px 24px;
-    margin: -12px -12px 0;
-    padding: 8px 16px 8px 8px;
+    border-radius: 28px 20px 20px 28px;
+    margin: 0 0 16px;
+    padding: 0 14px 0 0;
   }
 
   /* Form card tighter on mobile */
