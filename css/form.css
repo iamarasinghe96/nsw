@@ -65,26 +65,25 @@ body {
     0 8px 32px rgba(0,0,80,0.22);
   filter: drop-shadow(0 6px 20px rgba(0,0,80,0.20));
   color: white;
-  border-radius: 32px 24px 24px 32px;
-  /* zero left padding — circle sits flush against the left edge */
-  padding: 0 20px 0 0;
+  /* left-radius = circle_radius(30) + padding(10) = 40px — wraps circle perfectly */
+  border-radius: 40px 26px 26px 40px;
+  padding: 10px 20px 10px 10px;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
-  gap: 14px;
-  /* clip: lets the banner corner-radius cut into the circle, blending them */
-  overflow: hidden;
+  gap: 16px;
+  overflow: visible;
 }
 
-/* Logo circle — flush with left edge, banner clips its outer corners */
+/* 60px circle with equal spacing — nestled in the banner's left curve */
 .form-header-logo {
   flex-shrink: 0;
-  /* slightly taller than banner to guarantee edge fill */
-  align-self: stretch;
-  /* fixed width = banner left-radius * 2 so circle fills the rounded corner */
-  width: 70px;
-  border-radius: 0;          /* no separate radius — banner does the clipping */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   background: white;
+  border: 2px solid rgba(255,255,255,0.55);
+  box-shadow: 0 2px 12px rgba(0,0,80,0.22);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,10 +92,9 @@ body {
 
 .form-header-logo svg,
 .form-header-logo img {
-  width: 52px;
-  height: 52px;
+  width: 50px;
+  height: 50px;
   flex-shrink: 0;
-  border-radius: 50%;
 }
 
 .form-header-info h1 {
@@ -1197,11 +1195,11 @@ textarea.field-input {
     font-size: 16px;
   }
 
-  /* Header on small screens — keep full border-radius, no edge-to-edge stretch */
+  /* Mobile: same nestled look, slightly tighter */
   .form-header {
-    border-radius: 28px 20px 20px 28px;
-    margin: 0 0 16px;
-    padding: 0 14px 0 0;
+    border-radius: 38px 22px 22px 38px;
+    padding: 8px 14px 8px 8px;
+    margin-bottom: 14px;
   }
 
   /* Form card tighter on mobile */
