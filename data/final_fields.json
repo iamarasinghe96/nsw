@@ -442,7 +442,7 @@
   "45062462-driving-instructor-mutual-recognition.pdf": [
     {
       "type": "instruction",
-      "text": "This form is used to apply for registration of equivalent occupation as a driving instructor's licence in NSW under the Mutual Recognition Act 1992. It may also be used under the Trans-Tasman Mutual Recognition (New South Wales) Act 1996 for New Zealand driving instructor's licence mutual recognition. Any field referencing a 'State or Territory' may be used to indicate New Zealand.",
+      "text": "This form may also be used under the Trans-Tasman Mutual Recognition (New South Wales) Act 1996 to manage applications for mutual recognition of a New Zealand driving instructor's licence. When so used, any field referencing a 'State or Territory' may be used to indicate New Zealand.",
       "page": 1
     },
     {
@@ -451,7 +451,7 @@
       "page": 1
     },
     {
-      "label": "Surname",
+      "label": "Family Name",
       "field_name": "surname",
       "type": "text",
       "options": [],
@@ -459,8 +459,32 @@
       "page": 1
     },
     {
-      "label": "Given Names",
+      "label": "Given Name(s)",
       "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Postal Address",
+      "field_name": "postal_address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Suburb / Town",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
       "type": "text",
       "options": [],
       "required": true,
@@ -475,16 +499,56 @@
       "page": 1
     },
     {
-      "label": "Phone Number",
-      "field_name": "phone",
+      "label": "Place of Birth",
+      "field_name": "place_of_birth",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Business Address (if applicable)",
+      "field_name": "business_address",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Business Suburb / Town",
+      "field_name": "business_suburb",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Business Postcode",
+      "field_name": "business_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Telephone",
+      "field_name": "telephone",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Mobile Number",
+      "field_name": "mobile",
       "type": "text",
       "options": [],
       "required": true,
       "page": 1
     },
     {
-      "label": "Email Address",
-      "field_name": "email",
+      "label": "Facsimile",
+      "field_name": "facsimile",
       "type": "text",
       "options": [],
       "required": false,
@@ -492,28 +556,27 @@
     },
     {
       "type": "heading",
-      "text": "2. Postal Address",
+      "text": "2. Occupation",
       "page": 2
     },
     {
-      "label": "Street Address",
-      "field_name": "address",
-      "type": "text",
-      "options": [],
-      "required": true,
+      "type": "instruction",
+      "text": "I am seeking registration for the following occupation in New South Wales in accordance with the mutual recognition principle — Driving Instruction.",
       "page": 2
     },
     {
-      "label": "Suburb",
-      "field_name": "suburb",
-      "type": "text",
-      "options": [],
-      "required": true,
+      "type": "heading",
+      "text": "3. Details of Current Interstate Registration for this Occupation",
       "page": 2
     },
     {
-      "label": "State",
-      "field_name": "state",
+      "type": "instruction",
+      "text": "Note: registration includes any licence, admission, approval, certificate, etc. Specify all the States in which you currently hold or previously held registration for this occupation. A copy of the current registration document(s) or licence must accompany this notice.",
+      "page": 2
+    },
+    {
+      "label": "State / Territory (Registration 1)",
+      "field_name": "reg_state_1",
       "type": "dropdown",
       "options": [
         "NSW",
@@ -523,117 +586,203 @@
         "WA",
         "TAS",
         "ACT",
-        "NT"
+        "NT",
+        "New Zealand"
       ],
       "required": true,
       "page": 2
     },
     {
-      "label": "Postcode",
-      "field_name": "postcode",
+      "label": "Occupational Registration / Licence Type (Registration 1)",
+      "field_name": "reg_type_1",
       "type": "text",
       "options": [],
       "required": true,
       "page": 2
     },
     {
-      "type": "heading",
-      "text": "3. Current Interstate / New Zealand Licence",
-      "page": 2
-    },
-    {
-      "label": "Current State / Territory of Licence",
-      "field_name": "current_state",
-      "type": "dropdown",
-      "options": [
-        "NSW",
-        "VIC",
-        "QLD",
-        "SA",
-        "WA",
-        "TAS",
-        "ACT",
-        "NT"
-      ],
-      "required": true,
-      "page": 2
-    },
-    {
-      "label": "Licence Number (Current State)",
-      "field_name": "interstate_licence_number",
+      "label": "Registration / Licence Number (Registration 1)",
+      "field_name": "reg_number_1",
       "type": "text",
       "options": [],
       "required": true,
       "page": 2
     },
     {
-      "type": "heading",
-      "text": "4. Licence Details",
-      "page": 3
-    },
-    {
-      "label": "Licence Class",
-      "field_name": "licence_class",
-      "type": "dropdown",
-      "options": [
-        "C – Car",
-        "R – Motorcycle",
-        "Both"
-      ],
-      "required": true,
-      "page": 3
-    },
-    {
-      "label": "Date Licence Issued",
-      "field_name": "licence_issued_date",
-      "type": "date",
-      "options": [],
-      "required": true,
-      "page": 3
-    },
-    {
-      "label": "Licence Expiry Date",
-      "field_name": "licence_expiry_date",
-      "type": "date",
-      "options": [],
-      "required": true,
-      "page": 3
-    },
-    {
-      "label": "Have you previously held a NSW driving instructor licence?",
-      "field_name": "previous_nsw_licence",
+      "label": "Is this registration current? (Registration 1)",
+      "field_name": "reg_current_1",
       "type": "radio",
       "options": [
-        "No",
-        "Yes"
+        "Yes",
+        "No"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State / Territory (Registration 2)",
+      "field_name": "reg_state_2",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT",
+        "New Zealand"
+      ],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Occupational Registration / Licence Type (Registration 2)",
+      "field_name": "reg_type_2",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Registration / Licence Number (Registration 2)",
+      "field_name": "reg_number_2",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Is this registration current? (Registration 2)",
+      "field_name": "reg_current_2",
+      "type": "radio",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "4. Conditions",
+      "page": 2
+    },
+    {
+      "type": "instruction",
+      "text": "Are there any conditions, limitations or restrictions which apply to your registration in any State or Territory? If so, provide details below.",
+      "page": 2
+    },
+    {
+      "label": "Conditions / Restrictions Details",
+      "field_name": "conditions_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "5. Registration Status in Other States or Territories",
+      "page": 3
+    },
+    {
+      "type": "instruction",
+      "text": "In relation to the occupation for which registration is sought, I declare that (* cross out whichever is not applicable; provide details if necessary):\n\n(a) I am / am not the subject of disciplinary proceedings in any State or Territory (including preliminary investigations that may lead to disciplinary proceedings) in relation to this occupation; and\n\n(b) My registration in any State or Territory is / is not cancelled or currently suspended as a result of disciplinary action; and\n\n(c) I give consent to Transport for NSW to make enquiries of, and the exchange of information with, the authorities of any State or Territory regarding my activities in the relevant occupation and any other matters relevant to this notice.",
+      "page": 3
+    },
+    {
+      "label": "Subject to disciplinary proceedings in any State or Territory?",
+      "field_name": "disciplinary_proceedings",
+      "type": "radio",
+      "options": [
+        "No — I am not subject to any disciplinary proceedings",
+        "Yes — I am subject to disciplinary proceedings"
       ],
       "required": true,
       "page": 3
     },
     {
+      "label": "Registration cancelled or suspended due to disciplinary action?",
+      "field_name": "registration_suspended",
+      "type": "radio",
+      "options": [
+        "No — my registration has not been cancelled or suspended",
+        "Yes — my registration has been cancelled or suspended"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Details (if any of the above apply)",
+      "field_name": "disciplinary_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
       "type": "heading",
-      "text": "5. Declaration",
+      "text": "6. Statutory Declaration",
       "page": 4
     },
     {
       "type": "instruction",
-      "text": "By signing this form you confirm that: the information you have provided is true and correct; you hold a current driving instructor's licence in the state or territory indicated above; you have not previously been refused a driving instructor's licence in NSW or had a licence cancelled or suspended; and you consent to Transport for NSW collecting and using your personal information to process this application under the Privacy and Personal Information Protection Act 1998.",
+      "text": "Do solemnly and sincerely declare as follows: (1) that the statements and information in this notice are correct to the best of my knowledge and belief, and (2) that any registration document attached is the original or a complete and accurate copy of the original, and (3) I make this solemn declaration by virtue of the Statutory Declarations Act 1959 and subject to the penalties provided by that Act for the making of false statements in statutory declarations, and (4) information supplied may be disclosed to the law enforcement, registration and licensing agencies of NSW and other States and Territories for the purposes of law enforcement, protection of the public revenue or location of the person whom the information relates.",
       "page": 4
     },
     {
-      "label": "I declare that the information provided is true and correct",
-      "field_name": "declaration",
-      "type": "checkbox",
+      "label": "Full Name (Declarant)",
+      "field_name": "declarant_name",
+      "type": "text",
       "options": [],
       "required": true,
       "page": 4
     },
     {
-      "label": "Signature",
+      "label": "Address (Declarant)",
+      "field_name": "declarant_address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Occupation (Declarant)",
+      "field_name": "declarant_occupation",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Declared at (Place and State / Territory)",
+      "field_name": "declared_at",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Declaration Date",
+      "field_name": "declaration_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature of Person Making this Declaration",
       "field_name": "signature",
       "type": "signature",
       "options": [],
       "required": true,
+      "page": 4
+    },
+    {
+      "type": "instruction",
+      "text": "Important Notice: The carrying on of business in NSW under relevant State legislation is still subject to the payment of relevant fees and compliance with any other requirements such as registration of business name, approval of trading premises, and operation of trust accounts. Personal Information Collection Notice: Transport for NSW is committed to protecting your privacy. Find out more at transport.nsw.gov.au/privacy-statement or phone 13 22 13.",
       "page": 4
     }
   ],
