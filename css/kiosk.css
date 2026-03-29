@@ -169,14 +169,24 @@ body,
 .btn-nav:hover  { filter: brightness(1.12); }
 .btn-nav:active { transform: scale(0.91); }
 
-/* Back button fades in on page load and out before back-navigation */
+/* Header elements fade in on page load, staggered */
+.btn-home {
+  opacity: 0;
+  animation: header-el-fade-in 0.35s ease 0.05s forwards;
+}
 .btn-back {
   opacity: 0;
-  animation: btn-back-fade-in 0.35s ease 0.1s forwards;
+  animation: header-el-fade-in 0.35s ease 0.12s forwards;
 }
-@keyframes btn-back-fade-in {
+.header-right {
+  opacity: 0;
+  animation: header-el-fade-in 0.35s ease 0.2s forwards;
+}
+@keyframes header-el-fade-in {
   to { opacity: 1; }
 }
+
+/* Back button fades out before back-navigation */
 .btn-back.fading-out {
   animation: btn-back-fade-out 0.22s ease forwards;
 }

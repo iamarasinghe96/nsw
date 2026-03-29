@@ -49,14 +49,15 @@ window.addEventListener('pageshow', function(e) {
       content.classList.remove('page-exit');
       content.style.cssText = '';
     }
-    // Re-trigger back button fade-in
-    var back = document.querySelector('.btn-back');
-    if (back) {
-      back.classList.remove('fading-out');
-      back.style.animation = 'none';
-      back.offsetWidth; // reflow
-      back.style.animation = '';
-    }
+    // Re-trigger header element fade-ins
+    ['.btn-home', '.btn-back', '.header-right'].forEach(function(sel) {
+      var el = document.querySelector(sel);
+      if (!el) return;
+      el.classList.remove('fading-out');
+      el.style.animation = 'none';
+      el.offsetWidth; // reflow
+      el.style.animation = '';
+    });
   }
 });
 
