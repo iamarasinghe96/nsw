@@ -520,6 +520,8 @@ body,
   display: flex;
   gap: 14px;
   overflow-x: auto;
+  overflow-y: visible;   /* allow cards to float up on hover without clipping */
+  padding-top: 8px;      /* room for the translateY(-5px) lift */
   padding-bottom: 10px;
   margin-bottom: 28px;
   scrollbar-width: none;
