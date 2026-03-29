@@ -1175,12 +1175,24 @@ body,
 .qr-code-container canvas {
   border-radius: var(--radius-sm);
 }
-.qr-url-hint {
-  font-size: 11px;
-  color: var(--gray);
-  word-break: break-all;
-  max-width: 320px;
+.qr-open-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 10px 24px;
+  background: var(--navy);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 28px;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 16px rgba(0,38,100,0.25);
+  transition: filter 0.2s, transform 0.15s;
 }
+.qr-open-link:hover  { filter: brightness(1.15); }
+.qr-open-link:active { transform: scale(0.96); }
 .qr-instructions {
   display: flex;
   flex-direction: row;

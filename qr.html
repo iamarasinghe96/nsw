@@ -51,7 +51,7 @@
         <div class="qr-code-container" id="qrCodeContainer">
           <!-- QR rendered here by QRCode.js -->
         </div>
-        <p class="qr-url-hint" id="qrUrlHint"></p>
+        <a class="qr-open-link" id="qrUrlHint" target="_blank" rel="noopener">Open Form</a>
       </div>
 
       <div class="qr-instructions">
@@ -137,7 +137,7 @@
 
       // Build the URL to encode
       const formUrl = buildFormUrl(formId);
-      document.getElementById('qrUrlHint').textContent = formUrl;
+      document.getElementById('qrUrlHint').href = formUrl;
 
       // Generate QR code
       try {
