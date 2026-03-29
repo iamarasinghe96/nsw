@@ -187,7 +187,10 @@
       const fields = formFields.filter(f => Number(f.page) === pageNum);
       if (fields.length === 0) return 'Page ' + pageNum;
 
-      const firstLabel = fields[0].label.toLowerCase();
+      // Skip instruction/heading blocks which have no label
+      const firstField = fields.find(f => f.label);
+      if (!firstField) return 'Page ' + pageNum;
+      const firstLabel = firstField.label.toLowerCase();
       if (firstLabel.includes('surname') || firstLabel.includes('full name') || firstLabel.includes('given')) return 'Personal Details';
       if (firstLabel.includes('address') || firstLabel.includes('suburb') || firstLabel.includes('state') || firstLabel.includes('postcode')) return 'Contact Details';
       if (firstLabel.includes('email') || firstLabel.includes('phone')) return 'Contact Details';
