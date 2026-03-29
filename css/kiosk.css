@@ -35,6 +35,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  outline: none;
 }
 
 html,
@@ -545,12 +546,6 @@ body,
   scrollbar-width: none;
 }
 .frequent-forms::-webkit-scrollbar { display: none; }
-.frequent-forms:focus { outline: none; }
-.frequent-card:focus,
-.browse-btn:focus,
-.start-btn:focus,
-.btn-nav:focus,
-.category-card:focus { outline: none; }
 
 /* Individual frequently-used chip card */
 .frequent-card {
