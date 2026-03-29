@@ -34,10 +34,17 @@ window.addEventListener('pageshow', function(e) {
     var header = document.querySelector('.kiosk-header');
     var screen = document.querySelector('.screen');
     if (header) {
+      // Freeze transitions FIRST so removing the exit class snaps instantly
+      // instead of animating back from translateY(-130%) — which looks like a drop-in
+      header.style.transition = 'none';
+      header.style.transform = '';
+      header.style.opacity = '';
       header.classList.remove('header-exit');
-      header.style.cssText = '';
+      header.offsetWidth; // force reflow so the above takes effect
+      header.style.transition = '';
     }
     if (screen) {
+      screen.style.transition = 'none';
       screen.classList.remove('page-exit');
       screen.style.cssText = '';
     }
