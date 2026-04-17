@@ -5993,5 +5993,60 @@
       "required": true,
       "page": 1
     }
+  ],
+  "nsw-stat-dec-schedule-9.pdf": [
+    {
+      "type": "disclosure",
+      "text": "Statutory Declaration under the Oaths Act 1900, NSW, Ninth Schedule. I, [name of declarant], of [residence], do hereby solemnly declare and affirm that [declaration content]. And I make this solemn declaration, as to the matter (or matters) aforesaid, according to the law in this behalf made – and subject to the punishment by law provided for any wilfully false statement in any such declaration.",
+      "page": 1
+    },
+    {
+      "label": "Name of declarant",
+      "field_name": "declarant_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Residence",
+      "field_name": "declarant_residence",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Declaration content",
+      "field_name": "declaration_content",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Declared at (place)",
+      "field_name": "declared_at_place",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date",
+      "field_name": "declared_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Signature of declarant",
+      "field_name": "declarant_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 1
+    }
   ]
 }
