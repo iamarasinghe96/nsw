@@ -5409,5 +5409,542 @@
       "required": false,
       "page": 7
     }
+  ],
+  "ccd_form_strata_community_schemes_application.pdf": [
+    {
+      "type": "instruction",
+      "text": "Complete this form to apply for orders under the Strata Schemes Management Act 2015 or Community Land Management Act 2021. Visit the NCAT website for information on how to complete this form. You can also apply online using NCAT Online Services.",
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "1. Dispute Details",
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "A. Place of Dispute",
+      "page": 1
+    },
+    {
+      "label": "Address of the strata or community scheme (include suburb and postcode)",
+      "field_name": "scheme_address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "B. Scheme Details",
+      "page": 1
+    },
+    {
+      "label": "Type of scheme",
+      "field_name": "scheme_type",
+      "type": "radio",
+      "options": [
+        "Strata Scheme",
+        "Community Scheme"
+      ],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Strata Plan (SP) number",
+      "field_name": "strata_plan_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Community Plan (DP) number",
+      "field_name": "community_plan_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "C. Owners Corporation or Association Address",
+      "page": 1
+    },
+    {
+      "type": "instruction",
+      "text": "The service address for the owners corporation or community/precinct/neighbourhood association can be found on the common property certificate of title.",
+      "page": 1
+    },
+    {
+      "label": "Service Address",
+      "field_name": "owners_corporation_service_address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "D. What is your dispute about?",
+      "page": 2
+    },
+    {
+      "label": "Dispute category (select one only)",
+      "field_name": "dispute_category",
+      "type": "radio",
+      "options": [
+        "General orders for the settlement of a dispute",
+        "Managing agents/building managers or managing statement",
+        "Meetings of owners corporation or association",
+        "Records",
+        "Property",
+        "Penalty for breach of by laws",
+        "Penalty for breach of Tribunal orders"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "E. Have you tried to settle this dispute through mediation?",
+      "page": 2
+    },
+    {
+      "type": "instruction",
+      "text": "Most strata and community schemes applications cannot be accepted without mediation. For mediation requirements check the Strata schemes fact sheet or Community schemes fact sheet.",
+      "page": 2
+    },
+    {
+      "label": "Mediation attempted",
+      "field_name": "mediation_attempted",
+      "type": "radio",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "If No — what exemption are you relying on?",
+      "field_name": "mediation_exemption_reason",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "2. Applicant",
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "A. Applicant Type",
+      "page": 2
+    },
+    {
+      "label": "Applicant type",
+      "field_name": "applicant_type",
+      "type": "radio",
+      "options": [
+        "Lot owner",
+        "Owners corporation",
+        "Association",
+        "Other (please specify)"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Other applicant type (please specify)",
+      "field_name": "applicant_type_other",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "B. Applicant Contact Details",
+      "page": 3
+    },
+    {
+      "label": "First name",
+      "field_name": "applicant_first_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Last name",
+      "field_name": "applicant_last_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Organisation name",
+      "field_name": "applicant_organisation",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "ACN/ABN",
+      "field_name": "applicant_acn_abn",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Address",
+      "field_name": "applicant_address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Telephone",
+      "field_name": "applicant_telephone",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Email",
+      "field_name": "applicant_email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "C. Are you Aboriginal or Torres Strait Islander?",
+      "page": 3
+    },
+    {
+      "label": "Aboriginal or Torres Strait Islander status",
+      "field_name": "indigenous_status",
+      "type": "radio",
+      "options": [
+        "No",
+        "Prefer not to answer",
+        "Yes - Aboriginal",
+        "Yes - Torres Strait Islander",
+        "Yes - both Aboriginal and Torres Strait Islander"
+      ],
+      "required": false,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "D. Applicant Representative Details",
+      "page": 4
+    },
+    {
+      "type": "instruction",
+      "text": "If the applicant is represented, the representative's contact details will be used as the applicant's address for service. Attach the authority to act for the applicant.",
+      "page": 4
+    },
+    {
+      "label": "Representative type",
+      "field_name": "representative_type",
+      "type": "radio",
+      "options": [
+        "Legal Practitioner",
+        "Agent",
+        "Other (please specify)"
+      ],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Other representative type (please specify)",
+      "field_name": "representative_type_other",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative first name",
+      "field_name": "representative_first_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative last name",
+      "field_name": "representative_last_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative organisation name",
+      "field_name": "representative_organisation",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative ACN/ABN",
+      "field_name": "representative_acn_abn",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative address",
+      "field_name": "representative_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative telephone",
+      "field_name": "representative_telephone",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative email",
+      "field_name": "representative_email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "type": "heading",
+      "text": "3. Respondent",
+      "page": 5
+    },
+    {
+      "type": "heading",
+      "text": "A. Respondent Type",
+      "page": 5
+    },
+    {
+      "label": "Respondent type",
+      "field_name": "respondent_type",
+      "type": "radio",
+      "options": [
+        "Lot owner",
+        "Owners corporation",
+        "Association",
+        "Other (please specify)"
+      ],
+      "required": true,
+      "page": 5
+    },
+    {
+      "label": "Other respondent type (please specify)",
+      "field_name": "respondent_type_other",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "type": "heading",
+      "text": "B. Respondent Contact Details",
+      "page": 5
+    },
+    {
+      "label": "First name",
+      "field_name": "respondent_first_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 5
+    },
+    {
+      "label": "Last name",
+      "field_name": "respondent_last_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 5
+    },
+    {
+      "label": "Organisation name",
+      "field_name": "respondent_organisation",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "ACN/ABN",
+      "field_name": "respondent_acn_abn",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Address",
+      "field_name": "respondent_address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 5
+    },
+    {
+      "label": "Telephone",
+      "field_name": "respondent_telephone",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Email",
+      "field_name": "respondent_email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "type": "heading",
+      "text": "4. Orders and Reasons",
+      "page": 6
+    },
+    {
+      "type": "heading",
+      "text": "A. What orders do you want?",
+      "page": 6
+    },
+    {
+      "type": "instruction",
+      "text": "Write down the section number/s of the Strata Schemes Management Act 2015 or Community Land Management Act 2021, and the orders you want NCAT to make.",
+      "page": 6
+    },
+    {
+      "label": "Orders sought",
+      "field_name": "orders_sought",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 6
+    },
+    {
+      "type": "heading",
+      "text": "B. Why are you applying to NCAT?",
+      "page": 6
+    },
+    {
+      "label": "Reasons for application",
+      "field_name": "reasons_for_application",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 6
+    },
+    {
+      "type": "heading",
+      "text": "5. Interim Order Details",
+      "page": 6
+    },
+    {
+      "type": "instruction",
+      "text": "Complete this section only if you are asking NCAT to make interim orders. Note: A higher filing fee applies for an application that also asks for interim orders to be made.",
+      "page": 6
+    },
+    {
+      "label": "Interim orders sought",
+      "field_name": "interim_orders_sought",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Reasons for asking for interim orders",
+      "field_name": "interim_orders_reasons",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "type": "heading",
+      "text": "6. Language and Disability Support",
+      "page": 7
+    },
+    {
+      "label": "Do you need an interpreter for the hearing?",
+      "field_name": "interpreter_required",
+      "type": "radio",
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Interpreter language",
+      "field_name": "interpreter_language",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Disability or support requirements",
+      "field_name": "support_requirements",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "type": "heading",
+      "text": "7. Signature",
+      "page": 7
+    },
+    {
+      "label": "Name",
+      "field_name": "signatory_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 7
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 7
+    },
+    {
+      "label": "Date",
+      "field_name": "signature_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 7
+    }
   ]
 }
