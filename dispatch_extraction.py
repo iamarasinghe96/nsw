@@ -21,6 +21,7 @@ Usage:
 
 import argparse
 import base64
+import io
 import json
 import sys
 import time
@@ -35,6 +36,11 @@ try:
     from github import Github, GithubException
 except ImportError:
     sys.exit("PyGithub not installed. Run: pip install PyGithub")
+
+try:
+    from PIL import Image
+except ImportError:
+    sys.exit("Pillow not installed. Run: pip install Pillow")
 
 
 # ── Config ────────────────────────────────────────────────────────────────────
@@ -127,6 +133,23 @@ Start with [ and end with ]. Nothing else."""
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
+MAX_IMAGE_DIM = 1900  # Claude multi-image limit is 2000px per dimension
+
+
+def _resize_png_bytes(raw: bytes) -> bytes:
+    """Resize image so neither dimension exceeds MAX_IMAGE_DIM. Returns PNG bytes."""
+    img = Image.open(io.BytesIO(raw))
+    w, h = img.size
+    if w <= MAX_IMAGE_DIM and h <= MAX_IMAGE_DIM:
+        return raw
+    scale = MAX_IMAGE_DIM / max(w, h)
+    new_w, new_h = int(w * scale), int(h * scale)
+    img = img.resize((new_w, new_h), Image.LANCZOS)
+    buf = io.BytesIO()
+    img.save(buf, format="PNG", optimize=True)
+    return buf.getvalue()
+
+
 def load_images_as_b64(folder: Path) -> list[dict]:
     """Load all page_NN.png files from a folder as base64 image blocks."""
     pages = sorted(folder.glob("page_*.png"))
@@ -135,7 +158,13 @@ def load_images_as_b64(folder: Path) -> list[dict]:
 
     blocks = []
     for p in pages:
-        data = base64.standard_b64encode(p.read_bytes()).decode()
+        raw = p.read_bytes()
+        resized = _resize_png_bytes(raw)
+        if len(resized) != len(raw):
+            print(f"    resized {p.name}  ({len(raw)//1024} KB → {len(resized)//1024} KB)")
+        else:
+            print(f"    loaded {p.name}  ({len(raw)//1024} KB)")
+        data = base64.standard_b64encode(resized).decode()
         blocks.append({
             "type": "image",
             "source": {
@@ -144,8 +173,6 @@ def load_images_as_b64(folder: Path) -> list[dict]:
                 "data": data,
             },
         })
-        kb = p.stat().st_size // 1024
-        print(f"    loaded {p.name}  ({kb} KB)")
     return blocks
 
 
