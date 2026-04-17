@@ -4799,5 +4799,370 @@
       "required": true,
       "page": 4
     }
+  ],
+  "ap10001-add-remove-category.pdf": [
+    {
+      "type": "instruction",
+      "text": "Use this form to add or remove a category to an existing Certificate of Registration or Individual Licence. To upgrade from a Certificate of Registration to a Class 2 licence or to upgrade from a Class 2 licence to a Class 1 licence, complete an online form for an Individual Property licence at Service NSW.",
+      "page": 1
+    },
+    {
+      "type": "instruction",
+      "text": "When applying by email, the fee must be paid before you submit this application. Pay by credit card or PayPal online, follow the instructions to complete the payment, and record the receipt number below.",
+      "page": 1
+    },
+    {
+      "label": "Receipt Number",
+      "field_name": "receipt_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 1 – Certificate or Licence Details",
+      "page": 2
+    },
+    {
+      "label": "Licence or Certificate Number",
+      "field_name": "licence_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Expiry Date",
+      "field_name": "expiry_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 2 – Add a Category",
+      "page": 2
+    },
+    {
+      "label": "Do you want to add a category?",
+      "field_name": "add_category",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 2
+    },
+    {
+      "type": "instruction",
+      "text": "If yes, select below which category or categories you are adding.",
+      "page": 2
+    },
+    {
+      "label": "Add – Certificate of Registration: Assistant Real Estate Agent",
+      "field_name": "add_cor_assistant_real_estate_agent",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Add – Certificate of Registration: Assistant Strata Managing Agent",
+      "field_name": "add_cor_assistant_strata_managing_agent",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Add – Certificate of Registration: Assistant Stock and Station Agent",
+      "field_name": "add_cor_assistant_stock_station_agent",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Add – Class 2 Agent: Real Estate Agent",
+      "field_name": "add_class2_real_estate_agent",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Add – Class 2 Agent: Strata Managing Agent",
+      "field_name": "add_class2_strata_managing_agent",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Add – Class 2 Agent: Stock and Station Agent",
+      "field_name": "add_class2_stock_station_agent",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Add – Class 1 Agent: Real Estate Agent",
+      "field_name": "add_class1_real_estate_agent",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Add – Class 1 Agent: Strata Managing Agent",
+      "field_name": "add_class1_strata_managing_agent",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Add – Class 1 Agent: Stock and Station Agent",
+      "field_name": "add_class1_stock_station_agent",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 3 – Remove a Category",
+      "page": 2
+    },
+    {
+      "label": "Do you want to remove a category?",
+      "field_name": "remove_category",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 2
+    },
+    {
+      "type": "instruction",
+      "text": "If yes, select below which category or categories you are removing.",
+      "page": 2
+    },
+    {
+      "label": "Remove – Certificate of Registration: Assistant Real Estate Agent",
+      "field_name": "remove_cor_assistant_real_estate_agent",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Remove – Certificate of Registration: Assistant Strata Managing Agent",
+      "field_name": "remove_cor_assistant_strata_managing_agent",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Remove – Certificate of Registration: Assistant Stock and Station Agent",
+      "field_name": "remove_cor_assistant_stock_station_agent",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Remove – Class 2 Agent: Real Estate Agent",
+      "field_name": "remove_class2_real_estate_agent",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Remove – Class 2 Agent: Strata Managing Agent",
+      "field_name": "remove_class2_strata_managing_agent",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Remove – Class 2 Agent: Stock and Station Agent",
+      "field_name": "remove_class2_stock_station_agent",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Remove – Class 1 Agent: Real Estate Agent",
+      "field_name": "remove_class1_real_estate_agent",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Remove – Class 1 Agent: Strata Managing Agent",
+      "field_name": "remove_class1_strata_managing_agent",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Remove – Class 1 Agent: Stock and Station Agent",
+      "field_name": "remove_class1_stock_station_agent",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 4 – Removal of Restriction on Licence",
+      "page": 2
+    },
+    {
+      "label": "Are you requesting to have Real Estate – Sales or Leasing restriction lifted from your licence?",
+      "field_name": "remove_restriction",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 5 – Applicant Details",
+      "page": 3
+    },
+    {
+      "type": "instruction",
+      "text": "Note – any changes to your contact details in this section will be updated on your existing record.",
+      "page": 3
+    },
+    {
+      "label": "First Name",
+      "field_name": "first_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Last Name",
+      "field_name": "last_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Preferred Contact Number",
+      "field_name": "preferred_contact_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Mobile Number",
+      "field_name": "mobile_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Residential Address (including postcode)",
+      "field_name": "residential_address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Postal Address (including postcode)",
+      "field_name": "postal_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Section 6 – Attachments",
+      "page": 4
+    },
+    {
+      "type": "instruction",
+      "text": "The following items must be attached to this application if adding a category.",
+      "page": 4
+    },
+    {
+      "label": "Qualifications – I have attached a copy of my qualification transcript from a Registered Training Organisation (RTO)",
+      "field_name": "attach_qualifications",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Evidence of Work Experience Logbook – I have attached a copy of my Evidence of Work Experience logbook",
+      "field_name": "attach_work_experience_logbook",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "type": "heading",
+      "text": "Section 7 – Declaration and Consent",
+      "page": 4
+    },
+    {
+      "type": "disclosure",
+      "text": "I apply for the grant of a licence or certificate of registration under the Property and Stock Agents Act 2002 and certify that the particulars specified in this application and all attachments are, to the best of my knowledge, true and correct in every detail.\n\nUnder the Privacy and Personal Information Protection Act 1998, I: authorise NSW Fair Trading to make any inquiries and to receive and disclose any information which is relevant to my initial and ongoing eligibility to hold this licence; acknowledge that information will be placed on a register open to the public in accordance with the Property and Stock Agents Act 2002; accept that failure to supply information required as part of this application may extend the time taken to assess this application; and have a right to seek access to and correction of information supplied.\n\nMaking a false or misleading statement, giving false or misleading information, or producing false or misleading documents is a serious offence which may render you liable to prosecution for offences including under the Crimes Act 1900 which may result in penalties including a fine or imprisonment.",
+      "page": 4
+    },
+    {
+      "label": "Full Name",
+      "field_name": "declaration_full_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Date",
+      "field_name": "declaration_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "type": "disclosure",
+      "text": "Privacy Collection Notice: NSW Fair Trading, Department of Customer Service gives priority to protecting the privacy of your personal information. We do this by handling personal information in a responsible manner and in accordance with the Privacy and Personal Information Protection Act 1998 (PPIP Act) and the Health Records and Information Privacy Act 2002 (HRIP Act). Service NSW will collect and use the personal information you provide through your MyServiceNSW Account to verify your identity and confirm your current contact details. The personal information contained in your application is collected and held by NSW Fair Trading. Information collected includes: full name, date of birth, contact details (address, email and phone number), proof of identity information, and other personal information required to check eligibility requirements.",
+      "page": 5
+    }
   ]
 }
