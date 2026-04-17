@@ -5363,5 +5363,433 @@
       "required": false,
       "page": 3
     }
+  ],
+  "45072012-application-maritime-replacement-products.pdf": [
+    {
+      "type": "instruction",
+      "text": "Applications must be accompanied by Proof of Identity (POI) and the prescribed fee. Complete the Representative's Authority section if authorising another person to apply for a replacement product on your behalf. If your application is for a replacement Personal Watercraft (PWC) licence, you must also complete an Application for Personal Watercraft Driving Licence, provide 2 colour passport acceptable photographs and have your identification verified.",
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Details of Applicant",
+      "page": 1
+    },
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Names",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Gender",
+      "field_name": "gender",
+      "type": "radio",
+      "options": ["Male", "Female", "X"],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Are you of Aboriginal and/or Torres Strait Islander origin? (Answering this question is voluntary)",
+      "field_name": "aboriginal_torres_strait_islander",
+      "type": "radio",
+      "options": ["Yes", "No"],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "type": "instruction",
+      "text": "Residential address – PO Box No. is not acceptable. Application will not be processed unless residential address is supplied.",
+      "page": 1
+    },
+    {
+      "label": "Residential Address (street)",
+      "field_name": "residential_address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Residential Suburb",
+      "field_name": "residential_suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Residential State",
+      "field_name": "residential_state",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Residential Postcode",
+      "field_name": "residential_postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Postal Address (if same as residential please write 'as above')",
+      "field_name": "postal_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Postal Suburb",
+      "field_name": "postal_suburb",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Postal State",
+      "field_name": "postal_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Postal Postcode",
+      "field_name": "postal_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Private Number",
+      "field_name": "private_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Mobile Number",
+      "field_name": "mobile_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Business Number",
+      "field_name": "business_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Replacement Product",
+      "page": 2
+    },
+    {
+      "label": "General Boat Driving Licence",
+      "field_name": "replace_general_boat_licence",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "PWC Driving Licence",
+      "field_name": "replace_pwc_licence",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Vessel Registration Certificate",
+      "field_name": "replace_vessel_registration",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Boat Licence Number (if known)",
+      "field_name": "boat_licence_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Registration Number (if known)",
+      "field_name": "registration_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Circumstances of Loss or Destruction",
+      "field_name": "loss_circumstances",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "type": "disclosure",
+      "text": "Personal Information Collection Notice: Your privacy is important to us and our Privacy Statement explains why we collect your Personal Information and how we will manage it. You can obtain a copy of our Privacy Statement at transport.nsw.gov.au or by calling us to request a copy on 13 12 36.",
+      "page": 2
+    },
+    {
+      "type": "disclosure",
+      "text": "Declaration: I declare that I am the customer referred to above and that the details provided in this form are true and correct.",
+      "page": 2
+    },
+    {
+      "label": "Applicant's Signature",
+      "field_name": "applicant_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Date",
+      "field_name": "declaration_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Proof of Identity – Authorised Signatory's Use",
+      "page": 3
+    },
+    {
+      "type": "instruction",
+      "text": "This section must be completed for all applicants. The applicant's proof of identity must be verified by an authorised signatory. Acceptable signatories are any Service NSW Officer, Police Officer, Justice of the Peace, Judge, Magistrate, Bank Manager, Legal Practitioner or School Principal.",
+      "page": 3
+    },
+    {
+      "label": "Full Proof of ID – Document Name",
+      "field_name": "poi_full_document_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Full Proof of ID – Document No.",
+      "field_name": "poi_full_document_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Primary Proof of ID – Document Name",
+      "field_name": "poi_primary_document_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Primary Proof of ID – Document No.",
+      "field_name": "poi_primary_document_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Secondary Proof of ID – Document Name",
+      "field_name": "poi_secondary_document_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Secondary Proof of ID – Document No.",
+      "field_name": "poi_secondary_document_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Authorised Signatory's Name",
+      "field_name": "authorised_signatory_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Authorised Signatory's Official No.",
+      "field_name": "authorised_signatory_official_no",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Name of Agency",
+      "field_name": "authorised_signatory_agency",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Authorised Signatory's Signature",
+      "field_name": "authorised_signatory_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Date",
+      "field_name": "authorised_signatory_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Representative's Authority",
+      "page": 4
+    },
+    {
+      "type": "instruction",
+      "text": "Complete this section only if authorising another person to apply for the replacement product on your behalf.",
+      "page": 4
+    },
+    {
+      "label": "Applicant's Signature (authorising representative)",
+      "field_name": "rep_authority_applicant_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Date",
+      "field_name": "rep_authority_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative's Surname",
+      "field_name": "rep_surname",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative's Given Names",
+      "field_name": "rep_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative's Residential Address",
+      "field_name": "rep_residential_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative's Suburb",
+      "field_name": "rep_suburb",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative's State",
+      "field_name": "rep_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative's Postcode",
+      "field_name": "rep_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative's Phone Number",
+      "field_name": "rep_phone_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative's Signature",
+      "field_name": "rep_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Date",
+      "field_name": "rep_signature_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 4
+    }
   ]
 }
