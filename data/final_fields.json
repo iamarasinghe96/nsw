@@ -8141,5 +8141,403 @@
       "required": true,
       "page": 4
     }
+  ],
+  "45071760-adjustment-to-records-maritime.pdf": [
+    {
+      "type": "instruction",
+      "text": "IMPORTANT: If you also hold a NSW driver licence, vehicle registration, combined licence and/or photo card, please complete the 'Change of Records - Road and Maritime Products' form instead and attend a Service NSW Centre. You must provide original or certified copies of supporting documents to change name, pension concession status, medical conditions and some vessel details. Change of name applications can only be submitted in person at any service centre.",
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 1 – Type of Change",
+      "page": 1
+    },
+    {
+      "label": "Change of customer name",
+      "field_name": "change_customer_name",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Change of customer address",
+      "field_name": "change_customer_address",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Change of medical / eyesight condition",
+      "field_name": "change_medical_eyesight",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Change of pensioner concession",
+      "field_name": "change_pensioner_concession",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Change of vessel details",
+      "field_name": "change_vessel_details",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Change of engine details",
+      "field_name": "change_engine_details",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 2 – Customer Details (include all NEW details)",
+      "page": 2
+    },
+    {
+      "label": "Family Name",
+      "field_name": "family_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Given Name(s)",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Organisation Name (if applicable)",
+      "field_name": "organisation_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Residential Address (PO Box not acceptable)",
+      "field_name": "residential_address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Residential Postcode",
+      "field_name": "residential_postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postal Address (if different from residential address)",
+      "field_name": "postal_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Postal Postcode",
+      "field_name": "postal_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Daytime Number",
+      "field_name": "daytime_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "After Hours / Mobile Number",
+      "field_name": "mobile_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 3 – Personal Details",
+      "page": 2
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Gender",
+      "field_name": "gender",
+      "type": "radio",
+      "options": ["Male", "Female", "X"],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Are you of Aboriginal and/or Torres Strait Islander origin? (Answering this question is voluntary)",
+      "field_name": "indigenous",
+      "type": "radio",
+      "options": ["Yes", "No"],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 4 – Maritime Details",
+      "page": 2
+    },
+    {
+      "label": "Boat Licence Number",
+      "field_name": "boat_licence_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Vessel Registration Number",
+      "field_name": "vessel_registration_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Mooring Licence Number",
+      "field_name": "mooring_licence_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 5 – Vessel / Engine Details (include all NEW details)",
+      "page": 3
+    },
+    {
+      "type": "instruction",
+      "text": "Note: Vessel/engine detail changes for commercial vessels cannot be notified using this form. Please contact AMSA on 1800 627 484 for assistance.",
+      "page": 3
+    },
+    {
+      "label": "Vessel Name",
+      "field_name": "vessel_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Vessel Model",
+      "field_name": "vessel_model",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Hull Colour",
+      "field_name": "hull_colour",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Topside Colour",
+      "field_name": "topside_colour",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Engine Manufacturer",
+      "field_name": "engine_manufacturer",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Fuel Type",
+      "field_name": "fuel_type",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Engine Serial Number",
+      "field_name": "engine_serial_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Engine Horsepower",
+      "field_name": "engine_horsepower",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Engine Type",
+      "field_name": "engine_type",
+      "type": "radio",
+      "options": ["Inboard", "Outboard"],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Reason for Engine Change (e.g. engine stolen / replaced / scrapped / traded-in / auxiliary motor)",
+      "field_name": "engine_change_reason",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Section 6 – Representative's Authority (if applicable)",
+      "page": 4
+    },
+    {
+      "type": "instruction",
+      "text": "Complete this section only if you send someone else to conduct business on your behalf. I declare that the person below is my authorised representative.",
+      "page": 4
+    },
+    {
+      "label": "Owner's Signature (authorising representative)",
+      "field_name": "owner_auth_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Date",
+      "field_name": "owner_auth_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative's NSW Driver Licence / Customer Number",
+      "field_name": "rep_licence_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative's Name",
+      "field_name": "rep_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative's Address",
+      "field_name": "rep_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative's Postcode",
+      "field_name": "rep_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative's Signature",
+      "field_name": "rep_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Date",
+      "field_name": "rep_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "type": "disclosure",
+      "text": "Personal Information Collection Notice: Your privacy is important to us and our Privacy Statement explains why we collect your Personal Information and how we will manage it. You can obtain a copy of our Privacy Statement at transport.nsw.gov.au or by calling us to request a copy on 13 12 36.",
+      "page": 4
+    },
+    {
+      "type": "heading",
+      "text": "Section 8 – Declaration",
+      "page": 4
+    },
+    {
+      "type": "disclosure",
+      "text": "I declare that I am the customer referred to above and that the details provided in this form are true and correct.",
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "declaration_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Date",
+      "field_name": "declaration_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 4
+    }
   ]
 }
