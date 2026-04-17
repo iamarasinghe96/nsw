@@ -5946,5 +5946,52 @@
       "required": true,
       "page": 7
     }
+  ],
+  "nsw-stat-dec-schedule-8.pdf": [
+    {
+      "type": "disclosure",
+      "text": "Statutory Declaration under the Oaths Act 1900, NSW, Eighth Schedule. I do solemnly and sincerely declare that [declaration content], and I make this solemn declaration conscientiously believing the same to be true, and by virtue of the provisions of the Oaths Act 1900.",
+      "page": 1
+    },
+    {
+      "label": "Name of declarant",
+      "field_name": "declarant_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Declaration content",
+      "field_name": "declaration_content",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Declared at (place)",
+      "field_name": "declared_at_place",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date",
+      "field_name": "declared_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Signature of declarant",
+      "field_name": "declarant_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 1
+    }
   ]
 }
