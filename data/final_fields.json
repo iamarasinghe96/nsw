@@ -7032,5 +7032,433 @@
       "required": true,
       "page": 2
     }
+  ],
+  "apply-for-birth-certificate.pdf": [
+    {
+      "type": "instruction",
+      "text": "This application form is for a birth that occurred in, or was registered in NSW. Please provide copies of three forms of current identification with your application. You can also complete this application online at www.nsw.gov.au/bdm.",
+      "page": 1
+    },
+    {
+      "type": "disclosure",
+      "text": "Privacy: The Registry is responsible for the administration of legislation including the Births, Deaths and Marriages Registration Act 1995. Warning: It is an offence under Part 5A of the Crimes Act 1900 to provide false or misleading information or documents.",
+      "page": 1
+    },
+    {
+      "label": "Priority processing required",
+      "field_name": "priority_processing",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Send certificate to Australian passport office/DFAT office",
+      "field_name": "send_to_passport_office",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Passport/DFAT office name and location",
+      "field_name": "passport_dfat_office",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Quantity of standard birth certificate/s",
+      "field_name": "standard_quantity",
+      "type": "number",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Quantity of commemorative certificate/s",
+      "field_name": "commemorative_quantity",
+      "type": "number",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Commemorative certificate description",
+      "field_name": "commemorative_description",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Reason certificate is required (e.g. passport, school)",
+      "field_name": "reason_certificate_required",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Your relationship to the registered person (e.g. self, parent, child)",
+      "field_name": "relationship_to_registered_person",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Applicant's Details",
+      "page": 2
+    },
+    {
+      "label": "Family name",
+      "field_name": "applicant_family_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "First given name",
+      "field_name": "applicant_first_given_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Other given name/s",
+      "field_name": "applicant_other_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Company name",
+      "field_name": "applicant_company_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Company reference number",
+      "field_name": "applicant_company_reference_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Current address",
+      "field_name": "current_address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb/Town",
+      "field_name": "current_suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State/Territory",
+      "field_name": "current_state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "current_postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Country",
+      "field_name": "current_country",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postal address (if different from above)",
+      "field_name": "postal_address",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Postal suburb/town",
+      "field_name": "postal_suburb",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Postal state/territory",
+      "field_name": "postal_state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Postal postcode",
+      "field_name": "postal_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Postal country",
+      "field_name": "postal_country",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Phone number",
+      "field_name": "applicant_phone",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Email address",
+      "field_name": "applicant_email",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "International Registered Post",
+      "field_name": "international_registered_post",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "type": "disclosure",
+      "text": "I have read and understand all the instructions in this document including the information about privacy. I declare that the information I have provided is true and correct. I understand that it is an offence under Part 5A of the Crimes Act 1900 to provide false or misleading information or documents and that it is an offence under the Births, Deaths and Marriages Registration Act 1995 to make a false or misleading representation in an application, notice or document.",
+      "page": 3
+    },
+    {
+      "label": "Signature of applicant",
+      "field_name": "applicant_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Details of Birth Certificate Required",
+      "page": 4
+    },
+    {
+      "label": "Date of birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Present age",
+      "field_name": "present_age",
+      "type": "number",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Registration number (if known)",
+      "field_name": "registration_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Search period — from (if date unknown)",
+      "field_name": "search_period_from",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Search period — to (if date unknown)",
+      "field_name": "search_period_to",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "type": "heading",
+      "text": "Names of Registered Person",
+      "page": 4
+    },
+    {
+      "label": "Family name",
+      "field_name": "registered_family_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Family name at birth",
+      "field_name": "registered_family_name_at_birth",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "First given name",
+      "field_name": "registered_first_given_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Other given name/s",
+      "field_name": "registered_other_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Place of birth (suburb/town/city)",
+      "field_name": "place_of_birth",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "type": "heading",
+      "text": "Parent 1 Details",
+      "page": 5
+    },
+    {
+      "label": "Parent 1 family name (current)",
+      "field_name": "parent_1_family_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Parent 1 family name at birth",
+      "field_name": "parent_1_family_name_at_birth",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Parent 1 first given name",
+      "field_name": "parent_1_first_given_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Parent 1 other given name/s",
+      "field_name": "parent_1_other_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "type": "heading",
+      "text": "Parent 2 Details",
+      "page": 5
+    },
+    {
+      "label": "Parent 2 family name (current)",
+      "field_name": "parent_2_family_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Parent 2 family name at birth",
+      "field_name": "parent_2_family_name_at_birth",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Parent 2 first given name",
+      "field_name": "parent_2_first_given_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Parent 2 other given name/s",
+      "field_name": "parent_2_other_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Email address for payment link",
+      "field_name": "payment_email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    }
   ]
 }
