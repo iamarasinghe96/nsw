@@ -8539,5 +8539,812 @@
       "required": true,
       "page": 4
     }
+  ],
+  "45071143-provisional-licence-conditions-exemption-application.pdf": [
+    {
+      "type": "instruction",
+      "text": "This form is for P-platers who wish to have an exemption from: the peer passenger condition (P1 drivers under 25 only), the one passenger condition (P1 and P2 drivers reissued a provisional licence following a disqualification), or the prohibited vehicle condition (P1 and P2 licences issued from 11 July 2005). You must always complete Sections A, B and C. Complete Section D for peer passenger, E for one passenger, F and I for prohibited vehicle, G for variation to a current exemption, or H for a replacement exemption letter. A fee is payable when lodged and is not refundable if an exemption is not granted.",
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section A – Application Details",
+      "page": 1
+    },
+    {
+      "label": "Applying for – Peer Passenger Exemption",
+      "field_name": "apply_peer_passenger",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Applying for – One Passenger Exemption",
+      "field_name": "apply_one_passenger",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Applying for – Prohibited Vehicle Exemption",
+      "field_name": "apply_prohibited_vehicle",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Applying for – Variation to my current Exemption Letter",
+      "field_name": "apply_variation",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Applying for – Replacement Exemption Letter",
+      "field_name": "apply_replacement",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section B – Your Details",
+      "page": 2
+    },
+    {
+      "label": "NSW Driver Licence / Customer Number",
+      "field_name": "nsw_licence_customer_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Name (as shown on provisional licence)",
+      "field_name": "full_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Residential Address",
+      "field_name": "residential_address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Daytime Contact Number",
+      "field_name": "daytime_contact_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section C – Applicant Declaration",
+      "page": 2
+    },
+    {
+      "type": "disclosure",
+      "text": "Please read carefully before you sign. If you do not tell the truth you can be fined. Any exemption you hold could be cancelled. I declare that the details in this application are true and complete.",
+      "page": 2
+    },
+    {
+      "label": "Applicant Signature",
+      "field_name": "applicant_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Date",
+      "field_name": "declaration_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Representative Authority (if applicable)",
+      "page": 3
+    },
+    {
+      "type": "instruction",
+      "text": "Complete this section only if a representative will lodge the form on your behalf. I declare that the person named below is my authorised representative.",
+      "page": 3
+    },
+    {
+      "label": "Applicant Signature (authorising representative)",
+      "field_name": "rep_auth_applicant_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Date",
+      "field_name": "rep_auth_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Representative's NSW Driver Licence / Customer Number (if applicable)",
+      "field_name": "rep_licence_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Representative's Surname",
+      "field_name": "rep_surname",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Representative's Given Name(s)",
+      "field_name": "rep_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Representative's Residential Address",
+      "field_name": "rep_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Representative's Postcode",
+      "field_name": "rep_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Representative's Signature",
+      "field_name": "rep_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Date",
+      "field_name": "rep_signature_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Section D – Peer Passenger Exemption",
+      "page": 4
+    },
+    {
+      "type": "instruction",
+      "text": "Complete this section if applying for a Peer Passenger Exemption. This condition applies to P1 drivers under 25 years of age between 11pm and 5am.",
+      "page": 4
+    },
+    {
+      "label": "Section D – Family exemption",
+      "field_name": "d_family_exemption",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Section D – Employment exemption",
+      "field_name": "d_employment_exemption",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Section D – Community service work exemption",
+      "field_name": "d_community_service_exemption",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Section D – How many passengers under 21 years of age do you need to carry at any one time between 11pm and 5am?",
+      "field_name": "d_passenger_count",
+      "type": "number",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Section D – Relationship: Number of child/children",
+      "field_name": "d_rel_children",
+      "type": "number",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Section D – Relationship: Number of brothers",
+      "field_name": "d_rel_brothers",
+      "type": "number",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Section D – Relationship: Number of sisters",
+      "field_name": "d_rel_sisters",
+      "type": "number",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Section D – Relationship: Number of work colleagues",
+      "field_name": "d_rel_work_colleagues",
+      "type": "number",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Section D – Relationship: Number of spouse/partner",
+      "field_name": "d_rel_spouse_partner",
+      "type": "number",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Section D – Relationship: Other (describe)",
+      "field_name": "d_rel_other",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Section D – Explain why you require an exemption",
+      "field_name": "d_exemption_reason",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Section D – What forms of transport do the passengers currently use between 11pm and 5am?",
+      "field_name": "d_current_transport",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Section D – Have you attached a statement from your employer / community service organisation? (if applicable)",
+      "field_name": "d_employer_statement_attached",
+      "type": "radio",
+      "options": ["Yes", "No"],
+      "required": false,
+      "page": 4
+    },
+    {
+      "type": "heading",
+      "text": "Section E – One Passenger Exemption",
+      "page": 5
+    },
+    {
+      "type": "instruction",
+      "text": "Complete this section if applying for a One Passenger Exemption. This applies to P1 and P2 drivers re-issued a provisional licence following a court disqualification for an offence committed on or after 11 July 2005.",
+      "page": 5
+    },
+    {
+      "label": "Section E – Family exemption",
+      "field_name": "e_family_exemption",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Section E – Employment exemption",
+      "field_name": "e_employment_exemption",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Section E – How many passengers do you need to carry at any one time?",
+      "field_name": "e_passenger_count",
+      "type": "number",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Section E – Relationship: Number of child/children",
+      "field_name": "e_rel_children",
+      "type": "number",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Section E – Relationship: Number of brothers",
+      "field_name": "e_rel_brothers",
+      "type": "number",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Section E – Relationship: Number of sisters",
+      "field_name": "e_rel_sisters",
+      "type": "number",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Section E – Relationship: Number of work colleagues",
+      "field_name": "e_rel_work_colleagues",
+      "type": "number",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Section E – Relationship: Number of spouse/partner",
+      "field_name": "e_rel_spouse_partner",
+      "type": "number",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Section E – Relationship: Number of parent/guardian",
+      "field_name": "e_rel_parent_guardian",
+      "type": "number",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Section E – Relationship: Other (describe)",
+      "field_name": "e_rel_other",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Section E – Explain why you require an exemption",
+      "field_name": "e_exemption_reason",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Section E – What forms of transport do the passengers currently use?",
+      "field_name": "e_current_transport",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Section E – Have you attached a statement from your employer? (if applicable)",
+      "field_name": "e_employer_statement_attached",
+      "type": "radio",
+      "options": ["Yes", "No"],
+      "required": false,
+      "page": 5
+    },
+    {
+      "type": "heading",
+      "text": "Section F – Prohibited Vehicle Exemption",
+      "page": 6
+    },
+    {
+      "label": "Section F – Reason 1: I need to drive a prohibited vehicle in the course of my employment",
+      "field_name": "f_reason_employment",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Section F – Reason 2: I, or my parent/guardian/spouse/partner, owned the vehicle prior to introduction of the scheme or change in high performance vehicle definition",
+      "field_name": "f_reason_prior_ownership",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Section F – Reason 3: Other exceptional circumstances",
+      "field_name": "f_reason_other",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Section F – Please explain what the vehicle will be used for",
+      "field_name": "f_vehicle_use",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Section F – Why can't you continue to use existing forms of transport?",
+      "field_name": "f_why_no_alternative_transport",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Section F – Have you attached a statement from your employer? (if applicable)",
+      "field_name": "f_employer_statement_attached",
+      "type": "radio",
+      "options": ["Yes", "No"],
+      "required": false,
+      "page": 6
+    },
+    {
+      "type": "heading",
+      "text": "Section G – Variation to My Current Exemption Letter",
+      "page": 6
+    },
+    {
+      "label": "Section G – Current exemption: Peer Passenger",
+      "field_name": "g_current_peer_passenger",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Section G – Current exemption: One Passenger",
+      "field_name": "g_current_one_passenger",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Section G – Current exemption: Prohibited Vehicle",
+      "field_name": "g_current_prohibited_vehicle",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Section G – Provide details of the changes to your circumstances that require a new exemption letter",
+      "field_name": "g_changed_circumstances",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "type": "heading",
+      "text": "Section H – Replacement Exemption Letter",
+      "page": 6
+    },
+    {
+      "label": "Section H – Current exemption: Peer passenger",
+      "field_name": "h_current_peer_passenger",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Section H – Current exemption: One passenger",
+      "field_name": "h_current_one_passenger",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Section H – Current exemption: Prohibited vehicle",
+      "field_name": "h_current_prohibited_vehicle",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Section H – Reason for replacement: Lost",
+      "field_name": "h_reason_lost",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Section H – Reason for replacement: Damaged",
+      "field_name": "h_reason_damaged",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Section H – Reason for replacement: Stolen",
+      "field_name": "h_reason_stolen",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "type": "heading",
+      "text": "Section I – Statutory Declaration (Prohibited Vehicle Exemption)",
+      "page": 7
+    },
+    {
+      "type": "instruction",
+      "text": "Must be completed if applying for a prohibited vehicle exemption. This section must be completed by the registered operator(s) of the nominated vehicle(s) and the declaration signed in front of a Justice of the Peace or a solicitor. If the vehicle is registered in a company name, the declaration must be completed by the employer (e.g. manager) or a nominated person who has authority to act on behalf of the company/business.",
+      "page": 7
+    },
+    {
+      "label": "Section I – Registered Operator(s) Name(s) in Full",
+      "field_name": "i_operator_names",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Section I – Address",
+      "field_name": "i_operator_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Section I – Declaration: as parent/spouse/guardian/partner/custodian, I give permission for the applicant to drive the nominated prohibited vehicle/s registered in my name",
+      "field_name": "i_decl_parent_permission",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Section I – Declaration: as employer/representative, I give permission for the applicant (employee) to drive the nominated prohibited vehicle/s registered to the company or business",
+      "field_name": "i_decl_employer_permission",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Section I – Declaration: as employer/representative with more than 10 registered prohibited vehicles, I authorise the applicant to drive prohibited vehicles in the company/business name",
+      "field_name": "i_decl_employer_10plus",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Section I – Declaration: as the applicant, I am self employed and need to use the nominated prohibited vehicle/s to carry out my business",
+      "field_name": "i_decl_self_employed",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Section I – Declaration: as the applicant, I owned my current prohibited vehicle before 11 July 2005",
+      "field_name": "i_decl_owned_before_2005",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Section I – Declaration: as the applicant/parent/guardian/spouse/partner, I owned the vehicle prior to change in high performance vehicle definition on 1 August 2014",
+      "field_name": "i_decl_owned_before_2014",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Section I – Declaration: as the applicant/registered operator, I owned the prohibited vehicle before transferring my licence to NSW or before licence cancellation due to disqualification",
+      "field_name": "i_decl_owned_before_transfer",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Section I – Vehicle 1: Registration Number",
+      "field_name": "i_v1_registration",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Section I – Vehicle 1: Year of Manufacture",
+      "field_name": "i_v1_year",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Section I – Vehicle 1: Make",
+      "field_name": "i_v1_make",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Section I – Vehicle 1: Model",
+      "field_name": "i_v1_model",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Section I – Vehicle 1: Cylinders",
+      "field_name": "i_v1_cylinders",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Section I – Vehicle 1: Gear Type",
+      "field_name": "i_v1_gear_type",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Section I – Vehicle 1: Does the vehicle have any other engine modifications?",
+      "field_name": "i_v1_engine_mods",
+      "type": "radio",
+      "options": ["Yes", "No"],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Section I – Vehicle 1: Engine Modification Details",
+      "field_name": "i_v1_engine_mod_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Section I – Vehicle 2: Registration Number",
+      "field_name": "i_v2_registration",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Section I – Vehicle 2: Year of Manufacture",
+      "field_name": "i_v2_year",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Section I – Vehicle 2: Make",
+      "field_name": "i_v2_make",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Section I – Vehicle 2: Model",
+      "field_name": "i_v2_model",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Section I – Vehicle 2: Cylinders",
+      "field_name": "i_v2_cylinders",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Section I – Vehicle 2: Gear Type",
+      "field_name": "i_v2_gear_type",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Section I – Vehicle 2: Does the vehicle have any other engine modifications?",
+      "field_name": "i_v2_engine_mods",
+      "type": "radio",
+      "options": ["Yes", "No"],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Section I – Vehicle 2: Engine Modification Details",
+      "field_name": "i_v2_engine_mod_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "type": "disclosure",
+      "text": "Personal Information Collection Notice: Transport for NSW is committed to protecting your privacy and ensuring your personal and health information is managed according to law. Find out why we collect your personal information, including how we use and manage it, by reading our privacy statement at transport.nsw.gov.au or phone 13 22 13 to request a copy.",
+      "page": 7
+    }
   ]
 }
