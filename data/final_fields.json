@@ -7460,5 +7460,508 @@
       "required": false,
       "page": 5
     }
+  ],
+  "apply-for-correct-an-entry.pdf": [
+    {
+      "type": "instruction",
+      "text": "Use this form to apply for a correction to the NSW Register of Births, Deaths and Marriages. Corrections can be made for administrative errors such as spelling mistakes. You must provide clear evidence an error was made. You must provide at least three forms of current identity documents.",
+      "page": 1
+    },
+    {
+      "type": "disclosure",
+      "text": "Privacy: The Registry is responsible for the administration of the Births, Deaths and Marriages Registration Act 1995 and the Relationship Register Act 2010. Warning: It is an offence under Part 5A of the Crimes Act 1900 to provide false or misleading information or documents.",
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Part A – Certificate to be Corrected",
+      "page": 1
+    },
+    {
+      "type": "instruction",
+      "text": "Select the certificate you need corrected by ticking the applicable box(es) below.",
+      "page": 1
+    },
+    {
+      "label": "Birth certificate",
+      "field_name": "cert_birth",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Integrated birth certificate (IBC)",
+      "field_name": "cert_integrated_birth",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Marriage certificate",
+      "field_name": "cert_marriage",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Recognised details certificate",
+      "field_name": "cert_recognised_details",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Relationship registration certificate",
+      "field_name": "cert_relationship_registration",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Death certificate",
+      "field_name": "cert_death",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Change of name certificate",
+      "field_name": "cert_change_of_name",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Section 50 certificate",
+      "field_name": "cert_section_50",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Single status certificate",
+      "field_name": "cert_single_status",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Part B – Applicant One Details",
+      "page": 2
+    },
+    {
+      "label": "Applicant one's relationship to the subject (e.g. self, daughter, partner)",
+      "field_name": "app1_relationship_to_subject",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Applicant one's first name",
+      "field_name": "app1_first_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Applicant one's other given name/s or middle name",
+      "field_name": "app1_other_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Applicant one's family name (surname)",
+      "field_name": "app1_family_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Applicant one's phone number",
+      "field_name": "app1_phone",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Applicant one's email address",
+      "field_name": "app1_email",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Applicant One's Current Address",
+      "page": 3
+    },
+    {
+      "label": "Street address",
+      "field_name": "app1_street_address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Suburb/Town/City",
+      "field_name": "app1_suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "State/Territory",
+      "field_name": "app1_state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Postcode",
+      "field_name": "app1_postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Country",
+      "field_name": "app1_country",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Postal Address",
+      "page": 3
+    },
+    {
+      "label": "Postal address to use",
+      "field_name": "postal_address_choice",
+      "type": "radio",
+      "options": [
+        "Use applicant one address",
+        "Use applicant two address",
+        "Use other address"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Other postal street address",
+      "field_name": "postal_street_address",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Other postal suburb/town/city",
+      "field_name": "postal_suburb",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Other postal postcode",
+      "field_name": "postal_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Other postal state/territory",
+      "field_name": "postal_state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Other postal country",
+      "field_name": "postal_country",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Part B – Applicant Two Details (if applicable)",
+      "page": 4
+    },
+    {
+      "label": "Applicant two's relationship to the subject",
+      "field_name": "app2_relationship_to_subject",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Applicant two's first name",
+      "field_name": "app2_first_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Applicant two's other given name/s or middle name",
+      "field_name": "app2_other_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Applicant two's family name (surname)",
+      "field_name": "app2_family_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Applicant two's phone number",
+      "field_name": "app2_phone",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Applicant two's email address",
+      "field_name": "app2_email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Applicant two's street address",
+      "field_name": "app2_street_address",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Applicant two's suburb/town/city",
+      "field_name": "app2_suburb",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Applicant two's state/territory",
+      "field_name": "app2_state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Applicant two's postcode",
+      "field_name": "app2_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Applicant two's country",
+      "field_name": "app2_country",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "type": "heading",
+      "text": "Part C – Life Event Details",
+      "page": 5
+    },
+    {
+      "label": "Date of life event (e.g. date of marriage, date of death, date of name change)",
+      "field_name": "date_of_life_event",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 5
+    },
+    {
+      "label": "Certificate registration number (if known, e.g. 1234567/2000)",
+      "field_name": "certificate_registration_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "type": "heading",
+      "text": "Subject's Details (if different from applicant)",
+      "page": 5
+    },
+    {
+      "label": "Subject's first name",
+      "field_name": "subject_first_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Subject's other given name/s or middle names",
+      "field_name": "subject_other_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Subject's family name (surname)",
+      "field_name": "subject_family_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "type": "heading",
+      "text": "Part D – Details of Correction",
+      "page": 5
+    },
+    {
+      "type": "instruction",
+      "text": "Documents supporting the correction request must be provided.",
+      "page": 5
+    },
+    {
+      "label": "Describe the error and where it appears on the certificate",
+      "field_name": "error_description",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 5
+    },
+    {
+      "label": "Describe how the error occurred",
+      "field_name": "error_cause",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 5
+    },
+    {
+      "label": "Write the error as it appears on the certificate",
+      "field_name": "error_as_on_certificate",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 5
+    },
+    {
+      "label": "Write your correction",
+      "field_name": "correction",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 5
+    },
+    {
+      "type": "heading",
+      "text": "Part E – Declaration",
+      "page": 6
+    },
+    {
+      "type": "disclosure",
+      "text": "I/We declare that an error/omission has been noted on the register, and request the Registrar to correct the entry as outlined in Part B. The information provided in support of this application is true and correct. I/We have read and understood all instructions and information in this document, including the privacy notice. I/We understand that providing false or misleading information or documents is an offence under Part 5A of the Crimes Act 1900, and that making a false or misleading representation in any application, notice, or document is an offence under the Births, Deaths and Marriages Registration Act 1995. Supporting evidence documents have been provided with this request.",
+      "page": 6
+    },
+    {
+      "label": "Signature of applicant one",
+      "field_name": "app1_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 6
+    },
+    {
+      "label": "Date signed (applicant one)",
+      "field_name": "app1_date_signed",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 6
+    },
+    {
+      "label": "Signature of applicant two",
+      "field_name": "app2_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Date signed (applicant two)",
+      "field_name": "app2_date_signed",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 6
+    }
   ]
 }
