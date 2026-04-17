@@ -9804,5 +9804,332 @@
       "required": false,
       "page": 3
     }
+  ],
+  "45071266-customer-number-application.pdf": [
+    {
+      "type": "instruction",
+      "text": "A motor vehicle can only be registered in the name of a legal entity. For registration purposes a vehicle must be registered in the name of a natural person or an organisation. To establish/create a Transport for NSW customer number for an organisation not already on the Transport for NSW system, proof of identity must be provided. Organisations are required to provide evidence of incorporation. This can be any of the following: Certificate of registration, with Australian Company Number (ACN); a current extract of the company, with ACN; Certificate of registration on change of name with ACN; a printed extract from the Australian Securities Investment Commission (ASIC) website with ACN; Certificate of incorporation issued by the NSW Office of Fair Trading; Certificate of incorporation of a foreign company, with Australian Registered Body Number (ARBN) for companies incorporated overseas. An organisation can nominate an authorised contact to conduct all business on their behalf. To add, change or delete an authorised contact please complete form 5756. The authorised contact must attend a Service NSW Centre and provide their Proof of Identity (POI). If the executive officer or authorised contact do not attend in person, the representative authority must be completed. In all cases, proof of identity is required.",
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 1 – Reason for Establishing/Creating a Customer Number",
+      "page": 1
+    },
+    {
+      "label": "Establish Registration",
+      "field_name": "reason_establish_registration",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Transfer Registration",
+      "field_name": "reason_transfer_registration",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Apply for Mobility Parking Scheme as an Organisation",
+      "field_name": "reason_mobility_parking",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Other",
+      "field_name": "reason_other",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Other Details",
+      "field_name": "reason_other_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 2 – Organisation Details",
+      "page": 1
+    },
+    {
+      "label": "ABN or ACN (if applicable)",
+      "field_name": "abn_acn",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Email",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Organisation Name (give incorporation name if applicable)",
+      "field_name": "organisation_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Business Address",
+      "field_name": "business_address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Business State",
+      "field_name": "business_state",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Business Postcode",
+      "field_name": "business_postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Postal Address (if different from business address)",
+      "field_name": "postal_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Postal State",
+      "field_name": "postal_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Postal Postcode",
+      "field_name": "postal_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 3 – Prior Business with Transport for NSW",
+      "page": 1
+    },
+    {
+      "label": "Has your organisation previously engaged in business with Transport for NSW that required the issue of a customer number in the above name?",
+      "field_name": "prior_business",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "What Type of Business?",
+      "field_name": "prior_business_type",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Customer Number/Registration Number",
+      "field_name": "prior_customer_registration_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 4 – Garage Address",
+      "page": 1
+    },
+    {
+      "label": "Garage Address (where any vehicle will most often be kept)",
+      "field_name": "garage_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Garage State",
+      "field_name": "garage_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Garage Postcode",
+      "field_name": "garage_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 5 – Declaration",
+      "page": 2
+    },
+    {
+      "type": "disclosure",
+      "text": "You declare that the information on this form is true and complete.",
+      "page": 2
+    },
+    {
+      "label": "Executive Officer Signature",
+      "field_name": "executive_officer_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Position Title",
+      "field_name": "position_title",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Date",
+      "field_name": "declaration_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 6 – Representative Authority",
+      "page": 3
+    },
+    {
+      "type": "instruction",
+      "text": "To be completed if an authorised representative attends to establish/create a Transport for NSW customer number. I declare that the person named below is my authorised representative.",
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "authorising_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Date",
+      "field_name": "authorising_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Driver Licence Number/Customer Number",
+      "field_name": "rep_licence_customer_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Surname",
+      "field_name": "rep_surname",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Given Name(s)",
+      "field_name": "rep_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Residential Address",
+      "field_name": "rep_residential_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Residential State",
+      "field_name": "rep_residential_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Residential Postcode",
+      "field_name": "rep_residential_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "rep_date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Representative Signature",
+      "field_name": "rep_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Date",
+      "field_name": "rep_signature_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 3
+    }
   ]
 }
