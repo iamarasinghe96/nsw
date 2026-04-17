@@ -7419,5 +7419,187 @@
       "text": "Personal Information Collection Notice: Transport for NSW is committed to protecting your privacy and ensuring your personal and health information is managed according to law. Find out why we collect your personal information, including how we use and manage it, by reading our privacy statement at transport.nsw.gov.au or phone 13 22 13 to request a copy.",
       "page": 4
     }
+  ],
+  "45071651-medical-condition-notification-form.pdf": [
+    {
+      "type": "instruction",
+      "text": "For use of registered medical practitioners only. This form is used to notify Transport for NSW of a patient's medical condition that may affect their fitness to drive.",
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Patient Details",
+      "page": 1
+    },
+    {
+      "label": "Title (Mr / Mrs / Ms)",
+      "field_name": "patient_title",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Surname",
+      "field_name": "patient_surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Name(s)",
+      "field_name": "patient_given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Full Address",
+      "field_name": "patient_address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "patient_dob",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Licence Number (if known)",
+      "field_name": "patient_licence_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Assessment of Fitness to Drive",
+      "page": 1
+    },
+    {
+      "label": "Driver standards assessed against",
+      "field_name": "driver_standards",
+      "type": "radio",
+      "options": ["Private driver standards", "Commercial driver standards"],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "I have known / treated the patient for (years)",
+      "field_name": "years_known_patient",
+      "type": "number",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "In my opinion, the person subject to the report",
+      "field_name": "fitness_opinion",
+      "type": "radio",
+      "options": [
+        "Option 1 – does not meet the relevant medical criteria for an unconditional or conditional driver licence",
+        "Option 2 – meets the relevant medical criteria for a conditional driver licence"
+      ],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Option 1 – Nature of condition and medical criteria not met",
+      "field_name": "option1_condition_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Option 2 – Information to support conditional driver licence (nature of condition, evidence of medical criteria met, nature of driving task)",
+      "field_name": "option2_conditional_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Recommended licence conditions or restrictions (e.g. periodic review, vehicle modifications, corrective lenses, restricted daytime driving)",
+      "field_name": "recommended_conditions",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Further comments / reports appear attached",
+      "field_name": "further_comments_attached",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Health Professional Details",
+      "page": 3
+    },
+    {
+      "label": "Reporting Professional's Name",
+      "field_name": "professional_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Provider Number",
+      "field_name": "provider_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Address",
+      "field_name": "professional_address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "professional_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Date",
+      "field_name": "professional_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "type": "instruction",
+      "text": "Send completed form to: This report can be submitted online direct to Transport for NSW using Best Practice, Genie or Medical Director. Alternatively, if you are registered with Healthlink you can submit this form via the Healthlink Website portal. Otherwise email medicalunit@transport.nsw.gov.au or mail to: Manager, Licence Review Unit, Locked Bag 14, Grafton NSW 2460.",
+      "page": 3
+    }
   ]
 }
