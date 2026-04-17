@@ -3077,71 +3077,455 @@
   ],
   "45072015-application-transfer-vessel-registration.pdf": [
     {
-      "label": "Current Owner Surname",
-      "field_name": "current_owner_surname",
-      "type": "text",
-      "options": [],
-      "required": true,
+      "type": "instruction",
+      "text": "How to use this form: If you cannot provide an original Certificate of Registration, complete pages 1-3. If you cannot provide an acceptable receipt, complete the Statutory Declaration on page 4. If you cannot provide either, complete the entire form pages 1-4. Applications must be accompanied by the prescribed fee. An application must be completed in person at a service centre within 14 days of purchasing/acquiring a vessel. You must be at least 16 years of age to register a vessel.",
       "page": 1
     },
     {
-      "label": "Current Owner Given Names",
-      "field_name": "current_owner_given_names",
-      "type": "text",
-      "options": [],
-      "required": true,
+      "type": "heading",
+      "text": "Details of New Owner",
       "page": 1
     },
     {
-      "label": "Current Owner Phone",
-      "field_name": "current_owner_phone",
-      "type": "text",
-      "options": [],
-      "required": true,
-      "page": 1
-    },
-    {
-      "label": "New Owner Surname",
+      "label": "Surname",
       "field_name": "new_owner_surname",
       "type": "text",
       "options": [],
       "required": true,
-      "page": 2
+      "page": 1
     },
     {
-      "label": "New Owner Given Names",
+      "label": "Given Name(s)",
       "field_name": "new_owner_given_names",
       "type": "text",
       "options": [],
       "required": true,
-      "page": 2
+      "page": 1
     },
     {
-      "label": "New Owner Date of Birth",
+      "label": "Gender",
+      "field_name": "new_owner_gender",
+      "type": "radio",
+      "options": ["M", "F", "X"],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
       "field_name": "new_owner_dob",
       "type": "date",
       "options": [],
       "required": true,
-      "page": 2
+      "page": 1
     },
     {
-      "label": "New Owner Phone",
-      "field_name": "new_owner_phone",
+      "label": "Are you of Aboriginal and/or Torres Strait Islander origin? (Answering this question is voluntary)",
+      "field_name": "new_owner_indigenous",
+      "type": "radio",
+      "options": ["Yes", "No"],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Organisation (if applicable)",
+      "field_name": "new_owner_organisation",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "ACN",
+      "field_name": "new_owner_acn",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "instruction",
+      "text": "Residential/business address – PO Box No. is not acceptable. Application will not be processed unless residential/business address is supplied.",
+      "page": 1
+    },
+    {
+      "label": "Residential/Business Address",
+      "field_name": "new_owner_address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Suburb",
+      "field_name": "new_owner_suburb",
       "type": "text",
       "options": [],
       "required": true,
+      "page": 1
+    },
+    {
+      "label": "State",
+      "field_name": "new_owner_state",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Postcode",
+      "field_name": "new_owner_postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Postal Address (if same as residential/business please write 'as above')",
+      "field_name": "new_owner_postal_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Postal Suburb",
+      "field_name": "new_owner_postal_suburb",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Postal State",
+      "field_name": "new_owner_postal_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Postal Postcode",
+      "field_name": "new_owner_postal_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Private Phone",
+      "field_name": "new_owner_private_phone",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Business Phone",
+      "field_name": "new_owner_business_phone",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Mobile",
+      "field_name": "new_owner_mobile",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Email",
+      "field_name": "new_owner_email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Nominated Contact of the Organisation",
       "page": 2
     },
     {
-      "label": "New Owner Email",
-      "field_name": "new_owner_email",
+      "type": "instruction",
+      "text": "Complete this section only if the new owner is an organisation. Written authorisation on organisation's letterhead is required.",
+      "page": 2
+    },
+    {
+      "label": "Nominee Surname",
+      "field_name": "nominee_surname",
       "type": "text",
       "options": [],
       "required": false,
       "page": 2
     },
     {
-      "label": "Vessel Registration Number",
+      "label": "Nominee Given Name(s)",
+      "field_name": "nominee_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Nominee Gender",
+      "field_name": "nominee_gender",
+      "type": "radio",
+      "options": ["M", "F", "X"],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Nominee Date of Birth",
+      "field_name": "nominee_dob",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Nominee – Aboriginal and/or Torres Strait Islander origin? (Voluntary)",
+      "field_name": "nominee_indigenous",
+      "type": "radio",
+      "options": ["Yes", "No"],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Nominee Residential Address",
+      "field_name": "nominee_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Nominee Suburb",
+      "field_name": "nominee_suburb",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Nominee State",
+      "field_name": "nominee_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Nominee Postcode",
+      "field_name": "nominee_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Nominee Postal Address",
+      "field_name": "nominee_postal_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Nominee Postal Suburb",
+      "field_name": "nominee_postal_suburb",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Nominee Postal State",
+      "field_name": "nominee_postal_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Nominee Postal Postcode",
+      "field_name": "nominee_postal_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Nominee Private Phone",
+      "field_name": "nominee_private_phone",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Nominee Business Phone",
+      "field_name": "nominee_business_phone",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Nominee Mobile",
+      "field_name": "nominee_mobile",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Nominee Email",
+      "field_name": "nominee_email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Have you previously been issued with a maritime product? (Boat Driving Licence, Vessel Registration, Mooring Licence)",
+      "field_name": "prev_maritime_product",
+      "type": "radio",
+      "options": ["Yes", "No"],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "If yes, provide product numbers (if known)",
+      "field_name": "prev_maritime_product_numbers",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Details of Seller",
+      "page": 3
+    },
+    {
+      "label": "Was the vessel purchased from a licensed dealer/auction house?",
+      "field_name": "purchased_from_dealer",
+      "type": "radio",
+      "options": ["Yes", "No"],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Name of Licensed Dealer/Auction House",
+      "field_name": "dealer_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Seller Surname or Organisation Name",
+      "field_name": "seller_surname_or_org",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Seller Given Name(s)",
+      "field_name": "seller_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Seller Address",
+      "field_name": "seller_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Seller Suburb",
+      "field_name": "seller_suburb",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Seller State",
+      "field_name": "seller_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Seller Postcode",
+      "field_name": "seller_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Reason Registration Certificate and Acceptable Receipt Cannot Be Provided",
+      "field_name": "no_receipt_reason",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Concession Details (if applicable)",
+      "page": 3
+    },
+    {
+      "label": "Concession Requested?",
+      "field_name": "concession_requested",
+      "type": "radio",
+      "options": ["Yes", "No"],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Concession Number",
+      "field_name": "concession_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Concession Type",
+      "field_name": "concession_type",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Concession Expiry Date",
+      "field_name": "concession_expiry_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Details of Vessel",
+      "page": 3
+    },
+    {
+      "label": "Vessel Registration Number (purchased in full settlement)",
       "field_name": "vessel_registration_number",
       "type": "text",
       "options": [],
@@ -3149,44 +3533,704 @@
       "page": 3
     },
     {
-      "label": "Vessel Name",
-      "field_name": "vessel_name",
-      "type": "text",
-      "options": [],
-      "required": true,
-      "page": 3
-    },
-    {
-      "label": "Transfer Date",
-      "field_name": "transfer_date",
+      "label": "Settlement Date",
+      "field_name": "settlement_date",
       "type": "date",
       "options": [],
       "required": true,
       "page": 3
     },
     {
-      "label": "Sale Price ($)",
-      "field_name": "sale_price",
-      "type": "number",
+      "label": "HIN (Boatcode) (if applicable)",
+      "field_name": "hin_boatcode",
+      "type": "text",
       "options": [],
-      "required": true,
+      "required": false,
       "page": 3
     },
     {
-      "label": "Current Owner Signature",
-      "field_name": "current_owner_signature",
-      "type": "signature",
+      "label": "Vessel Name (if applicable)",
+      "field_name": "vessel_name",
+      "type": "text",
       "options": [],
-      "required": true,
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Hull Length (m)",
+      "field_name": "hull_length",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Vessel Manufacturer (if known)",
+      "field_name": "vessel_manufacturer",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Year Vessel Built",
+      "field_name": "year_vessel_built",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Where is the vessel kept – Marina berth",
+      "field_name": "kept_marina_berth",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
       "page": 4
     },
     {
-      "label": "New Owner Signature",
-      "field_name": "new_owner_signature",
+      "label": "Where is the vessel kept – Trailer",
+      "field_name": "kept_trailer",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Where is the vessel kept – Slipway",
+      "field_name": "kept_slipway",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Where is the vessel kept – Boatshed",
+      "field_name": "kept_boatshed",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Where is the vessel kept – Mooring",
+      "field_name": "kept_mooring",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Where is the vessel kept – Dry storage",
+      "field_name": "kept_dry_storage",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Where is the vessel kept – Jetty",
+      "field_name": "kept_jetty",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Where is the vessel kept – Other (specify)",
+      "field_name": "kept_other",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Vessel Use – Wakeboarding",
+      "field_name": "use_wakeboarding",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Vessel Use – Skiing",
+      "field_name": "use_skiing",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Vessel Use – Fishing",
+      "field_name": "use_fishing",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Vessel Use – Cruising",
+      "field_name": "use_cruising",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Vessel Use – Sailing",
+      "field_name": "use_sailing",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Vessel Use – Other (specify)",
+      "field_name": "use_other",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Construction Material",
+      "field_name": "construction_material",
+      "type": "dropdown",
+      "options": ["Steel", "Aluminium", "Plywood", "Fibreglass (GRP)", "Vinyl/plastic/textile", "Timber", "Ferrocement", "Composite", "Rubber", "Carbon fibre", "Polyethylene", "Other"],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Construction Material – Other (specify)",
+      "field_name": "construction_material_other",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Vessel Type",
+      "field_name": "vessel_type",
+      "type": "dropdown",
+      "options": ["Cabin runabout", "Inflatable", "Barge", "Sailvessel (Yacht)", "Open runabout", "Motor cruiser", "Punt", "PWC", "Houseboat", "Catamaran", "Other"],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Vessel Type – Other (specify)",
+      "field_name": "vessel_type_other",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Hull Colour",
+      "field_name": "hull_colour",
+      "type": "dropdown",
+      "options": ["White", "Black", "Blue", "Red", "Yellow", "Green", "Brown", "Cream", "Silver", "Unpainted", "Other"],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Hull Colour – Other (specify)",
+      "field_name": "hull_colour_other",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Topside Colour",
+      "field_name": "topside_colour",
+      "type": "dropdown",
+      "options": ["White", "Black", "Blue", "Red", "Yellow", "Green", "Brown", "Cream", "Silver", "Unpainted", "Other"],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Topside Colour – Other (specify)",
+      "field_name": "topside_colour_other",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Has MicroDot technology been applied to this vessel?",
+      "field_name": "microdot_applied",
+      "type": "radio",
+      "options": ["Yes", "No"],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Does this vessel display an Australian Builders Plate (ABP)?",
+      "field_name": "abp_displayed",
+      "type": "radio",
+      "options": ["Yes", "No"],
+      "required": false,
+      "page": 4
+    },
+    {
+      "type": "heading",
+      "text": "Engine Details – 1st Engine",
+      "page": 5
+    },
+    {
+      "type": "instruction",
+      "text": "Applications may not be accepted without engine details. If more than two engines, supply details on a separate sheet.",
+      "page": 5
+    },
+    {
+      "label": "Engine 1 – Propulsion",
+      "field_name": "engine1_propulsion",
+      "type": "radio",
+      "options": ["Inboard", "Outboard", "Sterndrive"],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Engine 1 – Fuel",
+      "field_name": "engine1_fuel",
+      "type": "radio",
+      "options": ["Petrol", "Diesel", "Other"],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Engine 1 – Fuel Other (specify)",
+      "field_name": "engine1_fuel_other",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Engine 1 – Manufacturer Name",
+      "field_name": "engine1_manufacturer",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Engine 1 – Serial No.",
+      "field_name": "engine1_serial_no",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Engine 1 – Horsepower",
+      "field_name": "engine1_horsepower",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Engine 1 – Kilowatt",
+      "field_name": "engine1_kilowatt",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "type": "heading",
+      "text": "Engine Details – 2nd Engine",
+      "page": 5
+    },
+    {
+      "label": "Engine 2 – Propulsion",
+      "field_name": "engine2_propulsion",
+      "type": "radio",
+      "options": ["Inboard", "Outboard", "Sterndrive"],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Engine 2 – Fuel",
+      "field_name": "engine2_fuel",
+      "type": "radio",
+      "options": ["Petrol", "Diesel", "Other"],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Engine 2 – Fuel Other (specify)",
+      "field_name": "engine2_fuel_other",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Engine 2 – Manufacturer Name",
+      "field_name": "engine2_manufacturer",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Engine 2 – Serial No.",
+      "field_name": "engine2_serial_no",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Engine 2 – Horsepower",
+      "field_name": "engine2_horsepower",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Engine 2 – Kilowatt",
+      "field_name": "engine2_kilowatt",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "type": "disclosure",
+      "text": "Personal Information Collection Notice: Your privacy is important to us and our privacy statement explains why we collect your personal information and how we will manage it. You can obtain a copy of our privacy statement at transport.nsw.gov.au or by calling us to request a copy on 13 12 36.",
+      "page": 5
+    },
+    {
+      "type": "heading",
+      "text": "Declaration",
+      "page": 5
+    },
+    {
+      "type": "disclosure",
+      "text": "I declare that I am the owner or am authorised to act on behalf of the owner of this vessel (and any interested parties) and that the information supplied in this form is true and correct. I understand that if any material information in this application is found to be false, misleading, inadequate or incorrect, the vessel registration may be cancelled.",
+      "page": 5
+    },
+    {
+      "label": "Owner Signature",
+      "field_name": "owner_signature",
       "type": "signature",
       "options": [],
       "required": true,
-      "page": 4
+      "page": 5
+    },
+    {
+      "label": "Date",
+      "field_name": "declaration_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 5
+    },
+    {
+      "type": "heading",
+      "text": "Representative Authority",
+      "page": 6
+    },
+    {
+      "type": "instruction",
+      "text": "Complete this section only if authorising another person to register this vessel in your name.",
+      "page": 6
+    },
+    {
+      "label": "Owner Signature (authorising representative)",
+      "field_name": "rep_authority_owner_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Representative Surname",
+      "field_name": "rep_surname",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Representative Given Name(s)",
+      "field_name": "rep_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Representative Address or Daytime Contact Phone No.",
+      "field_name": "rep_address_or_phone",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Representative Signature",
+      "field_name": "rep_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Date",
+      "field_name": "rep_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "type": "heading",
+      "text": "Proof of Identity – Authorised Signatory Use",
+      "page": 6
+    },
+    {
+      "type": "instruction",
+      "text": "This section must be completed for all applicants. The applicant's proof of identity must be verified by an authorised signatory. Acceptable signatories are any Service NSW Officer, Police Officer, Justice of the Peace, Judge, Magistrate, Bank Manager, Legal Practitioner or School Principal.",
+      "page": 6
+    },
+    {
+      "label": "Full Proof of ID – Document Name",
+      "field_name": "poi_full_document_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Full Proof of ID – No.",
+      "field_name": "poi_full_document_no",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Primary Proof of ID – Document Name",
+      "field_name": "poi_primary_document_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Primary Proof of ID – No.",
+      "field_name": "poi_primary_document_no",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Secondary Proof of ID – Document Name",
+      "field_name": "poi_secondary_document_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Secondary Proof of ID – No.",
+      "field_name": "poi_secondary_document_no",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Authorised Signatory Name",
+      "field_name": "authorised_signatory_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 6
+    },
+    {
+      "label": "Authorised Signatory Signature",
+      "field_name": "authorised_signatory_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 6
+    },
+    {
+      "label": "Name of Agency",
+      "field_name": "authorised_signatory_agency",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Date",
+      "field_name": "authorised_signatory_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 6
+    },
+    {
+      "type": "heading",
+      "text": "Statutory Declaration – Vessel Ownership",
+      "page": 7
+    },
+    {
+      "type": "instruction",
+      "text": "Complete this page only if you cannot provide an original Certificate of Registration or an acceptable receipt. Transport for NSW notes that making a false Statutory Declaration or providing false information may result in cancellation of the vessel registration.",
+      "page": 7
+    },
+    {
+      "label": "Full Name (declarant)",
+      "field_name": "stat_dec_full_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Full Address (declarant)",
+      "field_name": "stat_dec_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Vessel Registration Number",
+      "field_name": "stat_dec_vessel_reg_no",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "HIN (Boatcode)",
+      "field_name": "stat_dec_hin",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Vessel Type",
+      "field_name": "stat_dec_vessel_type",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Vessel Length (metres)",
+      "field_name": "stat_dec_vessel_length",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Vessel Name (if applicable)",
+      "field_name": "stat_dec_vessel_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Made and Declared at (location)",
+      "field_name": "stat_dec_location",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Date of Declaration",
+      "field_name": "stat_dec_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Applicant's Signature",
+      "field_name": "stat_dec_applicant_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Name of Authorised Witness",
+      "field_name": "stat_dec_witness_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Witness Qualification – Justice of the Peace",
+      "field_name": "stat_dec_witness_jp",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "JP Number",
+      "field_name": "stat_dec_jp_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Witness Qualification – Legal Practitioner (with a current practising certificate)",
+      "field_name": "stat_dec_witness_legal_practitioner",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Witness Qualification – Notary Public",
+      "field_name": "stat_dec_witness_notary_public",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Describe Identification Document Relied On",
+      "field_name": "stat_dec_witness_id_document",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Signature of Authorised Witness",
+      "field_name": "stat_dec_witness_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 7
+    },
+    {
+      "label": "Date",
+      "field_name": "stat_dec_witness_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 7
     }
   ],
   "45062798-road-occupancy-licence-app-development-activities.pdf": [
