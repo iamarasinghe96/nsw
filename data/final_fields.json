@@ -9345,6 +9345,174 @@
       "type": "disclosure",
       "text": "Personal Information Collection Notice: Transport for NSW is committed to protecting your privacy and ensuring your personal and health information is managed according to law. Find out why we collect your personal information, including how we use and manage it, by reading our privacy statement at transport.nsw.gov.au or phone 13 22 13 to request a copy.",
       "page": 7
+    },
+    {
+      "label": "Section I – Vehicle 3: Registration Number",
+      "field_name": "i_v3_registration",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 8
+    },
+    {
+      "label": "Section I – Vehicle 3: Year of Manufacture",
+      "field_name": "i_v3_year",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 8
+    },
+    {
+      "label": "Section I – Vehicle 3: Make",
+      "field_name": "i_v3_make",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 8
+    },
+    {
+      "label": "Section I – Vehicle 3: Model",
+      "field_name": "i_v3_model",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 8
+    },
+    {
+      "label": "Section I – Vehicle 3: Cylinders",
+      "field_name": "i_v3_cylinders",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 8
+    },
+    {
+      "label": "Section I – Vehicle 3: Gear Type",
+      "field_name": "i_v3_gear_type",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 8
+    },
+    {
+      "label": "Section I – Vehicle 3: Does the vehicle have any other engine modifications?",
+      "field_name": "i_v3_engine_mods",
+      "type": "radio",
+      "options": ["Yes", "No"],
+      "required": false,
+      "page": 8
+    },
+    {
+      "label": "Section I – Vehicle 3: Engine Modification Details",
+      "field_name": "i_v3_engine_mod_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 8
+    },
+    {
+      "label": "Section I – Do you also have vehicles registered to you / the company / business that are not considered to be a prohibited vehicle type?",
+      "field_name": "i_non_prohibited_vehicles",
+      "type": "radio",
+      "options": ["Yes", "No"],
+      "required": false,
+      "page": 8
+    },
+    {
+      "label": "Section I – If yes, explain why those vehicles cannot be used or are not suitable for the applicant's use",
+      "field_name": "i_non_prohibited_vehicles_reason",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 8
+    },
+    {
+      "label": "Section I – Operator Phone Number",
+      "field_name": "i_operator_phone",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 8
+    },
+    {
+      "label": "Section I – Operator Mobile Number",
+      "field_name": "i_operator_mobile",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 8
+    },
+    {
+      "label": "Section I – Operator Email Address",
+      "field_name": "i_operator_email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 8
+    },
+    {
+      "label": "Section I – Subscribed and Declared at (location)",
+      "field_name": "i_declared_at",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 8
+    },
+    {
+      "label": "Section I – Date of Declaration",
+      "field_name": "i_declaration_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 8
+    },
+    {
+      "label": "Section I – Declarant Signature(s)",
+      "field_name": "i_declarant_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 8
+    },
+    {
+      "label": "Section I – Name of Authorised Witness",
+      "field_name": "i_witness_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 8
+    },
+    {
+      "label": "Section I – Qualification of Authorised Witness",
+      "field_name": "i_witness_qualification",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 8
+    },
+    {
+      "label": "Section I – Describe Identification Document Relied On",
+      "field_name": "i_witness_id_document",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 8
+    },
+    {
+      "label": "Section I – Signature of Authorised Witness",
+      "field_name": "i_witness_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 8
+    },
+    {
+      "label": "Section I – JP Registration Number (if applicable)",
+      "field_name": "i_witness_jp_registration",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 8
     }
   ]
 }
