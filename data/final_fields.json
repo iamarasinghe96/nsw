@@ -5164,5 +5164,204 @@
       "text": "Privacy Collection Notice: NSW Fair Trading, Department of Customer Service gives priority to protecting the privacy of your personal information. We do this by handling personal information in a responsible manner and in accordance with the Privacy and Personal Information Protection Act 1998 (PPIP Act) and the Health Records and Information Privacy Act 2002 (HRIP Act). Service NSW will collect and use the personal information you provide through your MyServiceNSW Account to verify your identity and confirm your current contact details. The personal information contained in your application is collected and held by NSW Fair Trading. Information collected includes: full name, date of birth, contact details (address, email and phone number), proof of identity information, and other personal information required to check eligibility requirements.",
       "page": 5
     }
+  ],
+  "45071766-personalise-existing-vessel-registration.pdf": [
+    {
+      "type": "instruction",
+      "text": "Personalised vessel registration can be a combination of alpha / numeric characters to a maximum of 6 followed by the letter 'N' eg: FISHN, ANCHORN, ABC123N. If Transport for NSW considers the registration number to be offensive it will not be allowed. Applications must be accompanied by the current Certificate of Registration, proof of identity (certified copies are acceptable) and prescribed fee. For further information telephone 13 77 88.",
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 1 – Applicant Details",
+      "page": 1
+    },
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Names",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Daytime Contact Phone No.",
+      "field_name": "daytime_contact_phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Address",
+      "field_name": "address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 2 – Vessel Details",
+      "page": 1
+    },
+    {
+      "label": "Existing Registration Number",
+      "field_name": "existing_registration_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "HIN / Boatcode Number",
+      "field_name": "hin_boatcode_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 3 – Personalised Registration Details",
+      "page": 2
+    },
+    {
+      "type": "instruction",
+      "text": "As your preferred selection may already be allocated, please provide alternative selections. Registration is up to 6 alpha/numeric characters followed by the letter 'N'.",
+      "page": 2
+    },
+    {
+      "label": "First Preference",
+      "field_name": "first_preference",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Second Preference",
+      "field_name": "second_preference",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Third Preference",
+      "field_name": "third_preference",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 4 – Applicant Declaration",
+      "page": 2
+    },
+    {
+      "type": "disclosure",
+      "text": "A Justice of the Peace or Authorised Witness must witness you sign and date this declaration.\n\nI, (as listed in Section 1) do solemnly declare that should my application for Personalised Vessel Registration be approved I will remove the existing registration numbers and clearly display the Personalised Registration numbers on the vessel in the prescribed size and location as stated in the Regulations and I make this solemn Declaration conscientiously believing it to be true and by virtue of the Oaths Act 1900.",
+      "page": 2
+    },
+    {
+      "label": "Applicant Signature",
+      "field_name": "applicant_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Date",
+      "field_name": "applicant_declaration_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 5 – Justice of the Peace or Authorised Witness Declaration",
+      "page": 3
+    },
+    {
+      "type": "instruction",
+      "text": "In the presences of an authorised witness, who states: I have witnessed the applicant sign and date this form. Please cross out the text that does not apply: (1) I saw the face of the person OR I did not see the face of the person because the person was wearing a face covering, but I am satisfied that the person had a special justification for not removing the covering. (2) I have known the person for at least 12 months OR I have not known the person for at least 12 months, but I have confirmed the person's identity using an identification document.",
+      "page": 3
+    },
+    {
+      "label": "Describe Identification Document Relied On",
+      "field_name": "witness_identification_document",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Name of Authorised Witness",
+      "field_name": "witness_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Qualification of Authorised Witness",
+      "field_name": "witness_qualification",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Signature of Authorised Witness",
+      "field_name": "witness_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Date",
+      "field_name": "witness_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "JP Registration No (if applicable)",
+      "field_name": "jp_registration_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    }
   ]
 }
