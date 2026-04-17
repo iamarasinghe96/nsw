@@ -6048,5 +6048,427 @@
       "required": true,
       "page": 1
     }
+  ],
+  "apply-for-death-certificate.pdf": [
+    {
+      "type": "instruction",
+      "text": "This application form can only be used if the death occurred in NSW. Please provide copies of 3 forms of current identification with your application. You can also complete this application online at www.nsw.gov.au/bdm.",
+      "page": 1
+    },
+    {
+      "type": "disclosure",
+      "text": "Privacy: The Registry is responsible for the administration of legislation including the Births, Deaths and Marriages Registration Act 1995 and the Relationship Register Act 2010. Warning: It is an offence under Part 5A of the Crimes Act 1900 to provide false or misleading information or documents.",
+      "page": 1
+    },
+    {
+      "label": "Priority processing required",
+      "field_name": "priority_processing",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Quantity of certificates to receive",
+      "field_name": "quantity",
+      "type": "number",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Reason certificate is required (e.g. probate, executor)",
+      "field_name": "reason_certificate_required",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Your relationship to the deceased (e.g. son, mother, executor)",
+      "field_name": "relationship_to_deceased",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Applicant's Details",
+      "page": 1
+    },
+    {
+      "label": "Family name",
+      "field_name": "applicant_family_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "First given name",
+      "field_name": "applicant_first_given_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Other given name(s)",
+      "field_name": "applicant_other_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Company name",
+      "field_name": "applicant_company_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Company reference number",
+      "field_name": "applicant_company_reference_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Applicant's Address",
+      "page": 2
+    },
+    {
+      "label": "Address",
+      "field_name": "applicant_address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Suburb/Town/City",
+      "field_name": "applicant_suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "State/Territory",
+      "field_name": "applicant_state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Postcode",
+      "field_name": "applicant_postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Country",
+      "field_name": "applicant_country",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Delivery address (if different from above)",
+      "field_name": "delivery_address",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Delivery suburb/town/city",
+      "field_name": "delivery_suburb",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Delivery state/territory",
+      "field_name": "delivery_state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Delivery postcode",
+      "field_name": "delivery_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Delivery country",
+      "field_name": "delivery_country",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Contact number",
+      "field_name": "applicant_contact_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Email address",
+      "field_name": "applicant_email",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "type": "disclosure",
+      "text": "I have read and understand all the instructions in this document including the information about privacy. I declare that the information I have provided is true and correct.",
+      "page": 3
+    },
+    {
+      "label": "Signature of applicant",
+      "field_name": "applicant_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Details of Death Certificate Required",
+      "page": 3
+    },
+    {
+      "label": "Date of death",
+      "field_name": "date_of_death",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Age at death",
+      "field_name": "age_at_death",
+      "type": "number",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Registration number (if known)",
+      "field_name": "registration_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Search period — from (if date unknown)",
+      "field_name": "search_period_from",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Search period — to (if date unknown)",
+      "field_name": "search_period_to",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Names of Registered Person (Deceased)",
+      "page": 4
+    },
+    {
+      "label": "Family name of deceased",
+      "field_name": "deceased_family_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Family name at birth",
+      "field_name": "deceased_family_name_at_birth",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "First given name",
+      "field_name": "deceased_first_given_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Other given name/s",
+      "field_name": "deceased_other_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Place of death (suburb/town/city)",
+      "field_name": "place_of_death",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "type": "heading",
+      "text": "Spouse Details",
+      "page": 4
+    },
+    {
+      "label": "Spouse family name (current)",
+      "field_name": "spouse_family_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Spouse family name at birth",
+      "field_name": "spouse_family_name_at_birth",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Spouse first given name",
+      "field_name": "spouse_first_given_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Spouse other given name/s",
+      "field_name": "spouse_other_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "type": "heading",
+      "text": "Parent 1 Details",
+      "page": 5
+    },
+    {
+      "label": "Parent 1 family name (current)",
+      "field_name": "parent_1_family_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Parent 1 family name at birth",
+      "field_name": "parent_1_family_name_at_birth",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Parent 1 first given name",
+      "field_name": "parent_1_first_given_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Parent 1 other given name/s",
+      "field_name": "parent_1_other_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "type": "heading",
+      "text": "Parent 2 Details",
+      "page": 5
+    },
+    {
+      "label": "Parent 2 family name (current)",
+      "field_name": "parent_2_family_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Parent 2 family name at birth",
+      "field_name": "parent_2_family_name_at_birth",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Parent 2 first given name",
+      "field_name": "parent_2_first_given_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Parent 2 other given name/s",
+      "field_name": "parent_2_other_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    }
   ]
 }
