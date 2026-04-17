@@ -4799,5 +4799,615 @@
       "required": true,
       "page": 4
     }
+  ],
+  "45070923-e-toll-application-form.pdf": [
+    {
+      "type": "heading",
+      "text": "Select type of application",
+      "page": 1
+    },
+    {
+      "label": "Account type",
+      "field_name": "account_type",
+      "type": "radio",
+      "options": [
+        "E-Toll Tag Account",
+        "Easy Toll Tag Account"
+      ],
+      "required": true,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section A: Account Details",
+      "page": 1
+    },
+    {
+      "label": "Driver licence number",
+      "field_name": "driver_licence_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Title",
+      "field_name": "title",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "First and middle names",
+      "field_name": "first_and_middle_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Business name",
+      "field_name": "business_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "ABN / ACN",
+      "field_name": "abn_acn",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Do you require a Tax Invoice?",
+      "field_name": "require_tax_invoice",
+      "type": "radio",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section B: Contact Details",
+      "page": 2
+    },
+    {
+      "label": "Mailing address",
+      "field_name": "mailing_address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Mailing postcode",
+      "field_name": "mailing_postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Tag delivery address (if different from mailing address)",
+      "field_name": "tag_delivery_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Tag delivery postcode",
+      "field_name": "tag_delivery_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Email address",
+      "field_name": "email_address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Phone",
+      "field_name": "phone",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Mobile",
+      "field_name": "mobile",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Opt out of SMS communications",
+      "field_name": "opt_out_sms",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section C: Statement Options",
+      "page": 3
+    },
+    {
+      "label": "Statement delivery option",
+      "field_name": "statement_delivery_option",
+      "type": "radio",
+      "options": [
+        "Email quarterly (default)",
+        "Email monthly",
+        "Posted quarterly",
+        "Posted monthly"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Section D: M5 South-West Cashback",
+      "page": 3
+    },
+    {
+      "label": "Claim M5 South-West Cashback Rebate?",
+      "field_name": "claim_m5_cashback",
+      "type": "radio",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Claim Large Towed Recreational Vehicle Toll Rebate?",
+      "field_name": "claim_ltrvtr",
+      "type": "radio",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Do you have a pension concession card, DVA or TPI gold card?",
+      "field_name": "pension_concession_card",
+      "type": "radio",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Pension card number",
+      "field_name": "pension_card_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Pension card expiry date",
+      "field_name": "pension_card_expiry",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Section F: Payment Arrangement",
+      "page": 4
+    },
+    {
+      "type": "instruction",
+      "text": "Select a credit card type and provide card details, or complete the Direct Debit section to nominate a bank account.",
+      "page": 4
+    },
+    {
+      "label": "Type of card",
+      "field_name": "card_type",
+      "type": "radio",
+      "options": [
+        "MasterCard",
+        "Visa",
+        "AMEX",
+        "Diners Club"
+      ],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Name/s on card",
+      "field_name": "name_on_card",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Signature 1 on card",
+      "field_name": "signature_1_on_card",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Signature 2 on card",
+      "field_name": "signature_2_on_card",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "type": "disclosure",
+      "text": "I/We request and authorise Transport for NSW E-Toll, User ID 216825 to arrange, through its own financial institution, a debit to your nominated account any amount Transport for NSW E-Toll has deemed payable by you. This debit or charge will be made through the Bulk Electronic Clearing System Framework (BECS) and will be subject to the terms and conditions of the Direct Debit Request Service Agreement.",
+      "page": 4
+    },
+    {
+      "label": "Name of Financial Institution",
+      "field_name": "financial_institution",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Name/s on account with Financial Institution",
+      "field_name": "account_holder_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "BSB number",
+      "field_name": "bsb_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Account number with Financial Institution",
+      "field_name": "account_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Signature of nominated account holder 1",
+      "field_name": "signature_account_holder_1",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Signature of nominated account holder 2",
+      "field_name": "signature_account_holder_2",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "type": "heading",
+      "text": "Section G: Vehicle Information",
+      "page": 5
+    },
+    {
+      "type": "instruction",
+      "text": "Enter details for each vehicle. Licence plate number is mandatory. Class 2: car/motorcycle under 2.8m high. Class 4: truck/vehicle exceeding Class 2 dimensions. Each tag can only be used in one vehicle class.",
+      "page": 5
+    },
+    {
+      "label": "Licence plate number",
+      "field_name": "licence_plate_1",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 5
+    },
+    {
+      "label": "State",
+      "field_name": "vehicle_state_1",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 5
+    },
+    {
+      "label": "Vehicle description",
+      "field_name": "vehicle_description_1",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 5
+    },
+    {
+      "label": "Vehicle class",
+      "field_name": "vehicle_class_1",
+      "type": "radio",
+      "options": [
+        "Class 2",
+        "Class 4"
+      ],
+      "required": true,
+      "page": 5
+    },
+    {
+      "label": "Licence plate number",
+      "field_name": "licence_plate_2",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "State",
+      "field_name": "vehicle_state_2",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Vehicle description",
+      "field_name": "vehicle_description_2",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Vehicle class",
+      "field_name": "vehicle_class_2",
+      "type": "radio",
+      "options": [
+        "Class 2",
+        "Class 4"
+      ],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Licence plate number",
+      "field_name": "licence_plate_3",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "State",
+      "field_name": "vehicle_state_3",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Vehicle description",
+      "field_name": "vehicle_description_3",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Vehicle class",
+      "field_name": "vehicle_class_3",
+      "type": "radio",
+      "options": [
+        "Class 2",
+        "Class 4"
+      ],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Number of tags — Class 2",
+      "field_name": "tags_class_2",
+      "type": "number",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Number of tags — Class 4",
+      "field_name": "tags_class_4",
+      "type": "number",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "type": "heading",
+      "text": "Section H: Account Holders Telephone Password",
+      "page": 6
+    },
+    {
+      "label": "Phone password (12 characters maximum)",
+      "field_name": "phone_password",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "type": "heading",
+      "text": "Section I: Authorised Representatives (optional)",
+      "page": 6
+    },
+    {
+      "type": "instruction",
+      "text": "You can authorise up to two additional people to access your E-Toll account. By authorising them you give permission to disclose their personal information to TfNSW and to change their details.",
+      "page": 6
+    },
+    {
+      "label": "Authorised representative 1 — Title",
+      "field_name": "auth_rep_1_title",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Authorised representative 1 — First and middle names",
+      "field_name": "auth_rep_1_first_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Authorised representative 1 — Surname",
+      "field_name": "auth_rep_1_surname",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Authorised representative 1 — Phone password",
+      "field_name": "auth_rep_1_phone_password",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Authorised representative 2 — Title",
+      "field_name": "auth_rep_2_title",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Authorised representative 2 — First and middle names",
+      "field_name": "auth_rep_2_first_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Authorised representative 2 — Surname",
+      "field_name": "auth_rep_2_surname",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Authorised representative 2 — Phone password",
+      "field_name": "auth_rep_2_phone_password",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "type": "heading",
+      "text": "Section J: Declaration",
+      "page": 7
+    },
+    {
+      "type": "disclosure",
+      "text": "I hereby certify that the details given above are complete and correct. If I have included authorised representative/s I have their approval to disclose their personal information. I acknowledge I have received, read and agree to be bound by the Terms and Conditions for a TfNSW E-Toll Tag account as determined by TfNSW at the time of this application or as may be varied by TfNSW in accordance with the Terms and Conditions.",
+      "page": 7
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 7
+    },
+    {
+      "label": "Date",
+      "field_name": "declaration_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 7
+    },
+    {
+      "label": "Print full name",
+      "field_name": "print_full_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 7
+    },
+    {
+      "label": "Position (Corporate account)",
+      "field_name": "position_corporate",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 7
+    }
   ]
 }
