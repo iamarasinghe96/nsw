@@ -7963,5 +7963,287 @@
       "required": false,
       "page": 6
     }
+  ],
+  "45072066-application-passenger-transport-licence-code.pdf": [
+    {
+      "type": "instruction",
+      "text": "Use this form to apply for a Passenger Transport Licence Code to provide passenger transport services, such as taxis, private hire, rideshare or tour drive operations. For more information about eligibility, visit service.nsw.gov.au.",
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "1. Customer Details",
+      "page": 1
+    },
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given name(s)",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "NSW Driver Licence number",
+      "field_name": "nsw_driver_licence_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Residential address (must be in NSW)",
+      "field_name": "residential_address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Residential postcode",
+      "field_name": "residential_postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Mailing address (if different from residential address)",
+      "field_name": "mailing_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Mailing postcode",
+      "field_name": "mailing_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Email address",
+      "field_name": "email_address",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Mobile number",
+      "field_name": "mobile_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Driving History and Health Questions",
+      "page": 2
+    },
+    {
+      "type": "instruction",
+      "text": "If you answer Yes to any question from 4 to 10, you may need to visit a health professional to complete a medical assessment online. If you need a paper medical form, call Service NSW on 13 22 13 or visit a service centre.",
+      "page": 2
+    },
+    {
+      "label": "2. Have you ever been disqualified, prohibited or refused from driving a motor vehicle or riding a motorcycle in NSW or elsewhere?",
+      "field_name": "disqualified_driving",
+      "type": "radio",
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "If yes, give details",
+      "field_name": "disqualified_driving_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "3. Do you have a disqualification, cancellation, suspension or pending charge against you in NSW or elsewhere, or is your licence subject to an appeal for driving, riding or offences?",
+      "field_name": "licence_issues",
+      "type": "radio",
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "If yes, give details",
+      "field_name": "licence_issues_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "4. Do you have diabetes?",
+      "field_name": "has_diabetes",
+      "type": "radio",
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "If yes, diabetes controlled by",
+      "field_name": "diabetes_controlled_by",
+      "type": "radio",
+      "options": [
+        "Insulin",
+        "Oral medication (tablets)",
+        "Diet (medical not required)"
+      ],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "5. Do you have epilepsy?",
+      "field_name": "has_epilepsy",
+      "type": "radio",
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "6. Have you ever had any unexplained blackouts, fainting or sudden periods of unconsciousness?",
+      "field_name": "has_blackouts",
+      "type": "radio",
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "7. Do you have any medical conditions, physical disabilities or mental health conditions that may affect your driving?",
+      "field_name": "has_medical_conditions",
+      "type": "radio",
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "8. Do you regularly use drugs (such as stimulants or drugs of addiction) other than prescription medication, that may affect your driving?",
+      "field_name": "uses_drugs",
+      "type": "radio",
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "If yes, what are they?",
+      "field_name": "drugs_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "9. Will you be wearing glasses or contact lenses when driving or doing the eyesight test?",
+      "field_name": "wears_corrective_lenses",
+      "type": "radio",
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "If yes, type of corrective lenses",
+      "field_name": "corrective_lenses_type",
+      "type": "radio",
+      "options": [
+        "Contact lenses",
+        "Glasses"
+      ],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "10. Do you have an eye or vision condition that may affect your driving?",
+      "field_name": "has_vision_condition",
+      "type": "radio",
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "If yes, give details",
+      "field_name": "vision_condition_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "11. Disclosure Consent and Declaration",
+      "page": 3
+    },
+    {
+      "type": "disclosure",
+      "text": "You consent to Transport for NSW exchanging relevant information with relevant organisations in connection with Transport for NSW and those organisations carrying out their obligations and functions under relevant legislation. You declare that the information on this form is true and complete. Under road transport legislation it is an offence for anyone to attempt to obtain or renew a driver licence by false statement or dishonest means.",
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Date",
+      "field_name": "declaration_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 3
+    }
   ]
 }
