@@ -6470,5 +6470,401 @@
       "required": false,
       "page": 5
     }
+  ],
+  "apply-for-original-registration-form.pdf": [
+    {
+      "type": "instruction",
+      "text": "Use this form to apply for a copy of original document(s) related to a life event registered by the NSW Registry of Births, Deaths & Marriages. You must provide three proof of identity documents with your application. All sections of this form must be completed.",
+      "page": 1
+    },
+    {
+      "type": "disclosure",
+      "text": "Privacy: The Registry is responsible for the administration of legislation including the Births, Deaths and Marriages Registration Act 1995 and the Relationship Register Act 2010. Warning: It is an offence under Part 5A of the Crimes Act 1900 to provide false or misleading information or documents.",
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Part A – Requested Information",
+      "page": 1
+    },
+    {
+      "type": "instruction",
+      "text": "Select the document(s) you are requesting by ticking the applicable box(es) below.",
+      "page": 1
+    },
+    {
+      "label": "Birth registration statement (BRS) application",
+      "field_name": "req_birth_registration_statement",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Adding a parent's details to a birth registration application",
+      "field_name": "req_adding_parent_birth",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Removing a parent's details from a birth registration application",
+      "field_name": "req_removing_parent_birth",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Notice of intended marriage (NOIM)",
+      "field_name": "req_notice_intended_marriage",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Official certificate of marriage",
+      "field_name": "req_official_certificate_marriage",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Death registration statement (DRS) application",
+      "field_name": "req_death_registration_statement",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Medical certificate cause of death (MCCD)",
+      "field_name": "req_mccd",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Medical certificate cause of perinatal death (MCCPD)",
+      "field_name": "req_mccpd",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Relationship registration application",
+      "field_name": "req_relationship_registration",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Change of name application",
+      "field_name": "req_change_of_name",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Change of sex application",
+      "field_name": "req_change_of_sex",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Part B – Applicant's Details",
+      "page": 2
+    },
+    {
+      "label": "First name",
+      "field_name": "applicant_first_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Other given name/s or middle names",
+      "field_name": "applicant_other_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Family name (surname)",
+      "field_name": "applicant_family_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Contact number",
+      "field_name": "applicant_contact_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Email address",
+      "field_name": "applicant_email",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Current Address",
+      "page": 3
+    },
+    {
+      "label": "Street address",
+      "field_name": "current_street_address",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Suburb/Town/City",
+      "field_name": "current_suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "State/Territory",
+      "field_name": "current_state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Postcode",
+      "field_name": "current_postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Country",
+      "field_name": "current_country",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Postal Address (if different from current address)",
+      "page": 3
+    },
+    {
+      "label": "Street address",
+      "field_name": "postal_street_address",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Suburb/Town/City",
+      "field_name": "postal_suburb",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "State/Territory",
+      "field_name": "postal_state",
+      "type": "dropdown",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "ACT",
+        "NT"
+      ],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postal_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Country",
+      "field_name": "postal_country",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Part C – Reason for Accessing Registry Information",
+      "page": 4
+    },
+    {
+      "type": "instruction",
+      "text": "You must provide an adequate reason for wanting access. The Registry will assess your interest, the sensitivity of the information, how you intend to use it, and other relevant factors.",
+      "page": 4
+    },
+    {
+      "label": "Reason for requesting documentation and intended use of information",
+      "field_name": "reason_for_access",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "type": "heading",
+      "text": "Part D – Life Event Details",
+      "page": 4
+    },
+    {
+      "label": "Date of life event (e.g. date of marriage, date of death, date of name change)",
+      "field_name": "date_of_life_event",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Certificate registration number (if known, e.g. 1234567/2000)",
+      "field_name": "certificate_registration_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "type": "heading",
+      "text": "Subject's Details (if different from applicant)",
+      "page": 4
+    },
+    {
+      "type": "instruction",
+      "text": "If applying for someone else's record, provide their details here. For marriage/relationship documents, provide the other party's details.",
+      "page": 4
+    },
+    {
+      "label": "Subject first name",
+      "field_name": "subject_first_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Subject other given name/s or middle names",
+      "field_name": "subject_other_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Subject family name (surname)",
+      "field_name": "subject_family_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Applicant's relationship to subject (e.g. parent, daughter, partner)",
+      "field_name": "relationship_to_subject",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Place of life event (Town/City)",
+      "field_name": "place_of_life_event",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "type": "heading",
+      "text": "Part E – Secure Payment",
+      "page": 5
+    },
+    {
+      "type": "instruction",
+      "text": "After your application has been reviewed, you will receive an email with a secure payment link. You can pay using a credit or debit card. Alternatively, pay in person at a Service NSW Centre.",
+      "page": 5
+    },
+    {
+      "label": "Email address for payment link",
+      "field_name": "payment_email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "type": "heading",
+      "text": "Part F – Declaration",
+      "page": 5
+    },
+    {
+      "type": "disclosure",
+      "text": "I declare that the information I have provided is true and correct. I have read and understand all the information and instructions in this document including the information about privacy. I understand it is an offence under Part 5A of the Crimes Act 1900 to provide false or misleading information or documents and that it is an offence under the Births, Deaths and Marriages Registration Act 1995 to make a false or misleading representation in an application, notice or document.",
+      "page": 5
+    },
+    {
+      "label": "Signature of applicant",
+      "field_name": "applicant_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 5
+    },
+    {
+      "label": "Date",
+      "field_name": "declaration_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 5
+    }
   ]
 }
