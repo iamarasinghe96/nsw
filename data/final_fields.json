@@ -6835,5 +6835,213 @@
       "required": false,
       "page": 4
     }
+  ],
+  "45072029-classic-vehicle-declaration.pdf": [
+    {
+      "type": "instruction",
+      "text": "This form must be submitted as an original. Photocopies will not be accepted. The applicant is responsible for the vehicle to be suitable for safe use until the expiry date of the registration. An Inspection must be presented to establish or renew the registration. The applicant must be a financial member of a club affiliated with an approved organisation. The vehicle must be 30 years of age or older and meet eligibility requirements of the Classic Vehicle Scheme. The Gross Vehicle Mass (GVM) is only required where it is allocated by the vehicle manufacturer.",
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 1 – Applicant Details",
+      "page": 1
+    },
+    {
+      "label": "NSW Drivers Licence/Customer Number",
+      "field_name": "nsw_licence_customer_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Name(s)",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Address",
+      "field_name": "address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Club Membership Details (nominate primary club first)",
+      "field_name": "club_membership_details",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 2 – Vehicle Details",
+      "page": 2
+    },
+    {
+      "label": "Plate Number (if known)",
+      "field_name": "plate_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "GVM (if known)",
+      "field_name": "gvm",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "VIN or Chassis/Frame or Serial Number",
+      "field_name": "vin_chassis_serial",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Engine Number",
+      "field_name": "engine_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Make",
+      "field_name": "make",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Model Year",
+      "field_name": "model_year",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Model (in full – name, letters and/or numbers, variant)",
+      "field_name": "model",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Shape",
+      "field_name": "shape",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Type",
+      "field_name": "vehicle_type",
+      "type": "radio",
+      "options": ["Car/Station Wagon", "Motorcycle", "Other"],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Type – Other (specify)",
+      "field_name": "vehicle_type_other",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 3 – Vehicle Eligibility",
+      "page": 3
+    },
+    {
+      "type": "instruction",
+      "text": "To be completed by the approved organisation's responsible person. I certify that this vehicle meets the eligibility requirements of the Classic Vehicle Scheme and that the applicant is a financial member of a club affiliated with an approved organisation.",
+      "page": 3
+    },
+    {
+      "label": "Name of Responsible Person",
+      "field_name": "responsible_person_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Approved Organisation Name",
+      "field_name": "approved_organisation_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Inspection Report Number",
+      "field_name": "inspection_report_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Compliance Certificate Number (if required)",
+      "field_name": "compliance_certificate_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "responsible_person_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Date",
+      "field_name": "responsible_person_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "type": "disclosure",
+      "text": "Personal Information Collection Notice: Transport for NSW is committed to protecting your privacy and ensuring your personal and health information is managed according to law. Find out why we collect your personal information and how we use and manage it by reading our privacy statement at transport.nsw.gov.au or phone 13 22 13 to request a copy.",
+      "page": 3
+    }
   ]
 }
