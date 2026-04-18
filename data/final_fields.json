@@ -10360,5 +10360,493 @@
       "text": "Privacy Information Collection Notice: Transport for NSW is committed to protecting your privacy and ensuring your personal and health information is managed according to law. Find out why we collect your personal information, including how we use and manage it, by reading our privacy statement at transport.nsw.gov.au or phone 13 22 13 to request a copy.",
       "page": 3
     }
+  ],
+  "45070938-safe-use-declaration.pdf": [
+    {
+      "type": "instruction",
+      "text": "Your vehicle must be safe for use on the road. Penalties apply for driving a defective vehicle.",
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 1 – Registered Operator Details",
+      "page": 1
+    },
+    {
+      "label": "NSW Driver Licence/Customer Number",
+      "field_name": "driver_licence_customer_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 2 – Vehicle Identification",
+      "page": 1
+    },
+    {
+      "label": "Plate Number (if known)",
+      "field_name": "plate_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Year of Manufacture (Month/Year)",
+      "field_name": "year_of_manufacture",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Vehicle Description (e.g. sedan, trailer, motorcycle, combine-harvester, cotton picker, forklift, mini loader, bucket loader)",
+      "field_name": "vehicle_description",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "VIN or Chassis/Frame or Serial Number",
+      "field_name": "vin_chassis_serial",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 3 – Vehicle Use",
+      "page": 2
+    },
+    {
+      "label": "Unregistered Vehicle Permit",
+      "field_name": "vehicle_use_unregistered_permit",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Conditional Registration – Farm (Primary Producer declaration required)",
+      "field_name": "vehicle_use_farm",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Conditional Registration – Recreation (Stockton Beach)",
+      "field_name": "vehicle_use_recreation",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Conditional Registration – Earthwork/Roadwork",
+      "field_name": "vehicle_use_earthwork_roadwork",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Conditional Registration – Forestry",
+      "field_name": "vehicle_use_forestry",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Conditional Registration – Mining",
+      "field_name": "vehicle_use_mining",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Conditional Registration – Other",
+      "field_name": "vehicle_use_other",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Conditional Registration – Other (please specify)",
+      "field_name": "vehicle_use_other_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 4 – Equipment and Fittings",
+      "page": 3
+    },
+    {
+      "type": "instruction",
+      "text": "Non complying vehicle (e.g. tractor, grader, forklift) – For Conditional Registration or Unregistered Vehicle Permit. What fittings and equipment are on this vehicle?",
+      "page": 3
+    },
+    {
+      "label": "Amber Rotating Beacon",
+      "field_name": "eq_amber_rotating_beacon",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Brake Lights",
+      "field_name": "eq_brake_lights",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Turn Lights",
+      "field_name": "eq_turn_lights",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Headlights",
+      "field_name": "eq_headlights",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Tail Lights",
+      "field_name": "eq_tail_lights",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Rear Number Plate Light",
+      "field_name": "eq_rear_number_plate_light",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Clearance Lights",
+      "field_name": "eq_clearance_lights",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Delineators",
+      "field_name": "eq_delineators",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "2 Red Rear Reflectors",
+      "field_name": "eq_red_rear_reflectors",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Rear and Side Reflective Tape",
+      "field_name": "eq_reflective_tape",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Rear Vision Mirror",
+      "field_name": "eq_rear_vision_mirror",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Horn",
+      "field_name": "eq_horn",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Effective Brake System",
+      "field_name": "eq_effective_brake_system",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Seat Belt (all seating positions)",
+      "field_name": "eq_seat_belt",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Rear Mudguards/Flaps",
+      "field_name": "eq_rear_mudguards",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Hydraulic Steering Failure Warning Device or Sign",
+      "field_name": "eq_hydraulic_steering_failure_warning",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Left-Hand Drive Sign",
+      "field_name": "eq_left_hand_drive_sign",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Dual Control Steering Sign",
+      "field_name": "eq_dual_control_steering_sign",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Chain Guard",
+      "field_name": "eq_chain_guard",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Tracks, Rubber (tracks instead of wheels)",
+      "field_name": "eq_tracks_rubber",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Tracks, Steel (tracks instead of wheels)",
+      "field_name": "eq_tracks_steel",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "type": "instruction",
+      "text": "Complying vehicle (e.g. sedan, motorcycle, trailer) – For Unregistered Vehicle Permit ONLY. What fittings and equipment are on this vehicle?",
+      "page": 3
+    },
+    {
+      "label": "Lights and Indicators",
+      "field_name": "eq_lights_indicators",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Brakes",
+      "field_name": "eq_brakes",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Wheels and Tyres",
+      "field_name": "eq_wheels_tyres",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Steering",
+      "field_name": "eq_steering",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Windscreens and Windows",
+      "field_name": "eq_windscreens_windows",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Horn (complying vehicle)",
+      "field_name": "eq_horn_complying",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Seats and Seatbelts",
+      "field_name": "eq_seats_seatbelts",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Section 5 – Dimensions",
+      "page": 4
+    },
+    {
+      "label": "Is the vehicle within limits for length (12.5m), width (2.5m), height (4.3m)?",
+      "field_name": "dimensions_within_limits",
+      "type": "radio",
+      "options": ["Yes", "No"],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Notice OS1 Required",
+      "field_name": "notice_os1",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Permit OS2 Required",
+      "field_name": "permit_os2",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "type": "heading",
+      "text": "Section 6 – Weight Limits",
+      "page": 4
+    },
+    {
+      "label": "Is the vehicle within weight limits?",
+      "field_name": "weight_within_limits",
+      "type": "radio",
+      "options": ["Yes", "No"],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Notice OM2 Required",
+      "field_name": "notice_om2",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Permit OM3 Required",
+      "field_name": "permit_om3",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "type": "heading",
+      "text": "Section 7 – Safe Operating Condition",
+      "page": 4
+    },
+    {
+      "label": "Is the vehicle in a safe operating condition? (if unsure seek mechanical advice)",
+      "field_name": "safe_operating_condition",
+      "type": "radio",
+      "options": ["Yes", "No"],
+      "required": true,
+      "page": 4
+    },
+    {
+      "type": "heading",
+      "text": "Section 8 – Where Will the Vehicle Be Operated?",
+      "page": 4
+    },
+    {
+      "label": "Where Will the Vehicle Be Operated?",
+      "field_name": "operation_location",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "type": "heading",
+      "text": "Section 9 – Declaration",
+      "page": 4
+    },
+    {
+      "type": "disclosure",
+      "text": "I declare that: a) the vehicle has the equipment and fittings marked on this form and are in operating condition. b) I will be responsible for the vehicle to be suitable for safe use until the expiry of the registration or permit. c) the information on this form is true and complete.",
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "applicant_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Registered Operator Phone Number",
+      "field_name": "registered_operator_phone",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Date",
+      "field_name": "declaration_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "type": "disclosure",
+      "text": "Personal Information Collection Notice: Transport for NSW is committed to protecting your privacy and ensuring your personal and health information is managed according to law. Find out why we collect your personal information, including how we use and manage it, by reading our privacy statement at transport.nsw.gov.au or phone 13 22 13 to request a copy.",
+      "page": 4
+    }
   ]
 }
