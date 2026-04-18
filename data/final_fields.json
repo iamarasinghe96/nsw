@@ -10131,5 +10131,234 @@
       "required": false,
       "page": 3
     }
+  ],
+  "45071414-request-for-a-modified-licence.pdf": [
+    {
+      "type": "instruction",
+      "text": "To request a modified licence you need to complete this application form and sign the declaration. Take the form with your current licence and the required fee to a service centre. Please call us on 13 22 13 for further advice. National Relay Service 1300 555 727 or visit accesshub.gov.au",
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 1 – Applicant Details",
+      "page": 1
+    },
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Name(s)",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Residential Address",
+      "field_name": "residential_address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Customer / Licence Number",
+      "field_name": "customer_licence_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Class",
+      "field_name": "licence_class",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 2 – Modification Details",
+      "page": 2
+    },
+    {
+      "type": "instruction",
+      "text": "Modified licences are only available for essential journeys.",
+      "page": 2
+    },
+    {
+      "label": "Supplies (groceries etc.)",
+      "field_name": "journey_supplies",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Supplies – Description and Length of Journey",
+      "field_name": "supplies_description",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Supplies – Frequency of Journey",
+      "field_name": "supplies_frequency",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Medical (doctor/hospital etc.)",
+      "field_name": "journey_medical",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Medical – Description and Length of Journey",
+      "field_name": "medical_description",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Medical – Frequency of Journey",
+      "field_name": "medical_frequency",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Community (golf/bowling clubs etc.)",
+      "field_name": "journey_community",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Community – Description and Length of Journey",
+      "field_name": "community_description",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Community – Frequency of Journey",
+      "field_name": "community_frequency",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Voluntary Work (meals on wheels etc.)",
+      "field_name": "journey_voluntary_work",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Voluntary Work – Description and Length of Journey",
+      "field_name": "voluntary_work_description",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Voluntary Work – Frequency of Journey",
+      "field_name": "voluntary_work_frequency",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Other (relatives etc.)",
+      "field_name": "journey_other",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Other – Description and Length of Journey",
+      "field_name": "other_description",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Other – Frequency of Journey",
+      "field_name": "other_frequency",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 3 – Declaration",
+      "page": 3
+    },
+    {
+      "type": "disclosure",
+      "text": "I declare that the details in this application are true and complete.",
+      "page": 3
+    },
+    {
+      "label": "Signature of Applicant",
+      "field_name": "applicant_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Date",
+      "field_name": "declaration_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "type": "disclosure",
+      "text": "Privacy Information Collection Notice: Transport for NSW is committed to protecting your privacy and ensuring your personal and health information is managed according to law. Find out why we collect your personal information, including how we use and manage it, by reading our privacy statement at transport.nsw.gov.au or phone 13 22 13 to request a copy.",
+      "page": 3
+    }
   ]
 }
