@@ -11965,5 +11965,618 @@
       "text": "Personal Information Collection Notice: Transport for NSW is committed to protecting your privacy and ensuring your personal and health information is managed according to law. Find out why we collect your personal information, including how we use and manage it, by reading our privacy statement at transport.nsw.gov.au or phone 13 22 13 to request a copy.",
       "page": 2
     }
+  ],
+  "45070182-replacement-application.pdf": [
+    {
+      "type": "instruction",
+      "text": "This form covers replacement of: Licence, Registration Renewal Notice, Certificate of Conditional Registration, Unregistered Vehicle Permit (UVP), Certificate of Registration, Certificate of Approved Operations, and Historic and Classic Vehicle Log Book. Proof of identity: To apply for a replacement product you must provide acceptable proof of identity documents. Details of acceptable proof of identity documents are available at nsw.gov.au, visit any service centre or call us on 13 22 13. Reference statement: This is required in certain cases. See section 4 below.",
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 1 – Customer Details",
+      "page": 1
+    },
+    {
+      "label": "Name",
+      "field_name": "name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Residential Address (licence address must be within NSW)",
+      "field_name": "residential_address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Residential Postcode",
+      "field_name": "residential_postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Mailing Address (if different from residential address)",
+      "field_name": "mailing_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Mailing State",
+      "field_name": "mailing_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Mailing Postcode",
+      "field_name": "mailing_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email_address",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "NSW Licence Number",
+      "field_name": "nsw_licence_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 2 – Reason for Replacement Licence",
+      "page": 2
+    },
+    {
+      "label": "Lost",
+      "field_name": "reason_lost",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Change of Name",
+      "field_name": "reason_change_of_name",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Poor Picture Quality",
+      "field_name": "reason_poor_picture_quality",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Stolen",
+      "field_name": "reason_stolen",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Change of Conditions",
+      "field_name": "reason_change_of_conditions",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Not Received",
+      "field_name": "reason_not_received",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Damaged/Destroyed",
+      "field_name": "reason_damaged_destroyed",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Change of Appearance",
+      "field_name": "reason_change_of_appearance",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Licence Previously Surrendered",
+      "field_name": "reason_licence_surrendered",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Licence Confiscated",
+      "field_name": "reason_licence_confiscated",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Change of Residency Status",
+      "field_name": "reason_change_of_residency_status",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Change Specs Condition",
+      "field_name": "reason_change_specs_condition",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Passenger Transport Condition",
+      "field_name": "reason_passenger_transport_condition",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Data Breach",
+      "field_name": "reason_data_breach",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Other",
+      "field_name": "reason_other",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Other (please specify)",
+      "field_name": "reason_other_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 3 – NSW Photo Card",
+      "page": 2
+    },
+    {
+      "label": "Would you like a NSW Photo Card issued with your NSW Driver Licence?",
+      "field_name": "nsw_photo_card_requested",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "NSW Photo Card Duration",
+      "field_name": "nsw_photo_card_duration",
+      "type": "radio",
+      "options": ["5yr", "10yr"],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 5 – Driving Prohibition or Refusal",
+      "page": 2
+    },
+    {
+      "label": "Since last obtaining your licence, have you been prohibited or refused from driving a motor vehicle/vessel or riding a motorcycle in NSW or elsewhere?",
+      "field_name": "driving_prohibited_refused",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Driving Prohibition/Refusal – Details",
+      "field_name": "driving_prohibited_refused_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 6 – Disqualification, Cancellation or Suspension",
+      "page": 2
+    },
+    {
+      "label": "Since last obtaining your licence, have you been disqualified, cancelled, suspended or is there a charge pending against you or is your licence subject to an appeal for driving, riding or Maritime boating offences?",
+      "field_name": "driving_disqualified_suspended",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Disqualification/Suspension – Details",
+      "field_name": "driving_disqualified_suspended_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 4 – Reference Statement",
+      "page": 3
+    },
+    {
+      "type": "instruction",
+      "text": "Required when sufficient proof of identity documents are not provided and you still wish to pay for a replacement licence. To be completed by a person 18 years and over who has known you for at least 12 months and holds a current NSW licence. I declare that I have known the applicant for at least 12 months and, that to the best of my knowledge, the personal details given in section 1 are correct.",
+      "page": 3
+    },
+    {
+      "label": "Referee's Full Name (please print)",
+      "field_name": "referee_full_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Referee's Licence Number",
+      "field_name": "referee_licence_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Referee's Contact Number",
+      "field_name": "referee_contact_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Signature of Referee",
+      "field_name": "referee_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Referee – Date",
+      "field_name": "referee_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Section 7 – Replacement Document Type",
+      "page": 3
+    },
+    {
+      "type": "instruction",
+      "text": "I wish to apply for a replacement: (tick appropriate box)",
+      "page": 3
+    },
+    {
+      "label": "Registration Certificate",
+      "field_name": "replace_registration_certificate",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Registration Renewal Notice",
+      "field_name": "replace_registration_renewal_notice",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Conditional Registration Certificate",
+      "field_name": "replace_conditional_registration_certificate",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Certificate of Approved Operations",
+      "field_name": "replace_certificate_approved_operations",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Unregistered Vehicle Permit",
+      "field_name": "replace_unregistered_vehicle_permit",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Historic and Classic Vehicle Log Book",
+      "field_name": "replace_historic_classic_log_book",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Reason – Lost",
+      "field_name": "reg_reason_lost",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Reason – Damaged",
+      "field_name": "reg_reason_damaged",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Reason – Destroyed",
+      "field_name": "reg_reason_destroyed",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Reason – Stolen",
+      "field_name": "reg_reason_stolen",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Reason – Defaced",
+      "field_name": "reg_reason_defaced",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Reason – Not Received",
+      "field_name": "reg_reason_not_received",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Reason – Change of Details",
+      "field_name": "reg_reason_change_of_details",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Reason – Faulty",
+      "field_name": "reg_reason_faulty",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Your Vehicle Plate Number or VIN/Chassis/Serial Number",
+      "field_name": "vehicle_plate_vin",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Section 8 – Declaration",
+      "page": 4
+    },
+    {
+      "type": "disclosure",
+      "text": "Please read carefully before you sign. If you do not tell the truth you can be fined. Any licence you hold could be cancelled. You declare that the information on this form is true and complete. Under the road transport legislation it is an offence for anyone to attempt to obtain or renew a driver licence or to register or renew the registration of a vehicle, by false statement or any misrepresentation or other dishonest means.",
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "applicant_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Date",
+      "field_name": "declaration_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Capacity if Representative of Company or Firm",
+      "field_name": "applicant_capacity",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "type": "heading",
+      "text": "Representative Authority",
+      "page": 4
+    },
+    {
+      "type": "instruction",
+      "text": "This authority cannot be used to apply for a replacement licence. I declare that the person named below is my authorised representative.",
+      "page": 4
+    },
+    {
+      "label": "Authorising Signature",
+      "field_name": "authorising_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Authorising Date",
+      "field_name": "authorising_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative – Driver Licence Number",
+      "field_name": "rep_driver_licence_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative – Date of Birth",
+      "field_name": "rep_date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative – Surname",
+      "field_name": "rep_surname",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative – Given Name(s)",
+      "field_name": "rep_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative – Address",
+      "field_name": "rep_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative – State",
+      "field_name": "rep_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative – Postcode",
+      "field_name": "rep_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative Signature",
+      "field_name": "rep_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative – Date",
+      "field_name": "rep_signature_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Representative – Capacity if Representative of Company or Firm",
+      "field_name": "rep_capacity",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "type": "disclosure",
+      "text": "Personal Information Collection Notice: Transport for NSW is committed to protecting your privacy and ensuring your personal and health information is managed according to law. Find out why we collect your personal information, including how we use and manage it, by reading our privacy statement at transport.nsw.gov.au or phone 13 22 13 to request a copy.",
+      "page": 4
+    }
   ]
 }
