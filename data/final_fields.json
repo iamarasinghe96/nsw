@@ -14073,5 +14073,484 @@
       "text": "Personal Information Collection Notice: Transport for NSW is committed to protecting your privacy and ensuring your personal and health information is managed according to law. Find out why we collect your personal information, including how we use and manage it, by reading our privacy statement at transport.nsw.gov.au or call 13 22 13 to request a copy.",
       "page": 3
     }
+  ],
+  "45070018-licence-application.pdf": [
+    {
+      "type": "instruction",
+      "text": "To apply for a driver or rider licence, please visit a Service NSW Centre with this completed application form and your original proof of identity documents. One of these documents must show your signature. If it doesn't, please provide a witness letter (Form 1162). For more information about proving your identity, please visit nsw.gov.au or call 13 22 13.",
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Application Details",
+      "page": 1
+    },
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Name(s)",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Gender",
+      "field_name": "gender",
+      "type": "radio",
+      "options": ["Male", "Female"],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Residential Address (must be in NSW)",
+      "field_name": "residential_address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Residential Postcode",
+      "field_name": "residential_postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Mailing Address (if different from your residential address)",
+      "field_name": "mailing_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Mailing Postcode",
+      "field_name": "mailing_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email_address",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Mobile Number",
+      "field_name": "mobile_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "2. Are you a pensioner or transferring an interstate licence?",
+      "field_name": "pensioner_or_interstate_transfer",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "3. Are you an Australian citizen or a permanent resident of Australia?",
+      "field_name": "australian_citizen_or_resident",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Last Date of Entry in Australia (if not citizen/resident)",
+      "field_name": "last_entry_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "4. Are you an Aboriginal person or Torres Strait Islander? (optional)",
+      "field_name": "aboriginal_or_torres_strait_islander",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 5 – Licence Class",
+      "page": 1
+    },
+    {
+      "label": "Car (C)",
+      "field_name": "licence_class_car",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Light Rigid (LR)",
+      "field_name": "licence_class_lr",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Heavy Combination (HC)",
+      "field_name": "licence_class_hc",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Motorcycle (R)",
+      "field_name": "licence_class_motorcycle",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Medium Rigid (MR)",
+      "field_name": "licence_class_mr",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Multi Combination (MC)",
+      "field_name": "licence_class_mc",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Heavy Rigid (HR)",
+      "field_name": "licence_class_hr",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "6. Would you like a NSW Photo Card issued with your driver licence?",
+      "field_name": "nsw_photo_card_requested",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "NSW Photo Card Duration",
+      "field_name": "nsw_photo_card_duration",
+      "type": "radio",
+      "options": ["5 years", "10 years"],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Customer and Licence History",
+      "page": 2
+    },
+    {
+      "label": "7. Have you had a NSW licence, photo card, proof of age card, registration or permit in your current name or in any other name?",
+      "field_name": "prior_nsw_licence",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Prior NSW Licence – Details",
+      "field_name": "prior_nsw_licence_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "8. If you listed a NSW licence above, have you ever had the number changed due to a data breach or identity fraud?",
+      "field_name": "licence_number_changed_data_breach",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "9. Do you hold, or have you ever held, a licence issued by another State, Territory or Country?",
+      "field_name": "prior_interstate_overseas_licence",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Interstate/Overseas Licence Number",
+      "field_name": "interstate_licence_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Issuing State, Territory or Country",
+      "field_name": "interstate_licence_state_country",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Interstate Licence – First Issue Date",
+      "field_name": "interstate_licence_first_issue_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Interstate Licence – Expiry Date",
+      "field_name": "interstate_licence_expiry_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Details of Any Other Licences from Another State, Territory or Country",
+      "field_name": "other_licences_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "10. Have you ever been disqualified or had a licence suspended or refused from driving or riding a vehicle or vessel in NSW or elsewhere?",
+      "field_name": "prior_disqualification_suspension",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Prior Disqualification/Suspension – Details",
+      "field_name": "prior_disqualification_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "11. Do you have a current disqualification, cancellation, suspension, refusal or pending charge against you for a driving, riding or boating offence in NSW or elsewhere?",
+      "field_name": "current_disqualification_suspension",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Current Disqualification/Suspension – Details",
+      "field_name": "current_disqualification_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "12. Do you have a current appeal for a driving, riding or boating offence or suspension or refusal of licence in a NSW court or elsewhere?",
+      "field_name": "current_appeal",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Current Appeal – Details",
+      "field_name": "current_appeal_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Health Details",
+      "page": 3
+    },
+    {
+      "type": "instruction",
+      "text": "You must declare any medical condition that may affect your ability to operate a vehicle. If you answer yes to any questions from 13 to 19, you may need to visit a health professional so they can complete a medical assessment online. If you need a paper medical form, call Service NSW on 13 22 13 or visit a service centre.",
+      "page": 3
+    },
+    {
+      "label": "13. Will you be wearing glasses or contact lenses when driving or doing the eyesight test?",
+      "field_name": "wears_glasses_contacts",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Contact Lenses",
+      "field_name": "vision_contact_lenses",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Glasses",
+      "field_name": "vision_glasses",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "14. Do you have an eye or vision disorder that may affect your driving? (e.g. monocular vision, double vision, visual field defects, poor night vision)",
+      "field_name": "eye_vision_disorder",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Eye/Vision Disorder – Details",
+      "field_name": "eye_vision_disorder_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "15. Do you have diabetes?",
+      "field_name": "has_diabetes",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Diabetes Controlled by – Insulin",
+      "field_name": "diabetes_controlled_insulin",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Diabetes Controlled by – Oral Medication (tablets)",
+      "field_name": "diabetes_controlled_oral",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Diabetes Controlled by – Diet (medical not required)",
+      "field_name": "diabetes_controlled_diet",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "16. Do you have epilepsy?",
+      "field_name": "has_epilepsy",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "17. Have you ever had any blackouts, fainting or sudden periods of unconsciousness?",
+      "field_name": "has_blackouts_fainting",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "18. Do you have any medical conditions, physical disabilities or mental health conditions that may affect your driving?",
+      "field_name": "has_other_medical_conditions",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "19. Do you regularly use drugs (such as stimulants or drugs of addiction) other than prescription medication, that may affect your driving?",
+      "field_name": "uses_drugs_affecting_driving",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Drug Use – What Are They?",
+      "field_name": "drugs_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Declaration and Signature",
+      "page": 4
+    },
+    {
+      "type": "disclosure",
+      "text": "I declare the contents of this application are true and correct. I acknowledge it is an offence under the Road Transport Act 2013 to seek to obtain or renew a driver licence by false statement or dishonest means. It is a criminal offence under the Crimes Act 1900 to provide false or misleading information to Transport for NSW.",
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "applicant_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Date",
+      "field_name": "declaration_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "type": "disclosure",
+      "text": "Personal Information Collection Notice: Transport for NSW is committed to protecting your privacy and ensuring your personal and health information is managed according to law. Find out why we collect your personal information, including how we use and manage it, by reading our privacy statement at transport.nsw.gov.au or phone 13 22 13 to request a copy.",
+      "page": 4
+    }
   ]
 }
