@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel – Service NSW Forms</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <img src="../assets/service-nsw-logo.svg" alt="Service NSW" class="header-logo" onerror="this.style.display='none'">
+        <div>
+          <h1 class="header-title">Form Fields Admin</h1>
+          <p class="header-sub">Manage kiosk form definitions</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <span id="unsaved-indicator" class="unsaved-indicator hidden">● Unsaved changes</span>
+        <button id="btn-reset" class="btn btn-ghost" disabled>Reset</button>
+        <button id="btn-export" class="btn btn-export">Export JSON</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-layout">
+
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <input type="search" id="form-search" class="form-search" placeholder="Search forms…" autocomplete="off">
+        <div class="form-count" id="form-count"></div>
+      </div>
+      <ul class="form-list" id="form-list"></ul>
+    </aside>
+
+    <main class="main-panel">
+
+      <div id="empty-state" class="empty-state">
+        <div class="empty-icon">📋</div>
+        <p>Select a form from the left to view and edit its fields</p>
+      </div>
+
+      <div id="editor-panel" class="editor-panel hidden">
+
+        <div class="editor-header">
+          <div class="editor-title-area">
+            <h2 id="editor-form-title"></h2>
+            <div id="editor-form-meta" class="editor-meta"></div>
+          </div>
+          <div class="editor-header-actions">
+            <div class="filter-group" id="filter-group"></div>
+            <button id="btn-add-block" class="btn btn-sm btn-outline">+ Block</button>
+            <button id="btn-add-field" class="btn btn-sm btn-primary">+ Field</button>
+          </div>
+        </div>
+
+        <div class="field-table-wrap">
+          <table class="field-table">
+            <thead>
+              <tr>
+                <th class="col-order">Order</th>
+                <th class="col-type">Type</th>
+                <th class="col-label">Label / Text</th>
+                <th class="col-name">Field Name</th>
+                <th class="col-page">Page</th>
+                <th class="col-flags">Flags</th>
+                <th class="col-actions">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="field-tbody"></tbody>
+          </table>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Edit / Add Modal -->
+  <div id="modal-backdrop" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modal-heading">Edit Field</h3>
+        <button class="modal-close-btn" id="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+      <div class="modal-footer">
+        <button id="btn-modal-delete" class="btn btn-danger btn-sm">Delete</button>
+        <div class="modal-footer-right">
+          <button id="btn-modal-cancel" class="btn btn-sm btn-muted">Cancel</button>
+          <button id="btn-modal-save" class="btn btn-sm btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
