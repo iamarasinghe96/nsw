@@ -15903,5 +15903,136 @@
       "text": "Privacy Collection Notice: Transport for NSW collects your personal information for the purpose of processing your driving instructor licence application. Your information may be disclosed to other government agencies as required by law.",
       "page": 5
     }
+  ],
+  "45062862-proof-of-registration.pdf": [
+    {
+      "type": "instruction",
+      "text": "To register a homemade trailer for the first time the registered operator or representative must fill out this form for proof of registration entitlement.",
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "1. Vehicle details",
+      "page": 1
+    },
+    {
+      "label": "Year built",
+      "field_name": "year_built",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Market value",
+      "field_name": "market_value",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "VIN/Chassis number",
+      "field_name": "vin_chassis_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Primary place where parts purchased",
+      "field_name": "primary_place_parts_purchased",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Postcode (parts purchased)",
+      "field_name": "parts_purchased_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "2. Your details",
+      "page": 1
+    },
+    {
+      "label": "Surname or Organisation",
+      "field_name": "surname_or_organisation",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given name(s)",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Address details",
+      "field_name": "address_details",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Suburb (do not abbreviate)",
+      "field_name": "suburb",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Postcode",
+      "field_name": "postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Licence/customer number",
+      "field_name": "licence_customer_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "3. Declaration",
+      "page": 1
+    },
+    {
+      "label": "Registered operator or representative's signature",
+      "field_name": "operator_representative_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date",
+      "field_name": "declaration_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "type": "disclosure",
+      "text": "Personal Information Collection Notice: Transport for NSW is committed to protecting your privacy and ensuring your personal and health information is managed according to law. Find out why we collect your personal information, including how we use and manage it, by reading our privacy statement at transport.nsw.gov.au or phone 13 22 13 to request a copy.",
+      "page": 1
+    }
   ]
 }
