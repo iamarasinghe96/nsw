@@ -10848,5 +10848,848 @@
       "text": "Personal Information Collection Notice: Transport for NSW is committed to protecting your privacy and ensuring your personal and health information is managed according to law. Find out why we collect your personal information, including how we use and manage it, by reading our privacy statement at transport.nsw.gov.au or phone 13 22 13 to request a copy.",
       "page": 4
     }
+  ],
+  "45070939-conditional-reg.pdf": [
+    {
+      "type": "instruction",
+      "text": "All applicants must complete the customer details section. Important information: Conditionally registered vehicles can only be registered in the name of a person or a corporation. Only the vehicle assigned with a conditional registration vehicle sheet may be registered under the Conditional Registration Scheme. For a full list of vehicle types, go to nsw.gov.au. A Farm Firefighting Vehicle requires an inspection report from an AIS examiner. A Street Rod Declaration (Form 1309) and an inspection report is required for street rods. A Historic Vehicle Declaration (Form 1259) is required for historic vehicles. A Classic Vehicle Declaration (Form 1835) is required for classic vehicles. A Rally Vehicle Declaration (Form 1705) is required for rally vehicles. A Vehicle Suitable for Safe Use Declaration (Form 1245) is required for items of plant and all other vehicles not mentioned.",
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 1 – Registrant Type",
+      "page": 1
+    },
+    {
+      "label": "Is the vehicle to be registered in the name of:",
+      "field_name": "registrant_type",
+      "type": "radio",
+      "options": ["A person", "A corporation"],
+      "required": true,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 2 – Customer Details",
+      "page": 1
+    },
+    {
+      "label": "NSW Driver Licence/Customer Number",
+      "field_name": "driver_licence_customer_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Name(s)",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Residential Address",
+      "field_name": "residential_address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Residential State",
+      "field_name": "residential_state",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Residential Postcode",
+      "field_name": "residential_postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Mailing Address (if different from residential address)",
+      "field_name": "mailing_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Mailing State",
+      "field_name": "mailing_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Mailing Postcode",
+      "field_name": "mailing_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email_address",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Mobile Number",
+      "field_name": "mobile_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Gender",
+      "field_name": "gender",
+      "type": "radio",
+      "options": ["Male", "Female"],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "ABN (if applicable)",
+      "field_name": "abn",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 3 – Corporation Details",
+      "page": 2
+    },
+    {
+      "type": "instruction",
+      "text": "Complete Section 3 if the vehicle is being registered in the name of a corporation. The representative authority must be filled in. For a company, the director or an authorised delegate must complete and sign the representative section.",
+      "page": 2
+    },
+    {
+      "label": "Corporation Customer Number (if issued)",
+      "field_name": "corp_customer_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Corporation Name",
+      "field_name": "corp_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Business Address",
+      "field_name": "corp_business_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Business State",
+      "field_name": "corp_business_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Business Postcode",
+      "field_name": "corp_business_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Corporation Mailing Address",
+      "field_name": "corp_mailing_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Corporation Mailing State",
+      "field_name": "corp_mailing_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Corporation Mailing Postcode",
+      "field_name": "corp_mailing_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Corporation ABN (if applicable)",
+      "field_name": "corp_abn",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "ACN, ARBN or Other (evidence of incorporation required)",
+      "field_name": "corp_acn_arbn",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 4 – Previous NSW Registration",
+      "page": 2
+    },
+    {
+      "label": "Was the vehicle last registered in NSW?",
+      "field_name": "last_registered_nsw",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Last Registration Number (if known)",
+      "field_name": "last_registration_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 5 – Acquisition Details",
+      "page": 3
+    },
+    {
+      "label": "Date of Acquisition",
+      "field_name": "date_of_acquisition",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Section 6 – Vehicle's Garage Address",
+      "page": 3
+    },
+    {
+      "label": "Garage Address (where the vehicle will most often be kept)",
+      "field_name": "garage_address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Garage State",
+      "field_name": "garage_state",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Garage Postcode",
+      "field_name": "garage_postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Section 7 – Registration Term",
+      "page": 3
+    },
+    {
+      "label": "Annual",
+      "field_name": "reg_term_annual",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "3 Months",
+      "field_name": "reg_term_3_months",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Date Required (up to 12 months)",
+      "field_name": "reg_term_date_required",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Section 8 – Type of Vehicle",
+      "page": 4
+    },
+    {
+      "label": "Vehicle Type (as displayed on the conditional registration vehicle sheet)",
+      "field_name": "vehicle_type",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "type": "instruction",
+      "text": "CTP Class SVEH – Select applicable vehicle type:",
+      "page": 4
+    },
+    {
+      "label": "SVEH – Historic vehicle – Car, truck, bus, motorcycle and plant (Historic Vehicle Declaration form 1259 required)",
+      "field_name": "vtype_sveh_historic",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "SVEH – Classic vehicle (Classic Vehicle Declaration form 1835 required)",
+      "field_name": "vtype_sveh_classic",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "SVEH – Street rod (Street Rod Declaration form 1309 required)",
+      "field_name": "vtype_sveh_street_rod",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "SVEH – Purpose built vehicle – golf buggy and vehicles of a similar type",
+      "field_name": "vtype_sveh_purpose_built",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "SVEH – Rally vehicle (Rally Vehicle Declaration form 1705 required)",
+      "field_name": "vtype_sveh_rally",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "SVEH – Lawn mower – over 250 kgs",
+      "field_name": "vtype_sveh_lawn_mower",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "type": "instruction",
+      "text": "FARM – Complete the Declaration for Eligibility for a Registration Concession. See form 1193.",
+      "page": 4
+    },
+    {
+      "label": "FARM – 2-3 wheel agricultural bike operated for farming purposes",
+      "field_name": "vtype_farm_agri_bike",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "FARM – All terrain vehicle operated for farming purposes",
+      "field_name": "vtype_farm_atv",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "FARM – Plant operated for farming purposes",
+      "field_name": "vtype_farm_plant",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "FARM – Farm firefighting vehicle (inspection report required)",
+      "field_name": "vtype_farm_firefighting",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "MVEH – All terrain Vehicle",
+      "field_name": "vtype_mveh_atv",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "MVEH – Oversnow vehicle (skidoo, snow plough, snow groomer)",
+      "field_name": "vtype_mveh_oversnow",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "RECG – Recreational 2 or 3 wheel motor cycles with engine capacity greater than 300ml used on Stockton Beach Recreation Vehicle Area",
+      "field_name": "vtype_recg_motorcycle_300plus",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "RECG – 'Quad bike' type All terrain vehicles used on Stockton Beach Recreation Vehicle Area (excludes dune buggy and ultra-light utility vehicles)",
+      "field_name": "vtype_recg_quad_bike",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "RECM – Recreational 2 or 3 wheel motor cycles with engine capacity 101-300ml used on Stockton Beach Recreation Vehicle Area",
+      "field_name": "vtype_recm_motorcycle_101_300",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "RECL – Recreational 2 or 3 wheel motor cycles with engine capacity less than 100ml used on Stockton Beach Recreation Vehicle Area",
+      "field_name": "vtype_recl_motorcycle_under100",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "PLNT – Items of plant not operated on a farm",
+      "field_name": "vtype_plnt_non_farm_plant",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "TRLR – Historic trailer (Historic Vehicle Declaration form 1259 required)",
+      "field_name": "vtype_trlr_historic",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "TRLR – Oversnow trailer",
+      "field_name": "vtype_trlr_oversnow",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "TRLR – Trackless train carriages",
+      "field_name": "vtype_trlr_trackless_train",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "TRLR – Farm firefighting trailer (inspection report required)",
+      "field_name": "vtype_trlr_farm_firefighting",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "type": "heading",
+      "text": "Section 9 – Where Will the Vehicle Be Operated?",
+      "page": 4
+    },
+    {
+      "label": "Where Will the Vehicle Be Operated? (not required for Farm Firefighting Vehicles)",
+      "field_name": "operation_location",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "type": "heading",
+      "text": "Section 10 – Pensioner Concession",
+      "page": 4
+    },
+    {
+      "label": "Do you wish to apply for a pensioner concession? (You cannot receive a concession on more than one vehicle)",
+      "field_name": "pensioner_concession",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 4
+    },
+    {
+      "type": "heading",
+      "text": "Section 11 – Declaration",
+      "page": 5
+    },
+    {
+      "type": "disclosure",
+      "text": "Please read carefully before you sign. If you do not tell the truth you can be prosecuted. You declare that the information on this form is true and complete. Under road transport legislation, it is an offence to attempt to register or renew the registration of a vehicle by a false statement or any misrepresentation or other dishonest means.",
+      "page": 5
+    },
+    {
+      "label": "Signature",
+      "field_name": "applicant_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 5
+    },
+    {
+      "label": "Print Name and Capacity (if representing an organisation)",
+      "field_name": "print_name_capacity",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Date",
+      "field_name": "declaration_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 5
+    },
+    {
+      "type": "disclosure",
+      "text": "Personal Information Collection Notice: Transport for NSW is committed to protecting your privacy and ensuring your personal and health information is managed according to law. Find out why we collect your personal information, including how we use and manage it, by reading our privacy statement at transport.nsw.gov.au or phone 13 22 13 to request a copy.",
+      "page": 5
+    },
+    {
+      "type": "heading",
+      "text": "Vehicle Identification",
+      "page": 5
+    },
+    {
+      "label": "VIN or Chassis/Frame or Serial Number",
+      "field_name": "vin_chassis_serial",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 5
+    },
+    {
+      "label": "Engine Number",
+      "field_name": "engine_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Make",
+      "field_name": "vehicle_make",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 5
+    },
+    {
+      "label": "Model Year",
+      "field_name": "model_year",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 5
+    },
+    {
+      "label": "Model (in full – Name, letters and/or numbers, variant)",
+      "field_name": "vehicle_model",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 5
+    },
+    {
+      "label": "Body Shape",
+      "field_name": "body_shape",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Number of Seats",
+      "field_name": "number_of_seats",
+      "type": "number",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Vehicle Shape (as displayed on the conditional registration vehicle sheet)",
+      "field_name": "vehicle_shape",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Conditions (record any condition codes including area where the vehicle may be used)",
+      "field_name": "condition_codes",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Inspection Report Number",
+      "field_name": "inspection_report_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "AIS Number",
+      "field_name": "ais_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Historic Vehicle Declaration (C) Attached",
+      "field_name": "historic_vehicle_dec_attached",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Vehicle Suitable Safe Use Declaration (S) Attached",
+      "field_name": "safe_use_dec_attached",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Proof of Source (e.g. receipt, bill of sale, consignment note)",
+      "field_name": "proof_of_source",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Proof of Previous Registration",
+      "field_name": "proof_of_previous_registration",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Vehicle Identified by – Name (please print)",
+      "field_name": "identifier_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Vehicle Identified by – Signature",
+      "field_name": "identifier_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Examiner Number (if applicable)",
+      "field_name": "examiner_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "type": "heading",
+      "text": "Representative Authority",
+      "page": 6
+    },
+    {
+      "type": "instruction",
+      "text": "Complete this to authorise another person to register a vehicle in your name. However, if you are not already recorded on Transport's database, you must attend a service centre in person and provide proof of identity. I declare that the person named below is my authorised representative.",
+      "page": 6
+    },
+    {
+      "label": "Signature",
+      "field_name": "authorising_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Print Name and Capacity (if representing an organisation)",
+      "field_name": "authorising_print_name_capacity",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Date",
+      "field_name": "authorising_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "type": "heading",
+      "text": "Representative Details",
+      "page": 6
+    },
+    {
+      "label": "NSW Driver Licence/Customer Number",
+      "field_name": "rep_driver_licence_customer_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Surname",
+      "field_name": "rep_surname",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Given Name(s)",
+      "field_name": "rep_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Address",
+      "field_name": "rep_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Address State",
+      "field_name": "rep_address_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Address Postcode",
+      "field_name": "rep_address_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "rep_date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Gender",
+      "field_name": "rep_gender",
+      "type": "radio",
+      "options": ["Male", "Female"],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Representative Signature",
+      "field_name": "rep_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 6
+    },
+    {
+      "label": "Date",
+      "field_name": "rep_signature_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 6
+    }
   ]
 }
