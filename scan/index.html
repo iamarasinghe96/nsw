@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Form Data Scanner — Service NSW</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="scan.css">
+</head>
+<body>
+
+  <!-- ── HEADER ─────────────────────────────────────────────────── -->
+  <header class="header">
+    <div class="header-inner">
+      <img src="../assets/service-nsw-logo.svg" alt="Service NSW" class="header-logo" onerror="this.style.display='none'">
+      <div>
+        <h1 class="header-title">Form Data Scanner</h1>
+        <p class="header-sub">Admin Officer Station</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── MAIN ──────────────────────────────────────────────────── -->
+  <main class="main">
+
+    <!-- Camera panel -->
+    <section class="camera-panel" id="cameraPanel">
+
+      <div class="camera-wrap" id="cameraWrap">
+        <video id="video" autoplay muted playsinline></video>
+        <canvas id="canvas" style="display:none"></canvas>
+
+        <!-- Scan overlay -->
+        <div class="scan-overlay">
+          <div class="scan-frame" id="scanFrame">
+            <span class="corner tl"></span>
+            <span class="corner tr"></span>
+            <span class="corner bl"></span>
+            <span class="corner br"></span>
+            <div class="scan-line" id="scanLine"></div>
+          </div>
+        </div>
+
+        <!-- Camera permission error -->
+        <div class="camera-error hidden" id="cameraError">
+          <div class="camera-error-icon">📷</div>
+          <p>Camera access denied</p>
+          <p class="camera-error-sub">Please allow camera access and reload the page</p>
+          <button class="btn btn-primary" onclick="startCamera()">Try again</button>
+        </div>
+      </div>
+
+      <div class="scan-status" id="scanStatus">
+        <span class="status-dot" id="statusDot"></span>
+        <span id="statusMsg">Starting camera…</span>
+      </div>
+
+    </section>
+
+    <!-- Results panel (hidden until scan) -->
+    <section class="results-panel hidden" id="resultsPanel">
+
+      <div class="results-header">
+        <div>
+          <h2 class="results-form-name" id="rFormName"></h2>
+          <div class="results-meta">
+            <span class="meta-pill" id="rCatNum"></span>
+            <span class="meta-pill meta-pill-time" id="rTime"></span>
+            <span class="meta-pill meta-pill-t2 hidden" id="rT2badge">+ Written responses</span>
+          </div>
+        </div>
+        <button class="btn btn-outline btn-sm" id="btnClear" onclick="clearScan()">
+          ↩ New scan
+        </button>
+      </div>
+
+      <!-- Signature block -->
+      <div class="sig-card hidden" id="sigCard">
+        <div class="sig-label">Signature</div>
+        <div class="sig-wrap" id="sigWrap"></div>
+      </div>
+
+      <!-- Field data -->
+      <div class="field-cards" id="fieldCards"></div>
+
+      <!-- Second QR waiting indicator -->
+      <div class="t2-waiting hidden" id="t2Waiting">
+        <span class="t2-icon">📲</span>
+        <div>
+          <div class="t2-title">Scan QR 2 of 2 to see full written responses</div>
+          <div class="t2-sub">Point the camera at the second QR code on the customer's phone</div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- jsQR — lightweight QR decoder, no dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+  <script src="scan.js"></script>
+</body>
+</html>
