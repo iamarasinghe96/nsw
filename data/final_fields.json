@@ -12578,5 +12578,501 @@
       "text": "Personal Information Collection Notice: Transport for NSW is committed to protecting your privacy and ensuring your personal and health information is managed according to law. Find out why we collect your personal information, including how we use and manage it, by reading our privacy statement at transport.nsw.gov.au or phone 13 22 13 to request a copy.",
       "page": 4
     }
+  ],
+  "45070190-unregistered-vehicle-permit.pdf": [
+    {
+      "type": "instruction",
+      "text": "An Unregistered Vehicle Permit (UVP) must not be used as a substitute for registration. A UVP may only be issued for restricted journeys or short-term use up to 28 days. The UVP document should be kept in the vehicle and the UVP label or a notice showing the permit number must be clearly displayed on the vehicle at all times. A Vehicle Suitable for Safe Use Declaration (form 1245) is required. Vehicles carrying a commercial load, exempt from registration, or written-off cannot be issued with a UVP. Any old number plates must be removed from the vehicle and surrendered at a Service NSW centre. For further enquiries visit a Service NSW Centre, call 13 22 13 or visit nsw.gov.au",
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 1 – Permit Issued in the Name of",
+      "page": 1
+    },
+    {
+      "label": "Is the permit to be issued in the name of:",
+      "field_name": "permit_issued_to",
+      "type": "radio",
+      "options": ["A person", "A corporation"],
+      "required": true,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 2 – Personal Details",
+      "page": 1
+    },
+    {
+      "label": "NSW Driver Licence Number/Customer Number",
+      "field_name": "driver_licence_customer_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Name(s)",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Residential Address",
+      "field_name": "residential_address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Residential State",
+      "field_name": "residential_state",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Residential Postcode",
+      "field_name": "residential_postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Mailing Address (if different from residential address)",
+      "field_name": "mailing_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Mailing State",
+      "field_name": "mailing_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Mailing Postcode",
+      "field_name": "mailing_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email_address",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Gender",
+      "field_name": "gender",
+      "type": "radio",
+      "options": ["Male", "Female"],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 3 – Corporation Details",
+      "page": 2
+    },
+    {
+      "type": "instruction",
+      "text": "Complete Section 3 if the UVP is being issued in the name of a corporation. The representative authority must be filled in.",
+      "page": 2
+    },
+    {
+      "label": "Corporation Customer Number",
+      "field_name": "corp_customer_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Corporation Name",
+      "field_name": "corp_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Business Address",
+      "field_name": "corp_business_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Business State",
+      "field_name": "corp_business_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Business Postcode",
+      "field_name": "corp_business_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Corporation Mailing Address (if different from business address)",
+      "field_name": "corp_mailing_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Corporation Mailing State",
+      "field_name": "corp_mailing_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Corporation Mailing Postcode",
+      "field_name": "corp_mailing_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "ABN (if applicable)",
+      "field_name": "corp_abn",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "ACN or ARBN or Other (evidence of incorporation required)",
+      "field_name": "corp_acn_arbn",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 4 – Details of the Proposed Journey",
+      "page": 2
+    },
+    {
+      "label": "Starting From",
+      "field_name": "journey_starting_from",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Starting On (date)",
+      "field_name": "journey_starting_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Arriving At",
+      "field_name": "journey_arriving_at",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Arriving On (date)",
+      "field_name": "journey_arriving_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Why is the vehicle not being registered?",
+      "field_name": "reason_not_registered",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 5 – Permit Duration",
+      "page": 2
+    },
+    {
+      "label": "How Long Do You Want the Permit For? (UVPs are issued for up to 28 days only)",
+      "field_name": "permit_duration",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 6 – Vehicle Type",
+      "page": 2
+    },
+    {
+      "label": "Vehicle Type (e.g. car, truck, motorcycle, trailer, plant)",
+      "field_name": "vehicle_type",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 7 – Vehicle Identification",
+      "page": 2
+    },
+    {
+      "label": "Make",
+      "field_name": "vehicle_make",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Year of Manufacture",
+      "field_name": "year_of_manufacture",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "GVM (trucks only)",
+      "field_name": "gvm",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Model (in full – name, letters and/or numbers, variant)",
+      "field_name": "vehicle_model",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "VIN Number or Chassis/Frame Number",
+      "field_name": "vin_chassis_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Engine Number",
+      "field_name": "engine_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 8 – Declaration",
+      "page": 3
+    },
+    {
+      "type": "disclosure",
+      "text": "You declare that: the information on this form is true and complete; you will be bound by the conditions as described in the permit; you will be responsible for the vehicle to be suitable for safe use for the period of the permit; will clearly display the UVP label or notice showing the permit number on the vehicle. Under road transport legislation, it is an offence to attempt to obtain a UVP for a registrable vehicle, or renew the permit by false statement or any misrepresentation or other dishonest means.",
+      "page": 3
+    },
+    {
+      "label": "Signature",
+      "field_name": "applicant_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Print Name and Capacity (if representing an organisation)",
+      "field_name": "print_name_capacity",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Date",
+      "field_name": "declaration_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Section 9 – Representative Authority",
+      "page": 3
+    },
+    {
+      "type": "instruction",
+      "text": "Complete this to authorise another person to apply for a UVP in your name (as long as you are recorded on the Transport for NSW database). I declare that the person named below is my authorised representative.",
+      "page": 3
+    },
+    {
+      "label": "Authorising Signature",
+      "field_name": "authorising_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Print Name and Capacity (if representing an organisation)",
+      "field_name": "authorising_print_name_capacity",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Authorising Date",
+      "field_name": "authorising_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Representative – NSW Driver Licence/Customer No.",
+      "field_name": "rep_driver_licence_customer_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Representative – Date of Birth",
+      "field_name": "rep_date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Representative – Gender",
+      "field_name": "rep_gender",
+      "type": "radio",
+      "options": ["Male", "Female"],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Representative – Surname",
+      "field_name": "rep_surname",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Representative – Given Name(s)",
+      "field_name": "rep_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Representative – Address",
+      "field_name": "rep_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Representative – State",
+      "field_name": "rep_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Representative – Postcode",
+      "field_name": "rep_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Representative Signature",
+      "field_name": "rep_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Representative – Date",
+      "field_name": "rep_signature_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "type": "disclosure",
+      "text": "Personal Information Collection Notice: Transport for NSW is committed to protecting your privacy and ensuring your personal and health information is managed according to law. Find out why we collect your personal information, including how we use and manage it, by reading our privacy statement at transport.nsw.gov.au or phone 13 22 13 to request a copy.",
+      "page": 3
+    }
   ]
 }
