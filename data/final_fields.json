@@ -14552,5 +14552,794 @@
       "text": "Personal Information Collection Notice: Transport for NSW is committed to protecting your privacy and ensuring your personal and health information is managed according to law. Find out why we collect your personal information, including how we use and manage it, by reading our privacy statement at transport.nsw.gov.au or phone 13 22 13 to request a copy.",
       "page": 4
     }
+  ],
+  "45070107-transfer-of-reg.pdf": [
+    {
+      "type": "instruction",
+      "text": "To transfer a vehicle, visit a Service NSW Centre within 14 days of purchasing/acquiring the vehicle to avoid a late fee. Number plates must be attached to the vehicle at time of sale for transfer of registration. To register a vehicle in your name you must be at least 16 years of age for a light vehicle (up to 4.5 tonnes GVM) and at least 18 years of age for a heavy vehicle (over 4.5 tonnes GVM). You can complete the transfer online if you have a MyService NSW Account and the seller has lodged a notice of disposal.",
+      "page": 1
+    },
+    {
+      "label": "1. Registration Plate Number",
+      "field_name": "registration_plate_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "2. Is the vehicle to be registered in the name of:",
+      "field_name": "registrant_type",
+      "type": "radio",
+      "options": ["A person", "A licensed motor dealer", "A corporation"],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Previous Business with Transport for NSW in Another Name (if yes, please specify)",
+      "field_name": "previous_business_other_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 3 – Customer Details",
+      "page": 1
+    },
+    {
+      "label": "NSW Driver Licence/Customer Number",
+      "field_name": "driver_licence_customer_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Name(s)",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Residential Address",
+      "field_name": "residential_address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Residential State",
+      "field_name": "residential_state",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Residential Postcode",
+      "field_name": "residential_postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Mailing Address (if different from residential address)",
+      "field_name": "mailing_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Mailing State",
+      "field_name": "mailing_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Mailing Postcode",
+      "field_name": "mailing_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "ABN (if applicable)",
+      "field_name": "abn",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Gender",
+      "field_name": "gender",
+      "type": "radio",
+      "options": ["Male", "Female"],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Email Address",
+      "field_name": "email_address",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Phone Number",
+      "field_name": "phone_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 4 – Dealer Details",
+      "page": 1
+    },
+    {
+      "label": "Name of Dealership",
+      "field_name": "dealer_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Dealer Licence Number",
+      "field_name": "dealer_licence_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Dealer State or Territory",
+      "field_name": "dealer_state_territory",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Date Vehicle Purchased/Acquired",
+      "field_name": "dealer_date_purchased",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 5 – Corporation Details",
+      "page": 1
+    },
+    {
+      "label": "Corporation Customer Number (if issued)",
+      "field_name": "corp_customer_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Corporation Name",
+      "field_name": "corp_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Business Address",
+      "field_name": "corp_business_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Business State",
+      "field_name": "corp_business_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Business Postcode",
+      "field_name": "corp_business_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Corporation Mailing Address (if different from business address)",
+      "field_name": "corp_mailing_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Corporation Mailing State",
+      "field_name": "corp_mailing_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Corporation Mailing Postcode",
+      "field_name": "corp_mailing_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Corporation ABN (if applicable)",
+      "field_name": "corp_abn",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "ACN, ARBN or Other (evidence of incorporation required)",
+      "field_name": "corp_acn_arbn",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "6. Courtesy Name (only an organisation name, if required)",
+      "field_name": "courtesy_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 7 – Fleet Manager or Leasing Company (if applicable)",
+      "page": 2
+    },
+    {
+      "label": "Fleet Manager – Name and Postal Address",
+      "field_name": "fleet_manager_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Fleet Manager – State",
+      "field_name": "fleet_manager_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Fleet Manager – Postcode",
+      "field_name": "fleet_manager_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Fleet Manager – Customer Number",
+      "field_name": "fleet_manager_customer_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 8 – Purchase/Acquisition Details",
+      "page": 2
+    },
+    {
+      "label": "Date of Purchase/Acquisition",
+      "field_name": "date_of_purchase",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Sale Price or Market Value (whichever is greater)",
+      "field_name": "sale_price_market_value",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 9 – Vehicle's Garage Address",
+      "page": 2
+    },
+    {
+      "label": "Garage Address (where the vehicle will most often be kept)",
+      "field_name": "garage_address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Garage State",
+      "field_name": "garage_state",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Garage Postcode",
+      "field_name": "garage_postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 10 – Type of Use Intended for the Vehicle",
+      "page": 2
+    },
+    {
+      "label": "Private (used substantially for social, pleasure or domestic purposes)",
+      "field_name": "use_private",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Business (business use unless covered by another usage)",
+      "field_name": "use_business",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Rental Car (a motor vehicle which is let out for hire without a driver)",
+      "field_name": "use_rental_car",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Resale (second hand vehicle held for resale by licensed motor dealers)",
+      "field_name": "use_resale",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Demonstrator (demonstration vehicle used by licensed motor dealers)",
+      "field_name": "use_demonstrator",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Taxi – plate type T or TC",
+      "field_name": "use_taxi",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Long Distance, Tourist or Charter Service – plate type TV",
+      "field_name": "use_long_distance_tourist",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Regular Passenger Bus – plate type MO or M/O",
+      "field_name": "use_regular_passenger_bus",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Hire Car – plate type HC",
+      "field_name": "use_hire_car",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Private Hire Vehicle – general issue plate",
+      "field_name": "use_private_hire",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Tow Truck – plate type TT",
+      "field_name": "use_tow_truck",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Other – please specify (e.g. ambulance, road works, stand by taxi etc.)",
+      "field_name": "use_other_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "11. Nominated Configuration Code (for heavy vehicles over 4.5 tonnes GVM)",
+      "field_name": "nominated_configuration_code",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "12. Do you wish to apply for a concession on the registration renewal costs?",
+      "field_name": "concession_requested",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "13. Have you got the current Certificate of Registration for the vehicle?",
+      "field_name": "has_current_registration_certificate",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "14. Has the back of the Certificate of Registration been signed?",
+      "field_name": "certificate_back_signed",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "15. Is the Certificate of Registration in the seller's name?",
+      "field_name": "certificate_in_seller_name",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": false,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Section 16 – Vehicle Details",
+      "page": 3
+    },
+    {
+      "label": "Year of Manufacture",
+      "field_name": "year_of_manufacture",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Make",
+      "field_name": "vehicle_make",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Model",
+      "field_name": "vehicle_model",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Odometer Reading",
+      "field_name": "odometer_reading",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Colour(s)",
+      "field_name": "vehicle_colours",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "VIN or Chassis Number",
+      "field_name": "vin_chassis_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Engine Number",
+      "field_name": "engine_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "17. Have you got a signed receipt or letter from the seller?",
+      "field_name": "has_signed_receipt",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Reason (if no signed receipt)",
+      "field_name": "no_receipt_reason",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Section 18 – Who Did You Buy the Vehicle From?",
+      "page": 3
+    },
+    {
+      "label": "Seller Surname or Organisation Name",
+      "field_name": "seller_surname_organisation",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Seller Given Name(s)",
+      "field_name": "seller_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Seller Address",
+      "field_name": "seller_address",
+      "type": "textarea",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Seller State",
+      "field_name": "seller_state",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "label": "Seller Postcode",
+      "field_name": "seller_postcode",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Section 19 – Declaration",
+      "page": 4
+    },
+    {
+      "type": "disclosure",
+      "text": "Warning: Any person who by false statement or misrepresentation obtains or attempts to obtain a Certificate of Registration is liable to a penalty that may be in excess of $2,200. You declare that: the information on this form is true and complete; if the vehicle has Special Number Plates you have read and accept the Terms and Conditions for Special Number Plates. Under road transport legislation, it is an offence to attempt to register or renew the registration of a vehicle by a false statement or any misrepresentation or other dishonest means.",
+      "page": 4
+    },
+    {
+      "label": "Signature",
+      "field_name": "applicant_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "label": "Print Name and Capacity (if representing an organisation)",
+      "field_name": "print_name_capacity",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 4
+    },
+    {
+      "label": "Date",
+      "field_name": "declaration_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 4
+    },
+    {
+      "type": "heading",
+      "text": "Section 20 – Representative Authority",
+      "page": 5
+    },
+    {
+      "type": "instruction",
+      "text": "This authority must be completed if you are sending someone to transfer the registration into your name. However, if you are not already a Transport for NSW customer and recorded on Transport's database, you must attend a service centre in person and provide proof of identity. I declare that the person named below is my authorised representative.",
+      "page": 5
+    },
+    {
+      "label": "Authorising Signature",
+      "field_name": "authorising_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Print Name and Capacity (if representing an organisation)",
+      "field_name": "authorising_print_name_capacity",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Authorising Date",
+      "field_name": "authorising_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Representative – NSW Driver Licence/Customer Number",
+      "field_name": "rep_driver_licence_customer_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Representative – Date of Birth",
+      "field_name": "rep_date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Representative – Surname",
+      "field_name": "rep_surname",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Representative – Given Name(s)",
+      "field_name": "rep_given_names",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Representative – Address",
+      "field_name": "rep_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Representative – State",
+      "field_name": "rep_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Representative – Postcode",
+      "field_name": "rep_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Representative – Gender",
+      "field_name": "rep_gender",
+      "type": "radio",
+      "options": ["Male", "Female"],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Representative Signature",
+      "field_name": "rep_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Capacity if Representative of a Corporation",
+      "field_name": "rep_corporation_capacity",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "label": "Representative – Date",
+      "field_name": "rep_signature_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 5
+    },
+    {
+      "type": "disclosure",
+      "text": "Personal Information Collection Notice: Transport for NSW is committed to protecting your privacy and ensuring your personal and health information is managed according to law. Find out why we collect your personal information, including how we use and manage it, by reading our privacy statement at transport.nsw.gov.au or phone 13 22 13 to request a copy.",
+      "page": 5
+    }
   ]
 }
