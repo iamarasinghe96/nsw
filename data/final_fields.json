@@ -13637,5 +13637,91 @@
       "text": "Personal Information Collection Notice: Transport for NSW is committed to protecting your privacy and ensuring your personal and health information is managed according to law. Find out why we collect your personal information, including how we use and manage it, by reading our privacy statement at transport.nsw.gov.au or phone 13 22 13 to request a copy.",
       "page": 2
     }
+  ],
+  "45070803-good-behaviour-election.pdf": [
+    {
+      "label": "Customer Name",
+      "field_name": "customer_name",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Customer/Licence Number",
+      "field_name": "customer_licence_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "type": "instruction",
+      "text": "Please select from the following and place a tick in the box appropriate to your election/acknowledgement.",
+      "page": 1
+    },
+    {
+      "label": "1. Demerit Point Suspension or Refusal – I elect to be of good behaviour for a period of 12 months rather than having my licence suspended / refused under the Demerit Points Scheme.",
+      "field_name": "election_demerit_suspension_refusal",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "2. Demerit Point Suspension (exceeded the demerit point limit twice within a five year period) – Driver Knowledge Test required. I elect to be of good behaviour for a period of 12 months. I am aware that I must pass a Driver Knowledge Test to stop my suspension.",
+      "field_name": "election_demerit_suspension_dkt",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "3. Interstate Transfer of Good Behaviour Licence – I am aware that the licence I am being issued will be subject to good behaviour until the expiry date of the good behaviour/probationary period in place on my interstate licence.",
+      "field_name": "election_interstate_transfer",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Good Behaviour Expiry Date (for interstate transfer – insert date)",
+      "field_name": "good_behaviour_expiry_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Customer Declaration",
+      "page": 2
+    },
+    {
+      "type": "disclosure",
+      "text": "I am aware that should I incur 2 or more demerit points for traffic offences committed during the good behaviour period, the licence I hold will be suspended or, the renewal of the licence will be refused for twice the period that would have applied had I not made the election (as indicated on the Notice of Suspension / Refusal), or for a period of no less than six months.",
+      "page": 2
+    },
+    {
+      "label": "Customer Signature",
+      "field_name": "customer_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Date",
+      "field_name": "declaration_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "type": "disclosure",
+      "text": "Personal Information Collection Notice: Transport for NSW is committed to protecting your privacy and ensuring your personal and health information is managed according to law. Find out why we collect your personal information, including how we use and manage it, by reading our privacy statement at transport.nsw.gov.au or phone 13 22 13 to request a copy.",
+      "page": 2
+    }
   ]
 }
