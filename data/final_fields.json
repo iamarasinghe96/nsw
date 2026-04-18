@@ -13723,5 +13723,355 @@
       "text": "Personal Information Collection Notice: Transport for NSW is committed to protecting your privacy and ensuring your personal and health information is managed according to law. Find out why we collect your personal information, including how we use and manage it, by reading our privacy statement at transport.nsw.gov.au or phone 13 22 13 to request a copy.",
       "page": 2
     }
+  ],
+  "45062918-access-to-personal-records-app.pdf": [
+    {
+      "type": "instruction",
+      "text": "You can request access to information about your driver licence, motor vehicle and trailer information (personal records). Complete this form if you want us to search for and provide copies of your driving record, address history, name history, confirmation of licence details, confirmation of registration details or vehicle listings information. To find out about applicable fees or for more information, please visit nsw.gov.au or call Service NSW on 13 22 13.",
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 1 – Applicant Details",
+      "page": 1
+    },
+    {
+      "label": "NSW Driver Licence/Customer Number",
+      "field_name": "driver_licence_customer_number",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Organisation Name (if applicable)",
+      "field_name": "organisation_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "ABN/ACN (if applicable)",
+      "field_name": "abn_acn",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Surname",
+      "field_name": "surname",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Given Name(s)",
+      "field_name": "given_names",
+      "type": "text",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Date of Birth",
+      "field_name": "date_of_birth",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 1
+    },
+    {
+      "label": "Mobile Number",
+      "field_name": "mobile_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Email (your information will be sent to this address)",
+      "field_name": "email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Postal Address (only certified information will be sent to a postal address)",
+      "field_name": "postal_address",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Postal State",
+      "field_name": "postal_state",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "label": "Postal Postcode",
+      "field_name": "postal_postcode",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 1
+    },
+    {
+      "type": "heading",
+      "text": "Section 2 – Information Requested",
+      "page": 2
+    },
+    {
+      "type": "instruction",
+      "text": "Please place an 'X' next to the record(s) for which you are seeking information. A fee is payable for each search.",
+      "page": 2
+    },
+    {
+      "label": "Driving Record",
+      "field_name": "request_driving_record",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Name History",
+      "field_name": "request_name_history",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Address History",
+      "field_name": "request_address_history",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Vehicle Listing",
+      "field_name": "request_vehicle_listing",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Confirmation of Registration Details",
+      "field_name": "request_registration_details",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Number Plate / VIN (for registration details request)",
+      "field_name": "registration_plate_vin",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Other",
+      "field_name": "request_other",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Other – Details",
+      "field_name": "request_other_details",
+      "type": "textarea",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Certified Extract Required",
+      "field_name": "certified_extract_required",
+      "type": "radio",
+      "options": ["No", "Yes"],
+      "required": true,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 3 – Applicant Signature",
+      "page": 2
+    },
+    {
+      "label": "Applicant Signature",
+      "field_name": "applicant_signature",
+      "type": "signature",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "label": "Date",
+      "field_name": "declaration_date",
+      "type": "date",
+      "options": [],
+      "required": true,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 4 – Consent to Release Personal Records to a Third Party (optional)",
+      "page": 2
+    },
+    {
+      "type": "instruction",
+      "text": "Complete this section if you need Transport to send your records directly to a third party, such as an interstate/overseas driving authority, another organisation or an individual. By signing this form, I consent to Transport for NSW releasing my personal records to the named person/organisation and emailing them to the address provided.",
+      "page": 2
+    },
+    {
+      "label": "Third Party – Name of Person/Organisation",
+      "field_name": "third_party_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Third Party – Email Address",
+      "field_name": "third_party_email",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Applicant Signature (Section 4)",
+      "field_name": "third_party_consent_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "label": "Date (Section 4)",
+      "field_name": "third_party_consent_date",
+      "type": "date",
+      "options": [],
+      "required": false,
+      "page": 2
+    },
+    {
+      "type": "heading",
+      "text": "Section 5 – Application Requirements",
+      "page": 3
+    },
+    {
+      "type": "instruction",
+      "text": "You must include the following information with your application or the request will be declined. Proof of identity (POI): When seeking access to personal information, an applicant MUST provide POI in the form of one of these documents.",
+      "page": 3
+    },
+    {
+      "label": "POI – Australian Driver Licence",
+      "field_name": "poi_driver_licence",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "POI – Current Australian Passport",
+      "field_name": "poi_passport",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "POI – Other",
+      "field_name": "poi_other",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "type": "heading",
+      "text": "Credit Card Payment Authority",
+      "page": 3
+    },
+    {
+      "type": "instruction",
+      "text": "Complete the Credit Card Authority below. Do not complete if you are paying at a service centre.",
+      "page": 3
+    },
+    {
+      "label": "Card Type – Mastercard",
+      "field_name": "card_type_mastercard",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Card Type – Visa",
+      "field_name": "card_type_visa",
+      "type": "checkbox",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Card Number",
+      "field_name": "card_number",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Expiry Date",
+      "field_name": "card_expiry_date",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Card Holder Name",
+      "field_name": "card_holder_name",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Amount",
+      "field_name": "payment_amount",
+      "type": "text",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "label": "Signature of Card Holder",
+      "field_name": "card_holder_signature",
+      "type": "signature",
+      "options": [],
+      "required": false,
+      "page": 3
+    },
+    {
+      "type": "disclosure",
+      "text": "Personal Information Collection Notice: Transport for NSW is committed to protecting your privacy and ensuring your personal and health information is managed according to law. Find out why we collect your personal information, including how we use and manage it, by reading our privacy statement at transport.nsw.gov.au or call 13 22 13 to request a copy.",
+      "page": 3
+    }
   ]
 }
