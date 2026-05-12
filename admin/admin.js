@@ -551,6 +551,20 @@
     setTimeout(() => el.remove(), 3000);
   }
 
+  // ─── Public API (used by wizard.js) ──────────────────────────────────────────
+
+  window.adminAPI = {
+    getFormKeys: () => Object.keys(state.forms),
+    addForm(key, items) {
+      state.forms[key]    = deepClone(items);
+      state.original[key] = deepClone(items);
+      setDirty();
+      renderFormList(document.getElementById('form-search').value);
+      selectForm(key);
+    },
+    toast,
+  };
+
   // ─── Boot ─────────────────────────────────────────────────────────────────────
 
   init();
