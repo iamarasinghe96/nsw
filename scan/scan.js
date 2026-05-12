@@ -49,11 +49,15 @@
     stopCamera();
     document.getElementById('webcam-panel').classList.toggle('hidden', mode !== 'webcam');
     document.getElementById('usb-panel').classList.toggle('hidden', mode !== 'usb');
-    document.getElementById('tab-webcam').classList.toggle('active', mode === 'webcam');
-    document.getElementById('tab-usb').classList.toggle('active', mode === 'usb');
+    document.getElementById('upload-panel').classList.toggle('hidden', mode !== 'upload');
+    ['webcam','usb','upload'].forEach(m =>
+      document.getElementById('tab-'+m).classList.toggle('active', m === mode)
+    );
     if (mode === 'usb') {
       document.getElementById('usb-input').focus();
       setStatus('Ready — scan or paste QR data', 'active');
+    } else if (mode === 'upload') {
+      setStatus('Upload or drag a QR code image to decode', '');
     } else {
       setStatus('Click Start Scan to activate camera', '');
     }
@@ -410,6 +414,64 @@
     setTimeout(() => el.remove(), 3000);
   }
 
+  // ── Image upload / paste decoding ────────────────────────────────────
+  function decodeImageEl(imgEl) {
+    const cvs = document.getElementById('upload-canvas');
+    cvs.width = imgEl.naturalWidth || imgEl.width;
+    cvs.height = imgEl.naturalHeight || imgEl.height;
+    const ctx = cvs.getContext('2d');
+    ctx.drawImage(imgEl, 0, 0, cvs.width, cvs.height);
+    const data = ctx.getImageData(0, 0, cvs.width, cvs.height);
+    const code = jsQR(data.data, data.width, data.height, { inversionAttempts: 'attemptBoth' });
+
+    const zone  = document.getElementById('uploadDropZone');
+    const wrap  = document.getElementById('upload-preview-wrap');
+    const badge = wrap.querySelector('.upload-result-badge') || document.createElement('div');
+    badge.className = 'upload-result-badge';
+    if (!badge.parentNode) wrap.appendChild(badge);
+
+    if (code) {
+      badge.className = 'upload-result-badge ok';
+      badge.textContent = '✓ QR decoded — ' + code.data.length + ' chars';
+      onQRDetected(code.data);
+    } else {
+      badge.className = 'upload-result-badge error';
+      badge.textContent = '✗ No QR found — try a higher-resolution image';
+      setStatus('Could not decode — try a clearer/larger image', 'error');
+    }
+  }
+
+  function loadImageFile(file) {
+    if (!file || !file.type.startsWith('image/')) return;
+    const reader = new FileReader();
+    reader.onload = ev => {
+      const img = new Image();
+      img.onload = () => {
+        // Show preview
+        const zone = document.getElementById('uploadDropZone');
+        const wrap = document.getElementById('upload-preview-wrap');
+        // Remove old preview img
+        wrap.querySelector('.upload-img-preview')?.remove();
+        const prev = Object.assign(document.createElement('img'), {
+          src: ev.target.result, className: 'upload-img-preview'
+        });
+        wrap.insertBefore(prev, wrap.firstChild);
+        wrap.querySelector('.upload-icon')?.remove();
+        wrap.querySelectorAll('.upload-hint').forEach(el => el.remove());
+        decodeImageEl(img);
+      };
+      img.src = ev.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  window.onImageFile = function (input) { loadImageFile(input.files[0]); };
+  window.onImageDrop = function (e) {
+    e.preventDefault();
+    document.getElementById('uploadDropZone').classList.remove('drag-over');
+    loadImageFile(e.dataTransfer.files[0]);
+  };
+
   // ── USB scanner input ─────────────────────────────────────────────────
   function bindEvents() {
     const usbIn = document.getElementById('usb-input');
@@ -424,6 +486,18 @@
     usbIn.addEventListener('blur', () => {
       if (S.mode === 'usb') setTimeout(() => usbIn.focus(), 100);
     });
+
+    // Global Ctrl+V paste → decode image from clipboard in upload mode
+    document.addEventListener('paste', e => {
+      if (S.mode !== 'upload') return;
+      const item = Array.from(e.clipboardData.items).find(i => i.type.startsWith('image/'));
+      if (item) loadImageFile(item.getAsFile());
+    });
+
+    // Drag-over highlighting
+    const dz = document.getElementById('uploadDropZone');
+    dz.addEventListener('dragover',  () => dz.classList.add('drag-over'));
+    dz.addEventListener('dragleave', () => dz.classList.remove('drag-over'));
   }
 
   init();
