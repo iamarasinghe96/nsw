@@ -1,452 +1,430 @@
 (function () {
   'use strict';
 
-  // ─── State ───────────────────────────────────────────────────────────────────
-
-  const state = {
+  // ── State ────────────────────────────────────────────────────────────
+  const S = {
+    mode:        'webcam',   // 'webcam' | 'usb'
     scanning:    false,
-    t1:          null,   // Tier-1 payload (always present)
-    t2:          null,   // Tier-2 payload (long textarea detail)
-    formFields:  null,   // final_fields.json cache
-    stream:      null,   // MediaStream
-    raf:         null,   // requestAnimationFrame handle
-    lastRaw:     null,   // raw string of last detected QR (debounce)
-    debounceTimer: null,
+    frozen:      false,
+    stream:      null,
+    raf:         null,
+    allForms:    null,       // final_fields.json cache
+    formKey:     null,       // currently selected form key
+    t1:          null,       // Tier-1 QR payload
+    t2:          null,       // Tier-2 QR payload
+    lastRaw:     null,
+    debounce:    null,
   };
 
-  const BLOCK_TYPES = new Set(['heading', 'instruction', 'disclosure']);
+  const BLOCK = new Set(['heading', 'instruction', 'disclosure']);
 
-  // ─── Boot ────────────────────────────────────────────────────────────────────
-
+  // ── Boot ─────────────────────────────────────────────────────────────
   async function init() {
-    await loadFormFields();
-    startCamera();
+    await loadForms();
+    bindEvents();
+    setStatus('Select a scan mode above', '');
   }
 
-  // ─── Form fields ─────────────────────────────────────────────────────────────
-
-  async function loadFormFields() {
+  async function loadForms() {
     try {
-      const res = await fetch('../data/final_fields.json');
-      if (!res.ok) throw new Error();
-      state.formFields = await res.json();
-    } catch {
-      // Non-fatal — results will still show raw keys without labels
+      const r = await fetch('../data/final_fields.json');
+      S.allForms = await r.json();
+      populateAppType();
+    } catch { toast('Could not load form definitions', 'error'); }
+  }
+
+  function populateAppType() {
+    const sel = document.getElementById('app-type');
+    Object.keys(S.allForms).sort().forEach(key => {
+      const opt = document.createElement('option');
+      opt.value = key;
+      opt.textContent = fmtKey(key);
+      sel.appendChild(opt);
+    });
+  }
+
+  // ── Mode toggle ───────────────────────────────────────────────────────
+  window.setMode = function (mode) {
+    S.mode = mode;
+    stopCamera();
+    document.getElementById('webcam-panel').classList.toggle('hidden', mode !== 'webcam');
+    document.getElementById('usb-panel').classList.toggle('hidden', mode !== 'usb');
+    document.getElementById('tab-webcam').classList.toggle('active', mode === 'webcam');
+    document.getElementById('tab-usb').classList.toggle('active', mode === 'usb');
+    if (mode === 'usb') {
+      document.getElementById('usb-input').focus();
+      setStatus('Ready — scan or paste QR data', 'active');
+    } else {
+      setStatus('Click Start Scan to activate camera', '');
     }
-  }
+  };
 
-  function getFormByCat(catNum) {
-    if (!state.formFields || !catNum) return null;
-    const key = Object.keys(state.formFields).find(k =>
-      k.startsWith(catNum + '-') || k === catNum + '.pdf'
-    );
-    if (!key) return null;
-    return { key, fields: state.formFields[key] };
-  }
-
-  function getFormName(key) {
-    return key
-      .replace(/\.pdf$/i, '')
-      .replace(/^\d+-/, '')
-      .replace(/-/g, ' ')
-      .replace(/\b\w/g, c => c.toUpperCase());
-  }
-
-  // ─── Camera ──────────────────────────────────────────────────────────────────
-
-  async function startCamera() {
-    setStatus('Requesting camera access…', '');
-
+  // ── Camera ────────────────────────────────────────────────────────────
+  window.startCamera = async function () {
+    S.frozen = false;
+    document.getElementById('cameraOffMsg').classList.add('hidden');
+    setStatus('Requesting camera…', '');
     try {
-      state.stream = await navigator.mediaDevices.getUserMedia({
+      S.stream = await navigator.mediaDevices.getUserMedia({
         video: { facingMode: { ideal: 'environment' }, width: { ideal: 1280 } },
         audio: false,
       });
     } catch {
-      try {
-        // Fallback: any camera
-        state.stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
-      } catch {
-        document.getElementById('cameraError').classList.remove('hidden');
+      try { S.stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false }); }
+      catch {
         setStatus('Camera access denied', 'error');
+        document.getElementById('cameraOffMsg').classList.remove('hidden');
         return;
       }
     }
+    const vid = document.getElementById('video');
+    vid.srcObject = S.stream;
+    await vid.play().catch(() => {});
+    S.scanning = true;
+    document.getElementById('btn-start').style.display = 'none';
+    document.getElementById('btn-stop').style.display  = '';
+    document.getElementById('btn-freeze').disabled = false;
+    setStatus('Scanning — point at QR on customer\'s phone', 'active');
+    S.raf = requestAnimationFrame(scanFrame);
+  };
 
-    const video = document.getElementById('video');
-    video.srcObject = state.stream;
-    await video.play().catch(() => {});
+  window.stopCamera = function () {
+    S.scanning = false;
+    if (S.raf) cancelAnimationFrame(S.raf);
+    if (S.stream) { S.stream.getTracks().forEach(t => t.stop()); S.stream = null; }
+    document.getElementById('btn-start').style.display = '';
+    document.getElementById('btn-stop').style.display  = 'none';
+    document.getElementById('btn-freeze').disabled = true;
+    document.getElementById('cameraOffMsg').classList.remove('hidden');
+    setStatus('Camera stopped', '');
+  };
 
-    state.scanning = true;
-    setStatus('Scanning — point at the QR code on customer\'s phone', 'active');
-    requestAnimationFrame(scanFrame);
-  }
+  window.freezeAndScan = function () {
+    const vid = document.getElementById('video');
+    const cvs = document.getElementById('canvas');
+    cvs.width = vid.videoWidth; cvs.height = vid.videoHeight;
+    const ctx = cvs.getContext('2d');
+    ctx.drawImage(vid, 0, 0, cvs.width, cvs.height);
+    const img  = ctx.getImageData(0, 0, cvs.width, cvs.height);
+    const code = jsQR(img.data, img.width, img.height, { inversionAttempts: 'dontInvert' });
+    if (code) { onQRDetected(code.data); }
+    else       { setStatus('No QR found in frame — try again', 'error'); }
+  };
 
-  function stopCamera() {
-    state.scanning = false;
-    if (state.raf) cancelAnimationFrame(state.raf);
-    if (state.stream) {
-      state.stream.getTracks().forEach(t => t.stop());
-      state.stream = null;
-    }
-  }
-
-  // ─── QR scan loop ─────────────────────────────────────────────────────────
-
+  // ── QR scan loop ──────────────────────────────────────────────────────
   function scanFrame() {
-    if (!state.scanning) return;
-    state.raf = requestAnimationFrame(scanFrame);
-
-    const video  = document.getElementById('video');
-    const canvas = document.getElementById('canvas');
-
-    if (video.readyState < video.HAVE_ENOUGH_DATA) return;
-
-    canvas.width  = video.videoWidth;
-    canvas.height = video.videoHeight;
-    const ctx = canvas.getContext('2d');
-    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    const code = jsQR(imageData.data, imageData.width, imageData.height, {
-      inversionAttempts: 'dontInvert',
-    });
-
-    if (code && code.data) {
-      onRawQR(code.data);
-    }
+    if (!S.scanning) return;
+    S.raf = requestAnimationFrame(scanFrame);
+    const vid = document.getElementById('video');
+    if (vid.readyState < vid.HAVE_ENOUGH_DATA) return;
+    const cvs = document.getElementById('canvas');
+    cvs.width = vid.videoWidth; cvs.height = vid.videoHeight;
+    const ctx = cvs.getContext('2d');
+    ctx.drawImage(vid, 0, 0, cvs.width, cvs.height);
+    const img  = ctx.getImageData(0, 0, cvs.width, cvs.height);
+    const code = jsQR(img.data, img.width, img.height, { inversionAttempts: 'dontInvert' });
+    if (code && code.data) onQRDetected(code.data);
   }
 
-  // ─── QR handling ─────────────────────────────────────────────────────────────
+  // ── QR detection ──────────────────────────────────────────────────────
+  function onQRDetected(raw) {
+    if (raw === S.lastRaw) return;
+    S.lastRaw = raw;
+    clearTimeout(S.debounce);
+    S.debounce = setTimeout(() => { S.lastRaw = null; }, 2500);
 
-  function onRawQR(raw) {
-    // Debounce: ignore the same QR for 2.5s so we don't process it 60x/sec
-    if (raw === state.lastRaw) return;
-    state.lastRaw = raw;
-    clearTimeout(state.debounceTimer);
-    state.debounceTimer = setTimeout(() => { state.lastRaw = null; }, 2500);
-
-    // Parse JSON
     let data;
     try { data = JSON.parse(raw); } catch { return; }
-
-    // Must have slot and form id to be one of ours
     if (!data.slot || !data.f) return;
 
     beep();
+    flashFrame();
 
     if (data.detail) {
-      // ── Tier 2 ──
-      if (state.t1 && state.t1.slot === data.slot) {
-        // Matching T1 already received — merge and show full results
-        state.t2 = data;
-        flashFrame();
-        renderResults(true);
-      } else {
-        // T2 before T1 (unusual) — store and wait
-        state.t2 = data;
-        setStatus('QR 2 of 2 scanned — now scan QR 1 of 2', 'waiting');
-      }
+      // Tier-2
+      S.t2 = data;
+      if (S.t1 && S.t1.slot === data.slot) refreshFields();
+      else setStatus('QR 2 of 2 received — now scan QR 1 of 2', 'waiting');
     } else {
-      // ── Tier 1 ──
-      state.t1 = data;
+      // Tier-1
+      S.t1 = data;
+      if (S.t2 && S.t2.slot !== data.slot) S.t2 = null;
 
-      if (state.t2 && state.t2.slot === data.slot) {
-        // T2 already received — merge immediately
-        flashFrame();
-        renderResults(true);
-      } else {
-        // Show T1 results; may still wait for T2
-        state.t2 = null;
-        flashFrame();
-        renderResults(false);
+      // Auto-select form type
+      const matchKey = Object.keys(S.allForms || {}).find(k =>
+        k.startsWith(data.f + '-') || k === data.f + '.pdf'
+      );
+      if (matchKey) {
+        document.getElementById('app-type').value = matchKey;
+        S.formKey = matchKey;
       }
+
+      refreshFields();
+
+      const hasT2Pending = !S.t2 && hasTruncated(S.t1, S.formKey);
+      if (hasT2Pending)
+        setStatus('QR 1 of 2 scanned ✓ — scan QR 2 of 2 for full text', 'waiting');
+      else
+        setStatus('QR scanned ✓ — review and edit below', 'success');
     }
+  }
+
+  function hasTruncated(t1, formKey) {
+    if (!S.allForms || !formKey) return false;
+    return (S.allForms[formKey] || [])
+      .filter(f => !BLOCK.has(f.type) && f.type === 'textarea')
+      .some(f => { const v = t1[f.field_name]; return v && String(v).length >= 80; });
   }
 
   function flashFrame() {
-    const frame = document.getElementById('scanFrame');
-    frame.classList.add('detected');
-    setTimeout(() => frame.classList.remove('detected'), 800);
+    const fr = document.getElementById('scanFrame');
+    fr.classList.add('detected');
+    setTimeout(() => fr.classList.remove('detected'), 800);
   }
 
-  // ─── Render results ───────────────────────────────────────────────────────────
+  // ── Form type change (manual or auto) ────────────────────────────────
+  window.onFormTypeChange = function (key) {
+    S.formKey = key || null;
+    refreshFields();
+    setStatus(key ? 'Form selected — fill in the details below' : 'Select a form type', key ? '' : '');
+  };
 
-  function renderResults(hasT2) {
-    const t1 = state.t1;
-    const t2 = state.t2;
+  // ── Render editable fields ────────────────────────────────────────────
+  function refreshFields() {
+    const key    = S.formKey;
+    const fields = key && S.allForms ? (S.allForms[key] || []) : [];
+    const qr     = mergedData();
 
-    // Form lookup
-    const formInfo = getFormByCat(t1.f);
-    const formKey  = formInfo ? formInfo.key  : null;
-    const fields   = formInfo ? formInfo.fields : null;
+    const regular = fields.filter(f => !BLOCK.has(f.type) && f.type !== 'signature' && !f.office_only);
+    const sigs    = fields.filter(f => f.type === 'signature');
+    const office  = fields.filter(f => f.office_only);
 
-    // Form name
-    const formName = formKey ? getFormName(formKey) : ('Form ' + t1.f);
-    document.getElementById('rFormName').textContent = formName;
+    const dynEl  = document.getElementById('dynamic-fields');
+    const offEl  = document.getElementById('office-fields');
+    const offSec = document.getElementById('office-section');
 
-    // Catalogue pill
-    const catEl = document.getElementById('rCatNum');
-    catEl.textContent = 'Cat. ' + t1.f;
-    catEl.classList.remove('hidden');
+    dynEl.innerHTML  = regular.length ? renderFieldsGrid(regular, qr) + renderSigs(sigs, qr) : '';
+    offEl.innerHTML  = office.length  ? renderFieldsGrid(office, {})  : '';
+    offSec.classList.toggle('hidden', !office.length);
 
-    // Timestamp pill
-    const slot = t1.slot || '';
-    document.getElementById('rTime').textContent = formatSlot(slot);
+    // Show Copy Names if name fields present
+    const hasNames = regular.some(f => /given|first|surname|last|family/i.test(f.field_name));
+    document.getElementById('btn-copy-names').classList.toggle('hidden', !hasNames);
 
-    // T2 badge
-    document.getElementById('rT2badge').classList.toggle('hidden', !hasT2);
+    updatePreview();
+  }
 
-    // Show/hide "waiting for T2" banner
-    // A T2 is needed if any textarea values in T1 are exactly 80 chars (were truncated)
-    const mightHaveT2 = !hasT2 && hasTruncatedTextareas(t1, fields);
-    document.getElementById('t2Waiting').classList.toggle('hidden', !mightHaveT2);
-    if (mightHaveT2) {
-      setStatus('QR 1 of 2 scanned — scan QR 2 of 2 for full text answers', 'waiting');
-    } else if (hasT2) {
-      setStatus('Both QR codes scanned ✓', 'success');
-    } else {
-      setStatus('QR scanned ✓ — ready for next customer', 'success');
+  function renderFieldsGrid(fields, qr) {
+    let html = '<div class="fields-grid">';
+    fields.forEach(f => {
+      const val = qr[f.field_name] ?? '';
+      const wide = f.type === 'textarea' || (f.options && f.options.length > 3);
+      html += `<div class="form-group${wide ? ' full-width' : ''}">
+        <label class="field-label">${esc(f.label)}${f.required ? '<span class="req"> *</span>' : ''}</label>
+        ${renderInput(f, val)}
+      </div>`;
+    });
+    html += '</div>';
+    return html;
+  }
+
+  function renderSigs(sigs, qr) {
+    if (!sigs.length) return '';
+    let html = '<div style="margin-top:14px"><div class="fields-section-title">Signatures</div><div class="fields-grid">';
+    sigs.forEach(f => {
+      const path = qr[f.field_name] || qr.sig || '';
+      html += `<div class="form-group">
+        <label class="field-label">${esc(f.label)}</label>
+        ${path
+          ? `<div class="sig-preview"><svg viewBox="0 0 400 100" style="width:200px;height:60px"><path d="${esc(path)}" fill="none" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`
+          : '<span style="font-size:12px;color:#9CA3AF">No signature captured</span>'}
+      </div>`;
+    });
+    html += '</div></div>';
+    return html;
+  }
+
+  function renderInput(f, val) {
+    const id = 'fi_' + f.field_name;
+    const onch = 'updatePreview()';
+    switch (f.type) {
+      case 'text':
+      case 'number':
+        return `<input type="text" id="${id}" class="field-input" value="${esc(String(val))}" oninput="${onch}">`;
+      case 'date':
+        return `<input type="text" id="${id}" class="field-input" value="${esc(fmtDate(val))}" placeholder="DD/MM/YYYY" oninput="${onch}">`;
+      case 'textarea':
+        return `<textarea id="${id}" class="field-input" oninput="${onch}">${esc(String(val))}</textarea>`;
+      case 'checkbox':
+        return `<div class="checkbox-group"><label class="checkbox-opt"><input type="checkbox" id="${id}" ${val==='1'||val===true?'checked':''} onchange="${onch}"> Yes</label></div>`;
+      case 'radio':
+        return '<div class="radio-group">' +
+          (f.options || []).map(o =>
+            `<label class="radio-opt"><input type="radio" name="${id}" value="${esc(o)}" ${val===o?'checked':''} onchange="${onch}"> ${esc(o)}</label>`
+          ).join('') + '</div>';
+      case 'dropdown':
+        return `<select id="${id}" class="field-input" onchange="${onch}">
+          <option value="">— Select —</option>
+          ${(f.options||[]).map(o=>`<option value="${esc(o)}" ${val===o?'selected':''}>${esc(o)}</option>`).join('')}
+        </select>`;
+      default:
+        return `<input type="text" id="${id}" class="field-input" value="${esc(String(val))}" oninput="${onch}">`;
     }
-
-    // Signature
-    renderSignature(t1.sig);
-
-    // Field data
-    renderFields(t1, t2, fields);
-
-    // Show results panel
-    document.getElementById('resultsPanel').classList.remove('hidden');
   }
 
-  function hasTruncatedTextareas(t1, fields) {
-    if (!fields) return false;
-    return fields
-      .filter(f => !BLOCK_TYPES.has(f.type) && f.type === 'textarea')
-      .some(f => {
-        const v = t1[f.field_name];
-        return v && String(v).length >= 80;
+  // ── Collect values from rendered inputs ───────────────────────────────
+  function collectValues() {
+    const out = {};
+    document.querySelectorAll('[id^="fi_"]').forEach(el => {
+      const name = el.id.replace('fi_', '');
+      if (el.type === 'checkbox') out[name] = el.checked ? 'Yes' : '';
+      else if (el.type === 'radio') { if (el.checked) out[name] = el.value; }
+      else out[name] = el.value || '';
+    });
+    return out;
+  }
+
+  // ── Preview update ────────────────────────────────────────────────────
+  window.updatePreview = function () {
+    const vals = collectValues();
+    const parts = Object.values(vals).filter(Boolean).slice(0, 5);
+    document.getElementById('previewText').textContent =
+      parts.length ? parts.join(' · ') : 'Fill in the form to preview…';
+  };
+
+  // ── Copy to clipboard ─────────────────────────────────────────────────
+  window.copyToClipboard = function () {
+    const key    = S.formKey;
+    const fields = key && S.allForms ? (S.allForms[key] || []) : [];
+    const vals   = collectValues();
+    const slot   = document.getElementById('time-slot').value;
+    const formName = key ? fmtKey(key) : 'Unknown Form';
+
+    let lines = [];
+    lines.push('Application Type\t' + formName);
+    if (slot) lines.push('Time Slot\t' + slot);
+    lines.push('');
+
+    const regular = fields.filter(f => !BLOCK.has(f.type) && f.type !== 'signature' && !f.office_only);
+    const office  = fields.filter(f => f.office_only);
+
+    regular.forEach(f => {
+      const v = vals[f.field_name];
+      if (v !== undefined) lines.push(f.label + '\t' + (v || ''));
+    });
+
+    if (office.length) {
+      lines.push('');
+      lines.push('--- OFFICE USE ONLY ---');
+      office.forEach(f => {
+        const v = vals[f.field_name];
+        lines.push(f.label + '\t' + (v || ''));
       });
-  }
-
-  // ─── Signature ────────────────────────────────────────────────────────────────
-
-  function renderSignature(sigPath) {
-    const card = document.getElementById('sigCard');
-    const wrap = document.getElementById('sigWrap');
-
-    if (!sigPath) {
-      card.classList.add('hidden');
-      return;
     }
 
-    wrap.innerHTML = `
-      <svg viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg"
-           style="width:100%;height:100px;display:block;">
-        <path d="${esc(sigPath)}"
-              fill="none" stroke="#111827" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>`;
-    card.classList.remove('hidden');
+    const text = lines.join('\n');
+    navigator.clipboard.writeText(text)
+      .then(() => toast('Copied to clipboard ✓', 'success'))
+      .catch(() => {
+        // Fallback
+        const ta = document.createElement('textarea');
+        ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        toast('Copied to clipboard ✓', 'success');
+      });
+  };
+
+  // ── Copy names only ───────────────────────────────────────────────────
+  window.copyNames = function () {
+    const vals  = collectValues();
+    const names = Object.entries(vals)
+      .filter(([k]) => /given|first|surname|last|family|middle/i.test(k))
+      .map(([, v]) => v).filter(Boolean).join(' ');
+    if (!names) { toast('No name fields found', 'error'); return; }
+    navigator.clipboard.writeText(names)
+      .then(() => toast('Names copied ✓', 'success'))
+      .catch(() => toast('Copy failed', 'error'));
+  };
+
+  // ── Clear ─────────────────────────────────────────────────────────────
+  window.clearAll = function () {
+    S.t1 = null; S.t2 = null; S.formKey = null;
+    document.getElementById('app-type').value = '';
+    document.getElementById('time-slot').value = '';
+    document.getElementById('dynamic-fields').innerHTML = '';
+    document.getElementById('office-fields').innerHTML  = '';
+    document.getElementById('office-section').classList.add('hidden');
+    document.getElementById('btn-copy-names').classList.add('hidden');
+    document.getElementById('previewText').textContent = 'Fill in the form to preview…';
+    setStatus('Cleared — ready for next customer', '');
+  };
+
+  // ── Helpers ───────────────────────────────────────────────────────────
+  function mergedData() {
+    const d = Object.assign({}, S.t1 || {});
+    if (S.t2 && S.t2.detail) Object.assign(d, S.t2.detail);
+    return d;
   }
 
-  // ─── Field cards ──────────────────────────────────────────────────────────────
+  function fmtKey(key) {
+    return key.replace(/\.pdf$/i,'').replace(/^\d+-/,'')
+      .replace(/-/g,' ').replace(/\b\w/g, c => c.toUpperCase());
+  }
 
-  function renderFields(t1, t2, fields) {
-    const container = document.getElementById('fieldCards');
-    container.innerHTML = '';
-
-    // Merge T1 data with T2 detail (T2 has full text for long textareas)
-    const data = Object.assign({}, t1);
-    if (t2 && t2.detail) {
-      Object.assign(data, t2.detail);
+  function fmtDate(val) {
+    if (!val) return '';
+    if (/^\d{4}-\d{2}-\d{2}$/.test(val)) {
+      const [y,m,d] = val.split('-'); return d+'/'+m+'/'+y;
     }
-
-    // Remove meta keys
-    const META = new Set(['slot', 'f', 'sig', 'detail']);
-    const dataKeys = Object.keys(data).filter(k => !META.has(k));
-
-    if (!dataKeys.length) {
-      container.innerHTML = '<div style="padding:20px;color:#9CA3AF;text-align:center;font-size:13px;">No field data in QR</div>';
-      return;
-    }
-
-    if (fields) {
-      // Render in form order using field definitions
-      renderFieldsOrdered(container, data, fields, t1);
-    } else {
-      // No form definition — render raw key/value pairs
-      renderFieldsRaw(container, data);
-    }
+    return String(val);
   }
 
-  function renderFieldsOrdered(container, data, fields, t1Raw) {
-    let currentPage = null;
-
-    fields.forEach(item => {
-      // Page header rows
-      if (!BLOCK_TYPES.has(item.type) && item.page !== currentPage) {
-        currentPage = item.page;
-        if (currentPage > 1) {
-          const sep = document.createElement('div');
-          sep.className = 'field-card card-page-header';
-          sep.innerHTML = `<div class="fc-label">Page ${currentPage}</div>`;
-          container.appendChild(sep);
-        }
-      }
-
-      // Skip blocks and items with no submitted data
-      if (BLOCK_TYPES.has(item.type)) return;
-      if (item.type === 'signature') return; // shown separately
-
-      const rawVal = data[item.field_name];
-      if (rawVal === undefined || rawVal === null || rawVal === '') return;
-
-      const row = document.createElement('div');
-      row.className = 'field-card';
-      row.innerHTML = `
-        <div class="fc-label">${esc(item.label || item.field_name)}</div>
-        <div class="fc-value ${valueClass(item.type, rawVal, t1Raw[item.field_name])}">${formatValue(item.type, rawVal, t1Raw[item.field_name])}</div>`;
-      container.appendChild(row);
-    });
-
-    // Append any extra keys that aren't in the form definition
-    const definedNames = new Set(fields.map(f => f.field_name).filter(Boolean));
-    const META = new Set(['slot', 'f', 'sig', 'detail']);
-    Object.keys(data).forEach(k => {
-      if (META.has(k) || definedNames.has(k) || data[k] === '' || data[k] === null) return;
-      const row = document.createElement('div');
-      row.className = 'field-card';
-      row.innerHTML = `
-        <div class="fc-label">${esc(k)}</div>
-        <div class="fc-value">${esc(String(data[k]))}</div>`;
-      container.appendChild(row);
-    });
+  function esc(s) {
+    return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
   }
-
-  function renderFieldsRaw(container, data) {
-    const META = new Set(['slot', 'f', 'sig', 'detail']);
-    Object.keys(data).forEach(k => {
-      if (META.has(k)) return;
-      const v = data[k];
-      if (v === '' || v === null || v === undefined) return;
-      const row = document.createElement('div');
-      row.className = 'field-card';
-      row.innerHTML = `
-        <div class="fc-label">${esc(k.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase()))}</div>
-        <div class="fc-value">${esc(String(v))}</div>`;
-      container.appendChild(row);
-    });
-  }
-
-  // ─── Value formatting ─────────────────────────────────────────────────────────
-
-  function valueClass(type, val, t1Val) {
-    if (type === 'checkbox') return 'is-checked';
-    if (type === 'textarea') {
-      // T1 value was capped at 80 chars; if T2 has it, it's the full version
-      const wasTruncated = t1Val && String(t1Val).length >= 80;
-      return 'is-textarea' + (wasTruncated && val === t1Val ? ' is-truncated' : '');
-    }
-    if (type === 'date') return 'is-date';
-    return '';
-  }
-
-  function formatValue(type, val, t1Val) {
-    if (type === 'checkbox') {
-      return val === '1' || val === true ? '✓ Yes' : '✗ No';
-    }
-    if (type === 'date') return esc(formatDate(String(val)));
-    if (type === 'textarea') {
-      const wasTruncated = t1Val && String(t1Val).length >= 80 && val === t1Val;
-      const text = esc(String(val));
-      return wasTruncated ? text + '<span style="color:#9CA3AF;font-size:11px;"> … (truncated)</span>' : text;
-    }
-    return esc(String(val));
-  }
-
-  function formatDate(raw) {
-    // Accept YYYY-MM-DD or DD/MM/YYYY
-    if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) {
-      const [y, m, d] = raw.split('-');
-      return d + '/' + m + '/' + y;
-    }
-    return raw;
-  }
-
-  function formatSlot(slot) {
-    // slot = YYYYMMDDHHmmss
-    if (slot.length < 14) return slot;
-    const y  = slot.slice(0,4), mo = slot.slice(4,6), d  = slot.slice(6,8);
-    const h  = slot.slice(8,10), mi = slot.slice(10,12), s = slot.slice(12,14);
-    return `${d}/${mo}/${y} ${h}:${mi}:${s}`;
-  }
-
-  // ─── Clear ────────────────────────────────────────────────────────────────────
-
-  function clearScan() {
-    state.t1 = null;
-    state.t2 = null;
-    state.lastRaw = null;
-
-    document.getElementById('resultsPanel').classList.add('hidden');
-    document.getElementById('sigCard').classList.add('hidden');
-    document.getElementById('fieldCards').innerHTML = '';
-    document.getElementById('t2Waiting').classList.add('hidden');
-    document.getElementById('rT2badge').classList.add('hidden');
-
-    // Re-start scanning if camera was paused
-    if (!state.scanning && state.stream) {
-      state.scanning = true;
-      requestAnimationFrame(scanFrame);
-    }
-    setStatus('Scanning — point at the QR code on customer\'s phone', 'active');
-  }
-
-  // ─── Status ───────────────────────────────────────────────────────────────────
 
   function setStatus(msg, type) {
     document.getElementById('statusMsg').textContent = msg;
-    const dot = document.getElementById('statusDot');
-    dot.className = 'status-dot' + (type ? ' ' + type : '');
+    document.getElementById('statusDot').className = 'status-dot' + (type ? ' '+type : '');
   }
-
-  // ─── Audio feedback ───────────────────────────────────────────────────────────
 
   function beep() {
     try {
-      const ctx  = new (window.AudioContext || window.webkitAudioContext)();
-      const osc  = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-      osc.frequency.value = 1400;
-      osc.type = 'sine';
-      gain.gain.setValueAtTime(0.25, ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.12);
-      osc.start(ctx.currentTime);
-      osc.stop(ctx.currentTime + 0.12);
-    } catch { /* audio not critical */ }
+      const ac = new (window.AudioContext||window.webkitAudioContext)();
+      const o = ac.createOscillator(), g = ac.createGain();
+      o.connect(g); g.connect(ac.destination);
+      o.frequency.value = 1400; o.type = 'sine';
+      g.gain.setValueAtTime(0.25, ac.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.001, ac.currentTime+0.12);
+      o.start(); o.stop(ac.currentTime+0.12);
+    } catch {}
   }
 
-  // ─── Helpers ─────────────────────────────────────────────────────────────────
-
-  function esc(s) {
-    return String(s)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;');
+  function toast(msg, type='') {
+    document.querySelector('.toast')?.remove();
+    const el = Object.assign(document.createElement('div'), { className:'toast '+type, textContent:msg });
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 3000);
   }
 
-  // ─── Expose clearScan globally (called from HTML onclick) ─────────────────────
-
-  window.clearScan  = clearScan;
-  window.startCamera = startCamera;
-
-  // ─── Boot ─────────────────────────────────────────────────────────────────────
+  // ── USB scanner input ─────────────────────────────────────────────────
+  function bindEvents() {
+    const usbIn = document.getElementById('usb-input');
+    usbIn.addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        const raw = usbIn.value.trim();
+        usbIn.value = '';
+        if (raw) onQRDetected(raw);
+      }
+    });
+    // Keep USB input focused in USB mode
+    usbIn.addEventListener('blur', () => {
+      if (S.mode === 'usb') setTimeout(() => usbIn.focus(), 100);
+    });
+  }
 
   init();
-
 })();
