@@ -30,12 +30,9 @@
       </div>
 
       <div class="scanner-tabs">
-        <button class="tab-btn active" id="tab-webcam" onclick="setMode('webcam')">
-          📷 Webcam
-        </button>
-        <button class="tab-btn" id="tab-usb" onclick="setMode('usb')">
-          🔌 USB Scanner
-        </button>
+        <button class="tab-btn active" id="tab-webcam" onclick="setMode('webcam')">📷 Webcam</button>
+        <button class="tab-btn" id="tab-usb"    onclick="setMode('usb')">🔌 USB Scanner</button>
+        <button class="tab-btn" id="tab-upload" onclick="setMode('upload')">🖼 Upload Image</button>
       </div>
 
       <div class="scanner-body">
@@ -62,6 +59,21 @@
             <button class="btn btn-secondary" id="btn-freeze" onclick="freezeAndScan()" disabled>📸 Freeze &amp; Scan</button>
             <button class="btn btn-ghost" id="btn-stop" onclick="stopCamera()" style="display:none">⏹ Stop</button>
           </div>
+        </div>
+
+        <!-- Upload panel -->
+        <div id="upload-panel" class="upload-panel hidden">
+          <div class="upload-drop-zone" id="uploadDropZone"
+               onclick="document.getElementById('upload-file').click()"
+               ondragover="event.preventDefault()" ondrop="onImageDrop(event)">
+            <div id="upload-preview-wrap">
+              <div class="upload-icon">🖼</div>
+              <p class="upload-hint">Click to upload or drag &amp; drop a QR image</p>
+              <p class="upload-hint" style="font-size:11px">PNG, JPG — or paste with Ctrl+V</p>
+            </div>
+          </div>
+          <input type="file" id="upload-file" accept="image/*" style="display:none" onchange="onImageFile(this)">
+          <canvas id="upload-canvas" style="display:none"></canvas>
         </div>
 
         <!-- USB panel -->

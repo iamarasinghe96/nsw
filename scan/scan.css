@@ -141,6 +141,44 @@ body {
   gap: 8px;
 }
 
+/* ── Upload panel ── */
+.upload-panel { padding: 8px 0; }
+.upload-drop-zone {
+  border: 2px dashed var(--border);
+  border-radius: 10px;
+  padding: 32px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.15s;
+  background: #FAFAFA;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.upload-drop-zone:hover { border-color: var(--blue2); background: #EEF2FF; }
+.upload-drop-zone.drag-over { border-color: var(--blue); background: #DBEAFE; }
+.upload-icon { font-size: 36px; margin-bottom: 8px; }
+.upload-hint { font-size: 13px; color: var(--muted); margin-top: 4px; }
+#upload-preview-wrap { display: flex; flex-direction: column; align-items: center; }
+.upload-img-preview {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 6px;
+  display: block;
+}
+.upload-result-badge {
+  margin-top: 10px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.upload-result-badge.ok    { background: #D1FAE5; color: #065F46; }
+.upload-result-badge.error { background: #FEE2E2; color: #991B1B; }
+
 /* ── USB panel ── */
 .usb-panel {
   padding: 8px 0;
