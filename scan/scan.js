@@ -416,26 +416,40 @@
 
   // ── Image upload / paste decoding ────────────────────────────────────
   function decodeImageEl(imgEl) {
+    const nw  = imgEl.naturalWidth  || imgEl.width  || 300;
+    const nh  = imgEl.naturalHeight || imgEl.height || 300;
     const cvs = document.getElementById('upload-canvas');
-    cvs.width = imgEl.naturalWidth || imgEl.width;
-    cvs.height = imgEl.naturalHeight || imgEl.height;
     const ctx = cvs.getContext('2d');
-    ctx.drawImage(imgEl, 0, 0, cvs.width, cvs.height);
-    const data = ctx.getImageData(0, 0, cvs.width, cvs.height);
-    const code = jsQR(data.data, data.width, data.height, { inversionAttempts: 'attemptBoth' });
 
-    const zone  = document.getElementById('uploadDropZone');
+    // Scale up small images so jsQR has ≥1200px on the short side to work with.
+    // Dense QR codes (version 25+) need ~10px per module; a 300px image has only ~3px.
+    const minDim = Math.min(nw, nh);
+    const scale  = minDim < 1200 ? Math.min(6, Math.ceil(1200 / minDim)) : 1;
+    cvs.width  = nw * scale;
+    cvs.height = nh * scale;
+
+    function scanWith(smooth) {
+      ctx.imageSmoothingEnabled = smooth;
+      if (smooth) ctx.imageSmoothingQuality = 'high';
+      ctx.drawImage(imgEl, 0, 0, cvs.width, cvs.height);
+      const d = ctx.getImageData(0, 0, cvs.width, cvs.height);
+      return jsQR(d.data, d.width, d.height, { inversionAttempts: 'attemptBoth' });
+    }
+
+    // Try smooth first (better for photos), then sharp/nearest-neighbour (better
+    // for digital screenshots of QR codes where pixels should stay crisp).
+    const code = scanWith(true) || scanWith(false);
+
     const wrap  = document.getElementById('upload-preview-wrap');
     const badge = wrap.querySelector('.upload-result-badge') || document.createElement('div');
-    badge.className = 'upload-result-badge';
     if (!badge.parentNode) wrap.appendChild(badge);
 
     if (code) {
-      badge.className = 'upload-result-badge ok';
+      badge.className  = 'upload-result-badge ok';
       badge.textContent = '✓ QR decoded — ' + code.data.length + ' chars';
       onQRDetected(code.data);
     } else {
-      badge.className = 'upload-result-badge error';
+      badge.className  = 'upload-result-badge error';
       badge.textContent = '✗ No QR found — try a higher-resolution image';
       setStatus('Could not decode — try a clearer/larger image', 'error');
     }
