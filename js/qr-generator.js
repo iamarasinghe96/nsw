@@ -103,12 +103,39 @@ function generateDataQR(containerId, formData, formMeta, formFields) {
     });
   }
 
+  // ── Fit T1 within QR byte capacity before rendering ─────────────────────
+  // qrcodejs silently generates an unreadable QR when data exceeds capacity.
+  // Safe limits: Level M ≤ 2200 bytes, Level L ≤ 2800 bytes.
+  t1 = _fitT1(t1);
+
   // ── Render ──────────────────────────────────────────────────────────────
   if (t2) {
     _renderDualQR(container, _qrSafe(JSON.stringify(t1)), _qrSafe(JSON.stringify(t2)));
   } else {
     _renderSingleQR(container, _qrSafe(JSON.stringify(t1)));
   }
+}
+
+// ── Trim T1 payload to fit within QR byte capacity ─────────────────────────
+function _fitT1(t1) {
+  var json = JSON.stringify(t1);
+  if (json.length <= 2200) return t1;          // fits Level M — done
+
+  // Step 1: drop signature (largest optional field)
+  var out = Object.assign({}, t1);
+  delete out.sig;
+  json = JSON.stringify(out);
+  if (json.length <= 2200) return out;          // fits Level M without sig
+
+  // Step 2: halve every field value (Level L threshold is 2800)
+  if (json.length > 2200) {
+    Object.keys(out).forEach(function (k) {
+      if (k !== 'slot' && k !== 'f' && typeof out[k] === 'string') {
+        out[k] = out[k].slice(0, 25);
+      }
+    });
+  }
+  return out;                                   // caller will use Level L
 }
 
 // ── Single QR layout ───────────────────────────────────────────────────────
@@ -151,13 +178,19 @@ function _renderDualQR(container, text1, text2) {
   });
 }
 
-// ── Shared QR renderer with retry logic ───────────────────────────────────
-// Tries M correction first; if it fails (payload too large), retries with
-// L correction; calls cb(true/false) to indicate success.
+// ── Shared QR renderer ────────────────────────────────────────────────────
+// Picks error-correction level based on payload size so qrcodejs never
+// receives data larger than the chosen version can hold (which causes it
+// to silently produce an unreadable QR without throwing).
 function _makeQR(el, text, size, cb) {
   if (!el) { cb && cb(false); return; }
 
-  function attempt(level) {
+  // Level M handles ≤2331 bytes; Level L handles ≤2953 bytes.
+  // Use 2200/2800 as conservative limits to leave headroom.
+  var level = text.length <= 2200 ? QRCode.CorrectLevel.M : QRCode.CorrectLevel.L;
+
+  function attempt(lvl) {
+    el.innerHTML = '';
     try {
       new QRCode(el, {
         text: text,
@@ -165,23 +198,21 @@ function _makeQR(el, text, size, cb) {
         height: size,
         colorDark:    '#111827',
         colorLight:   '#ffffff',
-        correctLevel: level,
+        correctLevel: lvl,
       });
-    } catch (e) { /* silent — checked below */ }
-
-    if (el.querySelector('canvas,img')) {
-      cb && cb(true);
-      return true;
-    }
-    return false;
+    } catch (e) { /* checked below */ }
+    return !!el.querySelector('canvas,img');
   }
 
-  // Try M first, fall back to L
-  if (!attempt(QRCode.CorrectLevel.M)) {
-    el.innerHTML = '';
-    if (!attempt(QRCode.CorrectLevel.L)) {
-      cb && cb(false);
-    }
+  if (!attempt(level)) {
+    // Last resort: try the other level
+    var fallback = level === QRCode.CorrectLevel.M
+      ? QRCode.CorrectLevel.L
+      : QRCode.CorrectLevel.M;
+    if (!attempt(fallback)) cb && cb(false);
+    else cb && cb(true);
+  } else {
+    cb && cb(true);
   }
 }
 
