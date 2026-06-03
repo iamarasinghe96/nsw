@@ -231,6 +231,7 @@
       document.getElementById('reviewScreen').style.display = 'none';
       document.getElementById('finalQrScreen').style.display = 'none';
       document.getElementById('formNav').style.display = '';
+      if (window.stopQRCarousel) stopQRCarousel();
 
       if (isQrStep()) {
         // Final QR

@@ -1214,6 +1214,76 @@ textarea.field-input {
   flex-shrink: 0;
 }
 
+/* ── QR carousel (multi-chunk auto-rotation) ─────────────────────────────── */
+
+.qr-carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.qr-carousel-slide {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.qr-carousel-slide.active {
+  display: flex;
+}
+
+.qr-carousel-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  height: 10px;
+}
+
+.qr-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(0,38,100,0.18);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.qr-dot.active {
+  background: #002664;
+  transform: scale(1.3);
+}
+
+.qr-carousel-hint {
+  font-size: 11px;
+  color: rgba(0,38,100,0.45);
+  text-align: center;
+  margin: 0;
+  max-width: 220px;
+  line-height: 1.5;
+}
+
+.qr-carousel-progress {
+  width: 280px;
+  height: 3px;
+  background: rgba(0,38,100,0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.qr-carousel-bar {
+  height: 100%;
+  background: #002664;
+  border-radius: 2px;
+  animation: qr-bar-fill 1.5s linear infinite;
+  transform-origin: left;
+}
+
+@keyframes qr-bar-fill {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
 @media (max-width: 560px) {
   .qr-divider { display: none; }
   .qr-multi-wrap { flex-direction: column; align-items: center; }
