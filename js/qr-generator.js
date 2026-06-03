@@ -23,22 +23,24 @@ function generateKioskQR(containerId, formId) {
 // to fail silently. Replace them with safe ASCII equivalents.
 function _qrSafe(str) {
   return str
-    .replace(/[\u2018\u2019]/g, "'")   // smart single quotes → '
-    .replace(/[\u201C\u201D]/g, '"')   // smart double quotes → "
-    .replace(/[\u2013\u2014]/g, '-')   // en/em dash → -
-    .replace(/[\u2026]/g, '...')       // ellipsis → ...
+    .replace(/[‘’]/g, "'")   // smart single quotes → '
+    .replace(/[“”]/g, '"')   // smart double quotes → "
+    .replace(/[–—]/g, '-')   // en/em dash → -
+    .replace(/[…]/g, '...')       // ellipsis → ...
     .replace(/[^\x00-\x7F]/g, '?');   // all remaining non-ASCII → ?
 }
 
-// ── Data QR (encodes completed form data + embedded signature path) ────────
+// ── Data QR: multi-chunk approach ─────────────────────────────────────────
 //
-// Two-tier strategy:
-//   Tier 1 (always): slot + formId + all short fields + textareas ≤80 chars
-//                    + signature SVG path (capped at 400 chars)
-//   Tier 2 (only when textarea answers > 80 chars): slot + full text answers
+// Instead of truncating data to fit one QR, all field values are packed
+// into 1–3 QR codes split by byte count. Each chunk payload:
+//   { slot, f, n, i, ...fields }
+//   slot : YYYYMMDDHHmmss — links all chunks for this submission
+//   f    : form ID prefix (for auto-selection on scan page)
+//   n    : total number of chunks
+//   i    : 1-based index of this chunk
 //
-// If Tier 1 is still too large after capping, signature is dropped and tried
-// again with L error correction before falling back to text summary.
+// The scan page reassembles chunks by matching on slot before rendering.
 //
 function generateDataQR(containerId, formData, formMeta, formFields) {
   var container = document.getElementById(containerId);
@@ -47,111 +49,115 @@ function generateDataQR(containerId, formData, formMeta, formFields) {
 
   var catNum = (formMeta && formMeta.id) ? formMeta.id.split('-')[0] : '';
 
-  // Slot: YYYYMMDDHHmmss — links Tier 1 and Tier 2 together
   var now = new Date();
   var _p  = function (n) { return String(n).padStart(2, '0'); };
   var slot = String(now.getFullYear()) + _p(now.getMonth() + 1) + _p(now.getDate())
            + _p(now.getHours())        + _p(now.getMinutes())   + _p(now.getSeconds());
 
-  // Partition fields
-  var shortFields    = [];
-  var textareaFields = [];
-  var sigFieldNames  = [];
-
+  // Collect all field entries with values in form order
+  var entries = [];
   (formFields || []).forEach(function (f) {
     var ft = f.field_type || f.type || '';
-    if (f.type === 'heading' || f.type === 'instruction' || !f.field_name) return;
-    if (ft === 'signature') { sigFieldNames.push(f.field_name); return; }
-    if (ft === 'textarea')  { textareaFields.push(f); }
-    else                    { shortFields.push(f); }
-  });
+    if (['heading', 'instruction', 'disclosure'].indexOf(f.type) >= 0 || !f.field_name) return;
 
-  // ── Build Tier 1 payload ────────────────────────────────────────────────
-  var t1 = { slot: slot, f: catNum };
-
-  shortFields.forEach(function (f) {
-    var val = (formData || {})[f.field_name];
-    if (val === undefined || val === null || val === '' || val === false) return;
-    t1[f.field_name] = (val === true) ? '1' : String(val).slice(0, 50);
-  });
-
-  textareaFields.forEach(function (f) {
-    var val = (formData || {})[f.field_name];
-    if (!val) return;
-    t1[f.field_name] = String(val).slice(0, 80);
-  });
-
-  // Signature SVG path — cap at 400 chars to keep QR manageable
-  sigFieldNames.forEach(function (name) {
-    if (typeof getSignatureSVGPath === 'function') {
-      var path = getSignatureSVGPath(name);
-      if (path) t1.sig = path.slice(0, 400);
+    var strVal;
+    if (ft === 'signature') {
+      if (typeof getSignatureSVGPath === 'function') {
+        var path = getSignatureSVGPath(f.field_name);
+        if (path) strVal = path.slice(0, 300);
+      }
+    } else {
+      var val = (formData || {})[f.field_name];
+      if (val === undefined || val === null || val === '' || val === false) return;
+      strVal = (val === true) ? '1' : String(val).slice(0, 400);
     }
+
+    if (strVal) entries.push([f.field_name, strVal]);
   });
 
-  // ── Build Tier 2 payload ────────────────────────────────────────────────
-  var t2 = null;
-  var longTextareas = textareaFields.filter(function (f) {
-    var val = (formData || {})[f.field_name];
-    return val && String(val).length > 80;
-  });
-
-  if (longTextareas.length > 0) {
-    t2 = { slot: slot, f: catNum, detail: {} };
-    longTextareas.forEach(function (f) {
-      t2.detail[f.field_name] = String((formData || {})[f.field_name]).slice(0, 500);
-    });
-  }
-
-  // ── Fit T1 within QR byte capacity before rendering ─────────────────────
-  // qrcodejs silently generates an unreadable QR when data exceeds capacity.
-  // Safe limits: Level M ≤ 2200 bytes, Level L ≤ 2800 bytes.
-  t1 = _fitT1(t1);
-
-  // ── Render ──────────────────────────────────────────────────────────────
-  if (t2) {
-    _renderDualQR(container, _qrSafe(JSON.stringify(t1)), _qrSafe(JSON.stringify(t2)));
-  } else {
-    _renderSingleQR(container, _qrSafe(JSON.stringify(t1)));
-  }
+  var chunks = _packChunks(slot, catNum, entries);
+  _renderChunks(container, chunks);
 }
 
-// ── Trim T1 payload to fit within QR byte capacity ─────────────────────────
-// Guarantees output stays under TARGET_L bytes. qrcodejs silently creates
-// an unreadable QR (canvas present but data garbled) when capacity is
-// exceeded — so we must hard-enforce limits, not just best-effort trim.
-function _fitT1(t1) {
-  var TARGET_M = 1500;  // conservative Level M limit (capacity 2331)
-  var TARGET_L = 2200;  // conservative Level L limit (capacity 2953)
+// ── Greedy chunk packer ────────────────────────────────────────────────────
+// Packs entries into 1–3 payloads, each staying under _QR_CHUNK_TARGET bytes.
+// If all three chunks are full, the last value is truncated to fit rather
+// than silently dropped.
+var _QR_CHUNK_TARGET = 1400; // conservative (Level M capacity: 2331 bytes)
+var _QR_MAX_CHUNKS   = 3;
 
-  var out = Object.assign({}, t1);
-  if (JSON.stringify(out).length <= TARGET_M) return out;
+function _packChunks(slot, catNum, entries) {
+  var chunks = [[]];
 
-  // Step 1: drop signature (biggest optional blob)
-  delete out.sig;
-  if (JSON.stringify(out).length <= TARGET_M) return out;
+  for (var ei = 0; ei < entries.length; ei++) {
+    var entry = entries[ei];
+    var ci    = chunks.length - 1;
 
-  // Step 2: progressive value truncation: 40 → 20 → 10 chars
-  var steps = [40, 20, 10];
-  for (var i = 0; i < steps.length; i++) {
-    var cap = steps[i];
-    Object.keys(out).forEach(function (k) {
-      if (k !== 'slot' && k !== 'f' && typeof out[k] === 'string' && out[k].length > cap) {
-        out[k] = out[k].slice(0, cap);
-      }
+    // Try appending to the current chunk
+    var test = _chunkPayload(slot, catNum, 99, ci + 1, chunks[ci].concat([entry]));
+    if (JSON.stringify(test).length <= _QR_CHUNK_TARGET) {
+      chunks[ci].push(entry);
+      continue;
+    }
+
+    // Overflow — start a new chunk if under limit
+    if (chunks.length < _QR_MAX_CHUNKS) {
+      chunks.push([entry]);
+      continue;
+    }
+
+    // All chunks full: truncate the value to squeeze it in
+    var baseLen  = JSON.stringify(_chunkPayload(slot, catNum, 99, ci + 1, chunks[ci])).length;
+    var available = _QR_CHUNK_TARGET - baseLen - entry[0].length - 7; // ,"key":"" overhead
+    if (available > 3) {
+      chunks[ci].push([entry[0], entry[1].slice(0, available)]);
+    }
+  }
+
+  var n = chunks.length;
+  return chunks.map(function (chunk, i) {
+    return _chunkPayload(slot, catNum, n, i + 1, chunk);
+  });
+}
+
+function _chunkPayload(slot, catNum, n, i, entries) {
+  var obj = { slot: slot, f: catNum, n: n, i: i };
+  (entries || []).forEach(function (e) { obj[e[0]] = e[1]; });
+  return obj;
+}
+
+// ── Render 1, 2, or 3 QR code panels ─────────────────────────────────────
+function _renderChunks(container, chunks) {
+  var n = chunks.length;
+
+  if (n === 1) {
+    _renderSingleQR(container, _qrSafe(JSON.stringify(chunks[0])));
+    return;
+  }
+
+  var size       = n === 2 ? 240 : 190;
+  var subLabels  = ['Application data & selections', 'Additional details', 'Remaining details'];
+  var badgeMod   = ['', ' qr-badge--detail', ' qr-badge--detail'];
+
+  var html = '<div class="qr-multi-wrap">';
+  chunks.forEach(function (_, idx) {
+    html +=
+      '<div class="qr-panel">' +
+        '<span class="qr-badge' + badgeMod[idx] + '">Scan ' + (idx + 1) + ' of ' + n + '</span>' +
+        '<div class="qr-box" id="_qrChunk' + idx + '"></div>' +
+        '<span class="qr-panel-sub">' + (subLabels[idx] || 'Part ' + (idx + 1)) + '</span>' +
+      '</div>' +
+      (idx < chunks.length - 1 ? '<div class="qr-divider"></div>' : '');
+  });
+  html += '</div>';
+  container.innerHTML = html;
+
+  chunks.forEach(function (chunk, idx) {
+    var el = document.getElementById('_qrChunk' + idx);
+    _makeQR(el, _qrSafe(JSON.stringify(chunk)), size, function (ok) {
+      if (!ok) _dataQRFallback(el);
     });
-    if (JSON.stringify(out).length <= TARGET_L) return out;
-  }
-
-  // Step 3: drop entire fields (longest key names first) until it fits
-  var skip = { slot: 1, f: 1 };
-  var keys = Object.keys(out)
-    .filter(function (k) { return !skip[k]; })
-    .sort(function (a, b) { return b.length - a.length; });
-  while (JSON.stringify(out).length > TARGET_L && keys.length > 0) {
-    delete out[keys.shift()];
-  }
-  return out;
+  });
 }
 
 // ── Single QR layout ───────────────────────────────────────────────────────
@@ -164,36 +170,6 @@ function _renderSingleQR(container, text) {
   });
 }
 
-// ── Dual QR layout ─────────────────────────────────────────────────────────
-function _renderDualQR(container, text1, text2) {
-  container.innerHTML =
-    '<div class="qr-dual-wrap">' +
-      '<div class="qr-panel">' +
-        '<span class="qr-badge">Scan 1 of 2</span>' +
-        '<span class="qr-panel-label">Application Data</span>' +
-        '<div class="qr-box" id="_qrT1"></div>' +
-        '<span class="qr-panel-sub">Name, dates, selections &amp; signature</span>' +
-      '</div>' +
-      '<div class="qr-divider"></div>' +
-      '<div class="qr-panel">' +
-        '<span class="qr-badge qr-badge--detail">Scan 2 of 2</span>' +
-        '<span class="qr-panel-label">Written Responses</span>' +
-        '<div class="qr-box" id="_qrT2"></div>' +
-        '<span class="qr-panel-sub">Full text answers &amp; descriptions</span>' +
-      '</div>' +
-    '</div>';
-
-  var box1 = document.getElementById('_qrT1');
-  var box2 = document.getElementById('_qrT2');
-
-  _makeQR(box1, text1, 240, function (ok) {
-    if (!ok) _dataQRFallback(box1);
-  });
-  _makeQR(box2, text2, 240, function (ok) {
-    if (!ok) _dataQRFallback(box2);
-  });
-}
-
 // ── Shared QR renderer ────────────────────────────────────────────────────
 // Picks error-correction level based on payload size so qrcodejs never
 // receives data larger than the chosen version can hold (which causes it
@@ -202,8 +178,8 @@ function _makeQR(el, text, size, cb) {
   if (!el) { cb && cb(false); return; }
 
   // Level M handles ≤2331 bytes; Level L handles ≤2953 bytes.
-  // Use 2200/2800 as conservative limits to leave headroom.
-  var level = text.length <= 1500 ? QRCode.CorrectLevel.M : QRCode.CorrectLevel.L;
+  // Use 1400/2200 as conservative limits to leave headroom.
+  var level = text.length <= 1400 ? QRCode.CorrectLevel.M : QRCode.CorrectLevel.L;
 
   function attempt(lvl) {
     el.innerHTML = '';

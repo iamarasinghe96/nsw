@@ -1156,9 +1156,9 @@ textarea.field-input {
   display: inline-flex;
 }
 
-/* ── Dual QR layout ──────────────────────────────────────────────────────── */
+/* ── Multi QR layout (2 or 3 panels) ─────────────────────────────────────── */
 
-.qr-dual-wrap {
+.qr-multi-wrap {
   display: flex;
   align-items: flex-start;
   gap: 0;
@@ -1216,7 +1216,7 @@ textarea.field-input {
 
 @media (max-width: 560px) {
   .qr-divider { display: none; }
-  .qr-dual-wrap { flex-direction: column; align-items: center; }
+  .qr-multi-wrap { flex-direction: column; align-items: center; }
   .qr-panel { padding: 0; }
 }
 

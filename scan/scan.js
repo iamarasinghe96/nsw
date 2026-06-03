@@ -10,8 +10,8 @@
     raf:         null,
     allForms:    null,       // final_fields.json cache
     formKey:     null,       // currently selected form key
-    t1:          null,       // Tier-1 QR payload
-    t2:          null,       // Tier-2 QR payload
+    chunks:      {},         // slot → { n, received: { i: payload } }
+    activeSlot:  null,       // slot of the current submission
     lastRaw:     null,
     debounce:    null,
   };
@@ -144,17 +144,21 @@
     beep();
     flashFrame();
 
-    if (data.detail) {
-      // Tier-2
-      S.t2 = data;
-      if (S.t1 && S.t1.slot === data.slot) refreshFields();
-      else setStatus('QR 2 of 2 received — now scan QR 1 of 2', 'waiting');
-    } else {
-      // Tier-1
-      S.t1 = data;
-      if (S.t2 && S.t2.slot !== data.slot) S.t2 = null;
+    const slot = data.slot;
+    const n    = data.n || 1;
+    const idx  = data.i || 1;
 
-      // Auto-fill time slot with the current time when the QR is first scanned
+    // Initialise or continue accumulating chunks for this slot
+    if (!S.chunks[slot] || S.chunks[slot].n !== n) {
+      S.chunks[slot] = { n, received: {} };
+    }
+    S.chunks[slot].received[idx] = data;
+    S.activeSlot = slot;
+
+    const received = Object.keys(S.chunks[slot].received).length;
+
+    // Auto-fill time slot on the very first QR of a new submission
+    if (received === 1) {
       const slotEl = document.getElementById('time-slot');
       if (!slotEl.value) {
         const now = new Date();
@@ -169,22 +173,16 @@
         document.getElementById('app-type').value = matchKey;
         S.formKey = matchKey;
       }
-
-      refreshFields();
-
-      const hasT2Pending = !S.t2 && hasTruncated(S.t1, S.formKey);
-      if (hasT2Pending)
-        setStatus('QR 1 of 2 scanned ✓ — scan QR 2 of 2 for full text', 'waiting');
-      else
-        setStatus('QR scanned ✓ — review and edit below', 'success');
     }
-  }
 
-  function hasTruncated(t1, formKey) {
-    if (!S.allForms || !formKey) return false;
-    return (S.allForms[formKey] || [])
-      .filter(f => !BLOCK.has(f.type) && f.type === 'textarea')
-      .some(f => { const v = t1[f.field_name]; return v && String(v).length >= 80; });
+    refreshFields();
+
+    if (received < n) {
+      setStatus('QR ' + received + ' of ' + n + ' scanned ✓ — scan the next one', 'waiting');
+    } else {
+      const plural = n > 1 ? 'All ' + n + ' QR codes' : 'QR';
+      setStatus(plural + ' scanned ✓ — review and edit below', 'success');
+    }
   }
 
   function flashFrame() {
@@ -395,7 +393,7 @@
 
   // ── Clear ─────────────────────────────────────────────────────────────
   window.clearAll = function () {
-    S.t1 = null; S.t2 = null; S.formKey = null;
+    S.chunks = {}; S.activeSlot = null; S.formKey = null;
     document.getElementById('app-type').value = '';
     document.getElementById('time-slot').value = '';
     document.getElementById('dynamic-fields').innerHTML = '';
@@ -408,8 +406,17 @@
 
   // ── Helpers ───────────────────────────────────────────────────────────
   function mergedData() {
-    const d = Object.assign({}, S.t1 || {});
-    if (S.t2 && S.t2.detail) Object.assign(d, S.t2.detail);
+    const slot  = S.activeSlot;
+    const state = slot && S.chunks[slot];
+    if (!state) return {};
+    const d = {};
+    for (let i = 1; i <= state.n; i++) {
+      const chunk = state.received[i];
+      if (!chunk) continue;
+      Object.keys(chunk).forEach(k => {
+        if (k !== 'slot' && k !== 'f' && k !== 'n' && k !== 'i') d[k] = chunk[k];
+      });
+    }
     return d;
   }
 
