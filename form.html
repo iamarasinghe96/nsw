@@ -290,7 +290,7 @@
 
       // Save data first
       pageFields.forEach(field => {
-        if (field.type === 'heading' || field.type === 'instruction') return;
+        if (field.type === 'heading' || field.type === 'instruction' || field.type === 'disclosure') return;
         const el = document.getElementById('f_' + field.field_name);
         if (!el) return;
         const ft = field.field_type || field.type || 'text';
@@ -314,6 +314,23 @@
 
     function prevStep() {
       if (currentPageIndex > 0) {
+        // Save current page data before navigating back
+        if (!isReviewStep() && !isQrStep()) {
+          const pageNum = pageNumbers[currentPageIndex];
+          formFields.filter(f => Number(f.page) === pageNum).forEach(field => {
+            if (['heading', 'instruction', 'disclosure'].includes(field.type)) return;
+            const ft = field.field_type || field.type || 'text';
+            if (ft === 'radio') {
+              const checked = document.querySelector(`input[name="${field.field_name}"]:checked`);
+              formData[field.field_name] = checked ? checked.value : '';
+            } else {
+              const el = document.getElementById('f_' + field.field_name);
+              if (!el) return;
+              if (ft === 'checkbox') formData[field.field_name] = el.checked;
+              else formData[field.field_name] = el.value;
+            }
+          });
+        }
         showStep(currentPageIndex - 1);
       }
     }
@@ -331,6 +348,8 @@
         section.innerHTML = `<h3 class="review-section-title">${getPageLabel(pageNum)}</h3>`;
 
         pageFields.forEach(field => {
+          if (['heading', 'instruction', 'disclosure'].includes(field.type)) return;
+
           let displayValue = formData[field.field_name];
           if (field.type === 'checkbox') {
             displayValue = displayValue ? 'Yes' : 'No';
