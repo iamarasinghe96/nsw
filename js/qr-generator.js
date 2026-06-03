@@ -117,25 +117,41 @@ function generateDataQR(containerId, formData, formMeta, formFields) {
 }
 
 // ── Trim T1 payload to fit within QR byte capacity ─────────────────────────
+// Guarantees output stays under TARGET_L bytes. qrcodejs silently creates
+// an unreadable QR (canvas present but data garbled) when capacity is
+// exceeded — so we must hard-enforce limits, not just best-effort trim.
 function _fitT1(t1) {
-  var json = JSON.stringify(t1);
-  if (json.length <= 2200) return t1;          // fits Level M — done
+  var TARGET_M = 1500;  // conservative Level M limit (capacity 2331)
+  var TARGET_L = 2200;  // conservative Level L limit (capacity 2953)
 
-  // Step 1: drop signature (largest optional field)
   var out = Object.assign({}, t1);
-  delete out.sig;
-  json = JSON.stringify(out);
-  if (json.length <= 2200) return out;          // fits Level M without sig
+  if (JSON.stringify(out).length <= TARGET_M) return out;
 
-  // Step 2: halve every field value (Level L threshold is 2800)
-  if (json.length > 2200) {
+  // Step 1: drop signature (biggest optional blob)
+  delete out.sig;
+  if (JSON.stringify(out).length <= TARGET_M) return out;
+
+  // Step 2: progressive value truncation: 40 → 20 → 10 chars
+  var steps = [40, 20, 10];
+  for (var i = 0; i < steps.length; i++) {
+    var cap = steps[i];
     Object.keys(out).forEach(function (k) {
-      if (k !== 'slot' && k !== 'f' && typeof out[k] === 'string') {
-        out[k] = out[k].slice(0, 25);
+      if (k !== 'slot' && k !== 'f' && typeof out[k] === 'string' && out[k].length > cap) {
+        out[k] = out[k].slice(0, cap);
       }
     });
+    if (JSON.stringify(out).length <= TARGET_L) return out;
   }
-  return out;                                   // caller will use Level L
+
+  // Step 3: drop entire fields (longest key names first) until it fits
+  var skip = { slot: 1, f: 1 };
+  var keys = Object.keys(out)
+    .filter(function (k) { return !skip[k]; })
+    .sort(function (a, b) { return b.length - a.length; });
+  while (JSON.stringify(out).length > TARGET_L && keys.length > 0) {
+    delete out[keys.shift()];
+  }
+  return out;
 }
 
 // ── Single QR layout ───────────────────────────────────────────────────────
@@ -187,7 +203,7 @@ function _makeQR(el, text, size, cb) {
 
   // Level M handles ≤2331 bytes; Level L handles ≤2953 bytes.
   // Use 2200/2800 as conservative limits to leave headroom.
-  var level = text.length <= 2200 ? QRCode.CorrectLevel.M : QRCode.CorrectLevel.L;
+  var level = text.length <= 1500 ? QRCode.CorrectLevel.M : QRCode.CorrectLevel.L;
 
   function attempt(lvl) {
     el.innerHTML = '';
