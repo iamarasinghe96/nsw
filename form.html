@@ -260,8 +260,9 @@
             const sigFields = formFields.filter(f => Number(f.page) === pageNumbers[idx] && fieldType(f) === 'signature');
             sigFields.forEach(f => {
               initSignaturePad(f.field_name);
-              // Restore saved signature if any
-              if (formData[f.field_name]) {
+              // Only fall back to PNG restore when no stroke data is available
+              // (stroke data is preferred — it keeps the SVG path intact for QR)
+              if (formData[f.field_name] && !hasSignatureStrokes(f.field_name)) {
                 restoreSignature(f.field_name, formData[f.field_name]);
               }
             });
