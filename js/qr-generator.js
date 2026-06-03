@@ -102,20 +102,29 @@ function _packChunks(slot, catNum, entries) {
       continue;
     }
 
-    // Overflow — start a new chunk if under limit
-    if (chunks.length < _QR_MAX_CHUNKS) {
-      // Guard: if the entry alone is too large for an empty chunk (e.g. a very
-      // long signature path), truncate it to the max that fits before pushing.
-      var emptyChunkLen = JSON.stringify(_chunkPayload(slot, catNum, 99, chunks.length + 1, [])).length;
-      var maxEntryLen   = _QR_CHUNK_TARGET - emptyChunkLen - entry[0].length - 7;
-      var safeEntry     = maxEntryLen > 3 ? [entry[0], entry[1].slice(0, maxEntryLen)] : entry;
-      chunks.push([safeEntry]);
+    // Doesn't fit — compute max value length for an entry in the current chunk
+    var emptyBase = JSON.stringify(_chunkPayload(slot, catNum, 99, ci + 1, [])).length;
+    var maxHere   = _QR_CHUNK_TARGET - emptyBase - entry[0].length - 7; // ,"key":"" overhead
+
+    if (chunks[ci].length === 0) {
+      // Current chunk is empty: entry is too large even alone. Truncate to fit here
+      // rather than creating a new chunk (which would leave chunk 0 empty forever).
+      if (maxHere > 3) chunks[ci].push([entry[0], entry[1].slice(0, maxHere)]);
       continue;
     }
 
-    // All chunks full: truncate the value to squeeze it in
-    var baseLen  = JSON.stringify(_chunkPayload(slot, catNum, 99, ci + 1, chunks[ci])).length;
-    var available = _QR_CHUNK_TARGET - baseLen - entry[0].length - 7; // ,"key":"" overhead
+    // Current chunk has items — overflow to a new chunk if under limit
+    if (chunks.length < _QR_MAX_CHUNKS) {
+      var newIdx    = chunks.length;
+      var newBase   = JSON.stringify(_chunkPayload(slot, catNum, 99, newIdx + 1, [])).length;
+      var maxInNew  = _QR_CHUNK_TARGET - newBase - entry[0].length - 7;
+      chunks.push(maxInNew > 3 ? [[entry[0], entry[1].slice(0, maxInNew)]] : []);
+      continue;
+    }
+
+    // All chunks full: truncate to fit in the current (last) chunk
+    var baseLen   = JSON.stringify(_chunkPayload(slot, catNum, 99, ci + 1, chunks[ci])).length;
+    var available = _QR_CHUNK_TARGET - baseLen - entry[0].length - 7;
     if (available > 3) {
       chunks[ci].push([entry[0], entry[1].slice(0, available)]);
     }
