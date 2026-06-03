@@ -291,14 +291,17 @@
       // Save data first
       pageFields.forEach(field => {
         if (field.type === 'heading' || field.type === 'instruction' || field.type === 'disclosure') return;
-        const el = document.getElementById('f_' + field.field_name);
-        if (!el) return;
         const ft = field.field_type || field.type || 'text';
-        if (ft === 'checkbox') {
-          formData[field.field_name] = el.checked;
-        } else if (ft === 'radio') {
+        // Radio inputs have no id — must query by name before id lookup
+        if (ft === 'radio') {
           const checked = document.querySelector(`input[name="${field.field_name}"]:checked`);
           formData[field.field_name] = checked ? checked.value : '';
+          return;
+        }
+        const el = document.getElementById('f_' + field.field_name);
+        if (!el) return;
+        if (ft === 'checkbox') {
+          formData[field.field_name] = el.checked;
         } else {
           formData[field.field_name] = el.value;
         }
