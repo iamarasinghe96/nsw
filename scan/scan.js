@@ -249,19 +249,44 @@
     let html = '<div style="margin-top:14px"><div class="fields-section-title">Signatures</div><div class="fields-grid">';
     sigs.forEach(f => {
       const path = qr[f.field_name] || qr.sig || '';
-      // Signature paths are encoded in a 0-99 normalised square coordinate space
-      // (see signature.js getSignatureSVGPath). The kiosk canvas is 480×180, so
-      // display at the same 8:3 aspect ratio with preserveAspectRatio="none" to
-      // stretch the square back to the original proportions.
+      // Paths are in a 0-99 normalised square space (signature.js).
+      // Display at the 480:180 = 8:3 kiosk aspect ratio using preserveAspectRatio="none".
+      // smoothSigPath() replaces straight L segments with quadratic bezier curves so the
+      // reconstructed path looks natural instead of angular.
       html += `<div class="form-group full-width">
         <label class="field-label">${esc(f.label)}</label>
         ${path
-          ? `<div class="sig-preview"><svg viewBox="0 0 99 99" preserveAspectRatio="none" style="width:240px;height:90px;display:block"><path d="${esc(path)}" fill="none" stroke="#111827" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`
+          ? `<div class="sig-preview"><svg viewBox="0 0 99 99" preserveAspectRatio="none" style="width:240px;height:90px;display:block"><path d="${esc(smoothSigPath(path))}" fill="none" stroke="#111827" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`
           : '<span style="font-size:12px;color:#9CA3AF">No signature captured</span>'}
       </div>`;
     });
     html += '</div></div>';
     return html;
+  }
+
+  // Convert an M/L-only SVG path to one using quadratic bezier curves so that
+  // the signature looks smooth rather than angular after RDP simplification.
+  function smoothSigPath(d) {
+    if (!d) return d;
+    const strokes = [];
+    let cur = null;
+    d.replace(/([ML])(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)/g, (_, cmd, x, y) => {
+      if (cmd === 'M') { if (cur) strokes.push(cur); cur = [{ x: +x, y: +y }]; }
+      else if (cur)    { cur.push({ x: +x, y: +y }); }
+    });
+    if (cur) strokes.push(cur);
+
+    return strokes.map(pts => {
+      if (pts.length < 2) return `M${pts[0].x},${pts[0].y}`;
+      let s = `M${pts[0].x},${pts[0].y}`;
+      for (let i = 1; i < pts.length - 1; i++) {
+        const mx = Math.round((pts[i].x + pts[i + 1].x) / 2);
+        const my = Math.round((pts[i].y + pts[i + 1].y) / 2);
+        s += ` Q${pts[i].x},${pts[i].y} ${mx},${my}`;
+      }
+      s += ` L${pts[pts.length - 1].x},${pts[pts.length - 1].y}`;
+      return s;
+    }).join(' ');
   }
 
   function renderInput(f, val) {
