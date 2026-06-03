@@ -62,9 +62,11 @@ function generateDataQR(containerId, formData, formMeta, formFields) {
 
     var strVal;
     if (ft === 'signature') {
+      // No artificial cap — RDP simplification in signature.js already keeps
+      // paths compact, and the chunk packer handles any overflow naturally.
       if (typeof getSignatureSVGPath === 'function') {
         var path = getSignatureSVGPath(f.field_name);
-        if (path) strVal = path.slice(0, 300);
+        if (path) strVal = path;
       }
     } else {
       var val = (formData || {})[f.field_name];
@@ -102,7 +104,12 @@ function _packChunks(slot, catNum, entries) {
 
     // Overflow — start a new chunk if under limit
     if (chunks.length < _QR_MAX_CHUNKS) {
-      chunks.push([entry]);
+      // Guard: if the entry alone is too large for an empty chunk (e.g. a very
+      // long signature path), truncate it to the max that fits before pushing.
+      var emptyChunkLen = JSON.stringify(_chunkPayload(slot, catNum, 99, chunks.length + 1, [])).length;
+      var maxEntryLen   = _QR_CHUNK_TARGET - emptyChunkLen - entry[0].length - 7;
+      var safeEntry     = maxEntryLen > 3 ? [entry[0], entry[1].slice(0, maxEntryLen)] : entry;
+      chunks.push([safeEntry]);
       continue;
     }
 
