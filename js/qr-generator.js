@@ -127,6 +127,9 @@ function _chunkPayload(slot, catNum, n, i, entries) {
 }
 
 // ── Render 1, 2, or 3 QR code panels ─────────────────────────────────────
+// Single chunk → one large static QR.
+// Multiple chunks → full-size carousel, one QR visible at a time,
+// auto-advancing every 1.5 s so a staff camera can capture each one.
 function _renderChunks(container, chunks) {
   var n = chunks.length;
 
@@ -135,30 +138,74 @@ function _renderChunks(container, chunks) {
     return;
   }
 
-  var size       = n === 2 ? 240 : 190;
-  var subLabels  = ['Application data & selections', 'Additional details', 'Remaining details'];
-  var badgeMod   = ['', ' qr-badge--detail', ' qr-badge--detail'];
+  _renderCarousel(container, chunks);
+}
 
-  var html = '<div class="qr-multi-wrap">';
+// ── Carousel for multi-chunk QRs ──────────────────────────────────────────
+var _carouselTimer = null;
+
+function _renderCarousel(container, chunks) {
+  var n = chunks.length;
+
+  var html = '<div class="qr-carousel">';
   chunks.forEach(function (_, idx) {
     html +=
-      '<div class="qr-panel">' +
-        '<span class="qr-badge' + badgeMod[idx] + '">Scan ' + (idx + 1) + ' of ' + n + '</span>' +
+      '<div class="qr-carousel-slide' + (idx === 0 ? ' active' : '') + '" id="_qrSlide' + idx + '">' +
+        '<span class="qr-badge' + (idx > 0 ? ' qr-badge--detail' : '') + '">Scan ' + (idx + 1) + ' of ' + n + '</span>' +
         '<div class="qr-box" id="_qrChunk' + idx + '"></div>' +
-        '<span class="qr-panel-sub">' + (subLabels[idx] || 'Part ' + (idx + 1)) + '</span>' +
-      '</div>' +
-      (idx < chunks.length - 1 ? '<div class="qr-divider"></div>' : '');
+      '</div>';
   });
+  // Dot indicators
+  html += '<div class="qr-carousel-dots">';
+  chunks.forEach(function (_, idx) {
+    html += '<span class="qr-dot' + (idx === 0 ? ' active' : '') + '" id="_qrDot' + idx + '"></span>';
+  });
+  html += '</div>';
+  // Progress bar that restarts on each switch
+  html += '<div class="qr-carousel-progress"><div class="qr-carousel-bar" id="_qrBar"></div></div>';
+  html += '<p class="qr-carousel-hint">Codes rotate automatically — staff will scan each one</p>';
   html += '</div>';
   container.innerHTML = html;
 
+  // Render QR codes into each slide
   chunks.forEach(function (chunk, idx) {
     var el = document.getElementById('_qrChunk' + idx);
-    _makeQR(el, _qrSafe(JSON.stringify(chunk)), size, function (ok) {
+    _makeQR(el, _qrSafe(JSON.stringify(chunk)), 280, function (ok) {
       if (!ok) _dataQRFallback(el);
     });
   });
+
+  // Auto-advance carousel every 1.5 s
+  var current = 0;
+  if (_carouselTimer) clearInterval(_carouselTimer);
+  _carouselTimer = setInterval(function () {
+    var prev = current;
+    current  = (current + 1) % n;
+
+    var prevSlide = document.getElementById('_qrSlide' + prev);
+    var nextSlide = document.getElementById('_qrSlide' + current);
+    var prevDot   = document.getElementById('_qrDot'   + prev);
+    var nextDot   = document.getElementById('_qrDot'   + current);
+
+    if (prevSlide) prevSlide.classList.remove('active');
+    if (nextSlide) nextSlide.classList.add('active');
+    if (prevDot)   prevDot.classList.remove('active');
+    if (nextDot)   nextDot.classList.add('active');
+
+    // Restart progress bar animation
+    var bar = document.getElementById('_qrBar');
+    if (bar) {
+      bar.style.animation = 'none';
+      bar.offsetWidth; // trigger reflow
+      bar.style.animation = '';
+    }
+  }, 1500);
 }
+
+// Stop the carousel timer (call when leaving the QR screen)
+window.stopQRCarousel = function () {
+  if (_carouselTimer) { clearInterval(_carouselTimer); _carouselTimer = null; }
+};
 
 // ── Single QR layout ───────────────────────────────────────────────────────
 function _renderSingleQR(container, text) {
