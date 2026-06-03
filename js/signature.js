@@ -174,10 +174,10 @@ function openMobileSignature(fieldName, onDone) {
   overlay.className = 'sig-overlay';
   overlay.innerHTML =
     '<div class="sig-overlay-bar">' +
-      '<span class="sig-overlay-title">Sign below</span>' +
+      '<span class="sig-overlay-title">Sign here</span>' +
       '<div class="sig-overlay-actions">' +
-        '<button class="sig-overlay-clear">Clear</button>' +
         '<button class="sig-overlay-done">Done ✓</button>' +
+        '<button class="sig-overlay-clear">Clear</button>' +
         '<button class="sig-overlay-cancel">✕</button>' +
       '</div>' +
     '</div>' +

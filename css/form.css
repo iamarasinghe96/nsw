@@ -1332,27 +1332,36 @@ textarea.field-input {
   z-index: 99999;
   background: #fff;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;  /* bar on LEFT, canvas fills right */
 }
 
+/* Left sidebar — narrow vertical strip with controls */
 .sig-overlay-bar {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 16px;
+  padding: 16px 0;
+  width: 64px;
   background: #002664;
   flex-shrink: 0;
 }
 
+/* Title rotated 90° so it reads bottom-to-top along the left edge */
 .sig-overlay-title {
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 700;
   color: #fff;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  letter-spacing: 0.04em;
 }
 
 .sig-overlay-actions {
   display: flex;
-  gap: 8px;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }
 
 .sig-overlay-clear,
@@ -1360,19 +1369,22 @@ textarea.field-input {
 .sig-overlay-cancel {
   border: none;
   border-radius: 6px;
-  padding: 6px 14px;
-  font-size: 13px;
+  padding: 8px 6px;
+  font-size: 12px;
   font-weight: 600;
   cursor: pointer;
+  width: 48px;
+  text-align: center;
+  line-height: 1.2;
 }
 
 .sig-overlay-clear  { background: rgba(255,255,255,0.15); color: #fff; }
 .sig-overlay-done   { background: #16a34a; color: #fff; }
-.sig-overlay-cancel { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); padding: 6px 10px; }
+.sig-overlay-cancel { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); }
 
 .sig-overlay-canvas {
   flex: 1;
-  width: 100%;
+  height: 100%;
   display: block;
   cursor: crosshair;
   touch-action: none;
