@@ -85,7 +85,7 @@ function generateDataQR(containerId, formData, formMeta, formFields) {
 // Packs entries into 1–3 payloads, each staying under _QR_CHUNK_TARGET bytes.
 // If all three chunks are full, the last value is truncated to fit rather
 // than silently dropped.
-var _QR_CHUNK_TARGET = 1400; // conservative (Level M capacity: 2331 bytes)
+var _QR_CHUNK_TARGET = 1100; // empirically safe limit — scans fail above ~1113 chars
 var _QR_MAX_CHUNKS   = 3;
 
 function _packChunks(slot, catNum, entries) {
@@ -242,7 +242,7 @@ function _makeQR(el, text, size, cb) {
 
   // Level M handles ≤2331 bytes; Level L handles ≤2953 bytes.
   // Use 1400/2200 as conservative limits to leave headroom.
-  var level = text.length <= 1400 ? QRCode.CorrectLevel.M : QRCode.CorrectLevel.L;
+  var level = text.length <= 1100 ? QRCode.CorrectLevel.M : QRCode.CorrectLevel.L;
 
   function attempt(lvl) {
     el.innerHTML = '';
