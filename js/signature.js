@@ -121,7 +121,13 @@ function restoreSignature(fieldName, dataUrl) {
   img.onload = function () {
     pad.clear();
     var canvas = document.getElementById('sigcanvas_' + fieldName);
-    if (canvas) canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+    if (canvas) {
+      // Must use offsetWidth/offsetHeight (CSS pixels), NOT canvas.width/canvas.height
+      // (physical pixels). resizeCanvas() applies a devicePixelRatio scale to the
+      // context, so drawing at physical dimensions renders at 4× on retina displays —
+      // only the top-left quarter is visible. CSS dimensions fill the canvas correctly.
+      canvas.getContext('2d').drawImage(img, 0, 0, canvas.offsetWidth, canvas.offsetHeight);
+    }
   };
   img.src = dataUrl;
   // Note: restoring from image loses stroke data — strokes stay empty
