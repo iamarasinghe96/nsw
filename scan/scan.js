@@ -154,6 +154,13 @@
       S.t1 = data;
       if (S.t2 && S.t2.slot !== data.slot) S.t2 = null;
 
+      // Auto-fill time slot with the current time when the QR is first scanned
+      const slotEl = document.getElementById('time-slot');
+      if (!slotEl.value) {
+        const now = new Date();
+        slotEl.value = String(now.getHours()).padStart(2,'0') + ':' + String(now.getMinutes()).padStart(2,'0');
+      }
+
       // Auto-select form type
       const matchKey = Object.keys(S.allForms || {}).find(k =>
         k.startsWith(data.f + '-') || k === data.f + '.pdf'
@@ -222,7 +229,12 @@
     let html = '<div class="fields-grid">';
     fields.forEach(f => {
       const val = qr[f.field_name] ?? '';
-      const wide = f.type === 'textarea' || (f.options && f.options.length > 3);
+      // Radio/checkbox with long options must be full-width or they get cramped.
+      // Textareas are always full-width.
+      const wide = f.type === 'textarea'
+                || f.type === 'radio'
+                || f.type === 'checkbox'
+                || (f.options && f.options.length > 2);
       html += `<div class="form-group${wide ? ' full-width' : ''}">
         <label class="field-label">${esc(f.label)}${f.required ? '<span class="req"> *</span>' : ''}</label>
         ${renderInput(f, val)}
@@ -237,10 +249,14 @@
     let html = '<div style="margin-top:14px"><div class="fields-section-title">Signatures</div><div class="fields-grid">';
     sigs.forEach(f => {
       const path = qr[f.field_name] || qr.sig || '';
-      html += `<div class="form-group">
+      // Signature paths are encoded in a 0-99 normalised square coordinate space
+      // (see signature.js getSignatureSVGPath). The kiosk canvas is 480×180, so
+      // display at the same 8:3 aspect ratio with preserveAspectRatio="none" to
+      // stretch the square back to the original proportions.
+      html += `<div class="form-group full-width">
         <label class="field-label">${esc(f.label)}</label>
         ${path
-          ? `<div class="sig-preview"><svg viewBox="0 0 400 100" style="width:200px;height:60px"><path d="${esc(path)}" fill="none" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`
+          ? `<div class="sig-preview"><svg viewBox="0 0 99 99" preserveAspectRatio="none" style="width:240px;height:90px;display:block"><path d="${esc(path)}" fill="none" stroke="#111827" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`
           : '<span style="font-size:12px;color:#9CA3AF">No signature captured</span>'}
       </div>`;
     });
