@@ -33,7 +33,7 @@ function _qrSafe(str) {
 // ── Data QR: multi-chunk approach ─────────────────────────────────────────
 //
 // Instead of truncating data to fit one QR, all field values are packed
-// into 1–3 QR codes split by byte count. Each chunk payload:
+// into 1–5 QR codes split by byte count. Each chunk payload:
 //   { slot, f, n, i, ...fields }
 //   slot : YYYYMMDDHHmmss — links all chunks for this submission
 //   f    : form ID prefix (for auto-selection on scan page)
@@ -82,11 +82,11 @@ function generateDataQR(containerId, formData, formMeta, formFields) {
 }
 
 // ── Greedy chunk packer ────────────────────────────────────────────────────
-// Packs entries into 1–3 payloads, each staying under _QR_CHUNK_TARGET bytes.
-// If all three chunks are full, the last value is truncated to fit rather
-// than silently dropped.
-var _QR_CHUNK_TARGET = 1100; // empirically safe limit — scans fail above ~1113 chars
-var _QR_MAX_CHUNKS   = 3;
+// Each chunk targets ≤850 chars → QR Version ≤25 (117×117 modules).
+// At 400px display that's 3.4 px/module — reliably scannable by jsQR.
+// Up to 5 chunks are shown in the carousel (5×850 ≈ 4250 usable chars).
+var _QR_CHUNK_TARGET = 850;
+var _QR_MAX_CHUNKS   = 5;
 
 function _packChunks(slot, catNum, entries) {
   var chunks = [[]];
@@ -186,7 +186,7 @@ function _renderCarousel(container, chunks) {
   // Render QR codes into each slide
   chunks.forEach(function (chunk, idx) {
     var el = document.getElementById('_qrChunk' + idx);
-    _makeQR(el, _qrSafe(JSON.stringify(chunk)), 280, function (ok) {
+    _makeQR(el, _qrSafe(JSON.stringify(chunk)), 400, function (ok) {
       if (!ok) _dataQRFallback(el);
     });
   });
@@ -228,7 +228,7 @@ function _renderSingleQR(container, text) {
   var box = document.createElement('div');
   box.className = 'qr-box';
   container.appendChild(box);
-  _makeQR(box, text, 280, function (ok) {
+  _makeQR(box, text, 400, function (ok) {
     if (!ok) _dataQRFallback(container);
   });
 }
@@ -240,9 +240,9 @@ function _renderSingleQR(container, text) {
 function _makeQR(el, text, size, cb) {
   if (!el) { cb && cb(false); return; }
 
-  // Level M handles ≤2331 bytes; Level L handles ≤2953 bytes.
-  // Use 1400/2200 as conservative limits to leave headroom.
-  var level = text.length <= 1100 ? QRCode.CorrectLevel.M : QRCode.CorrectLevel.L;
+  // Level M handles ≤914 bytes at Version 25; Level L handles more.
+  // Prefer M (15% error recovery) for robustness; fall back to L for larger payloads.
+  var level = text.length <= 850 ? QRCode.CorrectLevel.M : QRCode.CorrectLevel.L;
 
   function attempt(lvl) {
     el.innerHTML = '';
